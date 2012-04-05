@@ -13,6 +13,34 @@
     <table class="table table-striped" style="font-size: 16px;">
         <tbody>
             <tr>
+                <th>Imagen Frontal</th>
+                <td>
+                    {% set path = 'images/' ~ entity.imagenfrontal %}
+                    <img src="{{ asset(path)}}" alt="Imagen frontal" class="imagen-autobus" />
+                </td>
+            </tr>
+            <tr>
+                <th>Imagen Lateral Derecha</th>
+                <td>
+                    {% set path = 'images/' ~ entity.imagenlaterald %}
+                    <img src="{{ asset(path)}}" alt="Imagen lateral derecha" class="imagen-autobus" />
+                </td>
+            </tr>
+            <tr>
+                <th>Imagen Lateral Izquierda</th>
+                <td>
+                    {% set path = 'images/' ~ entity.imagenlaterali %}
+                    <img src="{{ asset(path)}}" alt="Imagen lateral izquierda" class="imagen-autobus" />
+                </td>
+            </tr>
+            <tr>
+                <th>Imagen Trasera</th>
+                <td>
+                    {% set path = 'images/' ~ entity.imagentrasera %}
+                    <img src="{{ asset(path)}}" alt="Imagen trasera" class="imagen-autobus" />
+                </td>
+            </tr>
+            <tr>
                 <th>Matrícula</th>
                 <td>{{ entity.matricula }}</td>
             </tr>

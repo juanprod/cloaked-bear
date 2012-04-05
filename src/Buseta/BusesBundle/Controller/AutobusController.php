@@ -2,11 +2,15 @@
 
 namespace Buseta\BusesBundle\Controller;
 
+use Doctrine\Tests\Common\Annotations\Null;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Buseta\BusesBundle\Entity\Autobus;
+use Buseta\BusesBundle\Form\Model\AutobusModel;
 use Buseta\BusesBundle\Form\Type\AutobusType;
+
+use Buseta\BusesBundle\Handle\HandleAutobus;
 
 /**
  * Autobus controller.
@@ -33,7 +37,7 @@ class AutobusController extends Controller
         $paginator = $this->get('knp_paginator');
         $entities = $paginator->paginate(
             $entities,
-            $this->get('request')->query->get('page', 1),
+            $this->get('request')->query->get('page', 5),
             1,
             array('pageParameterName' => 'page')
         );
@@ -49,24 +53,21 @@ class AutobusController extends Controller
      */
     public function createAction(Request $request)
     {
-        $entity = new Autobus();
-        $form = $this->createCreateForm($entity);
+        $entityModel = new AutobusModel();
+
+        $form = $this->createCreateForm($entityModel);
         $form->handleRequest($request);
 
-        $autobus = $request->request->get('buseta_databundle_autobus');
-        /*echo '<pre>';
-        var_dump($form->getErrorsAsString());die;*/
-
-        $entity->setFechaRtv(date_create_from_format('d/m/Y',$autobus['fecha_rtv']));
-        $entity->setValidoHasta(date_create_from_format('d/m/Y',$autobus['valido_hasta']));
-
         if ($form->isValid()) {
+            $model = $this->get('handlebuses');
+            $entity = $model->HandleAutobus($entityModel);
 
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($entity);
-            $em->flush();
-
-            return $this->redirect($this->generateUrl('autobus_show', array('id' => $entity->getId())));
+            if($model)
+                return $this->redirect($this->generateUrl('autobus_show', array('id' => $entity->getId())));
+            return $this->render('BusetaBusesBundle:Autobus:new.html.twig', array(
+                    'entity' => $entity,
+                    'form'   => $form->createView(),
+                ));
         }
 
         print_r($form->getErrorsAsString());die;
@@ -84,7 +85,7 @@ class AutobusController extends Controller
     *
     * @return \Symfony\Component\Form\Form The form
     */
-    private function createCreateForm(Autobus $entity)
+    private function createCreateForm(AutobusModel $entity)
     {
         $form = $this->createForm(new AutobusType(), $entity, array(
             'action' => $this->generateUrl('autobus_create'),
@@ -102,7 +103,7 @@ class AutobusController extends Controller
      */
     public function newAction()
     {
-        $entity = new Autobus();
+        $entity = new AutobusModel();
         $form   = $this->createCreateForm($entity);
 
         $em = $this->getDoctrine()->getManager();
@@ -163,6 +164,8 @@ class AutobusController extends Controller
      */
     public function editAction($id)
     {
+        $entity = new Autobus();
+
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('BusetaBusesBundle:Autobus')->find($id);
@@ -190,7 +193,44 @@ class AutobusController extends Controller
     */
     private function createEditForm(Autobus $entity)
     {
-        $form = $this->createForm(new AutobusType(), $entity, array(
+        $model = new AutobusModel();
+
+        $model->setMatricula($entity->getMatricula());
+        $model->setNumeroChasis($entity->getNumeroChasis());
+        $model->setNumeroMotor($entity->getNumeroMotor());
+
+        $model->setMarca($entity->getMarca());
+        $model->setModelo($entity->getModelo());
+        $model->setEstilo($entity->getEstilo());
+
+        $model->setPesoBruto($entity->getPesoBruto());
+        $model->setPesoTara($entity->getPesoTara());
+
+        $model->setColor($entity->getColor());
+        $model->setNumeroPlazas($entity->getNumeroPlazas());
+
+        $model->setMarcaMotor($entity->getMarcaMotor());
+        $model->setCombustible($entity->getCombustible());
+
+        $model->setCilindrada($entity->getCilindrada());
+        $model->setNumeroCilindros($entity->getNumeroCilindros());
+
+        $model->setPotencia($entity->getPotencia());
+        $model->setValidoHasta($entity->getValidoHasta());
+
+        $model->setFechaRtv($entity->getFechaRtv());
+        $model->setRampas($entity->getRampas());
+
+        $model->setBarras($entity->getBarras());
+        $model->setCamaras($entity->getCamaras());
+
+        $model->setLectorCedulas($entity->getLectorCedulas());
+        $model->setPublicidad($entity->getPublicidad());
+
+        $model->setGps($entity->getGps());
+        $model->setWifi($entity->getWifi());
+
+        $form = $this->createForm(new AutobusType(), $model, array(
             'action' => $this->generateUrl('autobus_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
@@ -218,9 +258,11 @@ class AutobusController extends Controller
         $editForm->submit($request);
 
         if ($editForm->isValid()) {
-            $em->flush();
+            $model = $this->get('handlebuses');
+            $entity = $model->HandleAutobus($entity);
 
-            return $this->redirect($this->generateUrl('autobus_show', array('id' => $id)));
+            if($model)
+                return $this->redirect($this->generateUrl('autobus_show', array('id' => $entity->getId())));
         }
 
         return $this->render('BusetaBusesBundle:Autobus:edit.html.twig', array(

@@ -12,6 +12,30 @@
 
         <form action="{{ path('autobus_create') }}" method="post" {{ form_enctype(form) }}>
             <div class="row show-grid">
+                <div class="col-md-6">
+                    <label>Vista Frontal:</label>
+                    {{ form_widget(form.imagen_frontal) }}
+                </div>
+
+                <div class="col-md-6">
+                    <label>Vista Trasera:</label>
+                    {{ form_widget(form.imagen_trasera) }}
+                </div>
+            </div>
+
+            <div class="row show-grid">
+                <div class="col-md-6">
+                    <label>Vista Lateral Izquierda:</label>
+                    {{ form_widget(form.imagen_lateral_i) }}
+                </div>
+
+                <div class="col-md-6">
+                    <label>Vista Lateral Derecha:</label>
+                    {{ form_widget(form.imagen_lateral_d) }}
+                </div>
+            </div>
+
+            <div class="row show-grid">
                 <div class="col-md-4">
                     <label>Matrícula:</label>
                     {{ form_widget(form.matricula) }}

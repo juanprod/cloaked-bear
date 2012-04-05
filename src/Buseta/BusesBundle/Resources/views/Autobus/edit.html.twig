@@ -13,6 +13,38 @@
     {{ form_errors(edit_form) }}
     <form action="{{ path('autobus_update',{'id':entity.id}) }}" method="post" {{ form_enctype(edit_form) }}>
         <div class="row show-grid">
+            <div class="col-md-6">
+                <label>Vista Frontal:</label>
+                {% set path = 'images/' ~ entity.imagenfrontal %}
+                <img src="{{ asset(path)}}" alt="Imagen frontal" class="imagen-autobus" />
+                {{ form_widget(edit_form.imagen_frontal) }}
+            </div>
+
+            <div class="col-md-6">
+                <label>Vista Trasera:</label>
+                {% set path = 'images/' ~ entity.imagentrasera %}
+                <img src="{{ asset(path)}}" alt="Imagen trasera" class="imagen-autobus" />
+                {{ form_widget(edit_form.imagen_trasera) }}
+            </div>
+        </div>
+
+        <div class="row show-grid">
+            <div class="col-md-6">
+                <label>Vista Lateral Izquierda:</label>
+                {% set path = 'images/' ~ entity.imagenlaterali %}
+                <img src="{{ asset(path)}}" alt="Imagen lateral izquierda" class="imagen-autobus" />
+                {{ form_widget(edit_form.imagen_lateral_i) }}
+            </div>
+
+            <div class="col-md-6">
+                <label>Vista Lateral Derecha:</label>
+                {% set path = 'images/' ~ entity.imagenlaterald %}
+                <img src="{{ asset(path)}}" alt="Imagen lateral derecha" class="imagen-autobus" />
+                {{ form_widget(edit_form.imagen_lateral_d) }}
+            </div>
+        </div>
+
+        <div class="row show-grid">
             <div class="col-md-4">
                 <label>Matrícula:</label>
                 {{ form_widget(edit_form.matricula) }}

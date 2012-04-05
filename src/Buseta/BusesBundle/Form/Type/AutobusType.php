@@ -15,6 +15,34 @@ class AutobusType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('imagen_frontal', 'file', array(
+                    'required' => true,
+                    'attr'   => array(
+                        'class' => 'form-control',
+                        'style' => 'width: 250px',
+                    )
+                ))
+            ->add('imagen_lateral_d', 'file', array(
+                    'required' => true,
+                    'attr'   => array(
+                        'class' => 'form-control',
+                        'style' => 'width: 250px',
+                    )
+                ))
+            ->add('imagen_lateral_i', 'file', array(
+                    'required' => true,
+                    'attr'   => array(
+                        'class' => 'form-control',
+                        'style' => 'width: 250px',
+                    )
+                ))
+            ->add('imagen_trasera', 'file', array(
+                    'required' => true,
+                    'attr'   => array(
+                        'class' => 'form-control',
+                        'style' => 'width: 250px',
+                    )
+                ))
             ->add('matricula', 'text', array(
                     'required' => true,
                     'attr'   => array(
@@ -197,7 +225,7 @@ class AutobusType extends AbstractType
             'data_class' => 'Buseta\BusesBundle\Form\Model\Autobus'
         ));*/
         $resolver->setDefaults(array(
-                'data_class' => 'Buseta\BusesBundle\Entity\Autobus'
+                'data_class' => 'Buseta\BusesBundle\Form\Model\AutobusModel'
         ));
     }
 

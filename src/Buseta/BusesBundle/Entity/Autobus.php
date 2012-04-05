@@ -21,6 +21,34 @@ class Autobus
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="imagen_frontal", type="string")
+     */
+    private $imagen_frontal;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="imagen_lateral_d", type="string")
+     */
+    private $imagen_lateral_d;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="imagen_lateral_i", type="string")
+     */
+    private $imagen_lateral_i;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="imagen_trasera", type="string")
+     */
+    private $imagen_trasera;
     
     /**
      * @var string
@@ -748,4 +776,70 @@ class Autobus
     {
         return $this->wifi;
     }
+
+    /**
+     * @param mixed $imagen_frontal
+     */
+    public function setImagenFrontal($imagen_frontal)
+    {
+        $this->imagen_frontal = $imagen_frontal;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImagenFrontal()
+    {
+        return $this->imagen_frontal;
+    }
+
+    /**
+     * @param mixed $imagen_lateral_d
+     */
+    public function setImagenLateralD($imagen_lateral_d)
+    {
+        $this->imagen_lateral_d = $imagen_lateral_d;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImagenLateralD()
+    {
+        return $this->imagen_lateral_d;
+    }
+
+    /**
+     * @param mixed $imagen_lateral_i
+     */
+    public function setImagenLateralI($imagen_lateral_i)
+    {
+        $this->imagen_lateral_i = $imagen_lateral_i;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImagenLateralI()
+    {
+        return $this->imagen_lateral_i;
+    }
+
+    /**
+     * @param mixed $imagen_trasera
+     */
+    public function setImagenTrasera($imagen_trasera)
+    {
+        $this->imagen_trasera = $imagen_trasera;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImagenTrasera()
+    {
+        return $this->imagen_trasera;
+    }
+
+
 }

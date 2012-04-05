@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "af63582f418197e7935d68e2568e9697",
+    "hash": "7ecc7fb9ef74d06d052c03f62ea79a0e",
     "packages": [
         {
             "name": "afarkas/html5shiv",
@@ -412,12 +412,12 @@
         },
         {
             "name": "doctrine/annotations",
-            "version": "1.0",
+            "version": "v1.1.2",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/doctrine-annotations-1.0.zip",
-                "reference": "doctrine-annotations-1.0.zip",
-                "shasum": "996f9350967a51a16b19d0508de9810f3cbdfc87"
+                "url": "http://192.168.0.106/artifact/zips/doctrine-annotations-v1.1.2.zip",
+                "reference": "doctrine-annotations-v1.1.2.zip",
+                "shasum": "909212051c2fd7c4af5b3fcdb2412b25c4033f91"
             },
             "require": {
                 "doctrine/lexer": "1.*",
@@ -472,12 +472,12 @@
         },
         {
             "name": "doctrine/cache",
-            "version": "1.0",
+            "version": "v1.3.0",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/doctrine-cache-1.0.zip",
-                "reference": "doctrine-cache-1.0.zip",
-                "shasum": "92b8cf5e26c493e31361030e8a4e4f0baf2e8544"
+                "url": "http://192.168.0.106/artifact/zips/doctrine-cache-v1.3.0.zip",
+                "reference": "doctrine-cache-v1.3.0.zip",
+                "shasum": "35593ab10712253e6633f3e8e761714bf15c8734"
             },
             "require": {
                 "php": ">=5.3.2"
@@ -534,12 +534,12 @@
         },
         {
             "name": "doctrine/collections",
-            "version": "1.1",
+            "version": "v1.2",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/doctrine-collections-1.1.zip",
-                "reference": "doctrine-collections-1.1.zip",
-                "shasum": "0d459e79e61d26ced5afb4d07d1899046e77dd4a"
+                "url": "http://192.168.0.106/artifact/zips/doctrine-collections-v1.2.zip",
+                "reference": "doctrine-collections-v1.2.zip",
+                "shasum": "e57d99a2e6fb33d3cff5d5803cfc9de186769240"
             },
             "require": {
                 "php": ">=5.3.2"
@@ -547,7 +547,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1.x-dev"
+                    "dev-master": "1.2.x-dev"
                 }
             },
             "autoload": {
@@ -590,12 +590,12 @@
         },
         {
             "name": "doctrine/common",
-            "version": "2.4",
+            "version": "v2.4.1",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/doctrine-common-2.4.zip",
-                "reference": "doctrine-common-2.4.zip",
-                "shasum": "b4308340e7346f52530e8c8985cafd12d2e5efe1"
+                "url": "http://192.168.0.106/artifact/zips/doctrine-common-v2.4.1.zip",
+                "reference": "doctrine-common-v2.4.1.zip",
+                "shasum": "5f4aacc579702e3d7e3ef916b146a6d1a6e5c50f"
             },
             "archive": {
                 "exclude": [
@@ -1551,13 +1551,13 @@
         },
         {
             "name": "liip/imagine-bundle",
-            "version": "0.20.2",
+            "version": "dev-master",
             "target-dir": "Liip/ImagineBundle",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/liip-imagine-bundle-0.20.2.zip",
-                "reference": "liip-imagine-bundle-0.20.2.zip",
-                "shasum": "b21f8513ec87b41f882dd1e1ddf53795eb74ca4c"
+                "url": "http://192.168.0.106/artifact/zips/liip-imagine-bundle-dev-master.zip",
+                "reference": "liip-imagine-bundle-dev-master.zip",
+                "shasum": "d0442d2809bcfe0caee698d3c1d3aa2b9e653bc9"
             },
             "archive": {
                 "exclude": [
@@ -1567,20 +1567,35 @@
             "require": {
                 "imagine/imagine": "0.5.*",
                 "php": ">=5.3.2",
-                "symfony/filesystem": ">=2.0.16,~2.0",
-                "symfony/finder": ">=2.0.16,~2.0",
-                "symfony/framework-bundle": ">=2.0.16,~2.0",
-                "symfony/options-resolver": ">=2.0.16,~2.0"
+                "symfony/filesystem": "~2.3",
+                "symfony/finder": "~2.3",
+                "symfony/framework-bundle": "~2.3",
+                "symfony/options-resolver": "~2.3"
             },
             "require-dev": {
+                "amazonwebservices/aws-sdk-for-php": "~1.0",
+                "aws/aws-sdk-php": "~2.4",
                 "doctrine/cache": "~1.1",
-                "symfony/yaml": ">=2.0.16,~2.0",
-                "twig/twig": ">=1.0,<2.0-dev"
+                "ext-gd": "*",
+                "phpunit/phpunit": "~3.7",
+                "psr/log": "~1.0",
+                "symfony/browser-kit": "~2.3",
+                "symfony/yaml": "~2.3",
+                "twig/twig": "~1.0"
             },
             "suggest": {
-                "twig/twig": ">=1.0,<2.0-dev"
+                "amazonwebservices/aws-sdk-for-php": "Add it if you'd like to use aws v1 resolver",
+                "aws/aws-sdk-php": "Add it if you'd like to use aws v2 resolver",
+                "monolog/monolog": "If you'd want to write logs",
+                "twig/twig": "If you'd want to use some handy twig filters"
             },
             "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev",
+                    "dev-0.x": "0.x-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
                     "Liip\\ImagineBundle": ""
@@ -2151,12 +2166,12 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "2.3.10",
+            "version": "2.3.11",
             "dist": {
                 "type": "zip",
-                "url": "http://192.168.0.100/artifact/zips/symfony-symfony-2.3.10.zip",
-                "reference": "symfony-symfony-2.3.10.zip",
-                "shasum": "17cc31ee392c7a3fc02a359cfa679fee8c04d5d7"
+                "url": "http://192.168.0.106/artifact/zips/symfony-symfony-2.3.11.zip",
+                "reference": "symfony-symfony-2.3.11.zip",
+                "shasum": "908eefcd86591246a6d6fa6b84c8d062317f9739"
             },
             "require": {
                 "doctrine/common": "~2.2",
@@ -2421,6 +2436,7 @@
     "stability-flags": {
         "cedriclombardot/admingenerator-generator-bundle": 20,
         "avocode/form-extensions-bundle": 20,
+        "liip/imagine-bundle": 20,
         "cedriclombardot/admingenerator-user-bundle": 20,
         "knplabs/knp-paginator-bundle": 20
     },

@@ -15,3 +15,16 @@
     padding: 4px !important;
     vertical-align: top !important;
 }
+
+.imagen-autobus {
+    width: 128px;
+    height: 128px;
+}
+
+#buseta_databundle_autobus_imagen_frontal,#buseta_databundle_autobus_imagen_trasera {
+    width: 412px !important;
+}
+
+#buseta_databundle_autobus_imagen_lateral_d,#buseta_databundle_autobus_imagen_lateral_i {
+    width: 412px !important;
+}

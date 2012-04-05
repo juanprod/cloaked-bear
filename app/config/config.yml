@@ -92,3 +92,19 @@ knp_paginator:
     template:
         pagination: CoreBundle:Pagination:sliding.html.twig     # sliding pagination controls template
         sortable: CoreBundle:Pagination:sortable_link.html.twig # sort link template
+
+liip_imagine:
+    resolvers:
+        default:
+            web_path:
+                web_root:     %kernel.root_dir%/web/images
+                cache_prefix: media/cache
+
+    #driver:               gd
+    cache:                default
+    #data_loader:          default
+    #controller_actdion:    liip_imagine.controller:filterAction
+    filter_sets:
+        my_thumb_in:
+            filters:
+                thumbnail: { size: [32, 32], mode: inset } # Transforms 50x40 to 32x26, no cropping
