@@ -17,13 +17,13 @@ class HandleAutobus
     }
 
 
-    public function HandleAutobus(AutobusModel $entityModel)
+    public function HandleAutobusNew(AutobusModel $entityModel)
     {
         /** @var Autobus $entity */
         $entity = new Autobus();
 
         $fileFrontal = $entityModel->getImagenFrontal();
-        $directorio = __DIR__.'/../../../web/images/';
+        $directorio = __DIR__.'/../../../../web/images/';
         $nombre = $entityModel->getMatricula()."-frontal.jpg";
         $entity->setImagenFrontal($nombre);
         $fileFrontal->move($directorio,$nombre);
@@ -55,7 +55,6 @@ class HandleAutobus
         $entity->setCilindrada($entityModel->getCilindrada());
         $entity->setPotencia($entityModel->getPotencia());
 
-        $entity->setFechaRtv($entityModel->getFechaRtv());
         $entity->setValidoHasta($entityModel->getValidoHasta());
         $entity->setEstilo($entityModel->getEstilo());
 
@@ -75,6 +74,36 @@ class HandleAutobus
         $entity->setGps($entityModel->getGps());
 
         $entity->setWifi($entityModel->getWifi());
+
+        $entity->setFechaIngreso($entityModel->getFechaIngreso());
+        $entity->setFechaRtv1($entityModel->getFechaRtv1());
+        $entity->setFechaRtv2($entityModel->getFechaRtv2());
+
+        $entity->setMarcaCajacambio($entityModel->getMarcaCajacambio());
+        $entity->setTipoCajacambio($entityModel->getTipoCajacambio());
+        $entity->setNumeroUnidad($entityModel->getNumeroUnidad());
+        $entity->setAnno($entityModel->getAnno());
+        $entity->setValorUnidad($entityModel->getValorUnidad());
+        $entity->setCapacidadTanque($entityModel->getCapacidadTanque());
+
+        $entity->setAceitemotor($entityModel->getAceitemotor());
+        $entity->setAceitehidraulico($entityModel->getAceitehidraulico());
+        $entity->setAceitecajacambios($entityModel->getAceitecajacambios());
+
+        $entity->setMarcaCajacambio($entityModel->getMarcaCajacambio());
+        $entity->setTipoCajacambio($entityModel->getTipoCajacambio());
+
+        $entity->setCartelCapacidadlitros($entityModel->getCartelCapacidadlitros());
+
+        $entity->setFiltroAceite($entityModel->getFiltroAceite1().$entityModel->getFiltroAceite2().$entityModel->getFiltroAceite3());
+        $entity->setFiltroAgua($entityModel->getFiltroAgua1().$entityModel->getFiltroAgua2());
+        $entity->setFiltroDiesel($entityModel->getFiltroDiesel1().$entityModel->getFiltroDiesel2().$entityModel->getFiltroDiesel3().$entityModel->getFiltroDiesel4());
+        $entity->setFiltroHidraulico($entityModel->getFiltroHidraulico1().$entityModel->getFiltroHidraulico2());
+        $entity->setFiltroTransmision($entityModel->getFiltroTransmision());
+        $entity->setFiltroCaja($entityModel->getFiltroCaja1().$entityModel->getFiltroCaja2());
+
+        $entity->setBateria1($entityModel->getBateria1());
+        $entity->setBateria2($entityModel->getBateria2());
 
         $this->em->persist($entity);
         $this->em->flush();

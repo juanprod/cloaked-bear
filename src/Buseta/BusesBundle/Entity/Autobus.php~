@@ -1,0 +1,363 @@
+<?php
+
+namespace Buseta\BusesBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
+/**
+ * Autobus
+ *
+ * @ORM\Table(name="d_autobus")
+ * @ORM\Entity
+ */
+class Autobus
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="imagen_frontal", type="string")
+     */
+    private $imagen_frontal;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="imagen_lateral_d", type="string")
+     */
+    private $imagen_lateral_d;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="imagen_lateral_i", type="string")
+     */
+    private $imagen_lateral_i;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="imagen_trasera", type="string")
+     */
+    private $imagen_trasera;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="matricula", type="string", length=32)
+     */
+    private $matricula;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="marca_cajacambio", type="string", length=32)
+     */
+    private $marca_cajacambio;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tipo_cajacambio", type="string", length=32)
+     */
+    private $tipo_cajacambio;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="bateria_1", type="string")
+     */
+    private $bateria_1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="bateria_2", type="string")
+     */
+    private $bateria_2;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="numero_chasis", type="string", length=32)
+     */
+    private $numero_chasis;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="numero_motor", type="string", length=32)
+     */
+    private $numero_motor;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="filtro_aceite", type="string", length=45)
+     */
+    private $filtro_aceite;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="filtro_agua", type="string", length=30)
+     */
+    private $filtro_agua;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="filtro_diesel", type="string", length=60)
+     */
+    private $filtro_diesel;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="filtro_hidraulico", type="string", length=30)
+     */
+    private $filtro_hidraulico;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="filtro_transmision", type="string", length=15)
+     */
+    private $filtro_transmision;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="filtro_caja", type="string", length=30)
+     */
+    private $filtro_caja;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cartel_capacidadlitros", type="string")
+     */
+    private $cartel_capacidadlitros;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Buseta\NomencladorBundle\Entity\Marca", inversedBy="autobuses")
+     */
+    private $marca;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Buseta\NomencladorBundle\Entity\AceiteCajaCambios", inversedBy="autobuses")
+     */
+    private $aceitecajacambios;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Buseta\NomencladorBundle\Entity\AceiteHidraulico", inversedBy="autobuses")
+     */
+    private $aceitehidraulico;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Buseta\NomencladorBundle\Entity\AceiteMotor", inversedBy="autobuses")
+     */
+    private $aceitemotor;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Buseta\NomencladorBundle\Entity\AceiteTransmision", inversedBy="autobuses")
+     */
+    private $aceitetransmision;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Buseta\NomencladorBundle\Entity\Modelo", inversedBy="autobuses")
+     */
+    private $modelo;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Buseta\NomencladorBundle\Entity\Estilo", inversedBy="autobuses")
+     */
+    private $estilo;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="peso_tara", type="integer")
+     * @Assert\Type("integer")
+     */
+    private $peso_tara;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="peso_bruto", type="integer")
+     * @Assert\Type("integer")
+     */
+    private $peso_bruto;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Buseta\NomencladorBundle\Entity\Color", inversedBy="autobuses")
+     */
+    private $color;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="numero_plazas", type="integer")
+     * @Assert\Type("integer")
+     */
+    private $numero_plazas;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Buseta\NomencladorBundle\Entity\MarcaMotor", inversedBy="autobuses")
+     */
+    private $marca_motor;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Buseta\NomencladorBundle\Entity\Combustible", inversedBy="autobuses")
+     */
+    private $combustible;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="anno", type="integer")
+     * @Assert\Type("integer")
+     */
+    private $anno;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="valor_unidad", type="integer")
+     * @Assert\Type("integer")
+     */
+    private $valor_unidad;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="capacidad_tanque", type="integer")
+     * @Assert\Type("integer")
+     */
+    private $capacidad_tanque;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="numero_unidad", type="integer")
+     * @Assert\Type("integer")
+     */
+    private $numero_unidad;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="numero_cilindros", type="integer")
+     * @Assert\Type("integer")
+     */
+    private $numero_cilindros;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="cilindrada", type="integer")
+     * @Assert\Type("integer")
+     */
+    private $cilindrada;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="potencia", type="integer")
+     * @Assert\Type("integer")
+     */
+    private $potencia;
+
+    /**
+     * @var date
+     *
+     * @ORM\Column(name="valido_hasta", type="date")
+     * @Assert\Date()
+     */
+    private $valido_hasta;
+
+    /**
+     * @var date
+     *
+     * @ORM\Column(name="fecha_rtv_1", type="date")
+     * @Assert\Date()
+     */
+    private $fecha_rtv_1;
+
+    /**
+     * @var date
+     *
+     * @ORM\Column(name="fecha_rtv_2", type="date")
+     * @Assert\Date()
+     */
+    private $fecha_rtv_2;
+
+    /**
+     * @var date
+     *
+     * @ORM\Column(name="fecha_ingreso", type="date")
+     * @Assert\Date()
+     */
+    private $fecha_ingreso;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="rampas", type="string", nullable=true)
+     */
+    private $rampas;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="barras", type="string", nullable=true)
+     */
+    private $barras;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="camaras", type="string", nullable=true)
+     */
+    private $camaras;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lector_cedulas", type="string", nullable=true)
+     */
+    private $lector_cedulas;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="publicidad", type="string", nullable=true)
+     */
+    private $publicidad;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="gps", type="string", nullable=true)
+     */
+    private $gps;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="wifi", type="string", nullable=true)
+     */
+    private $wifi;
+
+
+}

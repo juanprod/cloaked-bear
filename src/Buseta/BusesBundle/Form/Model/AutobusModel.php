@@ -42,6 +42,51 @@ class AutobusModel
     /**
      * @var string
      */
+    private $marca_cajacambio;
+
+    /**
+     * @var string
+     */
+    private $anno;
+
+    /**
+     * @var string
+     */
+    private $valor_unidad;
+
+    /**
+     * @var string
+     */
+    private $numero_unidad;
+
+    /**
+     * @var string
+     */
+    private $cartel_capacidadlitros;
+
+    /**
+     * @var integer
+     */
+    private $capacidad_tanque;
+
+    /**
+     * @var string
+     */
+    private $tipo_cajacambio;
+
+    /**
+     * @var string
+     */
+    private $bateria_1;
+
+    /**
+     * @var string
+     */
+    private $bateria_2;
+
+    /**
+     * @var string
+     */
     private $matricula;
 
     /**
@@ -53,6 +98,76 @@ class AutobusModel
      * @var string
      */
     private $numero_motor;
+
+    /**
+     * @var string
+     */
+    private $filtro_aceite_1;
+
+    /**
+     * @var string
+     */
+    private $filtro_aceite_2;
+
+    /**
+     * @var string
+     */
+    private $filtro_aceite_3;
+
+    /**
+     * @var string
+     */
+    private $filtro_diesel_1;
+
+    /**
+     * @var string
+     */
+    private $filtro_diesel_2;
+
+    /**
+     * @var string
+     */
+    private $filtro_diesel_3;
+
+    /**
+     * @var string
+     */
+    private $filtro_diesel_4;
+
+    /**
+     * @var string
+     */
+    private $filtro_agua_1;
+
+    /**
+     * @var string
+     */
+    private $filtro_agua_2;
+
+    /**
+     * @var string
+     */
+    private $filtro_hidraulico_1;
+
+    /**
+     * @var string
+     */
+    private $filtro_hidraulico_2;
+
+    /**
+     * @var string
+     */
+    private $filtro_transmision;
+
+    /**
+     * @var string
+     */
+    private $filtro_caja_1;
+
+    /**
+     * @var string
+     */
+    private $filtro_caja_2;
 
     /**
      * @var \Buseta\NomencladorBundle\Entity\Marca
@@ -103,6 +218,27 @@ class AutobusModel
     private $combustible;
 
     /**
+     * @var \Buseta\NomencladorBundle\Entity\AceiteCajaCambios
+     */
+    private $aceitecajacambios;
+
+    /**
+     * @var \Buseta\NomencladorBundle\Entity\AceiteTransmision
+     */
+    private $aceitetransmision;
+
+    /**
+     * @var \Buseta\NomencladorBundle\Entity\AceiteHidraulico
+     */
+    private $aceitehidraulico;
+
+    /**
+     * @var \Buseta\NomencladorBundle\Entity\AceiteMotor
+     */
+    private $aceitemotor;
+
+
+    /**
      * @var integer
      * @Assert\Type("integer")
      */
@@ -130,7 +266,19 @@ class AutobusModel
      * @var date
      * @Assert\Date()
      */
-    private $fecha_rtv;
+    private $fecha_rtv_1;
+
+    /**
+     * @var date
+     * @Assert\Date()
+     */
+    private $fecha_rtv_2;
+
+    /**
+     * @var date
+     * @Assert\Date()
+     */
+    private $fecha_ingreso;
 
     /**
      * @var string
@@ -168,6 +316,70 @@ class AutobusModel
     private $wifi;
 
     /**
+     * @param \Buseta\NomencladorBundle\Entity\AceiteCajaCambios $aceitecajacambios
+     */
+    public function setAceitecajacambios($aceitecajacambios)
+    {
+        $this->aceitecajacambios = $aceitecajacambios;
+    }
+
+    /**
+     * @return \Buseta\NomencladorBundle\Entity\AceiteCajaCambios
+     */
+    public function getAceitecajacambios()
+    {
+        return $this->aceitecajacambios;
+    }
+
+    /**
+     * @param \Buseta\NomencladorBundle\Entity\AceiteHidraulico $aceitehidraulico
+     */
+    public function setAceitehidraulico($aceitehidraulico)
+    {
+        $this->aceitehidraulico = $aceitehidraulico;
+    }
+
+    /**
+     * @return \Buseta\NomencladorBundle\Entity\AceiteHidraulico
+     */
+    public function getAceitehidraulico()
+    {
+        return $this->aceitehidraulico;
+    }
+
+    /**
+     * @param \Buseta\NomencladorBundle\Entity\AceiteMotor $aceitemotor
+     */
+    public function setAceitemotor($aceitemotor)
+    {
+        $this->aceitemotor = $aceitemotor;
+    }
+
+    /**
+     * @return \Buseta\NomencladorBundle\Entity\AceiteMotor
+     */
+    public function getAceitemotor()
+    {
+        return $this->aceitemotor;
+    }
+
+    /**
+     * @param \Buseta\NomencladorBundle\Entity\AceiteTransmision $aceitetransmision
+     */
+    public function setAceitetransmision($aceitetransmision)
+    {
+        $this->aceitetransmision = $aceitetransmision;
+    }
+
+    /**
+     * @return \Buseta\NomencladorBundle\Entity\AceiteTransmision
+     */
+    public function getAceitetransmision()
+    {
+        return $this->aceitetransmision;
+    }
+
+    /**
      * @param string $barras
      */
     public function setBarras($barras)
@@ -184,6 +396,38 @@ class AutobusModel
     }
 
     /**
+     * @param string $bateria_1
+     */
+    public function setBateria1($bateria_1)
+    {
+        $this->bateria_1 = $bateria_1;
+    }
+
+    /**
+     * @return string
+     */
+    public function getBateria1()
+    {
+        return $this->bateria_1;
+    }
+
+    /**
+     * @param string $bateria_2
+     */
+    public function setBateria2($bateria_2)
+    {
+        $this->bateria_2 = $bateria_2;
+    }
+
+    /**
+     * @return string
+     */
+    public function getBateria2()
+    {
+        return $this->bateria_2;
+    }
+
+    /**
      * @param string $camaras
      */
     public function setCamaras($camaras)
@@ -197,6 +441,22 @@ class AutobusModel
     public function getCamaras()
     {
         return $this->camaras;
+    }
+
+    /**
+     * @param string $cartel_capacidadlitros
+     */
+    public function setCartelCapacidadlitros($cartel_capacidadlitros)
+    {
+        $this->cartel_capacidadlitros = $cartel_capacidadlitros;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCartelCapacidadlitros()
+    {
+        return $this->cartel_capacidadlitros;
     }
 
     /**
@@ -264,19 +524,275 @@ class AutobusModel
     }
 
     /**
-     * @param \Buseta\DataBundle\Form\Model\date $fecha_rtv
+     * @param \Buseta\BusesBundle\Form\Model\date $fecha_ingreso
      */
-    public function setFechaRtv($fecha_rtv)
+    public function setFechaIngreso($fecha_ingreso)
     {
-        $this->fecha_rtv = $fecha_rtv;
+        $this->fecha_ingreso = $fecha_ingreso;
     }
 
     /**
-     * @return \Buseta\DataBundle\Form\Model\date
+     * @return \Buseta\BusesBundle\Form\Model\date
      */
-    public function getFechaRtv()
+    public function getFechaIngreso()
     {
-        return $this->fecha_rtv;
+        return $this->fecha_ingreso;
+    }
+
+    /**
+     * @param \Buseta\BusesBundle\Form\Model\date $fecha_rtv_1
+     */
+    public function setFechaRtv1($fecha_rtv_1)
+    {
+        $this->fecha_rtv_1 = $fecha_rtv_1;
+    }
+
+    /**
+     * @return \Buseta\BusesBundle\Form\Model\date
+     */
+    public function getFechaRtv1()
+    {
+        return $this->fecha_rtv_1;
+    }
+
+    /**
+     * @param \Buseta\BusesBundle\Form\Model\date $fecha_rtv_2
+     */
+    public function setFechaRtv2($fecha_rtv_2)
+    {
+        $this->fecha_rtv_2 = $fecha_rtv_2;
+    }
+
+    /**
+     * @return \Buseta\BusesBundle\Form\Model\date
+     */
+    public function getFechaRtv2()
+    {
+        return $this->fecha_rtv_2;
+    }
+
+    /**
+     * @param string $filtro_aceite_1
+     */
+    public function setFiltroAceite1($filtro_aceite_1)
+    {
+        $this->filtro_aceite_1 = $filtro_aceite_1;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFiltroAceite1()
+    {
+        return $this->filtro_aceite_1;
+    }
+
+    /**
+     * @param string $filtro_aceite_2
+     */
+    public function setFiltroAceite2($filtro_aceite_2)
+    {
+        $this->filtro_aceite_2 = $filtro_aceite_2;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFiltroAceite2()
+    {
+        return $this->filtro_aceite_2;
+    }
+
+    /**
+     * @param string $filtro_aceite_3
+     */
+    public function setFiltroAceite3($filtro_aceite_3)
+    {
+        $this->filtro_aceite_3 = $filtro_aceite_3;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFiltroAceite3()
+    {
+        return $this->filtro_aceite_3;
+    }
+
+    /**
+     * @param string $filtro_agua_1
+     */
+    public function setFiltroAgua1($filtro_agua_1)
+    {
+        $this->filtro_agua_1 = $filtro_agua_1;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFiltroAgua1()
+    {
+        return $this->filtro_agua_1;
+    }
+
+    /**
+     * @param string $filtro_agua_2
+     */
+    public function setFiltroAgua2($filtro_agua_2)
+    {
+        $this->filtro_agua_2 = $filtro_agua_2;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFiltroAgua2()
+    {
+        return $this->filtro_agua_2;
+    }
+
+    /**
+     * @param string $filtro_caja_1
+     */
+    public function setFiltroCaja1($filtro_caja_1)
+    {
+        $this->filtro_caja_1 = $filtro_caja_1;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFiltroCaja1()
+    {
+        return $this->filtro_caja_1;
+    }
+
+    /**
+     * @param string $filtro_caja_2
+     */
+    public function setFiltroCaja2($filtro_caja_2)
+    {
+        $this->filtro_caja_2 = $filtro_caja_2;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFiltroCaja2()
+    {
+        return $this->filtro_caja_2;
+    }
+
+    /**
+     * @param string $filtro_diesel_1
+     */
+    public function setFiltroDiesel1($filtro_diesel_1)
+    {
+        $this->filtro_diesel_1 = $filtro_diesel_1;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFiltroDiesel1()
+    {
+        return $this->filtro_diesel_1;
+    }
+
+    /**
+     * @param string $filtro_diesel_2
+     */
+    public function setFiltroDiesel2($filtro_diesel_2)
+    {
+        $this->filtro_diesel_2 = $filtro_diesel_2;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFiltroDiesel2()
+    {
+        return $this->filtro_diesel_2;
+    }
+
+    /**
+     * @param string $filtro_diesel_3
+     */
+    public function setFiltroDiesel3($filtro_diesel_3)
+    {
+        $this->filtro_diesel_3 = $filtro_diesel_3;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFiltroDiesel3()
+    {
+        return $this->filtro_diesel_3;
+    }
+
+    /**
+     * @param string $filtro_diesel_4
+     */
+    public function setFiltroDiesel4($filtro_diesel_4)
+    {
+        $this->filtro_diesel_4 = $filtro_diesel_4;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFiltroDiesel4()
+    {
+        return $this->filtro_diesel_4;
+    }
+
+    /**
+     * @param string $filtro_hidraulico_1
+     */
+    public function setFiltroHidraulico1($filtro_hidraulico_1)
+    {
+        $this->filtro_hidraulico_1 = $filtro_hidraulico_1;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFiltroHidraulico1()
+    {
+        return $this->filtro_hidraulico_1;
+    }
+
+    /**
+     * @param string $filtro_hidraulico_2
+     */
+    public function setFiltroHidraulico2($filtro_hidraulico_2)
+    {
+        $this->filtro_hidraulico_2 = $filtro_hidraulico_2;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFiltroHidraulico2()
+    {
+        return $this->filtro_hidraulico_2;
+    }
+
+    /**
+     * @param string $filtro_transmision
+     */
+    public function setFiltroTransmision($filtro_transmision)
+    {
+        $this->filtro_transmision = $filtro_transmision;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFiltroTransmision()
+    {
+        return $this->filtro_transmision;
     }
 
     /**
@@ -312,7 +828,7 @@ class AutobusModel
     }
 
     /**
-     * @param mixed $imagen_frontal
+     * @param \Symfony\Component\HttpFoundation\File\UploadedFile $imagen_frontal
      */
     public function setImagenFrontal($imagen_frontal)
     {
@@ -320,7 +836,7 @@ class AutobusModel
     }
 
     /**
-     * @return UploadedFile
+     * @return \Symfony\Component\HttpFoundation\File\UploadedFile
      */
     public function getImagenFrontal()
     {
@@ -328,7 +844,7 @@ class AutobusModel
     }
 
     /**
-     * @param mixed $imagen_lateral_d
+     * @param \Symfony\Component\HttpFoundation\File\UploadedFile $imagen_lateral_d
      */
     public function setImagenLateralD($imagen_lateral_d)
     {
@@ -336,7 +852,7 @@ class AutobusModel
     }
 
     /**
-     * @return UploadedFile
+     * @return \Symfony\Component\HttpFoundation\File\UploadedFile
      */
     public function getImagenLateralD()
     {
@@ -344,7 +860,7 @@ class AutobusModel
     }
 
     /**
-     * @param mixed $imagen_lateral_i
+     * @param \Symfony\Component\HttpFoundation\File\UploadedFile $imagen_lateral_i
      */
     public function setImagenLateralI($imagen_lateral_i)
     {
@@ -352,7 +868,7 @@ class AutobusModel
     }
 
     /**
-     * @return UploadedFile
+     * @return \Symfony\Component\HttpFoundation\File\UploadedFile
      */
     public function getImagenLateralI()
     {
@@ -360,7 +876,7 @@ class AutobusModel
     }
 
     /**
-     * @param mixed $imagen_trasera
+     * @param \Symfony\Component\HttpFoundation\File\UploadedFile $imagen_trasera
      */
     public function setImagenTrasera($imagen_trasera)
     {
@@ -368,7 +884,7 @@ class AutobusModel
     }
 
     /**
-     * @return UploadedFile
+     * @return \Symfony\Component\HttpFoundation\File\UploadedFile
      */
     public function getImagenTrasera()
     {
@@ -413,6 +929,22 @@ class AutobusModel
     public function setMarcaMotor($marca_motor)
     {
         $this->marca_motor = $marca_motor;
+    }
+
+    /**
+     * @param string $marca_cajacambio
+     */
+    public function setMarcaCajacambio($marca_cajacambio)
+    {
+        $this->marca_cajacambio = $marca_cajacambio;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMarcaCajacambio()
+    {
+        return $this->marca_cajacambio;
     }
 
     /**
@@ -600,7 +1132,23 @@ class AutobusModel
     }
 
     /**
-     * @param \Buseta\DataBundle\Form\Model\date $valido_hasta
+     * @param string $tipo_cajacambio
+     */
+    public function setTipoCajacambio($tipo_cajacambio)
+    {
+        $this->tipo_cajacambio = $tipo_cajacambio;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTipoCajacambio()
+    {
+        return $this->tipo_cajacambio;
+    }
+
+    /**
+     * @param \Buseta\BusesBundle\Form\Model\date $valido_hasta
      */
     public function setValidoHasta($valido_hasta)
     {
@@ -608,7 +1156,7 @@ class AutobusModel
     }
 
     /**
-     * @return \Buseta\DataBundle\Form\Model\date
+     * @return \Buseta\BusesBundle\Form\Model\date
      */
     public function getValidoHasta()
     {
@@ -630,6 +1178,73 @@ class AutobusModel
     {
         return $this->wifi;
     }
+
+    /**
+     * @param string $numero_unidad
+     */
+    public function setNumeroUnidad($numero_unidad)
+    {
+        $this->numero_unidad = $numero_unidad;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNumeroUnidad()
+    {
+        return $this->numero_unidad;
+    }
+
+    /**
+     * @param string $anno
+     */
+    public function setAnno($anno)
+    {
+        $this->anno = $anno;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAnno()
+    {
+        return $this->anno;
+    }
+
+    /**
+     * @param string $valor_unidad
+     */
+    public function setValorUnidad($valor_unidad)
+    {
+        $this->valor_unidad = $valor_unidad;
+    }
+
+    /**
+     * @return string
+     */
+    public function getValorUnidad()
+    {
+        return $this->valor_unidad;
+    }
+
+    /**
+     * @param int $capacidad_tanque
+     */
+    public function setCapacidadTanque($capacidad_tanque)
+    {
+        $this->capacidad_tanque = $capacidad_tanque;
+    }
+
+    /**
+     * @return int
+     */
+    public function getCapacidadTanque()
+    {
+        return $this->capacidad_tanque;
+    }
+
+
+
 
 
 

@@ -6,11 +6,10 @@ use Doctrine\Tests\Common\Annotations\Null;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
+use Buseta\BusesBundle\Handle\HandleAutobus;
 use Buseta\BusesBundle\Entity\Autobus;
 use Buseta\BusesBundle\Form\Model\AutobusModel;
 use Buseta\BusesBundle\Form\Type\AutobusType;
-
-use Buseta\BusesBundle\Handle\HandleAutobus;
 
 /**
  * Autobus controller.
@@ -37,7 +36,7 @@ class AutobusController extends Controller
         $paginator = $this->get('knp_paginator');
         $entities = $paginator->paginate(
             $entities,
-            $this->get('request')->query->get('page', 5),
+            $this->get('request')->query->get('page', 1),
             1,
             array('pageParameterName' => 'page')
         );
@@ -60,7 +59,7 @@ class AutobusController extends Controller
 
         if ($form->isValid()) {
             $model = $this->get('handlebuses');
-            $entity = $model->HandleAutobus($entityModel);
+            $entity = $model->HandleAutobusNew($entityModel);
 
             if($model)
                 return $this->redirect($this->generateUrl('autobus_show', array('id' => $entity->getId())));
@@ -258,11 +257,10 @@ class AutobusController extends Controller
         $editForm->submit($request);
 
         if ($editForm->isValid()) {
-            $model = $this->get('handlebuses');
-            $entity = $model->HandleAutobus($entity);
+            $em->persist($entity);
+            $em->flush();
 
-            if($model)
-                return $this->redirect($this->generateUrl('autobus_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('autobus_show', array('id' => $entity->getId())));
         }
 
         return $this->render('BusetaBusesBundle:Autobus:edit.html.twig', array(

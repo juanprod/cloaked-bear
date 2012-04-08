@@ -3,5 +3,5 @@ parameters:
 
 services:
     handlebuses:
-        class: Buseta\BusesBundle\HandleAutobus
+        class: Buseta\BusesBundle\Handle\HandleAutobus
         arguments: [@doctrine.orm.entity_manager]

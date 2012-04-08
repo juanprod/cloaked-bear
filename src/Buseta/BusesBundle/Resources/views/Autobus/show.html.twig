@@ -77,12 +77,20 @@
                 <td>{{ entity.potencia }}</td>
             </tr>
             <tr>
+                <th>Fecha Ingreso</th>
+                <td>{{ entity.fechaingreso|date('d/m/Y') }}</td>
+            </tr>
+            <tr>
                 <th>Válido Hasta</th>
                 <td>{{ entity.validohasta|date('d/m/Y') }}</td>
             </tr>
             <tr>
-                <th>Fecha RTV</th>
-                <td>{{ entity.fechartv|date('d/m/Y') }}</td>
+                <th>Fecha RTV 1</th>
+                <td>{{ entity.fechartv1|date('d/m/Y') }}</td>
+            </tr>
+            <tr>
+                <th>Fecha RTV 2</th>
+                <td>{{ entity.fechartv2|date('d/m/Y') }}</td>
             </tr>
             <tr>
                 <th>Rampas</th>
@@ -153,6 +161,86 @@
                             {{ entity.wifi }}
                         {% endif %}
                     </td>
+            </tr>
+            <tr>
+                <th>Numero de Unidad</th>
+                <td>
+                    {% if entity.numerounidad == '' %}
+                        <label style="color: red">El autobus no tiene Numero de Unidad</label>
+                    {% else %}
+                        {{ entity.numerounidad }}
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>Año</th>
+                <td>
+                    {% if entity.anno == '' %}
+                        <label style="color: red">El autobus no tiene Año</label>
+                    {% else %}
+                        {{ entity.anno }}
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>Valor de Unidad</th>
+                <td>
+                    {% if entity.valorunidad == '' %}
+                        <label style="color: red">El autobus no tiene Valor de Unidad</label>
+                    {% else %}
+                        {{ entity.valorunidad }}
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>Marca Caja de Cambios</th>
+                <td>
+                    {% if entity.marcacajacambio == '' %}
+                        <label style="color: red">El autobus no tiene Marca Caja de Cambios</label>
+                    {% else %}
+                        {{ entity.marcacajacambio }}
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>Tipo Caja de Cambios</th>
+                <td>
+                    {% if entity.tipocajacambio == '' %}
+                        <label style="color: red">El autobus no tiene Tipo Caja de Cambios</label>
+                    {% else %}
+                        {{ entity.tipocajacambio }}
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>Cartel Capacidad en Litros</th>
+                <td>
+                    {% if entity.cartelcapacidadlitros == '' %}
+                        <label style="color: red">El autobus no tiene Cartel Capacidad en Litros</label>
+                    {% else %}
+                        {{ entity.cartelcapacidadlitros }}
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>Bateria 1</th>
+                <td>
+                    {% if entity.bateria1 == '' %}
+                        <label style="color: red">El autobus no tiene Bateria 1</label>
+                    {% else %}
+                        {{ entity.bateria1 }}
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>Bateria 2</th>
+                <td>
+                    {% if entity.bateria2 == '' %}
+                        <label style="color: red">El autobus no tiene Bateria 2</label>
+                    {% else %}
+                        {{ entity.bateria2 }}
+                    {% endif %}
+                </td>
             </tr>
         </tbody>
     </table>
