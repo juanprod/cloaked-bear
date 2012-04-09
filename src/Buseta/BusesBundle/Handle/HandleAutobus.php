@@ -95,12 +95,12 @@ class HandleAutobus
 
         $entity->setCartelCapacidadlitros($entityModel->getCartelCapacidadlitros());
 
-        $entity->setFiltroAceite($entityModel->getFiltroAceite1().$entityModel->getFiltroAceite2().$entityModel->getFiltroAceite3());
-        $entity->setFiltroAgua($entityModel->getFiltroAgua1().$entityModel->getFiltroAgua2());
-        $entity->setFiltroDiesel($entityModel->getFiltroDiesel1().$entityModel->getFiltroDiesel2().$entityModel->getFiltroDiesel3().$entityModel->getFiltroDiesel4());
-        $entity->setFiltroHidraulico($entityModel->getFiltroHidraulico1().$entityModel->getFiltroHidraulico2());
+        $entity->setFiltroAceite($entityModel->getFiltroAceite());
+        $entity->setFiltroAgua($entityModel->getFiltroAgua());
+        $entity->setFiltroDiesel($entityModel->getFiltroDiesel());
+        $entity->setFiltroHidraulico($entityModel->getFiltroHidraulico());
         $entity->setFiltroTransmision($entityModel->getFiltroTransmision());
-        $entity->setFiltroCaja($entityModel->getFiltroCaja1().$entityModel->getFiltroCaja2());
+        $entity->setFiltroCaja($entityModel->getFiltroCaja());
 
         $entity->setBateria1($entityModel->getBateria1());
         $entity->setBateria2($entityModel->getBateria2());

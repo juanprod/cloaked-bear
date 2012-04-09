@@ -2,6 +2,7 @@
 
 namespace Buseta\BusesBundle\Entity;
 
+use Buseta\BusesBundle\Form\Type\FiltroCajaType;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -100,44 +101,32 @@ class Autobus
     private $numero_motor;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="filtro_aceite", type="string", length=45, nullable=true)
+     * @ORM\OneToOne(targetEntity="Buseta\BusesBundle\Entity\FiltroAceite", mappedBy="autobus", cascade={"all"})
      */
     private $filtro_aceite;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="filtro_agua", type="string", length=30, nullable=true)
+     * @ORM\OneToOne(targetEntity="Buseta\BusesBundle\Entity\FiltroAgua", mappedBy="autobus", cascade={"all"})
      */
     private $filtro_agua;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="filtro_diesel", type="string", length=60, nullable=true)
+     * @ORM\OneToOne(targetEntity="Buseta\BusesBundle\Entity\FiltroDiesel", mappedBy="autobus", cascade={"all"})
      */
     private $filtro_diesel;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="filtro_hidraulico", type="string", length=30, nullable=true)
+     * @ORM\OneToOne(targetEntity="Buseta\BusesBundle\Entity\FiltroHidraulico", mappedBy="autobus", cascade={"all"})
      */
     private $filtro_hidraulico;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="filtro_transmision", type="string", length=15, nullable=true)
+     * @ORM\OneToOne(targetEntity="Buseta\BusesBundle\Entity\FiltroTransmision", mappedBy="autobus", cascade={"all"})
      */
     private $filtro_transmision;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="filtro_caja", type="string", length=30, nullable=true)
+     * @ORM\OneToOne(targetEntity="Buseta\BusesBundle\Entity\FiltroCaja", mappedBy="autobus", cascade={"all"})
      */
     private $filtro_caja;
 
@@ -630,8 +619,10 @@ class Autobus
      * @param string $filtroAceite
      * @return Autobus
      */
-    public function setFiltroAceite($filtroAceite)
+    public function setFiltroAceite(FiltroAceite $filtroAceite)
     {
+        $filtroAceite->setAutobus($this);
+
         $this->filtro_aceite = $filtroAceite;
     
         return $this;
@@ -653,8 +644,10 @@ class Autobus
      * @param string $filtroAgua
      * @return Autobus
      */
-    public function setFiltroAgua($filtroAgua)
+    public function setFiltroAgua(FiltroAgua $filtroAgua)
     {
+        $filtroAgua->setAutobus($this);
+
         $this->filtro_agua = $filtroAgua;
     
         return $this;
@@ -676,8 +669,10 @@ class Autobus
      * @param string $filtroDiesel
      * @return Autobus
      */
-    public function setFiltroDiesel($filtroDiesel)
+    public function setFiltroDiesel(FiltroDiesel $filtroDiesel)
     {
+        $filtroDiesel->setAutobus($this);
+
         $this->filtro_diesel = $filtroDiesel;
     
         return $this;
@@ -699,8 +694,10 @@ class Autobus
      * @param string $filtroHidraulico
      * @return Autobus
      */
-    public function setFiltroHidraulico($filtroHidraulico)
+    public function setFiltroHidraulico(FiltroHidraulico $filtroHidraulico)
     {
+        $filtroHidraulico->setAutobus($this);
+
         $this->filtro_hidraulico = $filtroHidraulico;
     
         return $this;
@@ -722,8 +719,10 @@ class Autobus
      * @param string $filtroTransmision
      * @return Autobus
      */
-    public function setFiltroTransmision($filtroTransmision)
+    public function setFiltroTransmision(FiltroTransmision $filtroTransmision)
     {
+        $filtroTransmision->setAutobus($this);
+
         $this->filtro_transmision = $filtroTransmision;
     
         return $this;
@@ -745,8 +744,10 @@ class Autobus
      * @param string $filtroCaja
      * @return Autobus
      */
-    public function setFiltroCaja($filtroCaja)
+    public function setFiltroCaja(FiltroCaja $filtroCaja)
     {
+        $filtroCaja->setAutobus($this);
+
         $this->filtro_caja = $filtroCaja;
     
         return $this;

@@ -29,6 +29,13 @@ class AceiteTransmision extends BaseNomenclador
     private $descripcion;
 
     /**
+     * @var \Doctrine\Common\Collections\ArrayCollection
+     *
+     * @ORM\OneToMany(targetEntity="Buseta\BusesBundle\Entity\Autobus", mappedBy="aceitetransmision", cascade={"all"})
+     */
+    private $autobuses;
+
+    /**
      * Get id
      *
      * @return integer 

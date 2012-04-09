@@ -113,104 +113,18 @@ class AutobusType extends AbstractType
                         'style' => 'width: 250px',
                     )
                 ))
-            ->add('filtro_aceite_1', 'text', array(
-                    'required' => false,
-                    'attr'   => array(
-                        'class' => 'form-control',
-                        'style' => 'width: 150px',
-                    )
-                ))
-            ->add('filtro_aceite_2', 'text', array(
-                    'required' => false,
-                    'attr'   => array(
-                        'class' => 'form-control',
-                        'style' => 'width: 150px',
-                    )
-                ))
-            ->add('filtro_aceite_3', 'text', array(
-                    'required' => false,
-                    'attr'   => array(
-                        'class' => 'form-control',
-                        'style' => 'width: 150px',
-                    )
-                ))
-            ->add('filtro_diesel_1', 'text', array(
-                    'required' => false,
-                    'attr'   => array(
-                        'class' => 'form-control',
-                        'style' => 'width: 150px',
-                    )
-                ))
-            ->add('filtro_diesel_2', 'text', array(
-                    'required' => false,
-                    'attr'   => array(
-                        'class' => 'form-control',
-                        'style' => 'width: 150px',
-                    )
-                ))
-            ->add('filtro_diesel_3', 'text', array(
-                    'required' => false,
-                    'attr'   => array(
-                        'class' => 'form-control',
-                        'style' => 'width: 150px',
-                    )
-                ))
-            ->add('filtro_diesel_4', 'text', array(
-                    'required' => false,
-                    'attr'   => array(
-                        'class' => 'form-control',
-                        'style' => 'width: 150px',
-                    )
-                ))
-            ->add('filtro_hidraulico_1', 'text', array(
-                    'required' => false,
-                    'attr'   => array(
-                        'class' => 'form-control',
-                        'style' => 'width: 150px',
-                    )
-                ))
-            ->add('filtro_hidraulico_2', 'text', array(
-                    'required' => false,
-                    'attr'   => array(
-                        'class' => 'form-control',
-                        'style' => 'width: 150px',
-                    )
-                ))
-            ->add('filtro_caja_1', 'text', array(
-                    'required' => false,
-                    'attr'   => array(
-                        'class' => 'form-control',
-                        'style' => 'width: 150px',
-                    )
-                ))
-            ->add('filtro_caja_2', 'text', array(
-                    'required' => false,
-                    'attr'   => array(
-                        'class' => 'form-control',
-                        'style' => 'width: 150px',
-                    )
-                ))
-            ->add('filtro_transmision', 'text', array(
-                    'required' => false,
-                    'attr'   => array(
-                        'class' => 'form-control',
-                        'style' => 'width: 150px',
-                    )
-                ))
-            ->add('filtro_agua_1', 'text', array(
-                    'required' => false,
-                    'attr'   => array(
-                        'class' => 'form-control',
-                        'style' => 'width: 150px',
-                    )
-                ))
-            ->add('filtro_agua_2', 'text', array(
-                    'required' => false,
-                    'attr'   => array(
-                        'class' => 'form-control',
-                        'style' => 'width: 150px',
-                    )
-                ))
+            ->add('filtro_aceite', new FiltroAceiteType())
+
+            ->add('filtro_diesel', new FiltroDieselType())
+
+            ->add('filtro_hidraulico', new FiltroHidraulicoType())
+
+            ->add('filtro_caja', new FiltroCajaType())
+
+            ->add('filtro_transmision', new FiltroTransmisionType())
+
+            ->add('filtro_agua', new FiltroAguaType())
+
             ->add('numero_chasis', 'text', array(
                     'required' => true,
                     'attr'   => array(

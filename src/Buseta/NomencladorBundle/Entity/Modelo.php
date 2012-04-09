@@ -36,6 +36,13 @@ class Modelo extends BaseNomenclador
     private $marca;
 
     /**
+     * @var \Doctrine\Common\Collections\ArrayCollection
+     *
+     * @ORM\OneToMany(targetEntity="Buseta\BusesBundle\Entity\Autobus", mappedBy="modelo", cascade={"all"})
+     */
+    private $autobuses;
+
+    /**
      * Get id
      *
      * @return integer 
