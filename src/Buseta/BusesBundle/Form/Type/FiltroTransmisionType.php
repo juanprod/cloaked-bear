@@ -16,7 +16,7 @@ class FiltroTransmisionType extends AbstractType
     {
         $builder
             ->add('filtro_transmision', 'text', array(
-                    'required' => true,
+                    'required' => false,
                     'attr'   => array(
                         'class' => 'form-control',
                         'style' => 'width: 150px',

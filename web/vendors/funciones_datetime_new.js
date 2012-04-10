@@ -1,35 +1,32 @@
-$('#buseta_databundle_autobus_valido_hasta').pickadate({
+var autobus_fecha_ingreso = $('#buseta_databundle_autobus_fecha_ingreso').pickadate({
+    format: 'dd/mm/yyyy',
+    formatSubmit: 'dd/mm/yyyy'
+});
+var autobus_valido_hasta = $('#buseta_databundle_autobus_valido_hasta').pickadate({
     format: 'dd/mm/yyyy',
     formatSubmit: 'dd/mm/yyyy'
 });
 
-$('#buseta_databundle_autobus_fecha_ingreso').pickadate({
-    format: 'dd/mm/yyyy',
-    formatSubmit: 'dd/mm/yyyy'
-});
+var picker = autobus_fecha_ingreso.pickadate('picker');
+var $fechaIngreso;
+picker.on('close', function(){
+    $fechaIngreso = this.get('select','dd/mm/yyyy');
+    var splt = $fechaIngreso.split('/');
+    var entero = parseInt(splt[2]);
+    entero+=15;
+    splt[2] = entero.toString();
 
-$('#buseta_databundle_autobus_fecha_rtv_1').pickadate({
-    format: 'dd/mm/yyyy',
-    formatSubmit: 'dd/mm/yyyy'
-});
+    $fechaIngreso = splt.join('/');
 
-$('#buseta_databundle_autobus_fecha_rtv_2').pickadate({
-    format: 'dd/mm/yyyy',
-    formatSubmit: 'dd/mm/yyyy'
+    var picker2 = autobus_valido_hasta.pickadate('picker');
+    picker2.set('select', $fechaIngreso, { format: 'dd/mm/yyyy' });
 });
-
 
 var valido = $('#buseta_databundle_autobus_valido_hasta').val();
 $('input:hidden[name^="buseta_databundle_autobus[valido_hasta]_submit"]').val(valido);
 
 var fechaingreso = $('#buseta_databundle_autobus_fecha_ingreso').val();
 $('input:hidden[name^="buseta_databundle_autobus[fecha_ingreso]_submit"]').val(fechaingreso);
-
-var rtv1 = $('#buseta_databundle_autobus_fecha_rtv_1').val();
-$('input:hidden[name^="buseta_databundle_autobus[fecha_rtv_1]_submit"]').val(rtv1);
-
-var rtv2 = $('#buseta_databundle_autobus_fecha_rtv_2').val();
-$('input:hidden[name^="buseta_databundle_autobus[fecha_rtv_2]_submit"]').val(rtv2);
 
 localChange()
 $("input#barras").click(localChange);

@@ -217,20 +217,42 @@ class AutobusType extends AbstractType
                         'style' => 'width: 250px',
                     )
                 ))
-            ->add('fecha_rtv_1','date',array(
-                    'widget' => 'single_text',
-                    'format'  => 'dd/MM/yyyy',
+            ->add('fecha_rtv_1', 'choice', array(
                     'attr'   => array(
                         'class' => 'form-control',
                         'style' => 'width: 250px',
+                    ),
+                    'choices' => array('Enero'=>'Enero',
+                                       'Febrero' => 'Febrero',
+                                       'Marzo' => 'Marzo',
+                                       'Abril' => 'Abril',
+                                       'Mayo' => 'Mayo',
+                                       'Junio' => 'Junio',
+                                       'Julio' => 'Julio',
+                                       'Agosto' => 'Agosto',
+                                       'Septiembre' => 'Septiembre',
+                                       'Octubre' => 'Octubre',
+                                       'Noviembre' => 'Noviembre',
+                                       'Diciembre' => 'Diciembre'
                     )
-                ))
-            ->add('fecha_rtv_2','date',array(
-                    'widget' => 'single_text',
-                    'format'  => 'dd/MM/yyyy',
+                    ))
+            ->add('fecha_rtv_2', 'choice', array(
                     'attr'   => array(
                         'class' => 'form-control',
                         'style' => 'width: 250px',
+                    ),
+                    'choices' => array('Enero'=>'Enero',
+                                       'Febrero' => 'Febrero',
+                                       'Marzo' => 'Marzo',
+                                       'Abril' => 'Abril',
+                                       'Mayo' => 'Mayo',
+                                       'Junio' => 'Junio',
+                                       'Julio' => 'Julio',
+                                       'Agosto' => 'Agosto',
+                                       'Septiembre' => 'Septiembre',
+                                       'Octubre' => 'Octubre',
+                                       'Noviembre' => 'Noviembre',
+                                       'Diciembre' => 'Diciembre'
                     )
                 ))
             ->add('fecha_ingreso','date',array(

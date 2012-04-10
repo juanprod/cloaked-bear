@@ -16,28 +16,28 @@ class FiltroDieselType extends AbstractType
     {
         $builder
             ->add('filtro_diesel_1', 'text', array(
-                    'required' => true,
+                    'required' => false,
                     'attr'   => array(
                         'class' => 'form-control',
                         'style' => 'width: 150px',
                     )
                 ))
             ->add('filtro_diesel_2', 'text', array(
-                    'required' => true,
+                    'required' => false,
                     'attr'   => array(
                         'class' => 'form-control',
                         'style' => 'width: 150px',
                     )
                 ))
             ->add('filtro_diesel_3', 'text', array(
-                    'required' => true,
+                    'required' => false,
                     'attr'   => array(
                         'class' => 'form-control',
                         'style' => 'width: 150px',
                     )
                 ))
             ->add('filtro_diesel_4', 'text', array(
-                    'required' => true,
+                    'required' => false,
                     'attr'   => array(
                         'class' => 'form-control',
                         'style' => 'width: 150px',

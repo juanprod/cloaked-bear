@@ -37,7 +37,7 @@ class AutobusController extends Controller
         $entities = $paginator->paginate(
             $entities,
             $this->get('request')->query->get('page', 1),
-            1,
+            10,
             array('pageParameterName' => 'page')
         );
 
@@ -166,6 +166,7 @@ class AutobusController extends Controller
         $entity = new Autobus();
 
         $em = $this->getDoctrine()->getManager();
+        $handler = $this->get('handlebuses');
 
         $entity = $em->getRepository('BusetaBusesBundle:Autobus')->find($id);
 
@@ -173,7 +174,7 @@ class AutobusController extends Controller
             throw $this->createNotFoundException('Unable to find Autobus entity.');
         }
 
-        $editForm = $this->createEditForm($entity);
+        $editForm = $this->createEditForm($handler->fillDataAutobusModel($entity));
         $deleteForm = $this->createDeleteForm($id);
 
         return $this->render('BusetaBusesBundle:Autobus:edit.html.twig', array(
@@ -190,47 +191,10 @@ class AutobusController extends Controller
     *
     * @return \Symfony\Component\Form\Form The form
     */
-    private function createEditForm(Autobus $entity)
+    private function createEditForm(AutobusModel $model)
     {
-        $model = new AutobusModel();
-
-        $model->setMatricula($entity->getMatricula());
-        $model->setNumeroChasis($entity->getNumeroChasis());
-        $model->setNumeroMotor($entity->getNumeroMotor());
-
-        $model->setMarca($entity->getMarca());
-        $model->setModelo($entity->getModelo());
-        $model->setEstilo($entity->getEstilo());
-
-        $model->setPesoBruto($entity->getPesoBruto());
-        $model->setPesoTara($entity->getPesoTara());
-
-        $model->setColor($entity->getColor());
-        $model->setNumeroPlazas($entity->getNumeroPlazas());
-
-        $model->setMarcaMotor($entity->getMarcaMotor());
-        $model->setCombustible($entity->getCombustible());
-
-        $model->setCilindrada($entity->getCilindrada());
-        $model->setNumeroCilindros($entity->getNumeroCilindros());
-
-        $model->setPotencia($entity->getPotencia());
-        $model->setValidoHasta($entity->getValidoHasta());
-
-        $model->setFechaRtv($entity->getFechaRtv());
-        $model->setRampas($entity->getRampas());
-
-        $model->setBarras($entity->getBarras());
-        $model->setCamaras($entity->getCamaras());
-
-        $model->setLectorCedulas($entity->getLectorCedulas());
-        $model->setPublicidad($entity->getPublicidad());
-
-        $model->setGps($entity->getGps());
-        $model->setWifi($entity->getWifi());
-
         $form = $this->createForm(new AutobusType(), $model, array(
-            'action' => $this->generateUrl('autobus_update', array('id' => $entity->getId())),
+            'action' => $this->generateUrl('autobus_update', array('id' => $model->getId())),
             'method' => 'PUT',
         ));
 
@@ -245,6 +209,7 @@ class AutobusController extends Controller
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
+        $handler = $this->get('handlebuses');
 
         $entity = $em->getRepository('BusetaBusesBundle:Autobus')->find($id);
 
@@ -252,16 +217,25 @@ class AutobusController extends Controller
             throw $this->createNotFoundException('Unable to find Autobus entity.');
         }
 
+        $autobusmodel = $handler->fillDataAutobusModel($entity);
+
         $deleteForm = $this->createDeleteForm($id);
-        $editForm = $this->createEditForm($entity);
+        $editForm = $this->createEditForm($autobusmodel);
         $editForm->submit($request);
 
         if ($editForm->isValid()) {
+
+            //Aqui llamo el Handle con entity y model
+            $entity = $handler->HandleAutobusEdit($autobusmodel, $entity);
             $em->persist($entity);
             $em->flush();
 
             return $this->redirect($this->generateUrl('autobus_show', array('id' => $entity->getId())));
         }
+
+        echo '<pre>';
+        var_dump($editForm->isSubmitted());
+        exit;
 
         return $this->render('BusetaBusesBundle:Autobus:edit.html.twig', array(
             'entity'      => $entity,

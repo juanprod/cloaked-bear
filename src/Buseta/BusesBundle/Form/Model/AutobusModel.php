@@ -222,14 +222,12 @@ class AutobusModel
     private $valido_hasta;
 
     /**
-     * @var date
-     * @Assert\Date()
+     * @var string
      */
     private $fecha_rtv_1;
 
     /**
-     * @var date
-     * @Assert\Date()
+     * @var string
      */
     private $fecha_rtv_2;
 
@@ -531,7 +529,7 @@ class AutobusModel
     }
 
     /**
-     * @param \Buseta\BusesBundle\Form\Model\date $fecha_rtv_1
+     * @param string $fecha_rtv_1
      */
     public function setFechaRtv1($fecha_rtv_1)
     {
@@ -539,7 +537,7 @@ class AutobusModel
     }
 
     /**
-     * @return \Buseta\BusesBundle\Form\Model\date
+     * @return string
      */
     public function getFechaRtv1()
     {
@@ -547,7 +545,7 @@ class AutobusModel
     }
 
     /**
-     * @param \Buseta\BusesBundle\Form\Model\date $fecha_rtv_2
+     * @param string $fecha_rtv_2
      */
     public function setFechaRtv2($fecha_rtv_2)
     {
@@ -555,7 +553,7 @@ class AutobusModel
     }
 
     /**
-     * @return \Buseta\BusesBundle\Form\Model\date
+     * @return string
      */
     public function getFechaRtv2()
     {
@@ -1073,6 +1071,9 @@ class AutobusModel
     {
         return $this->wifi;
     }
+
+
+
 
 
 

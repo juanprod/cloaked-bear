@@ -16,14 +16,14 @@ class FiltroCajaType extends AbstractType
     {
         $builder
             ->add('filtro_caja_1', 'text', array(
-                    'required' => true,
+                    'required' => false,
                     'attr'   => array(
                         'class' => 'form-control',
                         'style' => 'width: 150px',
                     )
                 ))
             ->add('filtro_caja_2', 'text', array(
-                    'required' => true,
+                    'required' => false,
                     'attr'   => array(
                         'class' => 'form-control',
                         'style' => 'width: 150px',

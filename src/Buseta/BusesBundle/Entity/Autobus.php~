@@ -2,6 +2,7 @@
 
 namespace Buseta\BusesBundle\Entity;
 
+use Buseta\BusesBundle\Form\Type\FiltroCajaType;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -60,28 +61,28 @@ class Autobus
     /**
      * @var string
      *
-     * @ORM\Column(name="marca_cajacambio", type="string", length=32)
+     * @ORM\Column(name="marca_cajacambio", type="string", nullable=true)
      */
     private $marca_cajacambio;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="tipo_cajacambio", type="string", length=32)
+     * @ORM\Column(name="tipo_cajacambio", type="string", nullable=true)
      */
     private $tipo_cajacambio;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="bateria_1", type="string")
+     * @ORM\Column(name="bateria_1", type="string", nullable=true)
      */
     private $bateria_1;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="bateria_2", type="string")
+     * @ORM\Column(name="bateria_2", type="string", nullable=true)
      */
     private $bateria_2;
 
@@ -100,51 +101,39 @@ class Autobus
     private $numero_motor;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="filtro_aceite", type="string", length=45)
+     * @ORM\OneToOne(targetEntity="Buseta\BusesBundle\Entity\FiltroAceite", mappedBy="autobus", cascade={"all"})
      */
     private $filtro_aceite;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="filtro_agua", type="string", length=30)
+     * @ORM\OneToOne(targetEntity="Buseta\BusesBundle\Entity\FiltroAgua", mappedBy="autobus", cascade={"all"})
      */
     private $filtro_agua;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="filtro_diesel", type="string", length=60)
+     * @ORM\OneToOne(targetEntity="Buseta\BusesBundle\Entity\FiltroDiesel", mappedBy="autobus", cascade={"all"})
      */
     private $filtro_diesel;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="filtro_hidraulico", type="string", length=30)
+     * @ORM\OneToOne(targetEntity="Buseta\BusesBundle\Entity\FiltroHidraulico", mappedBy="autobus", cascade={"all"})
      */
     private $filtro_hidraulico;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="filtro_transmision", type="string", length=15)
+     * @ORM\OneToOne(targetEntity="Buseta\BusesBundle\Entity\FiltroTransmision", mappedBy="autobus", cascade={"all"})
      */
     private $filtro_transmision;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="filtro_caja", type="string", length=30)
+     * @ORM\OneToOne(targetEntity="Buseta\BusesBundle\Entity\FiltroCaja", mappedBy="autobus", cascade={"all"})
      */
     private $filtro_caja;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="cartel_capacidadlitros", type="string")
+     * @ORM\Column(name="cartel_capacidadlitros", type="string", nullable=true)
      */
     private $cartel_capacidadlitros;
 
@@ -225,7 +214,7 @@ class Autobus
     /**
      * @var integer
      *
-     * @ORM\Column(name="anno", type="integer")
+     * @ORM\Column(name="anno", type="integer", nullable=true)
      * @Assert\Type("integer")
      */
     private $anno;
@@ -233,7 +222,7 @@ class Autobus
     /**
      * @var integer
      *
-     * @ORM\Column(name="valor_unidad", type="integer")
+     * @ORM\Column(name="valor_unidad", type="integer", nullable=true)
      * @Assert\Type("integer")
      */
     private $valor_unidad;
@@ -249,7 +238,7 @@ class Autobus
     /**
      * @var integer
      *
-     * @ORM\Column(name="numero_unidad", type="integer")
+     * @ORM\Column(name="numero_unidad", type="integer", nullable=true)
      * @Assert\Type("integer")
      */
     private $numero_unidad;
@@ -287,18 +276,16 @@ class Autobus
     private $valido_hasta;
 
     /**
-     * @var date
+     * @var string
      *
-     * @ORM\Column(name="fecha_rtv_1", type="date")
-     * @Assert\Date()
+     * @ORM\Column(name="fecha_rtv_1", type="string")
      */
     private $fecha_rtv_1;
 
     /**
-     * @var date
+     * @var string
      *
-     * @ORM\Column(name="fecha_rtv_2", type="date")
-     * @Assert\Date()
+     * @ORM\Column(name="fecha_rtv_2", type="string")
      */
     private $fecha_rtv_2;
 
@@ -359,5 +346,5 @@ class Autobus
      */
     private $wifi;
 
-
+    
 }
