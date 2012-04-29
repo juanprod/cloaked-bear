@@ -22,6 +22,7 @@ class BusquedaAutobusType extends AbstractType{
 
             ->add('estilo','entity',array(
                     'class' => 'BusetaNomencladorBundle:Estilo',
+                    'required' => false,
                     'attr' => array(
                         'class' => 'form-control',
                         'style' => 'width: 250px',
@@ -30,6 +31,7 @@ class BusquedaAutobusType extends AbstractType{
 
             ->add('color','entity',array(
                     'class' => 'BusetaNomencladorBundle:Color',
+                    'required' => false,
                     'attr' => array(
                         'class' => 'form-control',
                         'style' => 'width: 250px',
@@ -38,6 +40,7 @@ class BusquedaAutobusType extends AbstractType{
 
             ->add('marca','entity',array(
                     'class' => 'BusetaNomencladorBundle:Marca',
+                    'required' => false,
                     'attr' => array(
                         'class' => 'form-control',
                         'style' => 'width: 250px',
@@ -46,6 +49,7 @@ class BusquedaAutobusType extends AbstractType{
 
             ->add('combustible','entity',array(
                     'class' => 'BusetaNomencladorBundle:Combustible',
+                    'required' => false,
                     'attr' => array(
                         'class' => 'form-control',
                         'style' => 'width: 250px',
@@ -54,6 +58,7 @@ class BusquedaAutobusType extends AbstractType{
 
             ->add('marca_motor','entity',array(
                     'class' => 'BusetaNomencladorBundle:MarcaMotor',
+                    'required' => false,
                     'attr' => array(
                         'class' => 'form-control',
                         'style' => 'width: 250px',

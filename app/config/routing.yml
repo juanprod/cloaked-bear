@@ -1,7 +1,17 @@
+BusetaBodegaBundle_admin_buseta_bodega_bundle_bodega:
+    resource: "@BusetaBodegaBundle/Controller/Bodega/"
+    type:     admingenerator
+    prefix:   /admin/bodega/bodega
+
+BusetaBodegaBundle_admin_buseta_bodega_bundle_producto:
+    resource: "@BusetaBodegaBundle/Controller/Producto/"
+    type:     admingenerator
+    prefix:   /admin/bodega/producto
+
 BusetaNomencladorBundle_admin_buseta_nomenclador_bundle_subgrupo:
     resource: "@BusetaNomencladorBundle/Controller/Subgrupo/"
     type:     admingenerator
-    prefix:   /admin/buseta_nomenclador_bundle/subgrupo
+    prefix:   /admin/nomenclador/subgrupo
 
 BusetaNomencladorBundle_admin_buseta_nomenclador_bundle_grupo:
     resource: "@BusetaNomencladorBundle/Controller/Grupo/"
