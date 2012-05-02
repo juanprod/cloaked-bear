@@ -1,0 +1,30 @@
+producto:
+    pattern:  /
+    defaults: { _controller: "BusetaBodegaBundle:Producto:index" }
+
+producto_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "BusetaBodegaBundle:Producto:show" }
+
+producto_new:
+    pattern:  /new
+    defaults: { _controller: "BusetaBodegaBundle:Producto:new" }
+
+producto_create:
+    pattern:  /create
+    defaults: { _controller: "BusetaBodegaBundle:Producto:create" }
+    requirements: { _method: post }
+
+producto_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "BusetaBodegaBundle:Producto:edit" }
+
+producto_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "BusetaBodegaBundle:Producto:update" }
+    requirements: { _method: post|put }
+
+producto_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "BusetaBodegaBundle:Producto:delete" }
+    requirements: { _method: post|delete }

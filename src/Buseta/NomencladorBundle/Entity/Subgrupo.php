@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="n_subgrupo")
  * @ORM\Entity
  */
-class Subgrupo extends BaseNomenclador
+class Subgrupo
 {
     /**
      * @var integer
@@ -24,9 +24,9 @@ class Subgrupo extends BaseNomenclador
     /**
      * @var string
      *
-     * @ORM\Column(name="descripcion", type="string", length=255)
+     * @ORM\Column(name="valor", type="string", length=255)
      */
-    private $descripcion;
+    protected $valor;
 
     /**
      * @var \Buseta\NomencladorBundle\Entity\Grupo
@@ -36,32 +36,15 @@ class Subgrupo extends BaseNomenclador
     private $grupo;
 
     /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set grupo
-     *
      * @param \Buseta\NomencladorBundle\Entity\Grupo $grupo
-     * @return Subgrupo
      */
-    public function setGrupo(\Buseta\NomencladorBundle\Entity\Grupo $grupo = null)
+    public function setGrupo($grupo)
     {
         $this->grupo = $grupo;
-    
-        return $this;
     }
 
     /**
-     * Get grupo
-     *
-     * @return \Buseta\NomencladorBundle\Entity\Grupo 
+     * @return \Buseta\NomencladorBundle\Entity\Grupo
      */
     public function getGrupo()
     {
@@ -69,26 +52,37 @@ class Subgrupo extends BaseNomenclador
     }
 
     /**
-     * Set descripcion
-     *
-     * @param string $descripcion
-     * @return Descripcion
+     * @param int $id
      */
-    public function setDescripcion($descripcion)
+    public function setId($id)
     {
-        $this->descripcion = $descripcion;
-
-        return $this;
+        $this->id = $id;
     }
 
     /**
-     * Get descripcion
-     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param string $valor
+     */
+    public function setValor($valor)
+    {
+        $this->valor = $valor;
+    }
+
+    /**
      * @return string
      */
-    public function getDescripcion()
+    public function getValor()
     {
-        return $this->descripcion;
+        return $this->valor;
     }
+
+
 
 }

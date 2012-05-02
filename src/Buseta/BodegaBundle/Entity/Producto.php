@@ -13,8 +13,6 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class Producto
 {
-    /*codigo, nombre, descripcion, unidad_medida, costo, precio_salida, peso, volumen*/
-
     /**
      * @var integer
      *
@@ -27,7 +25,7 @@ class Producto
     /**
      * @var string
      *
-     * @ORM\Column(name="codigo", type="string")
+     * @ORM\Column(name="codigo", type="string", nullable=true)
      */
     private $codigo;
 
@@ -37,13 +35,6 @@ class Producto
      * @ORM\Column(name="nombre", type="string")
      */
     private $nombre;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="descripcion", type="string", length=255)
-     */
-    private $descripcion;
 
     /**
      * @var string
@@ -69,14 +60,14 @@ class Producto
     /**
      * @var float
      *
-     * @ORM\Column(name="peso", type="decimal", scale=2)
+     * @ORM\Column(name="peso", type="decimal", scale=2, nullable=true)
      */
     private $peso;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="volumen", type="decimal", scale=2)
+     * @ORM\Column(name="volumen", type="decimal", scale=2, nullable=true)
      */
     private $volumen;
 
@@ -110,22 +101,6 @@ class Producto
     public function getCosto()
     {
         return $this->costo;
-    }
-
-    /**
-     * @param string $descripcion
-     */
-    public function setDescripcion($descripcion)
-    {
-        $this->descripcion = $descripcion;
-    }
-
-    /**
-     * @return string
-     */
-    public function getDescripcion()
-    {
-        return $this->descripcion;
     }
 
     /**

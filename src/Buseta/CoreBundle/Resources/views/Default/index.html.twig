@@ -1,55 +1,69 @@
-{% extends "CoreBundle::layout.html.twig" %}
+{% extends "BusetaTemplateBundle::layout.html.twig" %}
 
 {% block title %}Página principal{% endblock %}
 
 {% block header %} {% endblock %}
 
- {% block titulo_encabezado %}
-     Página Principal
- {% endblock %}
+ {% block titulo_encabezado %} Página Principal {% endblock %}
 
-{% block area_trabajo %}
-    <div class="row">
-        <div class="col-lg-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    Gestión de Nomencladores
-                </div>
-                <div class="panel-body">
-                    <div style="float: left; margin-top: -10px; width: 100px; height: 100px;" >
-                        <a href="{{  path('my_dashboard_welcome') }}"> <img src="{{ asset('images/todo.png') }}" alt="Banner" /> </a>
-                    </div>
 
-                    <div style="float: left; padding: 15px 0px 0px 30px; width: 190px; height: 100px;">
-                        <p style="text-align: center"> Permite acceder a la gestión de los nomencladores existentes en el Sistema. </p>
+{% block body %}
+
+    <header id="hero" style="padding-bottom: 20px; margin-top:120px;">
+
+        <div class="jumbotron masthead">
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="inner span5">
+                        <h1>Sistema de Gestión de Buses</h1>
+                        <p>Seleccione el módulo deseado</p>
                     </div>
-                </div>
-                <div class="panel-footer">
+                    <div class="span7">
+                        <img id="hero-image" class="pull-right" width="500" height="265" src="content/img/hero4.png" alt="">
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    Administración
-                </div>
-                <div class="panel-body">
-                    <div style="float: left; margin-top: -10px; width: 100px; height: 100px;" >
-                        <img src="{{ asset('images/setting.png') }}" alt="Banner" />
-                    </div>
 
-                    <div style="float: left; padding: 15px 0px 0px 30px; width: 190px; height: 100px;">
-                        <p style="text-align: center"> Permite acceder a la administración del Sistema. </p>
+    </header>
+
+
+    <div id="home-tiles" class="container-fluid metro">
+        <div class="row-fluid">
+            <div class="span4">
+                <a class="tile wide imagetext bg-color-blue middle" href="{{ path('autobus') }}">
+                    <div class="image-wrapper">
+                        <span class="icon icon-bus"/>
                     </div>
-                </div>
-                <div class="panel-footer">
-                </div>
+                    <div class="column-text">
+                        <div class="text-header3">Gestión de Buses</div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="span4">
+                <a class="tile wide imagetext bg-color-orange first" href="{{ path('bodega') }}">
+                    <div class="image-wrapper">
+                        <span class="icon icon-home-2"/>
+                    </div>
+                    <div class="column-text">
+                        <div class="text-header3">Gestión de Bodega</div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="span4">
+                <a class="tile wide imagetext bg-color-green last" href="{{ path('autobus') }}">
+                    <div class="image-wrapper">
+                        <span class="icon icon-wrench" />
+                    </div>
+                    <div class="column-text">
+                        <div class="text-header3">Gestión de Taller</div>
+                    </div>
+                </a>
             </div>
         </div>
-        <!-- /.col-lg-4 -->
     </div>
-    <!-- /.row -->
 
 {% endblock %}
 

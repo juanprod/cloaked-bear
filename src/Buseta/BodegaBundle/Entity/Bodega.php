@@ -25,7 +25,7 @@ class Bodega
     /**
      * @var string
      *
-     * @ORM\Column(name="codigo", type="string")
+     * @ORM\Column(name="codigo", type="string", nullable=true)
      */
     private $codigo;
 
@@ -39,21 +39,14 @@ class Bodega
     /**
      * @var string
      *
-     * @ORM\Column(name="descripcion", type="string", length=255)
+     * @ORM\Column(name="descripcion", type="string", length=255, nullable=true)
      */
     private $descripcion;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="entidad", type="string", length=255)
-     */
-    private $entidad;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="direccion", type="string", length=255)
+     * @ORM\Column(name="direccion", type="string", length=255, nullable=true)
      */
     private $direccion;
 
@@ -106,22 +99,6 @@ class Bodega
     }
 
     /**
-     * @param string $entidad
-     */
-    public function setEntidad($entidad)
-    {
-        $this->entidad = $entidad;
-    }
-
-    /**
-     * @return string
-     */
-    public function getEntidad()
-    {
-        return $this->entidad;
-    }
-
-    /**
      * @param int $id
      */
     public function setId($id)
@@ -152,6 +129,7 @@ class Bodega
     {
         return $this->nombre;
     }
+
 
 
 

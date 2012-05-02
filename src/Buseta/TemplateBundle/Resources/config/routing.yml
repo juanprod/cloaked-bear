@@ -1,0 +1,3 @@
+buseta_template_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: BusetaTemplateBundle:Default:index }

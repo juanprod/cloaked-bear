@@ -1,0 +1,30 @@
+bodega:
+    pattern:  /
+    defaults: { _controller: "BusetaBodegaBundle:Bodega:index" }
+
+bodega_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "BusetaBodegaBundle:Bodega:show" }
+
+bodega_new:
+    pattern:  /new
+    defaults: { _controller: "BusetaBodegaBundle:Bodega:new" }
+
+bodega_create:
+    pattern:  /create
+    defaults: { _controller: "BusetaBodegaBundle:Bodega:create" }
+    requirements: { _method: post }
+
+bodega_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "BusetaBodegaBundle:Bodega:edit" }
+
+bodega_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "BusetaBodegaBundle:Bodega:update" }
+    requirements: { _method: post|put }
+
+bodega_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "BusetaBodegaBundle:Bodega:delete" }
+    requirements: { _method: post|delete }

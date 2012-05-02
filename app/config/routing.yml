@@ -1,12 +1,14 @@
-BusetaBodegaBundle_admin_buseta_bodega_bundle_bodega:
-    resource: "@BusetaBodegaBundle/Controller/Bodega/"
-    type:     admingenerator
-    prefix:   /admin/bodega/bodega
+buseta_template:
+    resource: "@BusetaTemplateBundle/Resources/config/routing.yml"
+    prefix:   /
 
-BusetaBodegaBundle_admin_buseta_bodega_bundle_producto:
-    resource: "@BusetaBodegaBundle/Controller/Producto/"
-    type:     admingenerator
-    prefix:   /admin/bodega/producto
+BusetaBodegaBundle_producto:
+        resource: "@BusetaBodegaBundle/Resources/config/routing/producto.yml"
+        prefix:   /producto
+
+BusetaBodegaBundle_bodega:
+    resource: "@BusetaBodegaBundle/Resources/config/routing/bodega.yml"
+    prefix:   /bodega
 
 BusetaNomencladorBundle_admin_buseta_nomenclador_bundle_subgrupo:
     resource: "@BusetaNomencladorBundle/Controller/Subgrupo/"

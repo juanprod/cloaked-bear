@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="n_grupo")
  * @ORM\Entity
  */
-class Grupo extends BaseNomenclador
+class Grupo
 {
     /**
      * @var integer
@@ -24,9 +24,9 @@ class Grupo extends BaseNomenclador
     /**
      * @var string
      *
-     * @ORM\Column(name="descripcion", type="string", length=255)
+     * @ORM\Column(name="valor", type="string", length=255)
      */
-    private $descripcion;
+    protected $valor;
 
     /**
      * @var \Doctrine\Common\Collections\ArrayCollection
@@ -36,36 +36,19 @@ class Grupo extends BaseNomenclador
     private $subgrupos;
 
     /**
-     * Get id
-     *
-     * @return integer 
+     * @param int $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return int
      */
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set descripcion
-     *
-     * @param string $descripcion
-     * @return Grupo
-     */
-    public function setDescripcion($descripcion)
-    {
-        $this->descripcion = $descripcion;
-    
-        return $this;
-    }
-
-    /**
-     * Get descripcion
-     *
-     * @return string 
-     */
-    public function getDescripcion()
-    {
-        return $this->descripcion;
     }
 
     /**
@@ -83,6 +66,29 @@ class Grupo extends BaseNomenclador
     {
         return $this->subgrupos;
     }
+
+    /**
+     * @param string $valor
+     */
+    public function setValor($valor)
+    {
+        $this->valor = $valor;
+    }
+
+    /**
+     * @return string
+     */
+    public function getValor()
+    {
+        return $this->valor;
+    }
+
+    public function __toString()
+    {
+        return $this->valor;
+    }
+
+
 
 
 

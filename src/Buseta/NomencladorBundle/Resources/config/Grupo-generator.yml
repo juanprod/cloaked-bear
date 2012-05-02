@@ -8,10 +8,6 @@ params:
     fields:
       valor:
             label: Valor
-      codigo:
-            label: Código
-      descripcion:
-            label: Descripción
     object_actions:
         delete: ~
     batch_actions:
@@ -20,7 +16,7 @@ builders:
     list:
         params:
             title: Listado de Grupos
-            display: [valor, codigo, descripcion]
+            display: [valor]
             actions:
                 new: ~
             object_actions:
@@ -29,25 +25,25 @@ builders:
                 delete: ~
     filters:
         params:
-             display: [valor, codigo, descripcion]
+             display: [valor]
     new:
         params:
             title: Adicionar nuevo grupo
-            display: [valor, codigo, descripcion]
+            display: [valor]
             actions:
                 save: ~
                 list: ~
     edit:
         params:
             title: "Usted está modificando el grupo: \"%object%\"|{ %object%: Grupo.valor }|"
-            display: [valor, codigo, descripcion]
+            display: [valor]
             actions:
                 save: ~
                 list: ~
     show:
         params:
             title: "Usted está mostrando los datos del grupo: \"%object%\"|{ %object%: Grupo.valor }|"
-            display: [valor, codigo, descripcion]
+            display: [valor]
             actions:
                 list: ~
                 new: ~

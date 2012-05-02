@@ -8,12 +8,8 @@ params:
     fields:
       valor:
             label: Valor
-      codigo:
-            label: Código
       grupo:
             label: Grupo
-      descripcion:
-            label: Descripción
     object_actions:
         delete: ~
     batch_actions:
@@ -22,7 +18,7 @@ builders:
     list:
         params:
             title: Listado de Subgrupos
-            display: [valor, codigo, grupo, descripcion]
+            display: [valor, grupo]
             actions:
                 new: ~
             object_actions:
@@ -31,25 +27,25 @@ builders:
                 delete: ~
     filters:
         params:
-             display: [valor, codigo, grupo, descripcion]
+             display: [valor, grupo]
     new:
         params:
             title: Adicionar nuevo subgrupo
-            display: [valor, codigo, grupo, descripcion]
+            display: [valor, grupo]
             actions:
                 save: ~
                 list: ~
     edit:
         params:
             title: "Usted está modificando el subgrupo: \"%object%\"|{ %object%: Subgrupo.valor }|"
-            display: [valor, codigo, grupo, descripcion]
+            display: [valor, grupo]
             actions:
                 save: ~
                 list: ~
     show:
         params:
             title: "Usted está mostrando los datos del subgrupo: \"%object%\"|{ %object%: Subgrupo.valor }|"
-            display: [valor, codigo, grupo, descripcion]
+            display: [valor, grupo]
             actions:
                 list: ~
                 new: ~
