@@ -11,81 +11,47 @@
 {% block area_trabajo %}
 
     <table class="table table-striped" style="font-size: 16px;">
-        <tbody>
+    <tbody>
 
-        <tr>
-            <th>Nombre</th>
-            <td>{{ entity.nombre }}</td>
-        </tr>
+    <tr>
+        <th>Nombre</th>
+        <td>{{ entity.nombre }}</td>
+    </tr>
+    <tr>
+        <th>Código</th>
+        <td>{{ entity.codigo }}</td>
+    </tr>
+    <tr>
+        <th>Unidad de medida (U/M)</th>
+        <td>{{ entity.uom }}</td>
+    </tr>
+    <tr>
+        <th>Categoría</th>
+        <td>{{ entity.categoria }}</td>
+    </tr>
+    <tr>
+        <th>Precio de costo</th>
+        <td>{{ entity.preciocosto }}</td>
+    </tr>
+    <tr>
+        <th>Precio de salida</th>
+        <td>{{ entity.preciosalida }}</td>
+    </tr>
 
-        <tr>
-            <th>Código</th>
-            <td>
-                {% if entity.codigo == '' %}
-                    <label style="color: red">El producto no tiene código</label>
-                {% else %}
-                    {{ entity.codigo }}
-                {% endif %}
-            </td>
-        </tr>
+    <tr>
+        <th>Activo</th>
+        <td>
+            {% if entity.activo == 1 %}
+                Sí
+            {% else %}
+                No
+            {% endif %}
+        </td>
+    </tr>
 
-        <tr>
-            <th>Unidad de medida</th>
-            <td>
-                {% if entity.unidadmedida == '' %}
-                    <label style="color: red">El producto no tiene unidad de medida</label>
-                {% else %}
-                    {{ entity.unidadmedida }}
-                {% endif %}
-            </td>
-        </tr>
-
-        <tr>
-            <th>Costo</th>
-            <td>
-                {% if entity.costo == '' %}
-                    <label style="color: red">El producto no tiene costo</label>
-                {% else %}
-                    {{ entity.costo }}
-                {% endif %}
-            </td>
-        </tr>
-
-        <tr>
-            <th>Precio de salida</th>
-            <td>
-                {% if entity.preciosalida == '' %}
-                    <label style="color: red">El producto no tiene precio de salida</label>
-                {% else %}
-                    {{ entity.preciosalida }}
-                {% endif %}
-            </td>
-        </tr>
-
-        <tr>
-            <th>Peso</th>
-            <td>
-                {% if entity.peso == '' %}
-                    <label style="color: red">El producto no tiene peso</label>
-                {% else %}
-                    {{ entity.peso }}
-                {% endif %}
-            </td>
-        </tr>
-
-        <tr>
-            <th>Volumen</th>
-            <td>
-                {% if entity.volumen == '' %}
-                    <label style="color: red">El producto no tiene volumen</label>
-                {% else %}
-                    {{ entity.volumen }}
-                {% endif %}
-            </td>
-        </tr>
-
-        </tbody>
+    </tbody>
     </table>
+
 
     <div class="btn-group">
         <a class="btn btn-primary" href="{{ path('producto_edit', { 'id': entity.id }) }}"> Editar</a>
@@ -94,7 +60,6 @@
     <div class="btn-group">
         <a class="btn btn-primary" href="{{ path('producto') }}"> Listado</a>
     </div>
-
 
 {% endblock %}
 

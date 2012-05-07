@@ -1,3 +1,7 @@
 buseta_taller_homepage:
     pattern:  /hello/{name}
     defaults: { _controller: BusetaTallerBundle:Default:index }
+
+taller_principal:
+    pattern:  /modulo/taller
+    defaults: { _controller: "BusetaTallerBundle:Default:principal" }

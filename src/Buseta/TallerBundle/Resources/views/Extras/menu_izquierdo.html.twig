@@ -1,0 +1,36 @@
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav" id="side-menu">
+            <li class="sidebar-search">
+                <div class="input-group custom-search-form">
+                    <input type="text" class="form-control" placeholder="Buscar...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                </div>
+                <!-- /input-group -->
+            </li>
+            <li>
+                <a href="{{ path('core_homepage') }}"><i class="fa fa-dashboard fa-fw"></i> Página Principal</a>
+            </li>
+
+            <li>
+                <a href="#"><i class="fa fa-wrench fa-fw"></i> Gestión Grupos/Subgrupos<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="{{ path('Buseta_NomencladorBundle_Grupo_list') }}">Listar grupos existentes</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('Buseta_NomencladorBundle_Subgrupo_list') }}">Listar subgrupos existentes</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+        </ul>
+        <!-- /#side-menu -->
+    </div>
+    <!-- /.sidebar-collapse -->
+</nav>
+<!-- /.navbar-static-side -->

@@ -1,3 +1,7 @@
 core_homepage:
     pattern:  /
     defaults: { _controller: CoreBundle:Default:index }
+
+configuracion_principal:
+    pattern:  /modulo/configuracion
+    defaults: { _controller: "CoreBundle:Default:principal" }

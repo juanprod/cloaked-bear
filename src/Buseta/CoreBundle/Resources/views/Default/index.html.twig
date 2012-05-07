@@ -9,7 +9,7 @@
 
 {% block body %}
 
-    <header id="hero" style="padding-bottom: 20px; margin-top:120px;">
+    <header id="hero" style="padding-bottom: 20px; margin-top:20px;">
 
         <div class="jumbotron masthead">
             <div class="container-fluid">
@@ -31,7 +31,7 @@
     <div id="home-tiles" class="container-fluid metro">
         <div class="row-fluid">
             <div class="span4">
-                <a class="tile wide imagetext bg-color-blue middle" href="{{ path('autobus') }}">
+                <a class="tile wide imagetext bg-color-blue middle" href="{{ path('autobus_principal') }}">
                     <div class="image-wrapper">
                         <span class="icon icon-bus"/>
                     </div>
@@ -42,7 +42,7 @@
             </div>
 
             <div class="span4">
-                <a class="tile wide imagetext bg-color-orange first" href="{{ path('bodega') }}">
+                <a class="tile wide imagetext bg-color-orange first" href="{{ path('bodega_principal') }}">
                     <div class="image-wrapper">
                         <span class="icon icon-home-2"/>
                     </div>
@@ -53,12 +53,28 @@
             </div>
 
             <div class="span4">
-                <a class="tile wide imagetext bg-color-green last" href="{{ path('autobus') }}">
+                <a class="tile wide imagetext bg-color-green last" href="{{ path('taller_principal') }}">
                     <div class="image-wrapper">
                         <span class="icon icon-wrench" />
                     </div>
                     <div class="column-text">
                         <div class="text-header3">Gestión de Taller</div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="home-tiles" class="container-fluid metro" style="margin-top: 30px">
+        <div class="row-fluid">
+            <div class="span4">
+                <a class="tile wide imagetext bg-color-brown middle" href="{{ path('configuracion_principal') }}">
+                    <div class="image-wrapper">
+                        <span class="icon icon-cog-2"/>
+                    </div>
+                    <div class="column-text">
+                        <div class="text-header3">Configuración del Sistema</div>
                     </div>
                 </a>
             </div>

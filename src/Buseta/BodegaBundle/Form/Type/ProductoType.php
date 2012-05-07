@@ -29,14 +29,21 @@ class ProductoType extends AbstractType
                         'style' => 'width: 250px',
                     )
                 ))
-            ->add('unidad_medida', 'text', array(
-                    'required' => true,
-                    'attr'   => array(
+            ->add('uom','entity',array(
+                    'class' => 'BusetaNomencladorBundle:UOM',
+                    'attr' => array(
                         'class' => 'form-control',
                         'style' => 'width: 250px',
                     )
                 ))
-            ->add('costo', 'text', array(
+            ->add('categoria','entity',array(
+                    'class' => 'BusetaNomencladorBundle:Categoria',
+                    'attr' => array(
+                        'class' => 'form-control',
+                        'style' => 'width: 250px',
+                    )
+                ))
+            ->add('precio_costo', 'text', array(
                     'required' => true,
                     'attr'   => array(
                         'class' => 'form-control',
@@ -50,20 +57,10 @@ class ProductoType extends AbstractType
                         'style' => 'width: 250px',
                     )
                 ))
-            ->add('peso', 'text', array(
+            ->add('activo', null, array(
                     'required' => false,
-                    'attr'   => array(
-                        'class' => 'form-control',
-                        'style' => 'width: 250px',
-                    )
                 ))
-            ->add('volumen', 'text', array(
-                    'required' => false,
-                    'attr'   => array(
-                        'class' => 'form-control',
-                        'style' => 'width: 250px',
-                    )
-                ))
+
         ;
     }
     

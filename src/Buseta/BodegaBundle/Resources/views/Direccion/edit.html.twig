@@ -1,0 +1,70 @@
+{% extends "BusetaBodegaBundle::layout.html.twig" %}
+
+{% block nombre_menu_superior %}
+
+{% endblock %}
+
+{% block titulo_encabezado %}
+    Modificar datos de la dirección
+{% endblock %}
+
+{% block area_trabajo %}
+
+    <form action="{{ path('direccion_update',{'id':entity.id}) }}" method="post" {{ form_enctype(edit_form) }}>
+
+        <div class="row show-grid">
+            <div class="col-md-4">
+                <label>Calle:</label>
+                {{ form_widget(edit_form.calle) }}
+            </div>
+            <div class="col-md-4">
+                <label>Número:</label>
+                {{ form_widget(edit_form.numero) }}
+            </div>
+            <div class="col-md-4">
+                <label>Entre Calles:</label>
+                {{ form_widget(edit_form.entre_calles) }}
+            </div>
+        </div>
+
+        <div class="row show-grid">
+            <div class="col-md-4">
+                <label>País:</label>
+                {{ form_widget(edit_form.pais) }}
+            </div>
+            <div class="col-md-4">
+                <label>Subdivisión (Estado):</label>
+                {{ form_widget(edit_form.subdivision) }}
+            </div>
+            <div class="col-md-4">
+                <label>Ciudad:</label>
+                {{ form_widget(edit_form.ciudad) }}
+            </div>
+        </div>
+
+        <div class="row show-grid">
+            <div class="col-md-4">
+                <label>Activo:</label>
+                {{ form_widget(edit_form.activo) }}
+            </div>
+        </div>
+
+        <div class="row show-grid">
+            <div class="col-md-4">
+
+                <input class="btn btn-primary" style="height: 34px" type="submit" value="Aceptar">
+                <div class="btn-group">
+                    <a class="btn btn-primary" href="{{ path('direccion') }}"> Cancelar</a>
+                </div>
+            </div>
+        </div>
+
+        {{ form_rest(edit_form) }}
+    </form>
+
+{% endblock %}
+
+
+{% block contenido %}
+
+{% endblock %}

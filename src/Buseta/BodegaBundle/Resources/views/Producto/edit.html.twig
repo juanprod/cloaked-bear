@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block titulo_encabezado %}
-    Modificar datos del producto: {{ entity.nombre }}
+    Modificar del producto: "{{ entity.nombre }}"
 {% endblock %}
 
 {% block area_trabajo %}
@@ -17,35 +17,32 @@
                 <label>Nombre:</label>
                 {{ form_widget(edit_form.nombre) }}
             </div>
+
             <div class="col-md-4">
                 <label>Código:</label>
                 {{ form_widget(edit_form.codigo) }}
             </div>
+
             <div class="col-md-4">
-                <label>Unidad de medida:</label>
-                {{ form_widget(edit_form.unidad_medida) }}
+                <label>Unidad de medida (U/M):</label>
+                {{ form_widget(edit_form.uom) }}
             </div>
         </div>
 
         <div class="row show-grid">
             <div class="col-md-4">
-                <label>Costo:</label>
-                {{ form_widget(edit_form.costo) }}
+                <label>Precio de costo:</label>
+                {{ form_widget(edit_form.precio_costo) }}
             </div>
+
             <div class="col-md-4">
                 <label>Precio de salida:</label>
                 {{ form_widget(edit_form.precio_salida) }}
             </div>
-            <div class="col-md-4">
-                <label>Peso:</label>
-                {{ form_widget(edit_form.peso) }}
-            </div>
-        </div>
 
-        <div class="row show-grid">
             <div class="col-md-4">
-                <label>Volumen:</label>
-                {{ form_widget(edit_form.volumen) }}
+                <label>Categoría:</label>
+                {{ form_widget(edit_form.categoria) }}
             </div>
         </div>
 
@@ -61,6 +58,10 @@
 
         {{ form_rest(edit_form) }}
     </form>
+    </div>
+    <!-- /.col-lg-6 -->
+
+    </div>
 
 {% endblock %}
 

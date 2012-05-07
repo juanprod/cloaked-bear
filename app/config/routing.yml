@@ -1,14 +1,37 @@
+BusetaNomencladorBundle_admin_buseta_nomenclador_bundle_tipocontacto:
+    resource: "@BusetaNomencladorBundle/Controller/Tipocontacto/"
+    type:     admingenerator
+    prefix:   /admin/nomenclador/tipocontacto
+
+BusetaNomencladorBundle_admin_buseta_nomenclador_bundle_categoria:
+    resource: "@BusetaNomencladorBundle/Controller/Categoria/"
+    type:     admingenerator
+    prefix:   /admin/nomenclador/categoria
+
+BusetaNomencladorBundle_admin_buseta_nomenclador_bundle_uom:
+    resource: "@BusetaNomencladorBundle/Controller/Uom/"
+    type:     admingenerator
+    prefix:   /admin/nomenclador/uom
+
 buseta_template:
     resource: "@BusetaTemplateBundle/Resources/config/routing.yml"
     prefix:   /
 
 BusetaBodegaBundle_producto:
         resource: "@BusetaBodegaBundle/Resources/config/routing/producto.yml"
-        prefix:   /producto
+        prefix:   /bodega/producto
 
 BusetaBodegaBundle_bodega:
     resource: "@BusetaBodegaBundle/Resources/config/routing/bodega.yml"
     prefix:   /bodega
+
+BusetaBodegaBundle_direccion:
+    resource: "@BusetaBodegaBundle/Resources/config/routing/direccion.yml"
+    prefix:   /bodega/direccion
+
+BusetaBodegaBundle_tercero:
+    resource: "@BusetaBodegaBundle/Resources/config/routing/tercero.yml"
+    prefix:   /bodega/tercero
 
 BusetaNomencladorBundle_admin_buseta_nomenclador_bundle_subgrupo:
     resource: "@BusetaNomencladorBundle/Controller/Subgrupo/"

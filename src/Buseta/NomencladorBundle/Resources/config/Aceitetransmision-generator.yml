@@ -19,7 +19,7 @@ params:
 builders:
     list:
         params:
-            title: Listado de Aceites de Transmision
+            title: Listado de aceites de transmisión
             display: [valor, codigo, descripcion]
             actions:
                 new: ~
@@ -32,21 +32,21 @@ builders:
             display: [valor, codigo, descripcion]
     new:
         params:
-            title: Adicionar nuevo aceite de transmision
+            title: Adicionar nuevo aceite de transmisión
             display: [valor, codigo, descripcion]
             actions:
                 save: ~
                 list: ~
     edit:
         params:
-            title: "Usted está modificando el aceite de transmision: \"%object%\"|{ %object%: AceiteTransmision.valor }|"
+            title: "Usted está modificando el aceite de transmisión: \"%object%\"|{ %object%: AceiteTransmision.valor }|"
             display: [valor, codigo, descripcion]
             actions:
                 save: ~
                 list: ~
     show:
         params:
-            title: "Usted está mostrando los datos del aceite de transmision: \"%object%\"|{ %object%: AceiteTransmision.valor }|"
+            title: "Usted está mostrando los datos del aceite de transmisión: \"%object%\"|{ %object%: AceiteTransmision.valor }|"
             display: [valor, codigo, descripcion]
             actions:
                 list: ~

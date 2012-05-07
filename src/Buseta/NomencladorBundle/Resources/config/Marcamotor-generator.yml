@@ -19,7 +19,7 @@ params:
 builders:
     list:
         params:
-            title: Listado de Marcas de Motor
+            title: Listado de marcas de motor
             display: [valor, codigo, descripcion]
             actions:
                 new: ~
@@ -32,7 +32,7 @@ builders:
             display: [valor, codigo, descripcion]
     new:
         params:
-            title: Adicionar nueva Marca de Motor
+            title: Adicionar nueva marca de motor
             display: [valor, codigo, descripcion]
             actions:
                 save: ~

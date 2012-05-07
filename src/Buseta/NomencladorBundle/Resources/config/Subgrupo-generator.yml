@@ -17,7 +17,7 @@ params:
 builders:
     list:
         params:
-            title: Listado de Subgrupos
+            title: Listado de subgrupos
             display: [valor, grupo]
             actions:
                 new: ~

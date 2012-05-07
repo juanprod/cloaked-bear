@@ -1,3 +1,7 @@
 buseta_bodega_homepage:
     pattern:  /hello/{name}
     defaults: { _controller: BusetaBodegaBundle:Default:index }
+
+bodega_principal:
+    pattern:  /modulo/bodega
+    defaults: { _controller: "BusetaBodegaBundle:Bodega:principal" }

@@ -16,6 +16,35 @@
                 <a href="{{ path('core_homepage') }}"><i class="fa fa-dashboard fa-fw"></i> Página Principal</a>
             </li>
 
+            <li>
+                <a href="#"><i class="fa fa-users fa-fw"></i> Gestión de Terceros<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="{{ path('tercero') }}">Listar terceros</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('direccion') }}">Listar direcciones</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+
+            <li>
+                <a href="#"><i class="fa fa-coffee fa-fw"></i> Gestión de Productos<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="{{ path('producto') }}">Listar productos</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('Buseta_NomencladorBundle_Categoria_list') }}">Listar categorías</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('Buseta_NomencladorBundle_Uom_list') }}">Listar unidades de medidas</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+
 
             <li>
                 <a href="#"><i class="fa fa-wrench fa-fw"></i> Gestión de Bodega<span class="fa arrow"></span></a>
@@ -23,13 +52,11 @@
                     <li>
                         <a href="{{ path('bodega') }}">Listar bodegas</a>
                     </li>
-                    <li>
-                        <a href="{{ path('producto') }}">Listar productos</a>
-                    </li>
-
                 </ul>
                 <!-- /.nav-second-level -->
             </li>
+
+
         </ul>
         <!-- /#side-menu -->
     </div>

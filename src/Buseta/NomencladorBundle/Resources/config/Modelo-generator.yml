@@ -21,7 +21,7 @@ params:
 builders:
     list:
         params:
-            title: Listado de Modelos
+            title: Listado de modelos
             display: [valor, codigo, marca, descripcion]
             actions:
                 new: ~
@@ -34,7 +34,7 @@ builders:
             display: [valor, codigo, marca, descripcion]
     new:
         params:
-            title: Adicionar nuevo Modelo
+            title: Adicionar nuevo modelo
             display: [valor, codigo, marca, descripcion]
             actions:
                 save: ~

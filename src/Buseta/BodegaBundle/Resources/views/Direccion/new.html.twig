@@ -1,0 +1,75 @@
+{% extends "BusetaBodegaBundle::layout.html.twig" %}
+
+{% block nombre_menu_superior %}
+
+{% endblock %}
+
+{% block titulo_encabezado %}
+    Adicionar nueva dirección
+{% endblock %}
+
+{% block area_trabajo %}
+
+    <form action="{{ path('direccion_create') }}" method="post" {{ form_enctype(form) }}>
+        <div class="row show-grid">
+            <div class="col-md-4">
+                <label>Calle:</label>
+                {{ form_widget(form.calle) }}
+            </div>
+
+            <div class="col-md-4">
+                <label>Número:</label>
+                {{ form_widget(form.numero) }}
+            </div>
+
+            <div class="col-md-4">
+                <label>Entre Calles:</label>
+                {{ form_widget(form.entre_calles) }}
+            </div>
+        </div>
+
+        <div class="row show-grid">
+            <div class="col-md-4">
+                <label>País:</label>
+                {{ form_widget(form.pais) }}
+            </div>
+
+            <div class="col-md-4">
+                <label>Subdivisión (Estado):</label>
+                {{ form_widget(form.subdivision) }}
+            </div>
+
+            <div class="col-md-4">
+                <label>Ciudad:</label>
+                {{ form_widget(form.ciudad) }}
+            </div>
+        </div>
+
+        <div class="row show-grid">
+            <div class="col-md-4">
+                <label>Activo:</label>
+                {{ form_widget(form.activo) }}
+            </div>
+        </div>
+
+
+
+        <div class="row show-grid">
+            <div class="col-md-4">
+
+                <input class="btn btn-primary" style="height: 34px" type="submit" value="Aceptar">
+                <div class="btn-group">
+                    <a class="btn btn-primary" href="{{ path('direccion') }}"> Cancelar</a>
+                </div>
+            </div>
+        </div>
+
+        {{ form_rest(form) }}
+    </form>
+
+{% endblock %}
+
+
+{% block contenido %}
+
+{% endblock %}

@@ -1,0 +1,57 @@
+generator: admingenerator.generator.doctrine
+params:
+    model: Buseta\NomencladorBundle\Entity\Categoria
+    namespace_prefix: Buseta
+    concurrency_lock: ~
+    bundle_name: NomencladorBundle
+    pk_requirement: ~
+    fields:
+      valor:
+            label: Valor
+      codigo:
+            label: Código
+    object_actions:
+        delete: ~
+    batch_actions:
+        delete: ~
+builders:
+    list:
+        params:
+            title: Listado de categorías
+            display: [valor, codigo]
+            actions:
+                new: ~
+            object_actions:
+                show: ~
+                edit: ~
+                delete: ~
+    filters:
+        params:
+            display: [valor, codigo]
+    new:
+        params:
+            title: Adicionar nueva categoría
+            display: [valor, codigo]
+            actions:
+                save: ~
+                list: ~
+    edit:
+        params:
+            title: "Usted está modificando la categoría: \"%object%\"|{ %object%: Categoria.valor }|"
+            display: [valor, codigo]
+            actions:
+                save: ~
+                list: ~
+    show:
+        params:
+            title: "Usted está mostrando los datos de la categoría: \"%object%\"|{ %object%: Categoria.valor }|"
+            display: [valor, codigo]
+            actions:
+                list: ~
+                new: ~
+    actions:
+        params:
+            object_actions:
+                delete: ~
+            batch_actions:
+                delete: ~

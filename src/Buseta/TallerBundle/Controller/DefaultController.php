@@ -10,4 +10,14 @@ class DefaultController extends Controller
     {
         return $this->render('BusetaTallerBundle:Default:index.html.twig', array('name' => $name));
     }
+
+    /**
+     * Module Taller entiy.
+     *
+     */
+    public function principalAction()
+    {
+        return $this->render('BusetaTallerBundle:Default:principal.html.twig');
+    }
+
 }

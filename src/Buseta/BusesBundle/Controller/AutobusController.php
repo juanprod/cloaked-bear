@@ -19,6 +19,15 @@ use Symfony\Component\Security\Core\User\UserInterface;
  */
 class AutobusController extends Controller
 {
+    /**
+     * Module Autobus entiy.
+     *
+     */
+    public function principalAction()
+    {
+        return $this->render('BusetaBusesBundle:Default:principal.html.twig');
+    }
+
 
     /**
      * Lists all Autobus entities.

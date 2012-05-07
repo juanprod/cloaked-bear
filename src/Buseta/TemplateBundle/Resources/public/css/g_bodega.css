@@ -1,3 +1,10 @@
+.alert-info {
+    color: #fff;
+    background-color: #CD4900;
+    border-color: #C00000;
+    padding: 20px;
+}
+
 .table thead th {
     background-color: #CD4900;
     color: #FFFFFF;

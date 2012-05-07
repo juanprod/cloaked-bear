@@ -19,7 +19,7 @@ params:
 builders:
     list:
         params:
-            title: Listado de Aceites de Caja de Cambios
+            title: Listado de aceites de caja de cambios
             display: [valor, codigo, descripcion]
             actions:
                 new: ~

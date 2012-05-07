@@ -1,0 +1,43 @@
+{% extends "::base.html.twig" %}
+
+{% block header %}{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('bundles/busetatemplate/css/g_taller.css') }}" media="screen">
+{% endblock %}
+
+
+{% block body %}
+
+    {# Header Superior y logo #}
+    {% include 'BusetaTallerBundle:Extras:header.html.twig'  %}
+
+    {# Header Superior y logo #}
+    {% include 'BusetaTallerBundle:Extras:menu_izquierdo.html.twig'  %}
+
+    <div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h3 class="page-header">
+                {% block titulo_encabezado %}
+                    Título encabezado
+                {% endblock %}
+            </h3>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+
+        {% block area_trabajo %}
+            Área de Trabajo
+        {% endblock %}
+
+{% endblock %}
+
+{% block inside_javascripts %}
+
+
+    {% block inside_javascripts_inter %}
+    {% endblock %}
+
+{% endblock %}

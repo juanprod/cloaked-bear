@@ -1,0 +1,30 @@
+tercero:
+    pattern:  /
+    defaults: { _controller: "BusetaBodegaBundle:Tercero:index" }
+
+tercero_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "BusetaBodegaBundle:Tercero:show" }
+
+tercero_new:
+    pattern:  /new
+    defaults: { _controller: "BusetaBodegaBundle:Tercero:new" }
+
+tercero_create:
+    pattern:  /create
+    defaults: { _controller: "BusetaBodegaBundle:Tercero:create" }
+    requirements: { _method: post }
+
+tercero_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "BusetaBodegaBundle:Tercero:edit" }
+
+tercero_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "BusetaBodegaBundle:Tercero:update" }
+    requirements: { _method: post|put }
+
+tercero_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "BusetaBodegaBundle:Tercero:delete" }
+    requirements: { _method: post|delete }

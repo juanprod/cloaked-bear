@@ -19,7 +19,7 @@ params:
 builders:
     list:
         params:
-            title: Listado de Aceites Hidraulico
+            title: Listado de aceites hidráulicos
             display: [valor, codigo, descripcion]
             actions:
                 new: ~
@@ -32,21 +32,21 @@ builders:
             display: [valor, codigo, descripcion]
     new:
         params:
-            title: Adicionar nuevo aceite hidraulico
+            title: Adicionar nuevo aceite hidráulico
             display: [valor, codigo, descripcion]
             actions:
                 save: ~
                 list: ~
     edit:
         params:
-            title: "Usted está modificando el aceite de hidraulico: \"%object%\"|{ %object%: AceiteHidraulico.valor }|"
+            title: "Usted está modificando el aceite de hidráulico: \"%object%\"|{ %object%: AceiteHidraulico.valor }|"
             display: [valor, codigo, descripcion]
             actions:
                 save: ~
                 list: ~
     show:
         params:
-            title: "Usted está mostrando los datos del aceite hidraulico: \"%object%\"|{ %object%: AceiteHidraulico.valor }|"
+            title: "Usted está mostrando los datos del aceite hidráulico: \"%object%\"|{ %object%: AceiteHidraulico.valor }|"
             display: [valor, codigo, descripcion]
             actions:
                 list: ~

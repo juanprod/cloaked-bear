@@ -15,7 +15,7 @@ params:
 builders:
     list:
         params:
-            title: Listado de Grupos
+            title: Listado de grupos
             display: [valor]
             actions:
                 new: ~

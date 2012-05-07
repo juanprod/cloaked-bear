@@ -37,18 +37,11 @@ class Producto
     private $nombre;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="unidad_medida", type="string", length=255)
-     */
-    private $unidad_medida;
-
-    /**
      * @var float
      *
-     * @ORM\Column(name="costo", type="decimal", scale=2)
+     * @ORM\Column(name="precio_costo", type="decimal", scale=2)
      */
-    private $costo;
+    private $precio_costo;
 
     /**
      * @var float
@@ -58,18 +51,51 @@ class Producto
     private $precio_salida;
 
     /**
-     * @var float
-     *
-     * @ORM\Column(name="peso", type="decimal", scale=2, nullable=true)
+     * @ORM\ManyToOne(targetEntity="Buseta\NomencladorBundle\Entity\UOM", inversedBy="productos")
      */
-    private $peso;
+    private $uom;
 
     /**
-     * @var float
-     *
-     * @ORM\Column(name="volumen", type="decimal", scale=2, nullable=true)
+     * @ORM\ManyToOne(targetEntity="Buseta\NomencladorBundle\Entity\Categoria", inversedBy="productos")
      */
-    private $volumen;
+    private $categoria;
+
+    /**
+     * @ORM\Column(name="activo", type="boolean", nullable=true)
+     */
+    private $activo;
+
+    /**
+     * @param mixed $activo
+     */
+    public function setActivo($activo)
+    {
+        $this->activo = $activo;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getActivo()
+    {
+        return $this->activo;
+    }
+
+    /**
+     * @param mixed $categoria
+     */
+    public function setCategoria($categoria)
+    {
+        $this->categoria = $categoria;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCategoria()
+    {
+        return $this->categoria;
+    }
 
     /**
      * @param string $codigo
@@ -85,22 +111,6 @@ class Producto
     public function getCodigo()
     {
         return $this->codigo;
-    }
-
-    /**
-     * @param float $costo
-     */
-    public function setCosto($costo)
-    {
-        $this->costo = $costo;
-    }
-
-    /**
-     * @return float
-     */
-    public function getCosto()
-    {
-        return $this->costo;
     }
 
     /**
@@ -136,19 +146,19 @@ class Producto
     }
 
     /**
-     * @param float $peso
+     * @param float $precio_costo
      */
-    public function setPeso($peso)
+    public function setPrecioCosto($precio_costo)
     {
-        $this->peso = $peso;
+        $this->precio_costo = $precio_costo;
     }
 
     /**
      * @return float
      */
-    public function getPeso()
+    public function getPrecioCosto()
     {
-        return $this->peso;
+        return $this->precio_costo;
     }
 
     /**
@@ -168,36 +178,22 @@ class Producto
     }
 
     /**
-     * @param string $unidad_medida
+     * @param mixed $uom
      */
-    public function setUnidadMedida($unidad_medida)
+    public function setUom($uom)
     {
-        $this->unidad_medida = $unidad_medida;
+        $this->uom = $uom;
     }
 
     /**
-     * @return string
+     * @return mixed
      */
-    public function getUnidadMedida()
+    public function getUom()
     {
-        return $this->unidad_medida;
+        return $this->uom;
     }
 
-    /**
-     * @param float $volumen
-     */
-    public function setVolumen($volumen)
-    {
-        $this->volumen = $volumen;
-    }
 
-    /**
-     * @return float
-     */
-    public function getVolumen()
-    {
-        return $this->volumen;
-    }
 
 
 

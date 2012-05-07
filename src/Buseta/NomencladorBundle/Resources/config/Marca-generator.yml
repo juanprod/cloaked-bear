@@ -17,7 +17,7 @@ params:
 builders:
     list:
         params:
-            title: Listado de Marcas
+            title: Listado de marcas
             display: [valor, codigo]
             actions:
                 new: ~
@@ -30,7 +30,7 @@ builders:
             display: [valor, codigo]
     new:
         params:
-            title: Adicionar nuevo marca
+            title: Adicionar nueva marca
             display: [valor, codigo]
             actions:
                 save: ~

@@ -10,4 +10,13 @@ class DefaultController extends Controller
     {
         return $this->render('CoreBundle:Default:index.html.twig', array());
     }
+
+    /**
+     * Module Configuration System.
+     *
+     */
+    public function principalAction()
+    {
+        return $this->render('CoreBundle:Default:principal.html.twig');
+    }
 }

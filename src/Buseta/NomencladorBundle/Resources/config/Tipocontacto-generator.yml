@@ -1,0 +1,57 @@
+generator: admingenerator.generator.doctrine
+params:
+    model: Buseta\NomencladorBundle\Entity\TipoContacto
+    namespace_prefix: Buseta
+    concurrency_lock: ~
+    bundle_name: NomencladorBundle
+    pk_requirement: ~
+    fields:
+      valor:
+            label: Valor
+      codigo:
+            label: Código
+    object_actions:
+        delete: ~
+    batch_actions:
+        delete: ~
+builders:
+    list:
+        params:
+            title: Listado de tipos de contactos
+            display: [valor, codigo]
+            actions:
+                new: ~
+            object_actions:
+                show: ~
+                edit: ~
+                delete: ~
+    filters:
+        params:
+            display: [valor, codigo]
+    new:
+        params:
+            title: Adicionar nuevo tipo de contacto
+            display: [valor, codigo]
+            actions:
+                save: ~
+                list: ~
+    edit:
+        params:
+            title: "Usted está modificando el tipo de contacto: \"%object%\"|{ %object%: TipoContacto.valor }|"
+            display: [valor, codigo]
+            actions:
+                save: ~
+                list: ~
+    show:
+        params:
+            title: "Usted está mostrando los datos del tipo de contacto: \"%object%\"|{ %object%: TipoContacto.valor }|"
+            display: [valor, codigo]
+            actions:
+                list: ~
+                new: ~
+    actions:
+        params:
+            object_actions:
+                delete: ~
+            batch_actions:
+                delete: ~

@@ -14,6 +14,15 @@ use Buseta\BodegaBundle\Form\Type\BodegaType;
  */
 class BodegaController extends Controller
 {
+    /**
+     * Module Bodega entiy.
+     *
+     */
+    public function principalAction()
+    {
+        return $this->render('BusetaBodegaBundle:Default:principal.html.twig');
+    }
+
 
     /**
      * Lists all Bodega entities.
@@ -222,7 +231,7 @@ class BodegaController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('bodega_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            //->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()
         ;
     }

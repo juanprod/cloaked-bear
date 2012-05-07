@@ -19,7 +19,7 @@ params:
 builders:
     list:
         params:
-            title: Listado de Estilos
+            title: Listado de estilos
             display: [valor, codigo, descripcion]
             actions:
                 new: ~
