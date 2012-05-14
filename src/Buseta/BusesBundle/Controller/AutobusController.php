@@ -7,11 +7,13 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Buseta\BusesBundle\Handle\HandleAutobus;
-use Buseta\BusesBundle\Entity\Autobus;
 use Buseta\BusesBundle\Form\Model\AutobusModel;
 use Buseta\BusesBundle\Form\Type\AutobusType;
 use Buseta\BusesBundle\Form\Filtro\BusquedaAutobusType;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Buseta\BusesBundle\Entity\Autobus;
+
+
 
 /**
  * Autobus controller.
@@ -44,12 +46,12 @@ class AutobusController extends Controller
 
             if($busqueda->isValid()){
 
-                $entities = $em->getRepository('BusetaBusesBundle:Autobus')->buscarAutobus($busqueda);
+                $entities = $em->getRepository('BusetaBusesBundle:Autobus')->buscarAutobus($busqueda,$em);
             }
         }
         else
         {
-            $entities = $em->getRepository('BusetaBusesBundle:Autobus')->buscarTodos();
+            $entities = $em->getRepository('BusetaBusesBundle:Autobus')->buscarTodos($em);
         }
 
         //CASO BUSQUEDA-AUTOBUS

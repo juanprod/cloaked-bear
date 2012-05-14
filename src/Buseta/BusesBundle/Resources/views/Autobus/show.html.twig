@@ -9,17 +9,14 @@
 {% endblock %}
 
 {% block area_trabajo %}
-
     <table class="table table-striped" style="font-size: 16px;">
         <tbody>
             <tr>
-                <th>Imagen Frontal</th>
+                <th>Imagen Lateral Izquierda</th>
                 <td>
-                    {% set path = 'images/' ~ entity.imagenfrontal %}
-                    <img src="{{ asset(path)}}" alt="Imagen frontal" class="imagen-autobus" />
+                    {% set path = 'images/' ~ entity.imagenlaterali %}
+                    <img src="{{ asset(path)}}" alt="Imagen lateral izquierda" class="imagen-autobus" />
                 </td>
-            </tr>
-            <tr>
                 <th>Imagen Lateral Derecha</th>
                 <td>
                     {% set path = 'images/' ~ entity.imagenlaterald %}
@@ -27,13 +24,11 @@
                 </td>
             </tr>
             <tr>
-                <th>Imagen Lateral Izquierda</th>
+                <th>Imagen Frontal</th>
                 <td>
-                    {% set path = 'images/' ~ entity.imagenlaterali %}
-                    <img src="{{ asset(path)}}" alt="Imagen lateral izquierda" class="imagen-autobus" />
+                    {% set path = 'images/' ~ entity.imagenfrontal %}
+                    <img src="{{ asset(path)}}" alt="Imagen frontal" class="imagen-autobus" />
                 </td>
-            </tr>
-            <tr>
                 <th>Imagen Trasera</th>
                 <td>
                     {% set path = 'images/' ~ entity.imagentrasera %}
@@ -43,127 +38,37 @@
             <tr>
                 <th>Matrícula</th>
                 <td>{{ entity.matricula }}</td>
-            </tr>
-            <tr>
                 <th>Número Chasis</th>
                 <td>{{ entity.numerochasis }}</td>
             </tr>
             <tr>
                 <th>Número Motor</th>
                 <td>{{ entity.numeromotor }}</td>
-            </tr>
-            <tr>
                 <th>Peso Tara</th>
                 <td>{{ entity.pesotara }}</td>
             </tr>
             <tr>
                 <th>Peso Bruto</th>
                 <td>{{ entity.pesobruto }}</td>
-            </tr>
-            <tr>
                 <th>Número Plazas</th>
                 <td>{{ entity.numeroplazas }}</td>
             </tr>
             <tr>
                 <th>Número Cilindros</th>
                 <td>{{ entity.numerocilindros }}</td>
-            </tr>
-            <tr>
                 <th>Cilindrada</th>
                 <td>{{ entity.cilindrada }}</td>
             </tr>
             <tr>
                 <th>Potencia</th>
                 <td>{{ entity.potencia }}</td>
-            </tr>
-            <tr>
                 <th>Fecha Ingreso</th>
                 <td>{{ entity.fechaingreso|date('d/m/Y') }}</td>
             </tr>
             <tr>
                 <th>Válido Hasta</th>
                 <td>{{ entity.validohasta|date('d/m/Y') }}</td>
-            </tr>
-            <tr>
-                <th>Fecha RTV 1</th>
-                <td>{{ entity.fechartv1 }}</td>
-            </tr>
-            <tr>
-                <th>Fecha RTV 2</th>
-                <td>{{ entity.fechartv2 }}</td>
-            </tr>
-            <tr>
-                <th>Rampas</th>
-                <td>
-                    {% if entity.rampas == '' %}
-                        <label style="color: red">El autobus no tiene Rampas</label>
-                    {% else %}
-                        {{ entity.rampas }}
-                    {% endif %}
-                </td>
-            </tr>
-            <tr>
-                <th>Barras</th>
-                <td>
-                    {% if entity.barras == '' %}
-                        <label style="color: red">El autobus no tiene Barras</label>
-                    {% else %}
-                        {{ entity.barras }}
-                    {% endif %}
-                </td>
-            </tr>
-            <tr>
-                <th>Cámaras</th>
-                <td>
-                    {% if entity.camaras == '' %}
-                        <label style="color: red">El autobus no tiene Cámaras</label>
-                    {% else %}
-                        {{ entity.camaras }}
-                    {% endif %}
-                </td>
-            </tr>
-            <tr>
-                <th>Lector de Células</th>
-                <td>
-                    {% if entity.lectorcedulas == '' %}
-                        <label style="color: red">El autobus no tiene Lector de Cédulas</label>
-                    {% else %}
-                        {{ entity.lectorcedulas }}
-                    {% endif %}
-                </td>
-            </tr>
-            <tr>
-                <th>Publicidad</th>
-                <td>
-                    {% if entity.publicidad == '' %}
-                        <label style="color: red">El autobus no tiene Publicidad</label>
-                    {% else %}
-                        {{ entity.publicidad }}
-                    {% endif %}
-                </td>
-            </tr>
-            <tr>
-                <th>GPS</th>
-                <td>
-                    {% if entity.gps == '' %}
-                        <label style="color: red">El autobus no tiene GPS</label>
-                    {% else %}
-                        {{ entity.gps }}
-                    {% endif %}
-                </td>
-            </tr>
-            <tr>
-                <th>Wifi</th>
-                    <td>
-                        {% if entity.wifi == '' %}
-                            <label style="color: red">El autobus no tiene Wifi</label>
-                        {% else %}
-                            {{ entity.wifi }}
-                        {% endif %}
-                    </td>
-            </tr>
-            <tr>
-                <th>N&uacute;mero de Unidad</th>
+                <th>Número de Unidad</th>
                 <td>
                     {% if entity.numerounidad == '' %}
                         <label style="color: red">El autobus no tiene N&uacute;mero de Unidad</label>
@@ -171,6 +76,12 @@
                         {{ entity.numerounidad }}
                     {% endif %}
                 </td>
+            </tr>
+            <tr>
+                <th>Fecha RTV 1</th>
+                <td>{{ entity.fechartv1 }}</td>
+                <th>Fecha RTV 2</th>
+                <td>{{ entity.fechartv2 }}</td>
             </tr>
             <tr>
                 <th>Año</th>
@@ -181,8 +92,6 @@
                         {{ entity.anno }}
                     {% endif %}
                 </td>
-            </tr>
-            <tr>
                 <th>Valor de Unidad</th>
                 <td>
                     {% if entity.valorunidad == '' %}
@@ -192,6 +101,7 @@
                     {% endif %}
                 </td>
             </tr>
+
             <tr>
                 <th>Marca Caja de Cambios</th>
                 <td>
@@ -201,8 +111,6 @@
                         {{ entity.marcacajacambio }}
                     {% endif %}
                 </td>
-            </tr>
-            <tr>
                 <th>Tipo Caja de Cambios</th>
                 <td>
                     {% if entity.tipocajacambio == '' %}
@@ -212,6 +120,7 @@
                     {% endif %}
                 </td>
             </tr>
+
             <tr>
                 <th>Carter Capacidad en Litros</th>
                 <td>
@@ -221,8 +130,6 @@
                         {{ entity.cartercapacidadlitros }}
                     {% endif %}
                 </td>
-            </tr>
-            <tr>
                 <th>Bater&iacute;a 1</th>
                 <td>
                     {% if entity.bateria1 == '' %}
@@ -233,7 +140,7 @@
                 </td>
             </tr>
             <tr>
-                <th>Bater&iacute;a 2</th>
+                <th>Batería 2</th>
                 <td>
                     {% if entity.bateria2 == '' %}
                         <label style="color: red">El autobus no tiene Bater&iacute;a 2</label>
@@ -241,7 +148,94 @@
                         {{ entity.bateria2 }}
                     {% endif %}
                 </td>
+                <th></th>
+                <td></td>
             </tr>
+            <tr>
+                <th>Rampas</th>
+                <td>
+                    {% if entity.rampas == '' %}
+                        <label style="color: red">El autobus no tiene Rampas</label>
+                    {% else %}
+                        {{ entity.rampas }}
+                    {% endif %}
+                </td>
+                <th></th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Barras</th>
+                <td>
+                    {% if entity.barras == '' %}
+                        <label style="color: red">El autobus no tiene Barras</label>
+                    {% else %}
+                        {{ entity.barras }}
+                    {% endif %}
+                </td>
+                <th></th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Cámaras</th>
+                <td>
+                    {% if entity.camaras == '' %}
+                        <label style="color: red">El autobus no tiene Cámaras</label>
+                    {% else %}
+                        {{ entity.camaras }}
+                    {% endif %}
+                </td>
+                <th></th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Lector de Células</th>
+                <td>
+                    {% if entity.lectorcedulas == '' %}
+                        <label style="color: red">El autobus no tiene Lector de Cédulas</label>
+                    {% else %}
+                        {{ entity.lectorcedulas }}
+                    {% endif %}
+                </td>
+                <th></th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Publicidad</th>
+                <td>
+                    {% if entity.publicidad == '' %}
+                        <label style="color: red">El autobus no tiene Publicidad</label>
+                    {% else %}
+                        {{ entity.publicidad }}
+                    {% endif %}
+                </td>
+                <th></th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>GPS</th>
+                <td>
+                    {% if entity.gps == '' %}
+                        <label style="color: red">El autobus no tiene GPS</label>
+                    {% else %}
+                        {{ entity.gps }}
+                    {% endif %}
+                </td>
+                <th></th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Wifi</th>
+                <td>
+                    {% if entity.wifi == '' %}
+                        <label style="color: red">El autobus no tiene Wifi</label>
+                    {% else %}
+                        {{ entity.wifi }}
+                    {% endif %}
+                </td>
+                <th></th>
+                <td></td>
+            </tr>
+
             <tr>
                 <th>Filtro de Aceite</th>
                 <td>
@@ -251,6 +245,8 @@
                         {{ entity.filtroaceite.filtroaceite1 }} - {{ entity.filtroaceite.filtroaceite2 }} - {{ entity.filtroaceite.filtroaceite3 }}
                     {% endif %}
                 </td>
+                <th></th>
+                <td></td>
             </tr>
             <tr>
                 <th>Filtro de Agua</th>
@@ -261,6 +257,8 @@
                         {{ entity.filtroagua.filtroagua1 }} - {{ entity.filtroagua.filtroagua2 }}
                     {% endif %}
                 </td>
+                <th></th>
+                <td></td>
             </tr>
             <tr>
                 <th>Filtro de Caja</th>
@@ -271,6 +269,8 @@
                         {{ entity.filtrocaja.filtrocaja1 }} - {{ entity.filtrocaja.filtrocaja2 }}
                     {% endif %}
                 </td>
+                <th></th>
+                <td></td>
             </tr>
             <tr>
                 <th>Filtro de Diesel</th>
@@ -281,6 +281,8 @@
                         {{ entity.filtrodiesel.filtrodiesel1 }} - {{ entity.filtrodiesel.filtrodiesel2 }} - {{ entity.filtrodiesel.filtrodiesel3 }} - {{ entity.filtrodiesel.filtrodiesel4 }}
                     {% endif %}
                 </td>
+                <th></th>
+                <td></td>
             </tr>
             <tr>
                 <th>Filtro Hidr&aacute;ulico</th>
@@ -291,6 +293,8 @@
                         {{ entity.filtrohidraulico.filtrohidraulico1 }} - {{ entity.filtrohidraulico.filtrohidraulico2 }}
                     {% endif %}
                 </td>
+                <th></th>
+                <td></td>
             </tr>
             <tr>
                 <th>Filtro de Transmisi&oacute;n</th>
@@ -301,6 +305,8 @@
                         {{ entity.filtrotransmision.filtrotransmision }}
                     {% endif %}
                 </td>
+                <th></th>
+                <td></td>
             </tr>
         </tbody>
     </table>

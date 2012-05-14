@@ -1,11 +1,9 @@
-BusetaBuses_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: BusetaBusesBundle:Default:index }
-
 BusetaBusesBundle_autobus:
         resource: "@BusetaBusesBundle/Resources/config/routing/autobus.yml"
         prefix:   /autobus
-
+BusetaBuses_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: BusetaBusesBundle:Default:index }
 autobus_principal:
     pattern:  /modulo/autobus
     defaults: { _controller: "BusetaBusesBundle:Autobus:principal" }

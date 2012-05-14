@@ -36,7 +36,7 @@ class DireccionType extends AbstractType
                         'style' => 'width: 250px',
                     )
                 ))
-            ->add('pais', 'text', array(
+            ->add('pais', 'country', array(
                     'required' => false,
                     'attr'   => array(
                         'class' => 'form-control',

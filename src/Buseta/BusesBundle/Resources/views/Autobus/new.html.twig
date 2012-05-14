@@ -18,10 +18,13 @@
     <!-- Nav tabs -->
     <ul class="nav nav-tabs">
         <li class="active">
-            <a href="#basicos" data-toggle="tab">Datos b&aacute;sicos</a>
+            <a href="#basicos" data-toggle="tab">Datos básicos</a>
         </li>
         <li>
-            <a href="#extras" data-toggle="tab">Informaci&oacute;n extra</a>
+            <a href="#imagenes" data-toggle="tab">Imágenes</a>
+        </li>
+        <li>
+            <a href="#extras" data-toggle="tab">Información extra</a>
         </li>
         <li>
             <a href="#filtros" data-toggle="tab">Filtros</a>
@@ -248,6 +251,30 @@
             {{ form_widget(form.wifi) }}
         </div>
     </div>
+
+    </div>
+
+    <div class="tab-pane fade" id="imagenes">
+
+        <div class="row show-grid">
+            <div class="col-md-4">
+                <label>N&uacute;mero de Unidad:</label>
+                {{ form_widget(form.numero_unidad) }}
+            </div>
+
+            <div class="col-md-4">
+                <label>Valor Unidad:</label>
+                {{ form_widget(form.valor_unidad) }}
+            </div>
+
+            <div class="col-md-4">
+                <label>Año:</label>
+                {{ form_widget(form.anno) }}
+            </div>
+
+        </div>
+
+
 
     </div>
 

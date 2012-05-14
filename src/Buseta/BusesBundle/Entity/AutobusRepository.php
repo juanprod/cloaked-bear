@@ -13,16 +13,9 @@ use Doctrine\ORM\EntityManager;
  */
 class AutobusRepository extends EntityRepository
 {
-    private $em;
-
-    function __construct(EntityManager $em)
+    public function buscarTodos($em)
     {
-        $this->em = $em;
-    }
-
-    public function buscarTodos()
-    {
-        $entities = $this->em->createQueryBuilder()
+        $entities = $em->createQueryBuilder()
             ->select('a')
             ->from('BusetaBusesBundle:Autobus','a');
 
@@ -32,9 +25,9 @@ class AutobusRepository extends EntityRepository
         return $entities;
     }
 
-    public function buscarAutobus($busqueda)
+    public function buscarAutobus($busqueda,$em)
     {
-        $entities = $this->em->createQueryBuilder()
+        $entities = $em->createQueryBuilder()
             ->select('a')
             ->from('BusetaBusesBundle:Autobus','a');
 

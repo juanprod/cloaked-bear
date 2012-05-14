@@ -2,12 +2,13 @@
 
 namespace Buseta\BodegaBundle\Controller;
 
+use Buseta\BodegaBundle\Entity\MecanismoContacto;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Buseta\BodegaBundle\Entity\Tercero;
 use Buseta\BodegaBundle\Form\Type\TerceroType;
-use Buseta\BodegaBundle\Form\Filtro\MecanismoContactoType;
+use Buseta\BodegaBundle\Form\Type\MecanismoContactoType;
 
 /**
  * Tercero controller.
@@ -91,12 +92,14 @@ class TerceroController extends Controller
 
         $tipo_contacto = $this->createForm(new MecanismoContactoType());
 
+        $entity->addMecanismoscontacto(new MecanismoContacto());
+
         if($request->getMethod() === 'GET'){
             $tipo_contacto->submit($request);
 
             if($tipo_contacto->isValid()){
 
-                print_r("OKOKO");
+                //print_r("OKOKO");
 
                 //$entities = $em->getRepository('BusetaBusesBundle:Autobus')->buscarAutobus($busqueda);
             }

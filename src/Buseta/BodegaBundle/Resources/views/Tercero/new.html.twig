@@ -1,5 +1,7 @@
 {% extends "BusetaBodegaBundle::layout.html.twig" %}
 
+{% form_theme form 'BusetaTemplateBundle:Widgets:collection_widget_mecanismos_contacto.html.twig' %}
+
 {% block nombre_menu_superior %}
 
 {% endblock %}
@@ -11,6 +13,8 @@
 {% block area_trabajo %}
 
     <form action="{{ path('tercero_create') }}" method="post" {{ form_enctype(form) }}>
+        {{ form_widget(form.mecanismoscontacto) }}
+
         <div class="row show-grid">
             <div class="col-md-4">
                 <label>Nombres:</label>
@@ -71,32 +75,6 @@
             </div>
         </div>
 
-
-        <div class="row"> <div class="col-lg-12"><div class="panel panel-default"><div class="panel-body">
-                        <h4>Mecanismos de Contacto:</h4>
-                            <form action="{{ path('tercero') }}" method="get">
-                                <div class="row show-grid" style="padding-top: 0px">
-                                    <div class="col-md-4">
-                                        <label>Tipo:</label>
-                                        {{ form_widget(tipo_contacto.tipocontacto) }}
-                                    </div>
-
-                                    <div class="col-md-4">
-                                        <label>Valor:</label>
-                                        {{ form_widget(tipo_contacto.valor) }}
-                                    </div>
-
-                                    <div class="col-md-4">
-                                        <label>&nbsp;</label> <br>
-                                        <div class="btn-group" style="padding-bottom: 8px;">
-                                            <a class="btn btn-primary" href="{{ path('tercero_new') }}"><i class="fa fa-plus-circle"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-
-        </div></div></div></div>
-
         <div class="row show-grid">
             <div class="col-md-4">
 
@@ -117,3 +95,44 @@
 {% block contenido %}
 
 {% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+<script type="text/javascript">
+    var $collectionHolder;
+    // setup an "add a tag" link
+    var $addTagLink = $('<a href="#" class="add_tag_link">Add a tag</a>');
+    var $newLinkLi = $('<li></li>').append($addTagLink);
+    jQuery(document).ready(function() {
+        // Get the ul that holds the collection of tags
+        $collectionHolder = $('ul.mecanismoscontacto');
+        // add the "add a tag" anchor and li to the tags ul
+        $collectionHolder.append($newLinkLi);
+        // count the current form inputs we have (e.g. 2), use that as the new
+        // index when inserting a new item (e.g. 2)
+        $collectionHolder.data('index', $collectionHolder.find(':input').length);
+        $addTagLink.on('click', function(e) {
+        // prevent the link from creating a "#" on the URL
+            e.preventDefault();
+        // add a new tag form (see next code block)
+            addTagForm($collectionHolder, $newLinkLi);
+        });
+
+
+        function addTagForm($collectionHolder, $newLinkLi) {
+// Get the data-prototype explained earlier
+            var prototype = $collectionHolder.data('prototype');
+// get the new index
+            var index = $collectionHolder.data('index');
+// Replace '__name__' in the prototype's HTML to
+// instead be a number based on how many items we have
+            var newForm = prototype.replace(/__name__/g, index);
+// increase the index with one for the next item
+            $collectionHolder.data('index', index + 1);
+// Display the form in the page in an li, before the "Add a tag" link li
+            var $newFormLi = $('<li></li>').append(newForm);
+            $newLinkLi.before($newFormLi);
+        }
+    });
+</script>
+{% endblock javascripts %}

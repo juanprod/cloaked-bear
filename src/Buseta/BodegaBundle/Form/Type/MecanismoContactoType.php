@@ -1,6 +1,6 @@
 <?php
 
-namespace Buseta\BodegaBundle\Form\Filtro;
+namespace Buseta\BodegaBundle\Form\Type;
 
 
 use Symfony\Component\Form\AbstractType;
@@ -32,8 +32,9 @@ class MecanismoContactoType extends AbstractType{
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-                'csrf_protection' => false,
-            ));
+            'data_class' => 'Buseta\BodegaBundle\Entity\MecanismoContacto',
+            'csrf_protection' => false,
+        ));
     }
 
     public function getName()

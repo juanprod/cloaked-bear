@@ -62,6 +62,12 @@ class TerceroType extends AbstractType
                         'style' => 'width: 300px',
                     )
                 ))
+            ->add('mecanismoscontacto','collection',array(
+                    'type' => new MecanismoContactoType(),
+                    'allow_add' => true,
+                    'allow_delete' => true,
+                    'by_reference' => false,
+                ))
         ;
     }
     
