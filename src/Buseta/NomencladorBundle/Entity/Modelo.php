@@ -98,4 +98,9 @@ class Modelo extends BaseNomenclador
         return $this->descripcion;
     }
 
+    public function __toString()
+    {
+        return $this->valor;
+    }
+
 }

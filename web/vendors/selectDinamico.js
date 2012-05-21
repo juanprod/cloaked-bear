@@ -24,7 +24,7 @@ var modelos = {
         if(json.length > 0){
             $.each(json, function(key, item){
                 //console.log(item);
-                option = $('<option value="'+item.id+'">'+item.codigo+'</option>');
+                option = $('<option value="'+item.id+'">'+item.valor+'</option>');
                 $modelo.append(option);
             });
         }else{

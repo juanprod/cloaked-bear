@@ -155,11 +155,11 @@ class AutobusController extends Controller
             $childrens = array();
 
             foreach($modelos as $modelo){
-                $childrens[$modelo->getId()] = $modelo->getCodigo();
+                $childrens[$modelo->getId()] = $modelo->getValor();
             }
 
             $json[$m->getId()] = array(
-                'name' => $m->getCodigo(),
+                'name' => $m->getValor(),
                 'childrens' => $childrens,
             );
         }

@@ -6,10 +6,10 @@ params:
     bundle_name: NomencladorBundle
     pk_requirement: ~
     fields:
-      valor:
-            label: Valor
       codigo:
             label: Código
+      valor:
+            label: Valor
       marca:
             label: Marca
       descripcion:
@@ -22,7 +22,7 @@ builders:
     list:
         params:
             title: Listado de modelos
-            display: [valor, codigo, marca, descripcion]
+            display: [codigo, valor, marca, descripcion]
             actions:
                 new: ~
             object_actions:
@@ -31,25 +31,25 @@ builders:
                 delete: ~
     filters:
         params:
-            display: [valor, codigo, marca, descripcion]
+            display: [codigo, valor, marca, descripcion]
     new:
         params:
             title: Adicionar nuevo modelo
-            display: [valor, codigo, marca, descripcion]
+            display: [codigo, valor, marca, descripcion]
             actions:
                 save: ~
                 list: ~
     edit:
         params:
             title: "Usted está modificando el modelo: \"%object%\"|{ %object%: Modelo.valor }|"
-            display: [valor, codigo, marca, descripcion]
+            display: [codigo, valor, marca, descripcion]
             actions:
                 save: ~
                 list: ~
     show:
         params:
             title: "Usted está mostrando el modelo: \"%object%\"|{ %object%: Modelo.valor }|"
-            display: [valor, codigo, marca, descripcion]
+            display: [codigo, valor, marca, descripcion]
             actions:
                 list: ~
                 new: ~
