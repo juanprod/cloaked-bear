@@ -40,6 +40,11 @@ class AutobusModel
     private $imagen_trasera;
 
     /**
+     * @var \Buseta\BusesBundle\Form\Model\FileModel
+     */
+    private $archivo_adjunto;
+
+    /**
      * @var string
      */
     private $marca_cajacambio;
@@ -1073,9 +1078,45 @@ class AutobusModel
         return $this->filtro_transmision;
     }
 
+    /**
+     * @param \Symfony\Component\HttpFoundation\File\UploadedFile $archivo_adjunto
+     */
+    public function setArchivoAdjunto($archivo_adjunto)
+    {
+        $this->archivo_adjunto = $archivo_adjunto;
+    }
 
+    /**
+     * Add archivo_adjunto
+     *
+     * @param \Buseta\BusesBundle\Entity\ArchivoAdjunto $archivoAdjunto
+     * @return AutobusModel
+     */
+    public function addArchivoAdjunto(\Symfony\Component\HttpFoundation\File\UploadedFile $archivoAdjunto)
+    {
+        $this->archivo_adjunto[] = $archivoAdjunto;
 
+        return $this;
+    }
 
+    /**
+     * Remove archivo_adjunto
+     *
+     * @param \Buseta\BusesBundle\Entity\ArchivoAdjunto $archivoAdjunto
+     */
+    public function removeArchivoAdjunto(\Symfony\Component\HttpFoundation\File\UploadedFile $archivoAdjunto)
+    {
+        $this->archivo_adjunto->removeElement($archivoAdjunto);
+    }
 
+    /**
+     * Get archivo_adjunto
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getArchivoAdjunto()
+    {
+        return $this->archivo_adjunto;
+    }
 
 }

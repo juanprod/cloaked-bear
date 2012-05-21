@@ -16,28 +16,28 @@ class AutobusType extends AbstractType
     {
         $builder
             ->add('imagen_frontal', 'file', array(
-                    'required' => true,
+                    'required' => false,
                     'attr'   => array(
                         'class' => 'form-control',
                         'style' => 'width: 250px',
                     )
                 ))
             ->add('imagen_lateral_d', 'file', array(
-                    'required' => true,
+                    'required' => false,
                     'attr'   => array(
                         'class' => 'form-control',
                         'style' => 'width: 250px',
                     )
                 ))
             ->add('imagen_lateral_i', 'file', array(
-                    'required' => true,
+                    'required' => false,
                     'attr'   => array(
                         'class' => 'form-control',
                         'style' => 'width: 250px',
                     )
                 ))
             ->add('imagen_trasera', 'file', array(
-                    'required' => true,
+                    'required' => false,
                     'attr'   => array(
                         'class' => 'form-control',
                         'style' => 'width: 250px',
@@ -66,6 +66,8 @@ class AutobusType extends AbstractType
                 ))
             ->add('aceitecajacambios','entity',array(
                     'class' => 'BusetaNomencladorBundle:AceiteCajaCambios',
+                    'empty_value' => '---Seleccione aceite caja cambios---',
+                    'required' => false,
                     'attr' => array(
                         'class' => 'form-control',
                         'style' => 'width: 250px',
@@ -73,6 +75,8 @@ class AutobusType extends AbstractType
                 ))
             ->add('aceitehidraulico','entity',array(
                     'class' => 'BusetaNomencladorBundle:AceiteHidraulico',
+                    'empty_value' => '---Seleccione aceite hidráulico---',
+                    'required' => false,
                     'attr' => array(
                         'class' => 'form-control',
                         'style' => 'width: 250px',
@@ -80,6 +84,8 @@ class AutobusType extends AbstractType
                 ))
             ->add('aceitemotor','entity',array(
                     'class' => 'BusetaNomencladorBundle:AceiteMotor',
+                    'empty_value' => '---Seleccione aceite motor---',
+                    'required' => false,
                     'attr' => array(
                         'class' => 'form-control',
                         'style' => 'width: 250px',
@@ -87,6 +93,8 @@ class AutobusType extends AbstractType
                 ))
             ->add('aceitetransmision','entity',array(
                     'class' => 'BusetaNomencladorBundle:AceiteTransmision',
+                    'empty_value' => '---Seleccione aceite transmisión---',
+                    'required' => false,
                     'attr' => array(
                         'class' => 'form-control',
                         'style' => 'width: 250px',
@@ -139,7 +147,7 @@ class AutobusType extends AbstractType
                         'style' => 'width: 250px',
                     )
                 ))
-            ->add('capacidad_tanque', 'text', array(
+            ->add('capacidad_tanque', 'integer', array(
                     'required' => true,
                     'attr'   => array(
                         'class' => 'form-control',
@@ -160,7 +168,7 @@ class AutobusType extends AbstractType
                         'style' => 'width: 250px',
                     )
                 ))
-            ->add('anno', 'text', array(
+            ->add('anno', 'integer', array(
                     'required' => false,
                     'attr'   => array(
                         'class' => 'form-control',
@@ -222,6 +230,7 @@ class AutobusType extends AbstractType
                         'class' => 'form-control',
                         'style' => 'width: 250px',
                     ),
+                    'empty_value' => '---Seleccione un año---',
                     'choices' => array('Enero'=>'Enero',
                                        'Febrero' => 'Febrero',
                                        'Marzo' => 'Marzo',
@@ -241,6 +250,7 @@ class AutobusType extends AbstractType
                         'class' => 'form-control',
                         'style' => 'width: 250px',
                     ),
+                    'empty_value' => '---Seleccione un año---',
                     'choices' => array('Enero'=>'Enero',
                                        'Febrero' => 'Febrero',
                                        'Marzo' => 'Marzo',
@@ -265,13 +275,16 @@ class AutobusType extends AbstractType
                 ))
             ->add('marca','entity',array(
                     'class' => 'BusetaNomencladorBundle:Marca',
+                    'empty_value' => '---Seleccione una marca---',
                     'attr' => array(
                         'class' => 'form-control',
+                        'empty_value' => '---Seleccione una marca---',
                         'style' => 'width: 250px',
                     )
                 ))
             ->add('modelo','entity',array(
                     'class' => 'BusetaNomencladorBundle:Modelo',
+                    'empty_value' => '---Seleccione un modelo---',
                     'attr' => array(
                         'class' => 'form-control',
                         'style' => 'width: 250px',
@@ -279,6 +292,7 @@ class AutobusType extends AbstractType
                 ))
             ->add('estilo','entity',array(
                     'class' => 'BusetaNomencladorBundle:Estilo',
+                    'empty_value' => '---Seleccione un estilo---',
                     'attr' => array(
                         'class' => 'form-control',
                         'style' => 'width: 250px',
@@ -286,6 +300,7 @@ class AutobusType extends AbstractType
                 ))
             ->add('color','entity',array(
                     'class' => 'BusetaNomencladorBundle:Color',
+                    'empty_value' => '---Seleccione un color---',
                     'attr' => array(
                         'class' => 'form-control',
                         'style' => 'width: 250px',
@@ -293,6 +308,7 @@ class AutobusType extends AbstractType
                 ))
             ->add('marca_motor','entity',array(
                     'class' => 'BusetaNomencladorBundle:MarcaMotor',
+                    'empty_value' => '---Seleccione marca de motor---',
                     'attr' => array(
                         'class' => 'form-control',
                         'style' => 'width: 250px',
@@ -300,6 +316,7 @@ class AutobusType extends AbstractType
                 ))
             ->add('combustible','entity',array(
                     'class' => 'BusetaNomencladorBundle:Combustible',
+                    'empty_value' => '---Seleccione un combustible---',
                     'attr' => array(
                         'class' => 'form-control',
                         'style' => 'width: 250px',
@@ -354,6 +371,12 @@ class AutobusType extends AbstractType
                         'style' => 'width: 250px',
                     )
                 ))
+            /*->add('archivo_adjunto','collection',array(
+                    'type' => 'file',
+                    'allow_add' => true,
+                    'allow_delete' => true,
+                    'by_reference' => false,
+                ))*/
         ;
     }
     
@@ -366,7 +389,8 @@ class AutobusType extends AbstractType
             'data_class' => 'Buseta\BusesBundle\Form\Model\Autobus'
         ));*/
         $resolver->setDefaults(array(
-                'data_class' => 'Buseta\BusesBundle\Form\Model\AutobusModel'
+                'data_class' => 'Buseta\BusesBundle\Form\Model\AutobusModel',
+                'method' => 'POST',
         ));
     }
 

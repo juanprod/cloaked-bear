@@ -13,8 +13,6 @@
 {% block area_trabajo %}
 
     <form action="{{ path('tercero_create') }}" method="post" {{ form_enctype(form) }}>
-        {{ form_widget(form.mecanismoscontacto) }}
-
         <div class="row show-grid">
             <div class="col-md-4">
                 <label>Nombres:</label>
@@ -75,6 +73,8 @@
             </div>
         </div>
 
+        {{ form_widget(form.mecanismoscontacto) }}
+
         <div class="row show-grid">
             <div class="col-md-4">
 
@@ -82,6 +82,7 @@
                 <div class="btn-group">
                     <a class="btn btn-primary" href="{{ path('tercero') }}"> Cancelar</a>
                 </div>
+
             </div>
         </div>
 
@@ -99,40 +100,66 @@
 {% block javascripts %}
     {{ parent() }}
 <script type="text/javascript">
-    var $collectionHolder;
-    // setup an "add a tag" link
-    var $addTagLink = $('<a href="#" class="add_tag_link">Add a tag</a>');
-    var $newLinkLi = $('<li></li>').append($addTagLink);
+    var collectionHolder = $('table#buseta_bodegabundle_tercero_mecanismoscontacto');
+    var $addTagLink = $('a.add_tag_link');
+
     jQuery(document).ready(function() {
-        // Get the ul that holds the collection of tags
-        $collectionHolder = $('ul.mecanismoscontacto');
-        // add the "add a tag" anchor and li to the tags ul
-        $collectionHolder.append($newLinkLi);
         // count the current form inputs we have (e.g. 2), use that as the new
         // index when inserting a new item (e.g. 2)
-        $collectionHolder.data('index', $collectionHolder.find(':input').length);
+        collectionHolder.data('index', collectionHolder.find('a.delete_tag_link').length);
+
         $addTagLink.on('click', function(e) {
-        // prevent the link from creating a "#" on the URL
+            // prevent the link from creating a "#" on the URL
             e.preventDefault();
-        // add a new tag form (see next code block)
-            addTagForm($collectionHolder, $newLinkLi);
+
+            // add a new tag form (see next code block)
+            addTagForm(collectionHolder);
         });
 
+        updateDeleteLink();
+        updateView();
 
-        function addTagForm($collectionHolder, $newLinkLi) {
-// Get the data-prototype explained earlier
-            var prototype = $collectionHolder.data('prototype');
-// get the new index
-            var index = $collectionHolder.data('index');
-// Replace '__name__' in the prototype's HTML to
-// instead be a number based on how many items we have
+        function addTagForm(collectionHolder) {
+            // Get the data-prototype explained earlier
+            var prototype = collectionHolder.data('prototype');
+
+            // get the new index
+            var index = collectionHolder.data('index');
+
+            // Replace '__name__' in the prototype's HTML to
+            // instead be a number based on how many items we have
             var newForm = prototype.replace(/__name__/g, index);
-// increase the index with one for the next item
-            $collectionHolder.data('index', index + 1);
-// Display the form in the page in an li, before the "Add a tag" link li
-            var $newFormLi = $('<li></li>').append(newForm);
-            $newLinkLi.before($newFormLi);
+
+            // increase the index with one for the next item
+            collectionHolder.data('index', index + 1);
+
+            // Display the form in the page in an li, before the "Add a tag" link li
+            var $newFormDiv = $('<tr></tr>').append(newForm);
+            collectionHolder.find('tbody').append($newFormDiv);
+            updateDeleteLink();
+            updateView();
+        }
+
+        function updateDeleteLink(){
+            $('a.delete_tag_link').on('click', function(e) {
+                // prevent the link from creating a "#" on the URL
+                e.preventDefault();
+
+                // remove the li for the tag form
+                $(this).parent().parent().remove();
+                updateView();
+            });
+        }
+
+        function updateView(){
+            counter = collectionHolder.find('a.delete_tag_link').length;
+            if(counter == 0){
+                $('tr#no-elements-tr').show();
+            }else{
+                $('tr#no-elements-tr').hide();
+            }
         }
     });
+
 </script>
 {% endblock javascripts %}

@@ -240,14 +240,6 @@ class Tercero
         return $this->proveedor;
     }
 
-
-
-
-
-
-
-
-
     /**
      * Constructor
      */

@@ -1,0 +1,55 @@
+{% block collection_widget %}
+    {% spaceless %}
+        <div class="collection">
+            {% if prototype is defined %}
+                {% set attr = attr | merge({'data-prototype': block('collection_item_widget') }) %}
+            {% endif %}
+            {{ form_errors(form) }}
+
+            <div class="row show-grid">
+                <div class="col-md-6">
+                    <table class="table table-striped table-condensed" {{ block('widget_container_attributes') }}>
+                        <label>Adjuntar archivos:</label>
+
+                        <tbody>
+                        {% set counter = form | length %}
+                        {% for rows in form %}
+                            <tr>
+                                {{ _self.template(rows) }}
+                            </tr>
+                        {% endfor %}
+                        {% if counter == 0 %}
+                            <tr id="no-elements-tr" style="font-size: 40px;"><td colspan="5">No existen elementos. Presione "Adicionar" para agregar nuevos elementos.</td></tr>
+                        {% else %}
+                            <tr id="no-elements-tr" style="display: none; font-size: 16px; color: red;"><td colspan="5">No existen elementos. Presione "Adicionar" para agregar nuevos elementos.</td></tr>
+                        {% endif %}
+                        </tbody>
+                    </table>
+
+                    <a class="btn btn-primary add_tag_link" style="margin: 0px 0px 20px 20px;" href="#"><i class="fa fa-plus-circle">Adicionar</i></a>
+                </div>
+            </div>
+
+            {{ form_rest(form) }}
+            <div>
+
+        </div>
+    {% endspaceless %}
+{% endblock collection_widget %}
+
+{% block collection_item_widget %}
+    {% spaceless %}
+        {{ _self.template(prototype) }}
+    {% endspaceless %}
+{% endblock collection_item_widget %}
+
+{% macro template(prototype) %}
+    <td>
+        {{ form_errors(prototype) }}
+        {{ form_widget(prototype) }}
+    </td>
+    <td>
+        <a class="btn btn-primary delete_tag_link" href="#"><i class="fa fa-minus-circle"></i></a>
+    </td>
+
+{% endmacro %}

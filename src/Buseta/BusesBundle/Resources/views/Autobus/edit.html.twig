@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block titulo_encabezado %}
-    Modificar Datos de Autobus con matrícula: {{ entity.matricula }}
+    Modificar datos de autobús con matrícula: {{ entity.matricula }}
 {% endblock %}
 
 {% block area_trabajo %}
@@ -27,6 +27,9 @@
     <li>
         <a href="#filtros" data-toggle="tab">Filtros</a>
     </li>
+    <li>
+        <a href="#imagenes" data-toggle="tab">Imágenes</a>
+    </li>
 </ul>
 
 <!-- Tab panes -->
@@ -34,37 +37,6 @@
 <form action="{{ path('autobus_update',{'id':entity.id}) }}" method="post" {{ form_enctype(edit_form) }}>
 <div class="tab-content">
 <div class="tab-pane fade in active" id="basicos">
-    <div class="row show-grid">
-        <div class="col-md-6">
-            <label>Vista Frontal:</label>
-            {% set path = 'images/' ~ entity.imagenfrontal %}
-            <img src="{{ asset(path)}}" alt="Imagen frontal" class="imagen-autobus" />
-            {{ form_widget(edit_form.imagen_frontal) }}
-        </div>
-
-        <div class="col-md-6">
-            <label>Vista Trasera:</label>
-            {% set path = 'images/' ~ entity.imagentrasera %}
-            <img src="{{ asset(path)}}" alt="Imagen trasera" class="imagen-autobus" />
-            {{ form_widget(edit_form.imagen_trasera) }}
-        </div>
-    </div>
-
-    <div class="row show-grid">
-        <div class="col-md-6">
-            <label>Vista Lateral Izquierda:</label>
-            {% set path = 'images/' ~ entity.imagenlaterali %}
-            <img src="{{ asset(path)}}" alt="Imagen lateral izquierda" class="imagen-autobus" />
-            {{ form_widget(edit_form.imagen_lateral_i) }}
-        </div>
-
-        <div class="col-md-6">
-            <label>Vista Lateral Derecha:</label>
-            {% set path = 'images/' ~ entity.imagenlaterald %}
-            <img src="{{ asset(path)}}" alt="Imagen lateral derecha" class="imagen-autobus" />
-            {{ form_widget(edit_form.imagen_lateral_d) }}
-        </div>
-    </div>
 
     <div class="row show-grid">
         <div class="col-md-4">
@@ -409,6 +381,34 @@
     </div>
 
 
+
+</div>
+
+<div class="tab-pane fade" id="imagenes">
+
+    <div class="row show-grid">
+        <div class="col-md-6">
+            <label>Vista Frontal:</label>
+            {{ form_widget(edit_form.imagen_frontal) }}
+        </div>
+
+        <div class="col-md-6">
+            <label>Vista Trasera:</label>
+            {{ form_widget(edit_form.imagen_trasera) }}
+        </div>
+    </div>
+
+    <div class="row show-grid">
+        <div class="col-md-6">
+            <label>Vista Lateral Izquierda:</label>
+            {{ form_widget(edit_form.imagen_lateral_i) }}
+        </div>
+
+        <div class="col-md-6">
+            <label>Vista Lateral Derecha:</label>
+            {{ form_widget(edit_form.imagen_lateral_d) }}
+        </div>
+    </div>
 
 </div>
 

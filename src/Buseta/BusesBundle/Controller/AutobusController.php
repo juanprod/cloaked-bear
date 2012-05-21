@@ -2,6 +2,9 @@
 
 namespace Buseta\BusesBundle\Controller;
 
+use Buseta\BusesBundle\Entity\ArchivoAdjunto;
+use Buseta\BusesBundle\Form\Model\FileModel;
+use Buseta\BusesBundle\Form\Type\ArchivoAdjuntoType;
 use Doctrine\Tests\Common\Annotations\Null;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -75,14 +78,18 @@ class AutobusController extends Controller
      */
     public function createAction(Request $request)
     {
-        $entityModel = new AutobusModel();
+        //echo '<pre>';
+        //print_r($request->files);exit;
 
+        $entityModel = new AutobusModel();
         $form = $this->createCreateForm($entityModel);
         $form->handleRequest($request);
 
         if ($form->isValid()) {
             $model = $this->get('handlebuses');
-            $entity = $model->HandleAutobusNew($entityModel);
+
+            $em = $this->getDoctrine()->getManager();
+            $entity = $model->HandleAutobusNew($em,$entityModel);
 
             if($model)
                 return $this->redirect($this->generateUrl('autobus_show', array('id' => $entity->getId())));
@@ -126,6 +133,11 @@ class AutobusController extends Controller
     public function newAction()
     {
         $entity = new AutobusModel();
+
+        $archivo_adjunto = $this->createForm(new ArchivoAdjuntoType());
+
+        //$entity->addArchivoAdjunto(new FileModel());
+
         $form   = $this->createCreateForm($entity);
 
         $em = $this->getDoctrine()->getManager();
@@ -153,9 +165,10 @@ class AutobusController extends Controller
         }
 
         return $this->render('BusetaBusesBundle:Autobus:new.html.twig', array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-            'json'   => json_encode($json),
+            'entity'          => $entity,
+            'form'            => $form->createView(),
+            'json'            => json_encode($json),
+            'archivo_adjunto' => $archivo_adjunto->createView(),
         ));
     }
 

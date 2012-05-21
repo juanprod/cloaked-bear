@@ -1,0 +1,39 @@
+0A0ZJ-DR1E2-FZ8E0-FKCNH-1CQP6
+
+cinfante
+C4rl0sJ4v13r
+
+Abrir  el tritón...
+
+Logearse como usuario:
+sudo su gnuhealth
+pass: gnu
+
+-Pide luego pass de "cinfante"
+
+Luego ir hasta home: escribir "cd"
+Luego ir al directorio: cd gnuhealth
+
+cd gnuhealth/tryton/server/trytond-3.0.4/bin/
+
+./trytond
+
+
+Abro otra consola y escribo: tryton
+
+
+
+
+/////////////////////////////////////////////////////////////////////////
+Yamila
+Calle: Ave 49 #5426 % 54 y 58. Playa
+2604258
+053247387
+
+
+
+
+
+
+
+

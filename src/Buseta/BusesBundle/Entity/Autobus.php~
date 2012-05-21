@@ -50,6 +50,11 @@ class Autobus
      * @ORM\Column(name="imagen_trasera", type="string")
      */
     private $imagen_trasera;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Buseta\BusesBundle\Entity\ArchivoAdjunto", mappedBy="autobuses", cascade={"persist"})
+     */
+    private $archivo_adjunto;
     
     /**
      * @var string
@@ -1490,4 +1495,21 @@ class Autobus
     {
         return $this->combustible;
     }
+
+    /**
+     * @param mixed $archivo_adjunto
+     */
+    public function setArchivoAdjunto($archivo_adjunto)
+    {
+        $this->archivo_adjunto = $archivo_adjunto;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getArchivoAdjunto()
+    {
+        return $this->archivo_adjunto;
+    }
+
 }

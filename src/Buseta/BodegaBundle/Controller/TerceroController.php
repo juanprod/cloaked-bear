@@ -94,17 +94,6 @@ class TerceroController extends Controller
 
         $entity->addMecanismoscontacto(new MecanismoContacto());
 
-        if($request->getMethod() === 'GET'){
-            $tipo_contacto->submit($request);
-
-            if($tipo_contacto->isValid()){
-
-                //print_r("OKOKO");
-
-                //$entities = $em->getRepository('BusetaBusesBundle:Autobus')->buscarAutobus($busqueda);
-            }
-        }
-
         $form   = $this->createCreateForm($entity);
 
         return $this->render('BusetaBodegaBundle:Tercero:new.html.twig', array(
