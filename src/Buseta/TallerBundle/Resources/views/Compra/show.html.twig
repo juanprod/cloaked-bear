@@ -1,0 +1,72 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Compra</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Numero</th>
+                <td>{{ entity.numero }}</td>
+            </tr>
+            <tr>
+                <th>Tipo</th>
+                <td>{{ entity.tipo }}</td>
+            </tr>
+            <tr>
+                <th>Descripcion</th>
+                <td>{{ entity.descripcion }}</td>
+            </tr>
+            <tr>
+                <th>Fecha_pedido</th>
+                <td>{{ entity.fechapedido|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Forma_pago</th>
+                <td>{{ entity.formapago }}</td>
+            </tr>
+            <tr>
+                <th>Moneda</th>
+                <td>{{ entity.moneda }}</td>
+            </tr>
+            <tr>
+                <th>Condiciones_pago</th>
+                <td>{{ entity.condicionespago }}</td>
+            </tr>
+            <tr>
+                <th>Importe_libre_impuesto</th>
+                <td>{{ entity.importelibreimpuesto }}</td>
+            </tr>
+            <tr>
+                <th>Importe_con_impuesto</th>
+                <td>{{ entity.importeconimpuesto }}</td>
+            </tr>
+            <tr>
+                <th>Importe_general</th>
+                <td>{{ entity.importegeneral }}</td>
+            </tr>
+            <tr>
+                <th>Estado</th>
+                <td>{{ entity.estado }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('compra') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('compra_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

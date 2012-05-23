@@ -1,12 +1,12 @@
 <?php
 
-namespace Buseta\BodegaBundle\Form\Type;
+namespace Buseta\TallerBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class ProductoType extends AbstractType
+class LineaType extends AbstractType
 {
         /**
      * @param FormBuilderInterface $builder
@@ -15,54 +15,52 @@ class ProductoType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('codigo', 'text', array(
-                    'required' => false,
-                    'attr'   => array(
-                        'class' => 'form-control',
-                        'style' => 'width: 250px',
-                    )
-                ))
-            ->add('nombre', 'text', array(
+            ->add('numero', 'text', array(
                     'required' => true,
                     'attr'   => array(
                         'class' => 'form-control',
                         'style' => 'width: 250px',
                     )
                 ))
-            ->add('uom','entity',array(
-                    'class' => 'BusetaNomencladorBundle:UOM',
-                    'empty_value' => '---Seleccione una UOM---',
+            ->add('tipo', 'text', array(
+                    'required' => true,
+                    'attr'   => array(
+                        'class' => 'form-control',
+                        'style' => 'width: 250px',
+                    )
+                ))
+            ->add('cantidad_pedido', 'integer', array(
+                    'required' => true,
+                    'attr'   => array(
+                        'class' => 'form-control',
+                        'style' => 'width: 250px',
+                    )
+                ))
+            ->add('monto', 'text', array(
+                    'required' => true,
+                    'attr'   => array(
+                        'class' => 'form-control',
+                        'style' => 'width: 250px',
+                    )
+                ))
+            ->add('producto','entity',array(
+                    'class' => 'BusetaBodegaBundle:Producto',
+                    'empty_value' => '---Seleccione un producto---',
+                    'required' => false,
                     'attr' => array(
                         'class' => 'form-control',
                         'style' => 'width: 250px',
                     )
                 ))
-            ->add('categoria','entity',array(
-                    'class' => 'BusetaNomencladorBundle:Categoria',
-                    'empty_value' => '---Seleccione una categoría---',
+            ->add('impuesto','entity',array(
+                    'class' => 'BusetaTallerBundle:Impuesto',
+                    'empty_value' => '---Seleccione un impuesto---',
+                    'required' => false,
                     'attr' => array(
                         'class' => 'form-control',
                         'style' => 'width: 250px',
                     )
                 ))
-            ->add('precio_costo', 'text', array(
-                    'required' => true,
-                    'attr'   => array(
-                        'class' => 'form-control',
-                        'style' => 'width: 250px',
-                    )
-                ))
-            ->add('precio_salida', 'text', array(
-                    'required' => true,
-                    'attr'   => array(
-                        'class' => 'form-control',
-                        'style' => 'width: 250px',
-                    )
-                ))
-            ->add('activo', null, array(
-                    'required' => false,
-                ))
-
         ;
     }
     
@@ -72,7 +70,7 @@ class ProductoType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Buseta\BodegaBundle\Entity\Producto'
+            'data_class' => 'Buseta\TallerBundle\Entity\Linea'
         ));
     }
 
@@ -81,6 +79,6 @@ class ProductoType extends AbstractType
      */
     public function getName()
     {
-        return 'buseta_bodegabundle_producto';
+        return 'buseta_tallerbundle_linea';
     }
 }

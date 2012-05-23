@@ -1,0 +1,30 @@
+impuesto:
+    pattern:  /
+    defaults: { _controller: "BusetaTallerBundle:Impuesto:index" }
+
+impuesto_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "BusetaTallerBundle:Impuesto:show" }
+
+impuesto_new:
+    pattern:  /new
+    defaults: { _controller: "BusetaTallerBundle:Impuesto:new" }
+
+impuesto_create:
+    pattern:  /create
+    defaults: { _controller: "BusetaTallerBundle:Impuesto:create" }
+    requirements: { _method: post }
+
+impuesto_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "BusetaTallerBundle:Impuesto:edit" }
+
+impuesto_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "BusetaTallerBundle:Impuesto:update" }
+    requirements: { _method: post|put }
+
+impuesto_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "BusetaTallerBundle:Impuesto:delete" }
+    requirements: { _method: post|delete }

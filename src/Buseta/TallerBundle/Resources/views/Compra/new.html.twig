@@ -1,0 +1,177 @@
+{% extends "BusetaTallerBundle::layout.html.twig" %}
+
+{% block nombre_menu_superior %}
+
+{% endblock %}
+
+{% block titulo_encabezado %}
+    Adicionar nueva compra
+{% endblock %}
+
+{% block area_trabajo %}
+
+    <form action="{{ path('impuesto_create') }}" method="post" {{ form_enctype(form) }}>
+        <div class="row show-grid">
+            <div class="col-md-4">
+                <label>Número:</label>
+                {{ form_widget(form.numero) }}
+            </div>
+
+            <div class="col-md-4">
+                <label>Tercero:</label>
+                {{ form_widget(form.tercero) }}
+            </div>
+        </div>
+
+        <div class="row show-grid">
+            <div class="col-md-8">
+                <label>Descripción:</label>
+                {{ form_widget(form.descripcion) }}
+            </div>
+        </div>
+
+        <div class="row show-grid">
+            <div class="col-md-4">
+                <label>Tipo:</label>
+                {{ form_widget(form.tipo) }}
+            </div>
+
+            <div class="col-md-4">
+                <label>Fecha pedido:</label>
+                {{ form_widget(form.fecha_pedido) }}
+            </div>
+
+            <div class="col-md-4">
+                <label>Estado:</label>
+                {{ form_widget(form.estado) }}
+            </div>
+        </div>
+
+        <div class="row show-grid">
+            <div class="col-md-4">
+                <div class="btn-group" style="padding-bottom: 8px;">
+                    <a data-toggle="modal" data-target="#newLinea" class="btn btn-primary" href="#"><i class="fa fa-plus-circle"></i> Adicionar línea</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row show-grid">
+            <div class="col-md-4">
+                <label>Forma de pago:</label>
+                {{ form_widget(form.forma_pago) }}
+            </div>
+
+            <div class="col-md-4">
+                <label>Condiciones de pago:</label>
+                {{ form_widget(form.condiciones_pago) }}
+            </div>
+
+            <div class="col-md-4">
+                <label>Moneda:</label>
+                {{ form_widget(form.moneda) }}
+            </div>
+        </div>
+
+        <div class="row show-grid">
+            <div class="col-md-4">
+                <label>Importe libre de impuesto:</label>
+                {{ form_widget(form.importe_libre_impuesto) }}
+            </div>
+
+            <div class="col-md-4">
+                <label>Importe con impuesto:</label>
+                {{ form_widget(form.importe_con_impuesto) }}
+            </div>
+
+            <div class="col-md-4">
+                <label>Importe general:</label>
+                {{ form_widget(form.importe_general) }}
+            </div>
+        </div>
+
+
+        <div class="row show-grid">
+            <div class="col-md-4">
+                <input class="btn btn-primary" style="height: 34px" type="submit" value="Aceptar">
+                <div class="btn-group">
+                    <a class="btn btn-primary" href="{{ path('impuesto') }}"> Cancelar</a>
+                </div>
+            </div>
+        </div>
+
+        {{ form_rest(form) }}
+    </form>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="newLinea" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width: 850px;">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h3 class="modal-title" id="myModalLabel">Datos de nueva línea</h3>
+                </div>
+                <div class="modal-body" style="width: 800px;">
+                    <form action="{{ path('linea_compra_create') }}" method="post" {{ form_enctype(linea) }}>
+                        <div class="row show-grid">
+                            <div class="col-md-4">
+                                <label>Número:</label>
+                                {{ form_widget(linea.numero) }}
+                            </div>
+
+                            <div class="col-md-4">
+                                <label>Tipo:</label>
+                                {{ form_widget(linea.tipo) }}
+                            </div>
+
+                            <div class="col-md-4">
+                                <label>Producto:</label>
+                                {{ form_widget(linea.producto) }}
+                            </div>
+                        </div>
+
+                        <div class="row show-grid">
+                            <div class="col-md-4">
+                                <label>Impuesto:</label>
+                                {{ form_widget(linea.impuesto) }}
+                            </div>
+
+                            <div class="col-md-4">
+                                <label>Cantidad de pedido:</label>
+                                {{ form_widget(linea.cantidad_pedido) }}
+                            </div>
+
+                            <div class="col-md-4">
+                                <label>Monto:</label>
+                                {{ form_widget(linea.monto) }}
+                            </div>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+                    <input class="btn btn-primary" style="height: 34px" type="submit" value="Guardar cambios">
+                </div>
+                {{ form_rest(linea) }}
+                </form>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+
+
+
+{% endblock %}
+
+
+{% block contenido %}
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script src="{{ asset('vendors/bootstrap/js/bootstrap-modal.js') }}"></script>
+
+{% endblock javascripts %}

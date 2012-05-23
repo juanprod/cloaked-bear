@@ -23,6 +23,13 @@ class Tercero
     private $id;
 
     /**
+     * @var \Doctrine\Common\Collections\ArrayCollection
+     *
+     * @ORM\OneToMany(targetEntity="Buseta\TallerBundle\Entity\Compra", mappedBy="tercero", cascade={"all"})
+     */
+    private $compras;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="codigo", type="string", nullable=true)
@@ -283,5 +290,12 @@ class Tercero
     public function getMecanismoscontacto()
     {
         return $this->mecanismoscontacto;
+    }
+
+
+
+    public function __toString()
+    {
+        return $this->nombres.' '.$this->apellidos;
     }
 }

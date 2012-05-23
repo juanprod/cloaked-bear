@@ -1,12 +1,12 @@
 <?php
 
-namespace Buseta\BodegaBundle\Form\Type;
+namespace Buseta\TallerBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class ProductoType extends AbstractType
+class ImpuestoType extends AbstractType
 {
         /**
      * @param FormBuilderInterface $builder
@@ -15,13 +15,6 @@ class ProductoType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('codigo', 'text', array(
-                    'required' => false,
-                    'attr'   => array(
-                        'class' => 'form-control',
-                        'style' => 'width: 250px',
-                    )
-                ))
             ->add('nombre', 'text', array(
                     'required' => true,
                     'attr'   => array(
@@ -29,41 +22,33 @@ class ProductoType extends AbstractType
                         'style' => 'width: 250px',
                     )
                 ))
-            ->add('uom','entity',array(
-                    'class' => 'BusetaNomencladorBundle:UOM',
-                    'empty_value' => '---Seleccione una UOM---',
-                    'attr' => array(
-                        'class' => 'form-control',
-                        'style' => 'width: 250px',
-                    )
-                ))
-            ->add('categoria','entity',array(
-                    'class' => 'BusetaNomencladorBundle:Categoria',
-                    'empty_value' => '---Seleccione una categoría---',
-                    'attr' => array(
-                        'class' => 'form-control',
-                        'style' => 'width: 250px',
-                    )
-                ))
-            ->add('precio_costo', 'text', array(
+            ->add('numero', 'text', array(
                     'required' => true,
                     'attr'   => array(
                         'class' => 'form-control',
                         'style' => 'width: 250px',
                     )
                 ))
-            ->add('precio_salida', 'text', array(
+            ->add('tipo', 'choice', array(
+                    'choices' => array(
+                        'fijo'       => 'Fijo',
+                        'none'       => 'None',
+                        'porcentaje' => 'Porcentaje (%)'),
+                    'multiple' => false,
+                    'expanded' => false,
                     'required' => true,
                     'attr'   => array(
                         'class' => 'form-control',
                         'style' => 'width: 250px',
                     )
                 ))
-            ->add('activo', null, array(
-                    'required' => false,
-                ))
-
-        ;
+            ->add('tarifa', 'text', array(
+                    'required' => true,
+                    'attr'   => array(
+                        'class' => 'form-control',
+                        'style' => 'width: 250px',
+                    )
+                ));
     }
     
     /**
@@ -72,7 +57,7 @@ class ProductoType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Buseta\BodegaBundle\Entity\Producto'
+            'data_class' => 'Buseta\TallerBundle\Entity\Impuesto'
         ));
     }
 
@@ -81,6 +66,6 @@ class ProductoType extends AbstractType
      */
     public function getName()
     {
-        return 'buseta_bodegabundle_producto';
+        return 'buseta_tallerbundle_impuesto';
     }
 }

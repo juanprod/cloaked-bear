@@ -66,6 +66,13 @@ class Producto
     private $activo;
 
     /**
+     * @var \Doctrine\Common\Collections\ArrayCollection
+     *
+     * @ORM\OneToMany(targetEntity="Buseta\TallerBundle\Entity\Linea", mappedBy="producto", cascade={"all"})
+     */
+    private $lineas;
+
+    /**
      * @param mixed $activo
      */
     public function setActivo($activo)
@@ -191,6 +198,11 @@ class Producto
     public function getUom()
     {
         return $this->uom;
+    }
+
+    public function __toString()
+    {
+        return $this->nombre;
     }
 
 

@@ -1,0 +1,54 @@
+{% extends "BusetaTallerBundle::layout.html.twig" %}
+
+{% block nombre_menu_superior %}
+
+{% endblock %}
+
+{% block titulo_encabezado %}
+    Datos del impuesto: "{{ entity.nombre }}"
+{% endblock %}
+
+{% block area_trabajo %}
+
+    <table class="table table-striped" style="font-size: 16px;">
+        <tbody>
+
+        <tr>
+            <th>Nombre</th>
+            <td>{{ entity.nombre }}</td>
+        </tr>
+
+        <tr>
+            <th>Número</th>
+            <td>{{ entity.numero }}</td>
+        </tr>
+
+        <tr>
+            <th>Tipo</th>
+            <td>{{ entity.tipo }}</td>
+        </tr>
+
+        <tr>
+            <th>Tarifa</th>
+            <td>{{ entity.tarifa }}</td>
+        </tr>
+
+        </tbody>
+    </table>
+
+    <div class="btn-group">
+        <a class="btn btn-primary" href="{{ path('impuesto_edit', { 'id': entity.id }) }}"> Editar</a>
+    </div>
+
+    <div class="btn-group">
+        <a class="btn btn-primary" href="{{ path('impuesto') }}"> Listado</a>
+    </div>
+
+
+{% endblock %}
+
+
+{% block contenido %}
+
+
+{% endblock %}

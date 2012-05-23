@@ -1,0 +1,30 @@
+compra:
+    pattern:  /
+    defaults: { _controller: "BusetaTallerBundle:Compra:index" }
+
+compra_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "BusetaTallerBundle:Compra:show" }
+
+compra_new:
+    pattern:  /new
+    defaults: { _controller: "BusetaTallerBundle:Compra:new" }
+
+compra_create:
+    pattern:  /create
+    defaults: { _controller: "BusetaTallerBundle:Compra:create" }
+    requirements: { _method: post }
+
+compra_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "BusetaTallerBundle:Compra:edit" }
+
+compra_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "BusetaTallerBundle:Compra:update" }
+    requirements: { _method: post|put }
+
+compra_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "BusetaTallerBundle:Compra:delete" }
+    requirements: { _method: post|delete }

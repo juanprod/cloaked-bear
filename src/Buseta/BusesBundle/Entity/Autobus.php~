@@ -26,33 +26,38 @@ class Autobus
     /**
      * @var string
      *
-     * @ORM\Column(name="imagen_frontal", type="string")
+     * @ORM\Column(name="imagen_frontal", type="string", nullable=true)
+     * @Assert\Image()
      */
     private $imagen_frontal;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="imagen_lateral_d", type="string")
+     * @ORM\Column(name="imagen_lateral_d", type="string", nullable=true)
+     * @Assert\Image()
      */
     private $imagen_lateral_d;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="imagen_lateral_i", type="string")
+     * @ORM\Column(name="imagen_lateral_i", type="string", nullable=true)
+     * @Assert\Image()
      */
     private $imagen_lateral_i;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="imagen_trasera", type="string")
+     * @ORM\Column(name="imagen_trasera", type="string", nullable=true)
+     * @Assert\Image()
      */
     private $imagen_trasera;
 
     /**
      * @ORM\OneToMany(targetEntity="Buseta\BusesBundle\Entity\ArchivoAdjunto", mappedBy="autobuses", cascade={"persist"})
+     * @Assert\File()
      */
     private $archivo_adjunto;
     
@@ -181,7 +186,7 @@ class Autobus
      * @var integer
      *
      * @ORM\Column(name="peso_tara", type="integer")
-     * @Assert\Type("integer")
+     * @Assert\Type(type="integer")
      */
     private $peso_tara;
 
@@ -1505,11 +1510,46 @@ class Autobus
     }
 
     /**
-     * @return mixed
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->archivo_adjunto = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Add archivo_adjunto
+     *
+     * @param \Buseta\BusesBundle\Entity\ArchivoAdjunto $archivoAdjunto
+     * @return Autobus
+     */
+    public function addArchivoAdjunto(\Buseta\BusesBundle\Entity\ArchivoAdjunto $archivoAdjunto)
+    {
+        $archivoAdjunto->setAutobuses($this);
+
+        $this->archivo_adjunto[] = $archivoAdjunto;
+    
+        return $this;
+    }
+
+    /**
+     * Remove archivo_adjunto
+     *
+     * @param \Buseta\BusesBundle\Entity\ArchivoAdjunto $archivoAdjunto
+     */
+    public function removeArchivoAdjunto(\Buseta\BusesBundle\Entity\ArchivoAdjunto $archivoAdjunto)
+    {
+        $this->archivo_adjunto->removeElement($archivoAdjunto);
+    }
+
+
+    /**
+     * Get archivo_adjunto
+     *
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getArchivoAdjunto()
     {
         return $this->archivo_adjunto;
     }
-
 }

@@ -1,3 +1,15 @@
+BusetaTallerBundle_linea:
+        resource: "@BusetaTallerBundle/Resources/config/routing/linea.yml"
+        prefix:   /linea
+
+BusetaTallerBundle_compra:
+        resource: "@BusetaTallerBundle/Resources/config/routing/compra.yml"
+        prefix:   /compra
+
+BusetaTallerBundle_impuesto:
+        resource: "@BusetaTallerBundle/Resources/config/routing/impuesto.yml"
+        prefix:   /impuesto
+
 BusetaNomencladorBundle_admin_buseta_nomenclador_bundle_tipocontacto:
     resource: "@BusetaNomencladorBundle/Controller/Tipocontacto/"
     type:     admingenerator
