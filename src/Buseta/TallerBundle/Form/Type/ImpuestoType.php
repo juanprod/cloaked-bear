@@ -24,6 +24,7 @@ class ImpuestoType extends AbstractType
                 ))
             ->add('numero', 'text', array(
                     'required' => true,
+                    'label'  => 'Número',
                     'attr'   => array(
                         'class' => 'form-control',
                         'style' => 'width: 250px',

@@ -2,6 +2,7 @@
 
 namespace Buseta\TallerBundle\Controller;
 
+use Buseta\TallerBundle\Entity\Linea;
 use Buseta\TallerBundle\Form\Type\LineaType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -26,6 +27,14 @@ class CompraController extends Controller
 
         $entities = $em->getRepository('BusetaTallerBundle:Compra')->findAll();
 
+        $paginator = $this->get('knp_paginator');
+        $entities = $paginator->paginate(
+            $entities,
+            $this->get('request')->query->get('page', 1),
+            10,
+            array('pageParameterName' => 'page')
+        );
+
         return $this->render('BusetaTallerBundle:Compra:index.html.twig', array(
             'entities' => $entities,
         ));
@@ -40,6 +49,8 @@ class CompraController extends Controller
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
+        $linea = $this->createForm(new LineaType());
+
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
@@ -50,6 +61,7 @@ class CompraController extends Controller
 
         return $this->render('BusetaTallerBundle:Compra:new.html.twig', array(
             'entity' => $entity,
+            'linea'  => $linea->createView(),
             'form'   => $form->createView(),
         ));
     }
@@ -80,6 +92,10 @@ class CompraController extends Controller
     public function newAction()
     {
         $entity = new Compra();
+
+        $linea = new Linea();
+
+        //$entity->addLinea($linea);
 
         $linea = $this->createForm(new LineaType());
 
@@ -127,12 +143,15 @@ class CompraController extends Controller
             throw $this->createNotFoundException('Unable to find Compra entity.');
         }
 
+        $linea = $this->createForm(new LineaType());
+
         $editForm = $this->createEditForm($entity);
         $deleteForm = $this->createDeleteForm($id);
 
         return $this->render('BusetaTallerBundle:Compra:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
+            'linea'       => $linea->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
@@ -147,7 +166,7 @@ class CompraController extends Controller
     private function createEditForm(Compra $entity)
     {
         $form = $this->createForm(new CompraType(), $entity, array(
-            'action' => $this->generateUrl('compra_update', array('id' => $entity->getId())),
+            'action' => $this->generateUrl('compra_show', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 

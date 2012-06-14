@@ -1,5 +1,7 @@
 {% extends "BusetaTallerBundle::layout.html.twig" %}
 
+{% form_theme form 'BusetaTemplateBundle:Widgets:collection_linea_insertadas.html.twig' %}
+
 {% block nombre_menu_superior %}
 
 {% endblock %}
@@ -10,40 +12,40 @@
 
 {% block area_trabajo %}
 
-    <form action="{{ path('impuesto_create') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_start(form) }}
         <div class="row show-grid">
-            <div class="col-md-4">
-                <label>Número:</label>
-                {{ form_widget(form.numero) }}
+            <div class="col-md-6">
+                {{ form_row(form.numero) }}
             </div>
 
-            <div class="col-md-4">
-                <label>Tercero:</label>
-                {{ form_widget(form.tercero) }}
+            <div class="col-md-6">
+                {{ form_row(form.tercero) }}
             </div>
         </div>
 
         <div class="row show-grid">
-            <div class="col-md-8">
-                <label>Descripción:</label>
-                {{ form_widget(form.descripcion) }}
+            <div class="col-md-12">
+                {{ form_row(form.descripcion) }}
             </div>
         </div>
 
         <div class="row show-grid">
             <div class="col-md-4">
-                <label>Tipo:</label>
-                {{ form_widget(form.tipo) }}
+                {{ form_row(form.tipo) }}
             </div>
 
             <div class="col-md-4">
-                <label>Fecha pedido:</label>
-                {{ form_widget(form.fecha_pedido) }}
+                {{ form_row(form.fecha_pedido) }}
             </div>
 
             <div class="col-md-4">
-                <label>Estado:</label>
-                {{ form_widget(form.estado) }}
+                {{ form_row(form.estado) }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                {{ form_row(form.lineas) }}
             </div>
         </div>
 
@@ -57,35 +59,29 @@
 
         <div class="row show-grid">
             <div class="col-md-4">
-                <label>Forma de pago:</label>
-                {{ form_widget(form.forma_pago) }}
+                {{ form_row(form.forma_pago) }}
             </div>
 
             <div class="col-md-4">
-                <label>Condiciones de pago:</label>
-                {{ form_widget(form.condiciones_pago) }}
+                {{ form_row(form.condiciones_pago) }}
             </div>
 
             <div class="col-md-4">
-                <label>Moneda:</label>
-                {{ form_widget(form.moneda) }}
+                {{ form_row(form.moneda) }}
             </div>
         </div>
 
         <div class="row show-grid">
             <div class="col-md-4">
-                <label>Importe libre de impuesto:</label>
-                {{ form_widget(form.importe_libre_impuesto) }}
+                {{ form_row(form.importe_libre_impuesto) }}
             </div>
 
             <div class="col-md-4">
-                <label>Importe con impuesto:</label>
-                {{ form_widget(form.importe_con_impuesto) }}
+                {{ form_row(form.importe_con_impuesto) }}
             </div>
 
             <div class="col-md-4">
-                <label>Importe general:</label>
-                {{ form_widget(form.importe_general) }}
+                {{ form_row(form.importe_general) }}
             </div>
         </div>
 
@@ -100,7 +96,7 @@
         </div>
 
         {{ form_rest(form) }}
-    </form>
+    {{ form_end(form) }}
 
 
     <!-- Modal -->
@@ -115,41 +111,36 @@
                     <form action="{{ path('linea_compra_create') }}" method="post" {{ form_enctype(linea) }}>
                         <div class="row show-grid">
                             <div class="col-md-4">
-                                <label>Número:</label>
-                                {{ form_widget(linea.numero) }}
+                                {{ form_row(linea.numero) }}
                             </div>
 
                             <div class="col-md-4">
-                                <label>Tipo:</label>
-                                {{ form_widget(linea.tipo) }}
+                                {{ form_row(linea.tipo) }}
                             </div>
 
                             <div class="col-md-4">
-                                <label>Producto:</label>
-                                {{ form_widget(linea.producto) }}
+                                {{ form_row(linea.producto) }}
                             </div>
                         </div>
 
                         <div class="row show-grid">
                             <div class="col-md-4">
-                                <label>Impuesto:</label>
-                                {{ form_widget(linea.impuesto) }}
+                                {{ form_row(linea.impuesto) }}
                             </div>
 
                             <div class="col-md-4">
-                                <label>Cantidad de pedido:</label>
-                                {{ form_widget(linea.cantidad_pedido) }}
+                                {{ form_row(linea.cantidad_pedido) }}
                             </div>
 
                             <div class="col-md-4">
-                                <label>Monto:</label>
-                                {{ form_widget(linea.monto) }}
+                                {{ form_row(linea.monto) }}
                             </div>
                         </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
-                    <input class="btn btn-primary" style="height: 34px" type="submit" value="Guardar cambios">
+                    <!-- <input class="btn btn-primary add_tag_link" style="height: 34px" type="submit" value="Guardar cambios"> !-->
+                    <a data-dismiss="modal" class="btn btn-primary add_tag_link" style="margin: 0px 0px 20px 20px;" href="#"><span class="fa fa-plus-circle">Adicionar</i></a>
+
                 </div>
                 {{ form_rest(linea) }}
                 </form>
@@ -172,6 +163,99 @@
 {% block javascripts %}
     {{ parent() }}
 
-    <script src="{{ asset('vendors/bootstrap/js/bootstrap-modal.js') }}"></script>
+    <script type="text/javascript">
+        var collectionHolder = $('div#buseta_tallerbundle_compra_lineas');
+        var $addTagLink = $('a.add_tag_link');
+
+        jQuery(document).ready(function() {
+            // count the current form inputs we have (e.g. 2), use that as the new
+            // index when inserting a new item (e.g. 2)
+            collectionHolder.data('index', collectionHolder.find('a.delete_tag_link').length);
+
+            updateDeleteLink();
+            updateView();
+
+            function addTagForm(collectionHolder) {
+                // Get the data-prototype explained earlier
+                var prototype = collectionHolder.data('prototype');
+
+                // get the new index
+                var index = collectionHolder.data('index');
+
+                // Replace '__name__' in the prototype's HTML to
+                // instead be a number based on how many items we have
+                var newForm = prototype.replace(/__name__/g, index);
+
+                // increase the index with one for the next item
+                collectionHolder.data('index', index + 1);
+
+                // Display the form in the page in an li, before the "Add a tag" link li
+                var $newFormDiv = $('<div></div>').append(newForm);
+                collectionHolder.find('#tbody').append($newFormDiv);
+                updateDeleteLink();
+                updateView();
+            }
+
+            function updateDeleteLink(){
+                $('a.delete_tag_link').on('click', function(e) {
+                    // prevent the link from creating a "#" on the URL
+                    e.preventDefault();
+
+                    // remove the li for the tag form
+                    $(this).parent().parent().remove();
+                    updateView();
+                });
+            }
+
+            function updateView(){
+                counter = collectionHolder.find('a.delete_tag_link').length;
+                if(counter == 0){
+                    $('div#no-elements-tr').show();
+                }else{
+                    $('div#no-elements-tr').hide();
+                }
+            }
+
+
+            $addTagLink.on('click', function(e) {
+                // prevent the link from creating a "#" on the URL
+                e.preventDefault();
+
+                var modal = $('#newLinea');
+
+                // captura de valores del modal
+                var linea_numero   = modal.find('#buseta_tallerbundle_linea_numero');
+                var linea_tipo     = modal.find('#buseta_tallerbundle_linea_tipo');
+                var linea_producto = modal.find('#buseta_tallerbundle_linea_producto');
+                var linea_impuesto = modal.find('#buseta_tallerbundle_linea_impuesto');
+                var linea_cantidad_pedido = modal.find('#buseta_tallerbundle_linea_cantidad_pedido');
+                var linea_monto = modal.find('#buseta_tallerbundle_linea_monto');
+
+                var index = collectionHolder.data('index');
+
+                addTagForm(collectionHolder);
+
+                $('#buseta_tallerbundle_compra_lineas_' + index + '_numero').val(linea_numero.val());
+                $('#buseta_tallerbundle_compra_lineas_' + index + '_tipo').val(linea_tipo.val());
+                $('#buseta_tallerbundle_compra_lineas_' + index + '_producto').val(linea_producto.val());
+                $('#buseta_tallerbundle_compra_lineas_' + index + '_impuesto').val(linea_impuesto.val());
+                $('#buseta_tallerbundle_compra_lineas_' + index + '_cantidad_pedido').val(linea_cantidad_pedido.val());
+                $('#buseta_tallerbundle_compra_lineas_' + index + '_monto').val(linea_monto.val());
+
+                linea_numero.val('');
+                linea_tipo.val('');
+                linea_producto.val('');
+                linea_impuesto.val('');
+                linea_cantidad_pedido.val('');
+                linea_monto.val('');
+            });
+
+
+
+        });
+
+
+
+    </script>
 
 {% endblock javascripts %}

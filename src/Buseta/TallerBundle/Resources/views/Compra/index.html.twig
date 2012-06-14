@@ -1,30 +1,43 @@
-{% extends '::base.html.twig' %}
+{% extends "BusetaTallerBundle::layout.html.twig" %}
 
-{% block body -%}
-    <h1>Compra list</h1>
+{% block nombre_menu_superior %}
 
-    <table class="records_list">
+{% endblock %}
+
+{% block titulo %}
+    Listado de compras
+{% endblock %}
+
+{% block titulo_encabezado %}
+    Listado de compras
+{% endblock %}
+
+{% block area_trabajo %}
+
+    <div class="btn-group" style="padding-bottom: 8px;">
+        <a class="btn btn-primary" href="{{ path('compra_new') }}"><i class="fa fa-plus-circle"></i> Adicionar compra</a>
+    </div>
+
+    <table class="records_list table table-striped table-bordered table-condensed table-hover">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Numero</th>
+                <th>Número</th>
                 <th>Tipo</th>
-                <th>Descripcion</th>
-                <th>Fecha_pedido</th>
-                <th>Forma_pago</th>
+                <th>Descripción</th>
+                <th>Fecha pedido</th>
+                <th>Forma pago</th>
                 <th>Moneda</th>
-                <th>Condiciones_pago</th>
-                <th>Importe_libre_impuesto</th>
-                <th>Importe_con_impuesto</th>
-                <th>Importe_general</th>
+                <th>Condiciones pago</th>
+                <th>Importe libre impuesto</th>
+                <th>Importe con impuesto</th>
+                <th>Importe general</th>
                 <th>Estado</th>
-                <th>Actions</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
         {% for entity in entities %}
             <tr>
-                <td><a href="{{ path('compra_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                 <td>{{ entity.numero }}</td>
                 <td>{{ entity.tipo }}</td>
                 <td>{{ entity.descripcion }}</td>
@@ -36,26 +49,27 @@
                 <td>{{ entity.importeconimpuesto }}</td>
                 <td>{{ entity.importegeneral }}</td>
                 <td>{{ entity.estado }}</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('compra_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('compra_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
+                <td  style="width: 18% !important; text-align: center;">
+                    <div class="btn-group">
+                        <a class="btn btn-success btn-xs" href="{{ path('compra_show', { 'id': entity.id }) }}"><i class="fa fa-search"> Mostrar</i></a>
+                    </div>
+
+                    <div class="btn-group">
+                        <a class="btn btn-danger btn-xs" href="{{ path('compra_edit', { 'id': entity.id }) }}"><i class="fa fa-edit"> Editar</i></a>
+                    </div>
+
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-        <ul>
-        <li>
-            <a href="{{ path('compra_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
-    {% endblock %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                {{ knp_pagination_render(entities) }}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

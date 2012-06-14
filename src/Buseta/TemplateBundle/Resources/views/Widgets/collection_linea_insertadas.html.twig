@@ -1,0 +1,90 @@
+{% block collection_widget %}
+    {% spaceless %}
+<div class="collection">
+    {% if prototype is defined %}
+        {% set attr = attr | merge({'data-prototype': block('collection_item_widget') }) %}
+    {% endif %}
+    {{ form_errors(form) }}
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div  {{ block('widget_container_attributes') }}>
+                        <h4>Listado de líneas insertadas:</h4>
+
+                        <div class="row form-group" >
+                            <div class="col-lg-12">
+                                <div class="col-lg-1" style="text-align: center;"><b>Número</b></div>
+                                <div class="col-lg-2" style="text-align: center;"><b>Tipo</b></div>
+                                <div class="col-lg-2" style="text-align: center;"><b>Pedido</b></div>
+                                <div class="col-lg-2" style="text-align: center;"><b>Monto</b></div>
+                                <div class="col-lg-2" style="text-align: center;"><b>Producto</b></div>
+                                <div class="col-lg-2" style="text-align: center;"><b>Impuesto</b></div>
+                            </div>
+                        </div>
+
+                        <div id="tbody">
+                            {% set counter = form | length %}
+                            {% for rows in form %}
+                                <div class="row form-group">
+                                    {{ _self.template(rows) }}
+                                </div>
+                            {% endfor %}
+                            {% if counter == 0 %}
+                                <div id="no-elements-tr">No existen elementos. Presione "Adicionar" para agregar nuevos elementos.</div>
+                            {% else %}
+                                <div id="no-elements-tr">No existen elementos. Presione "Adicionar" para agregar nuevos elementos.</div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    {{ form_rest(form) }}
+    <div>
+
+    </div>
+    {% endspaceless %}
+{% endblock collection_widget %}
+
+{% block collection_item_widget %}
+    {% spaceless %}
+        {{ _self.template(prototype) }}
+    {% endspaceless %}
+{% endblock collection_item_widget %}
+
+{% macro template(prototype) %}
+    <div class="col-lg-1 form-group">
+        {{ form_errors(prototype.numero) }}
+        {{ form_widget(prototype.numero) }}
+    </div>
+    <div class="col-lg-2 form-group">
+        {{ form_errors(prototype.tipo) }}
+        {{ form_widget(prototype.tipo) }}
+    </div>
+    <div class="col-lg-2 form-group">
+        {{ form_errors(prototype.cantidad_pedido) }}
+        {{ form_widget(prototype.cantidad_pedido) }}
+    </div>
+    <div class="col-lg-2 form-group">
+        {{ form_errors(prototype.monto) }}
+        {{ form_widget(prototype.monto) }}
+    </div>
+    <div class="col-lg-2 form-group">
+        {{ form_errors(prototype.producto) }}
+        {{ form_widget(prototype.producto) }}
+    </div>
+    <div class="col-lg-2 form-group">
+        {{ form_errors(prototype.impuesto) }}
+        {{ form_widget(prototype.impuesto) }}
+    </div>
+
+    <div class="col-lg-1 form-group">
+        <a class="btn btn-primary delete_tag_link" href="#"><i class="fa fa-minus-circle"></i></a>
+    </div>
+
+{% endmacro %}

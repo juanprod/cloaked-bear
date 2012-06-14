@@ -59,7 +59,6 @@ class Compra
      * @var date
      *
      * @ORM\Column(name="fecha_pedido", type="date")
-     * @Assert\Date()
      */
     private $fecha_pedido;
 
@@ -415,6 +414,8 @@ class Compra
      */
     public function addLinea(\Buseta\TallerBundle\Entity\Linea $lineas)
     {
+        $lineas->setCompra($this);
+
         $this->lineas[] = $lineas;
     
         return $this;

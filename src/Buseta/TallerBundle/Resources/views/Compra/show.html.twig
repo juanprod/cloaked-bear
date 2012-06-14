@@ -1,16 +1,19 @@
-{% extends '::base.html.twig' %}
+{% extends "BusetaTallerBundle::layout.html.twig" %}
 
-{% block body -%}
-    <h1>Compra</h1>
+{% block nombre_menu_superior %}
 
-    <table class="record_properties">
+{% endblock %}
+
+{% block titulo_encabezado %}
+    Datos de la compra
+{% endblock %}
+
+{% block area_trabajo %}
+
+    <table class="table table-striped" style="font-size: 16px;">
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ entity.id }}</td>
-            </tr>
-            <tr>
-                <th>Numero</th>
+                <th>Número</th>
                 <td>{{ entity.numero }}</td>
             </tr>
             <tr>
@@ -18,15 +21,15 @@
                 <td>{{ entity.tipo }}</td>
             </tr>
             <tr>
-                <th>Descripcion</th>
+                <th>Descripción</th>
                 <td>{{ entity.descripcion }}</td>
             </tr>
             <tr>
-                <th>Fecha_pedido</th>
+                <th>Fecha pedido</th>
                 <td>{{ entity.fechapedido|date('Y-m-d H:i:s') }}</td>
             </tr>
             <tr>
-                <th>Forma_pago</th>
+                <th>Forma pago</th>
                 <td>{{ entity.formapago }}</td>
             </tr>
             <tr>
@@ -34,39 +37,67 @@
                 <td>{{ entity.moneda }}</td>
             </tr>
             <tr>
-                <th>Condiciones_pago</th>
+                <th>Condiciones pago</th>
                 <td>{{ entity.condicionespago }}</td>
             </tr>
             <tr>
-                <th>Importe_libre_impuesto</th>
+                <th>Importe libre impuesto</th>
                 <td>{{ entity.importelibreimpuesto }}</td>
             </tr>
             <tr>
-                <th>Importe_con_impuesto</th>
+                <th>Importe con impuesto</th>
                 <td>{{ entity.importeconimpuesto }}</td>
             </tr>
             <tr>
-                <th>Importe_general</th>
+                <th>Importe general</th>
                 <td>{{ entity.importegeneral }}</td>
             </tr>
             <tr>
                 <th>Estado</th>
                 <td>{{ entity.estado }}</td>
             </tr>
+            <tr>
+                <th>Líneas</th>
+                <td>
+                    <table class="table table-striped" style="font-size: 16px;">
+                        <th>Número</th>
+                        <th>Tipo</th>
+                        <th>Producto</th>
+                        <th>Impuesto</th>
+                        <th>Cant. Pedido</th>
+                        <th>Monto</th>
+                        {% for linea in entity.lineas %}
+                            <tbody>
+                                <tr>
+                                    <td>{{ linea.numero }}</td>
+                                    <td>{{ linea.tipo }}</td>
+                                    <td>{{ linea.producto.nombre }}</td>
+                                    <td>{{ linea.impuesto.nombre }}</td>
+                                    <td>{{ linea.cantidadpedido }}</td>
+                                    <td>{{ linea.monto }}</td>
+                                </tr>
+                    {% else %}
+                        <label style="color: red">La compra no tiene líneas disponibles.</label>
+                    {% endfor %}
+                    </table>
+                </td>
+            </tr>
         </tbody>
     </table>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('compra') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>
-        <a href="{{ path('compra_edit', { 'id': entity.id }) }}">
-            Edit
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+    <div class="btn-group">
+        <a class="btn btn-primary" href="{{ path('compra_edit', { 'id': entity.id }) }}"> Editar</a>
+    </div>
+
+    <div class="btn-group">
+        <a class="btn btn-primary" href="{{ path('compra') }}"> Listado</a>
+    </div>
+
+
+{% endblock %}
+
+
+{% block contenido %}
+
+
 {% endblock %}

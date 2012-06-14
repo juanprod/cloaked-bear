@@ -17,48 +17,44 @@ class LineaType extends AbstractType
         $builder
             ->add('numero', 'text', array(
                     'required' => true,
+                    'label'  => 'Número',
                     'attr'   => array(
                         'class' => 'form-control',
-                        'style' => 'width: 250px',
                     )
                 ))
             ->add('tipo', 'text', array(
                     'required' => true,
                     'attr'   => array(
                         'class' => 'form-control',
-                        'style' => 'width: 250px',
                     )
                 ))
             ->add('cantidad_pedido', 'integer', array(
                     'required' => true,
+                   'label'  => 'Cantidad de pedido',
                     'attr'   => array(
                         'class' => 'form-control',
-                        'style' => 'width: 250px',
                     )
                 ))
             ->add('monto', 'text', array(
                     'required' => true,
                     'attr'   => array(
                         'class' => 'form-control',
-                        'style' => 'width: 250px',
                     )
                 ))
             ->add('producto','entity',array(
                     'class' => 'BusetaBodegaBundle:Producto',
                     'empty_value' => '---Seleccione un producto---',
-                    'required' => false,
+                    'required' => true,
                     'attr' => array(
                         'class' => 'form-control',
-                        'style' => 'width: 250px',
                     )
                 ))
             ->add('impuesto','entity',array(
                     'class' => 'BusetaTallerBundle:Impuesto',
                     'empty_value' => '---Seleccione un impuesto---',
-                    'required' => false,
+                    'required' => true,
                     'attr' => array(
                         'class' => 'form-control',
-                        'style' => 'width: 250px',
                     )
                 ))
         ;

@@ -19,80 +19,76 @@ class CompraType extends AbstractType
         $builder
             ->add('numero', 'text', array(
                     'required' => true,
+                    'label'  => 'Número',
                     'attr'   => array(
                         'class' => 'form-control',
-                        'style' => 'width: 250px',
                     )
                 ))
             ->add('tipo', 'text', array(
                     'required' => true,
                     'attr'   => array(
                         'class' => 'form-control',
-                        'style' => 'width: 250px',
                     )
                 ))
             ->add('descripcion', 'textarea', array(
                     'required' => false,
+                    'label'  => 'Descripción',
                     'attr'   => array(
                         'class' => 'form-control',
-                        'style' => 'width: 900px',
                     )
                 ))
             ->add('fecha_pedido','date',array(
                     'widget' => 'single_text',
-                    'format'  => 'dd/MM/yyyy',
+                    'label'  => 'Fecha de pedido',
                     'attr'   => array(
                         'class' => 'form-control',
-                        'style' => 'width: 250px',
                     )
                 ))
             ->add('forma_pago', 'text', array(
                     'required' => true,
+                    'label'  => 'Forma de pago',
                     'attr'   => array(
                         'class' => 'form-control',
-                        'style' => 'width: 250px',
                     )
                 ))
-            ->add('moneda', 'money', array(
+            ->add('moneda', 'text', array(
                     'required' => true,
                     'attr'   => array(
                         'class' => 'form-control',
-                        'style' => 'width: 250px',
                     )
                 ))
             ->add('condiciones_pago', 'text', array(
                     'required' => true,
+                    'label'  => 'Condiciones de pago',
                     'attr'   => array(
                         'class' => 'form-control',
-                        'style' => 'width: 250px',
                     )
                 ))
-            ->add('importe_libre_impuesto', 'money', array(
+            ->add('importe_libre_impuesto', 'text', array(
+                    'required' => true,
+                    'label'  => 'Importe libre de impuesto',
+                    'attr'   => array(
+                        'class' => 'form-control',
+                    )
+                ))
+            ->add('importe_con_impuesto', 'text', array(
                     'required' => true,
                     'attr'   => array(
                         'class' => 'form-control',
-                        'style' => 'width: 250px',
                     )
                 ))
-            ->add('importe_con_impuesto', 'money', array(
+            ->add('importe_general', 'text', array(
                     'required' => true,
+                    'label'  => 'Importe general',
                     'attr'   => array(
                         'class' => 'form-control',
-                        'style' => 'width: 250px',
-                    )
-                ))
-            ->add('importe_general', 'money', array(
-                    'required' => true,
-                    'attr'   => array(
-                        'class' => 'form-control',
-                        'style' => 'width: 250px',
                     )
                 ))
             ->add('estado', 'text', array(
                     'required' => true,
+                    'label'  => 'Estado',
                     'attr'   => array(
                         'class' => 'form-control',
-                        'style' => 'width: 250px',
                     )
                 ))
             ->add('tercero','entity',array(
@@ -105,9 +101,16 @@ class CompraType extends AbstractType
                     'required' => false,
                     'attr' => array(
                         'class' => 'form-control',
-                        'style' => 'width: 575px',
                     )
                 ))
+            ->add('lineas','collection',array(
+                'type' => new LineaType(),
+                'label'  => false,
+                'required' => false,
+                'by_reference' => false,
+                'allow_add' => true,
+                'allow_delete' => true,
+            ))
         ;
     }
     
