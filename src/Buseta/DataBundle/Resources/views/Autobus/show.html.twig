@@ -1,0 +1,86 @@
+{% extends "CoreBundle::layout.html.twig" %}
+
+{% block nombre_menu_superior %}
+
+{% endblock %}
+
+{% block titulo %}
+    Datos de Marca "{{ entity.descripcion }}"
+{% endblock %}
+
+{% block area_trabajo %}
+
+    <table class="table table-striped" style="font-size: 16px;">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Matricula</th>
+                <td>{{ entity.matricula }}</td>
+            </tr>
+            <tr>
+                <th>Numero_chasis</th>
+                <td>{{ entity.numerochasis }}</td>
+            </tr>
+            <tr>
+                <th>Numero_motor</th>
+                <td>{{ entity.numeromotor }}</td>
+            </tr>
+            <tr>
+                <th>Peso_tara</th>
+                <td>{{ entity.pesotara }}</td>
+            </tr>
+            <tr>
+                <th>Peso_bruto</th>
+                <td>{{ entity.pesobruto }}</td>
+            </tr>
+            <tr>
+                <th>Numero_plazas</th>
+                <td>{{ entity.numeroplazas }}</td>
+            </tr>
+            <tr>
+                <th>Numero_cilindros</th>
+                <td>{{ entity.numerocilindros }}</td>
+            </tr>
+            <tr>
+                <th>Cilindrada</th>
+                <td>{{ entity.cilindrada }}</td>
+            </tr>
+            <tr>
+                <th>Potencia</th>
+                <td>{{ entity.potencia }}</td>
+            </tr>
+            <tr>
+                <th>Valido_hasta</th>
+                <td>{{ entity.validohasta|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Fecha_rtv</th>
+                <td>{{ entity.fechartv|date('Y-m-d H:i:s') }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="btn-group">
+        <a class="btn btn-inverse" href="{{ path('autobus_edit', { 'id': entity.id }) }}"> Editar</a>
+    </div>
+
+    <div class="btn-group">
+        <a class="btn btn-inverse" href="{{ path('autobus') }}"> Listado</a>
+    </div>
+
+    <div class="btn-group" style="padding-top: 20px;">
+        <form action="{{ path('autobus_delete', { 'id': entity.id }) }}" method="post">
+            <button class="btn btn-inverse" type="submit">Eliminar</button>
+        </form>
+    </div>
+
+{% endblock %}
+
+
+{% block contenido %}
+
+
+{% endblock %}

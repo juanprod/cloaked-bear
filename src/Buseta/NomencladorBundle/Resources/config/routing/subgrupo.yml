@@ -1,0 +1,30 @@
+subgrupo:
+    pattern:  /
+    defaults: { _controller: "NomencladorBundle:Subgrupo:index" }
+
+subgrupo_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "NomencladorBundle:Subgrupo:show" }
+
+subgrupo_new:
+    pattern:  /new
+    defaults: { _controller: "NomencladorBundle:Subgrupo:new" }
+
+subgrupo_create:
+    pattern:  /create
+    defaults: { _controller: "NomencladorBundle:Subgrupo:create" }
+    requirements: { _method: post }
+
+subgrupo_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "NomencladorBundle:Subgrupo:edit" }
+
+subgrupo_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "NomencladorBundle:Subgrupo:update" }
+    requirements: { _method: post|put }
+
+subgrupo_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "NomencladorBundle:Subgrupo:delete" }
+    requirements: { _method: post|delete }

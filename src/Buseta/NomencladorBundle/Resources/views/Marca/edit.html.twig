@@ -1,0 +1,51 @@
+{% extends "CoreBundle::layout.html.twig" %}
+
+{% block nombre_menu_superior %}
+
+{% endblock %}
+
+{% block titulo %}
+    Creacion de Marcas
+{% endblock %}
+
+{% block area_trabajo %}
+
+    <form action="{{ path('marca_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+
+        <div style="display:none;">
+            {{ form_row(edit_form.descripcion) }}
+        </div>
+
+        <table border="0">
+            <tr>
+                <td>
+                    <label>Nombre de Marca:</label>
+                    <input type="text" value="{{ entity.descripcion }}" />
+                </td>
+                <td style="padding-bottom: 70px;">
+                    {{ form_row(edit_form.descripcion) }}
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <button type="submit" class="btn btn-inverse" >Modificar</button>
+                    <a class="btn btn-inverse" href="{{ path('marca') }}">Volver</a>
+                    <a class="btn btn-inverse" id="btn_eliminar" href="#">Eliminar</a>
+                </td>
+            </tr>
+
+        </table>
+
+        </tr>
+    </form>
+
+
+{% endblock %}
+
+
+{% block contenido %}
+
+
+{% endblock %}
+

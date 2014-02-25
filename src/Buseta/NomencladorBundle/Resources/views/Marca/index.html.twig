@@ -1,0 +1,48 @@
+{% extends "CoreBundle::layout.html.twig" %}
+
+{% block nombre_menu_superior %}
+
+{% endblock %}
+
+{% block titulo %}
+    Listado de Marcas
+{% endblock %}
+
+{% block area_trabajo %}
+
+    <div class="btn-group" style="padding-bottom: 10px;">
+        <a class="btn btn-inverse" href="{{ path('marca_new') }}"><i class="icon-plus-sign icon-white"></i> Adicionar nuevo</a>
+    </div>
+
+    <table class="records_list table table-striped table-bordered table-condensed table-hover ">
+        <thead>
+            <tr>
+                <th>Descripcion</th>
+                <th style="text-align: center;">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ entity.descripcion }}</td>
+                <td  style="width: 18% !important; text-align: center;">
+                    <div class="btn-group">
+                        <a class="btn btn-mini btn-inverse" href="{{ path('marca_show', { 'id': entity.id }) }}"><i class="icon-search icon-white"></i> Mostrar</a>
+                    </div>
+
+                    <div class="btn-group">
+                        <a class="btn btn-mini btn-inverse" href="{{ path('marca_edit', { 'id': entity.id }) }}"><i class="icon-edit icon-white"></i> Editar</a>
+                    </div>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
+
+
+{% block contenido %}
+
+
+{% endblock %}

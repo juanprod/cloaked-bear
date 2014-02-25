@@ -1,0 +1,6 @@
+data_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: DataBundle:Default:index }
+DataBundle_autobus:
+        resource: "@DataBundle/Resources/config/routing/autobus.yml"
+        prefix:   /autobus    

@@ -1,0 +1,114 @@
+{% extends "CoreBundle::layout.html.twig" %}
+
+{% block nombre_menu_superior %}
+
+{% endblock %}
+
+{% block titulo %}
+    Creacion de Marcas
+{% endblock %}
+
+{% block area_trabajo %}
+
+    <form action="{{ path('autobus_create') }}" method="post" {{ form_enctype(form) }}>
+        {{ form_error(form) }}
+
+        <label for="name">Matricula:</label>
+        <input required="true" type="text" id="buseta_nomencladorbundle_autobus_matricula" name="buseta_nomencladorbundle_autobus[matricula]"/>
+        <br>
+
+        <label for="name">Numero de Chasis:</label>
+        <input required="true" type="text" id="buseta_nomencladorbundle_autobus_numero_chasis" name="buseta_nomencladorbundle_autobus[numero_chasis]"/>
+        <br>
+
+        <label for="name">Numero de Motor:</label>
+        <input required="true" type="text" id="buseta_nomencladorbundle_autobus_numero_motor" name="buseta_nomencladorbundle_autobus[numero_motor]"/>
+        <br>
+
+        <label for="name">Peso Tara:</label>
+        <input required="true" type="text" id="buseta_nomencladorbundle_autobus_peso_tara" name="buseta_nomencladorbundle_autobus[peso_tara]"/>
+        <br>
+
+        <label for="name">Peso Bruto:</label>
+        <input required="true" type="text" id="buseta_nomencladorbundle_autobus_peso_bruto" name="buseta_nomencladorbundle_autobus[peso_bruto]"/>
+        <br>
+
+        <label for="name">Numero de Plazas:</label>
+        <input required="true" type="text" id="buseta_nomencladorbundle_autobus_numero_plazas" name="buseta_nomencladorbundle_autobus[numero_plazas]"/>
+        <br>
+
+        <label for="name">Numero de Cilindros:</label>
+        <input required="true" type="text" id="buseta_nomencladorbundle_autobus_numero_cilindros" name="buseta_nomencladorbundle_autobus[numero_cilindros]"/>
+        <br>
+
+        <label for="name">Cilindrada:</label>
+        <input required="true" type="text" id="buseta_nomencladorbundle_autobus_numero_cilindrada" name="buseta_nomencladorbundle_autobus[cilindrada]"/>
+        <br>
+
+        <label for="name">Potencia:</label>
+        <input required="true" type="text" id="buseta_nomencladorbundle_autobus_numero_potencia" name="buseta_nomencladorbundle_autobus[potencia]"/>
+        <br>
+
+        <label for="name">Valido Hasta:</label>
+        <input required="true" type="text" id="buseta_nomencladorbundle_autobus_numero_valido_hasta" name="buseta_nomencladorbundle_autobus[valido_hasta]"/>
+        <br>
+
+        <label for="name">Fecha RTV:</label>
+        <input required="true" type="text" id="buseta_nomencladorbundle_autobus_numero_fecha_rtv" name="buseta_nomencladorbundle_autobus[fecha_rtv]"/>
+        <br>
+
+        <label for="name">Marca:</label>
+        <select>
+            {% for entity in marcas %}
+                <option id="{{ entity.id }}" value="{{ entity.id }}">{{ entity.descripcion }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="name">Modelo:</label>
+        <select>
+            {% for entity in modelos %}
+                <option id="{{ entity.id }}" value="{{ entity.id }}">{{ entity.descripcion }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="name">Estilo:</label>
+        <select>
+            {% for entity in estilos %}
+                <option id="{{ entity.id }}" value="{{ entity.id }}">{{ entity.descripcion }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="name">Grupo:</label>
+        <input required="true" type="text" id="buseta_nomencladorbundle_autobus_numero_grupo" name="buseta_nomencladorbundle_autobus[grupo]"/>
+        <br>
+
+        <label for="name">Color:</label>
+        <input required="true" type="text" id="buseta_nomencladorbundle_autobus_numero_color" name="buseta_nomencladorbundle_autobus[color]"/>
+        <br>
+
+        <label for="name">Marca de Motor:</label>
+        <input required="true" type="text" id="buseta_nomencladorbundle_autobus_numero_marca_motor" name="buseta_nomencladorbundle_autobus[marca_motor]"/>
+        <br>
+
+        <label for="name">Combustible:</label>
+        <input required="true" type="text" id="buseta_nomencladorbundle_autobus_numero_combustible" name="buseta_nomencladorbundle_autobus[combustible]"/>
+        <br>
+
+        <input class="btn btn-inverse" type="submit" value="Aceptar">
+        <div class="btn-group">
+            <a class="btn btn-inverse" href="{{ path('autobus') }}"> Cancelar</a>
+        </div>
+
+        {{ form_rest() }}
+
+    </form>
+
+
+{% endblock %}
+
+
+{% block contenido %}
+
+
+{% endblock %}
+

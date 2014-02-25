@@ -1,0 +1,7 @@
+parameters:
+#    nomenclador.example.class: Buseta\NomencladorBundle\Example
+
+services:
+#    nomenclador.example:
+#        class: %nomenclador.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

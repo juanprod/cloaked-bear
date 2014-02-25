@@ -1,0 +1,30 @@
+autobus:
+    pattern:  /
+    defaults: { _controller: "DataBundle:Autobus:index" }
+
+autobus_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "DataBundle:Autobus:show" }
+
+autobus_new:
+    pattern:  /new
+    defaults: { _controller: "DataBundle:Autobus:new" }
+
+autobus_create:
+    pattern:  /create
+    defaults: { _controller: "DataBundle:Autobus:create" }
+    requirements: { _method: post }
+
+autobus_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "DataBundle:Autobus:edit" }
+
+autobus_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "DataBundle:Autobus:update" }
+    requirements: { _method: post|put }
+
+autobus_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "DataBundle:Autobus:delete" }
+    requirements: { _method: post|delete }

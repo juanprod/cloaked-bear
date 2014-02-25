@@ -1,0 +1,52 @@
+generator: admingenerator.generator.doctrine
+params:
+    model: Buseta\NomencladorBundle\Entity\Color
+    namespace_prefix: Buseta
+    concurrency_lock: ~
+    bundle_name: NomencladorBundle
+    pk_requirement: ~
+    fields: ~
+    object_actions:
+        delete: ~
+    batch_actions:
+        delete: ~
+builders:
+    list:
+        params:
+            title: List for NomencladorBundle
+            display: [valor, codigo, descripcion]
+            actions:
+                new: ~
+            object_actions:
+                edit: ~
+                delete: ~
+    filters:
+        params:
+            display: [valor, codigo, descripcion]
+    new:
+        params:
+            title: Crear nuevo color
+            display: [valor, codigo, descripcion]
+            actions:
+                save: ~
+                list: ~
+    edit:
+        params:
+            title: "You're editing the object \"%object%\"|{ %object%: Color.valor }|"
+            display: [valor, codigo, descripcion]
+            actions:
+                save: ~
+                list: ~
+    show:
+        params:
+            title: "You're viewing the object \"%object%\"|{ %object%: Color.valor }|"
+            display: [valor, codigo, descripcion]
+            actions:
+                list: ~
+                new: ~
+    actions:
+        params:
+            object_actions:
+                delete: ~
+            batch_actions:
+                delete: ~

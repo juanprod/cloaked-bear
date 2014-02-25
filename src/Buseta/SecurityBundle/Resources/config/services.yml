@@ -1,0 +1,7 @@
+parameters:
+#    buseta_security.example.class: Buseta\SecurityBundle\Example
+
+services:
+#    buseta_security.example:
+#        class: %buseta_security.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

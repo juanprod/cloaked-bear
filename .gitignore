@@ -1,0 +1,7 @@
+.idea
+composer.phar
+vendor/
+nbproject/
+web/bundles/
+app/cache/
+app/logs/

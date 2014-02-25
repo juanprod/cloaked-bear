@@ -1,0 +1,32 @@
+{% extends "CoreBundle::layout.html.twig" %}
+
+{% block nombre_menu_superior %}
+
+{% endblock %}
+
+{% block titulo %}
+    Creacion de Marcas
+{% endblock %}
+
+{% block area_trabajo %}
+
+    <form action="{{ path('marca_create') }}" method="post" {{ form_enctype(form) }}>
+        {# {{ form_widget(form) }} #}
+
+        <label for="name">Nombre de Marca:</label>
+        <input required="true" type="text" id="buseta_nomencladorbundle_marca_descripcion" name="buseta_nomencladorbundle_marca[descripcion]" onpaste="return false" />
+        <br>
+
+        <input class="btn btn-inverse" type="submit" value="Aceptar">
+        <div class="btn-group">
+            <a class="btn btn-inverse" href="{{ path('marca') }}"> Cancelar</a>
+        </div>
+    </form>
+
+{% endblock %}
+
+
+{% block contenido %}
+
+
+{% endblock %}

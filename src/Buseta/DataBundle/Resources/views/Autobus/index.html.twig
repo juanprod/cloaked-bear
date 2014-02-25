@@ -1,0 +1,64 @@
+{% extends "CoreBundle::layout.html.twig" %}
+
+{% block nombre_menu_superior %}
+
+{% endblock %}
+
+{% block titulo %}
+    Listado de Autobuses
+{% endblock %}
+
+{% block area_trabajo %}
+
+    <div class="btn-group" style="padding-bottom: 10px;">
+        <a class="btn btn-inverse" href="{{ path('autobus_new') }}"><i class="icon-plus-sign icon-white"></i> Adicionar nuevo</a>
+    </div>
+
+    <table class="records_list table table-striped table-bordered table-condensed table-hover ">
+        <thead>
+            <tr>
+                <th>Matricula</th>
+                <th>No.Chasis</th>
+                <th>No.Motor</th>
+                <th>Peso Tara</th>
+                <th>Peso Bruto</th>
+                <th>No.Plazas</th>
+                <th>No.Cilindros</th>
+                <th>Cilindrada</th>
+                <th>Potencia</th>
+                <th>Valido Hasta</th>
+                <th>Fecha RTV</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ entity.matricula }}</td>
+                <td>{{ entity.numerochasis }}</td>
+                <td>{{ entity.numeromotor }}</td>
+                <td>{{ entity.pesotara }}</td>
+                <td>{{ entity.pesobruto }}</td>
+                <td>{{ entity.numeroplazas }}</td>
+                <td>{{ entity.numerocilindros }}</td>
+                <td>{{ entity.cilindrada }}</td>
+                <td>{{ entity.potencia }}</td>
+                <td>{% if entity.validohasta %}{{ entity.validohasta|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.fechartv %}{{ entity.fechartv|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                <td  style="width: 18% !important; text-align: center;">
+                    <div class="btn-group">
+                        <a class="btn btn-mini btn-inverse" href="{{ path('autobus_show', { 'id': entity.id }) }}"><i class="icon-search icon-white"></i> Mostrar</a>
+                    </div>
+
+                    <div class="btn-group">
+                        <a class="btn btn-mini btn-inverse" href="{{ path('autobus_edit', { 'id': entity.id }) }}"><i class="icon-edit icon-white"></i> Editar</a>
+                    </div>
+                </td>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {% endblock %}

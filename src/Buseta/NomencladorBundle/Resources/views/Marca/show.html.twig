@@ -1,0 +1,42 @@
+{% extends "CoreBundle::layout.html.twig" %}
+
+{% block nombre_menu_superior %}
+
+{% endblock %}
+
+{% block titulo %}
+    Datos de Marca "{{ entity.descripcion }}"
+{% endblock %}
+
+{% block area_trabajo %}
+
+    <table class="table table-striped" style="font-size: 16px;">
+        <tbody>
+            <tr>
+                <th style="width: 20%">Nombre de Marca</th>
+                <td>{{ entity.descripcion }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="btn-group">
+        <a class="btn btn-inverse" href="{{ path('marca_edit', { 'id': entity.id }) }}"> Editar</a>
+    </div>
+
+    <div class="btn-group">
+        <a class="btn btn-inverse" href="{{ path('marca') }}"> Listado</a>
+    </div>
+
+    <div class="btn-group" style="padding-top: 20px;">
+        <form action="{{ path('marca_delete', { 'id': entity.id }) }}" method="post">
+            <button class="btn btn-inverse" type="submit">Eliminar</button>
+        </form>
+    </div>
+
+{% endblock %}
+
+
+{% block contenido %}
+
+
+{% endblock %}
