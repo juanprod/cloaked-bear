@@ -28,11 +28,6 @@ class Estilo
      */
     private $descripcion;
 
-    /**
-     * @ORM\OneToMany(targetEntity="Buseta\DataBundle\Entity\Autobus", mappedBy="estilo", cascade={"persist"})
-     */
-    private $autobuses;
-
     function __construct()
     {
         $this->autobuses = new \Doctrine\Common\Collections\ArrayCollection();
@@ -71,38 +66,6 @@ class Estilo
         return $this->descripcion;
     }
 
-    /**
-     * Add autobuses
-     *
-     * @param \Buseta\DataBundle\Entity\Autobus $autobuses
-     * @return Estilo
-     */
-    public function addAutobuses(\Buseta\DataBundle\Entity\Autobus $autobuses)
-    {
-        $this->autobuses[] = $autobuses;
-    
-        return $this;
-    }
-
-    /**
-     * Remove autobuses
-     *
-     * @param \Buseta\DataBundle\Entity\Autobus $autobuses
-     */
-    public function removeAutobuses(\Buseta\DataBundle\Entity\Autobus $autobuses)
-    {
-        $this->autobuses->removeElement($autobuses);
-    }
-
-    /**
-     * Get autobuses
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getAutobuses()
-    {
-        return $this->autobuses;
-    }
 
     public function __toString()
     {
@@ -120,15 +83,5 @@ class Estilo
         $this->autobuses[] = $autobuses;
     
         return $this;
-    }
-
-    /**
-     * Remove autobuses
-     *
-     * @param \Buseta\DataBundle\Entity\Autobus $autobuses
-     */
-    public function removeAutobuse(\Buseta\DataBundle\Entity\Autobus $autobuses)
-    {
-        $this->autobuses->removeElement($autobuses);
     }
 }

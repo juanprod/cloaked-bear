@@ -1,3 +1,8 @@
+BusetaNomencladorBundle_admin_buseta_nomenclador_bundle_combustible:
+    resource: "@BusetaNomencladorBundle/Controller/Combustible/"
+    type:     admingenerator
+    prefix:   /admin/nomenclador/combustible
+
 BusetaNomencladorBundle_admin_buseta_nomenclador_bundle_modelo:
     resource: "@BusetaNomencladorBundle/Controller/Modelo/"
     type:     admingenerator

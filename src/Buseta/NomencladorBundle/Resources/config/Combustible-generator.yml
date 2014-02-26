@@ -1,6 +1,6 @@
 generator: admingenerator.generator.doctrine
 params:
-    model: Buseta\NomencladorBundle\Entity\Color
+    model: Buseta\NomencladorBundle\Entity\Combustible
     namespace_prefix: Buseta
     concurrency_lock: ~
     bundle_name: NomencladorBundle
@@ -13,7 +13,7 @@ params:
 builders:
     list:
         params:
-            title: Listado de Colores
+            title: Listado de Combustiblees
             display: [valor, codigo, descripcion]
             actions:
                 new: ~
@@ -26,21 +26,21 @@ builders:
             display: [valor, codigo, descripcion]
     new:
         params:
-            title: Adicionar nuevo color
+            title: Adicionar nuevo combustible
             display: [valor, codigo, descripcion]
             actions:
                 save: ~
                 list: ~
     edit:
         params:
-            title: "Usted está modificando el color: \"%object%\"|{ %object%: Color.valor }|"
+            title: "Usted está modificando el combustible: \"%object%\"|{ %object%: Combustible.valor }|"
             display: [valor, codigo, descripcion]
             actions:
                 save: ~
                 list: ~
     show:
         params:
-            title: "Usted está mostrando los datos del color: \"%object%\"|{ %object%: Color.valor }|"
+            title: "Usted está mostrando los datos del combustible: \"%object%\"|{ %object%: Combustible.valor }|"
             display: [valor, codigo, descripcion]
             actions:
                 list: ~
