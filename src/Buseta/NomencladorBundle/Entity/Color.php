@@ -60,4 +60,5 @@ class Color extends BaseNomenclador
     {
         return $this->descripcion;
     }
+
 }

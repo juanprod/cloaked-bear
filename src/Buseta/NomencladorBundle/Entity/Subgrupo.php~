@@ -1,0 +1,92 @@
+<?php
+
+namespace Buseta\NomencladorBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Subgrupo
+ *
+ * @ORM\Table(name="n_subgrupo")
+ * @ORM\Entity
+ */
+class Subgrupo extends BaseNomenclador
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="descripcion", type="string", length=255)
+     */
+    private $descripcion;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Buseta\NomencladorBundle\Entity\Grupo", mappedBy="subgrupos")
+     */
+    private $grupos;
+
+
+    function __construct()
+    {
+        $this->grupos = new \Doctrine\Common\Collections\ArrayCollection();        
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+
+    /**
+     * Add grupos
+     *
+     * @param \Buseta\NomencladorBundle\Entity\Grupo $grupos
+     * @return Subgrupo
+     */
+    public function addGrupo(\Buseta\NomencladorBundle\Entity\Grupo $grupos)
+    {
+        $this->grupos[] = $grupos;
+    
+        return $this;
+    }
+
+    /**
+     * Remove grupos
+     *
+     * @param \Buseta\NomencladorBundle\Entity\Grupo $grupos
+     */
+    public function removeGrupo(\Buseta\NomencladorBundle\Entity\Grupo $grupos)
+    {
+        $this->grupos->removeElement($grupos);
+    }
+
+    /**
+     * Get grupos
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getGrupos()
+    {
+        return $this->grupos;
+    }
+
+    function __toString()
+    {
+        return $this->descripcion;
+    }
+    
+   
+}

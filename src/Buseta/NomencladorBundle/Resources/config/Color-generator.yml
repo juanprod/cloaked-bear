@@ -5,7 +5,13 @@ params:
     concurrency_lock: ~
     bundle_name: NomencladorBundle
     pk_requirement: ~
-    fields: ~
+    fields:
+      valor:
+            label: Valor
+      codigo:
+            label: Código
+      descripcion:
+            label: Descripción
     object_actions:
         delete: ~
     batch_actions:

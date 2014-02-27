@@ -22,6 +22,13 @@ class Modelo extends BaseNomenclador
     protected $id;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="descripcion", type="string", length=255)
+     */
+    private $descripcion;
+
+    /**
      * @var \Buseta\NomencladorBundle\Entity\Marca
      *
      * @ORM\ManyToOne(targetEntity="Buseta\NomencladorBundle\Entity\Marca", inversedBy="modelos")
@@ -60,4 +67,5 @@ class Modelo extends BaseNomenclador
     {
         return $this->marca;
     }
+
 }

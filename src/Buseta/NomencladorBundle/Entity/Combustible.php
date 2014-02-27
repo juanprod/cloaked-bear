@@ -60,4 +60,5 @@ class Combustible extends BaseNomenclador
     {
         return $this->descripcion;
     }
+
 }

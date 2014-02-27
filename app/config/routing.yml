@@ -1,3 +1,13 @@
+BusetaNomencladorBundle_admin_buseta_nomenclador_bundle_marcamotor:
+    resource: "@BusetaNomencladorBundle/Controller/Marcamotor/"
+    type:     admingenerator
+    prefix:   /admin/nomenclador/marcamotor
+
+BusetaNomencladorBundle_admin_buseta_nomenclador_bundle_estilo:
+    resource: "@BusetaNomencladorBundle/Controller/Estilo/"
+    type:     admingenerator
+    prefix:   /admin/nomenclador/estilo
+
 BusetaNomencladorBundle_admin_buseta_nomenclador_bundle_combustible:
     resource: "@BusetaNomencladorBundle/Controller/Combustible/"
     type:     admingenerator

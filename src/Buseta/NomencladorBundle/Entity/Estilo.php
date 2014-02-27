@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="n_estilo")
  * @ORM\Entity
  */
-class Estilo
+class Estilo extends BaseNomenclador
 {
     /**
      * @var integer
@@ -19,24 +19,19 @@ class Estilo
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="descripcion", type="string", length=32)
+     * @ORM\Column(name="descripcion", type="string", length=255)
      */
     private $descripcion;
-
-    function __construct()
-    {
-        $this->autobuses = new \Doctrine\Common\Collections\ArrayCollection();
-    }
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -52,36 +47,18 @@ class Estilo
     public function setDescripcion($descripcion)
     {
         $this->descripcion = $descripcion;
-    
+
         return $this;
     }
 
     /**
      * Get descripcion
      *
-     * @return string 
+     * @return string
      */
     public function getDescripcion()
     {
         return $this->descripcion;
     }
 
-
-    public function __toString()
-    {
-        return $this->descripcion;
-    }
-
-    /**
-     * Add autobuses
-     *
-     * @param \Buseta\DataBundle\Entity\Autobus $autobuses
-     * @return Estilo
-     */
-    public function addAutobuse(\Buseta\DataBundle\Entity\Autobus $autobuses)
-    {
-        $this->autobuses[] = $autobuses;
-    
-        return $this;
-    }
 }

@@ -56,13 +56,6 @@ class Autobus
      * @ORM\ManyToOne(targetEntity="Buseta\NomencladorBundle\Entity\Estilo", inversedBy="autobuses")
      */
     private $estilo;
-    
-    /**
-     *
-     * @ORM\ManyToMany(targetEntity="Buseta\NomencladorBundle\Entity\Grupo", inversedBy="autobuses")
-     * @ORM\JoinTable(name="d_grupos_autobuses")
-     */
-    private $grupos;
 
     /**
      * @var integer
@@ -178,41 +171,6 @@ class Autobus
     {
         return $this->marca;
     }
-    
-    /**
-     * Add grupos
-     *
-     * @param \Buseta\NomencladorBundle\Entity\Grupo $grupos
-     * @return Autobus
-     */
-    public function addGrupo(\Buseta\DataBundle\Entity\Grupo $grupos)
-    {
-        $this->grupos[] = $grupos;
-    
-        return $this;
-    }
-
-    /**
-     * Remove grupos
-     *
-     * @param \Buseta\NomencladorBundle\Entity\Grupo $grupos
-     */
-    public function removeGrupo(\Buseta\NomencladorBundle\Entity\Grupo $grupos)
-    {
-        $this->grupos->removeElement($grupos);
-    }
-
-    /**
-     * Get grupos
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getGrupos()
-    {
-        return $this->grupos;
-    }
-
-    
 
     /**
      * Set matricula

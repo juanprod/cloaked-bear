@@ -5,7 +5,11 @@ params:
     concurrency_lock: ~
     bundle_name: NomencladorBundle
     pk_requirement: ~
-    fields: ~
+    fields:
+      valor:
+            label: Valor
+      codigo:
+            label: Código
     object_actions:
         delete: ~
     batch_actions:
@@ -13,33 +17,34 @@ params:
 builders:
     list:
         params:
-            title: List for NomencladorBundle
+            title: Listado de Marcas
             display: [valor, codigo]
             actions:
                 new: ~
             object_actions:
+                show: ~
                 edit: ~
                 delete: ~
     filters:
         params:
-            display: ~
+            display: [valor, codigo]
     new:
         params:
-            title: New object for NomencladorBundle
+            title: Adicionar nuevo marca
             display: [valor, codigo]
             actions:
                 save: ~
                 list: ~
     edit:
         params:
-            title: "You're editing the object \"%object%\"|{ %object%: Marca.valor }|"
+            title: "Usted está modificando el marca: \"%object%\"|{ %object%: Marca.valor }|"
             display: [valor, codigo]
             actions:
                 save: ~
                 list: ~
     show:
         params:
-            title: "You're viewing the object \"%object%\"|{ %object%: Marca.valor }|"
+            title: "Usted está mostrando los datos del marca: \"%object%\"|{ %object%: Marca.valor }|"
             display: [valor, codigo]
             actions:
                 list: ~

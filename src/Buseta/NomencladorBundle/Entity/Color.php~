@@ -19,7 +19,7 @@ class Color extends BaseNomenclador
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
@@ -28,9 +28,36 @@ class Color extends BaseNomenclador
      */
     private $descripcion;
 
-
-    public function __toString()
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
     {
-        return $this->valor;
+        return $this->id;
+    }
+
+    /**
+     * Set descripcion
+     *
+     * @param string $descripcion
+     * @return Color
+     */
+    public function setDescripcion($descripcion)
+    {
+        $this->descripcion = $descripcion;
+    
+        return $this;
+    }
+
+    /**
+     * Get descripcion
+     *
+     * @return string 
+     */
+    public function getDescripcion()
+    {
+        return $this->descripcion;
     }
 }

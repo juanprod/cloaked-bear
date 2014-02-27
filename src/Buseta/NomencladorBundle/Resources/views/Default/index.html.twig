@@ -1,11 +1,120 @@
-<div class="row-fluid">
-    <div class="span3">
-        <div class="well well-small sidebar-nav">
-            {{ knp_menu_render('BusetaNomencladorBundle:AdminMenu:createDashboardMenu') }}
-        </div><!--/.well -->
-    </div><!--/span-->
-    <div id="dashboard-content" class="span9">
-        {% block content %}
-        {% endblock %}
-    </div><!--/span-->
-</div><!--/row-->
+{% extends "CoreBundle::layout.html.twig" %}
+
+{% block title %}Página de Administración{% endblock %}
+
+{% block header %} {% endblock %}
+
+ {% block titulo_encabezado %}
+    {#-- {{ knp_menu_render('BusetaNomencladorBundle:AdminMenu:createDashboardMenu') }} --#}
+    Gestión de Nomencladores
+ {% endblock %}
+
+{% block area_trabajo %}
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    Nomenclador Marca de Autobus
+                </div>
+                <div class="panel-body">
+                    <div style="float: left; margin-top: -15px; width: 100px; height: 100px;" >
+                        <a href="#"> <img src="{{ asset('images/todo.png') }}" width="110%" height="110%"  alt="Banner" /> </a>
+                    </div>
+
+                    <div style="float: left; padding: 8px 0px 0px 30px; width: 190px; height: 100px;">
+                        <p style="text-align: center"> Gestiona las marcas de los autobuses. </p>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                </div>
+            </div>
+        </div>
+        <!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    Nomenclador Marca de Motor
+                </div>
+                <div class="panel-body">
+                    <div style="float: left; margin-top: -4px; width: 100px; height: 100px;" >
+                        <a href="#"> <img src="{{ asset('images/setting.png') }}" width="110%" height="110%"  alt="Banner" /> </a>
+                    </div>
+
+                    <div style="float: left; padding: 8px 2px 0px 30px; width: 190px; height: 100px;">
+                        <p style="text-align: center"> Gestiona las marcas de los motores de los autobuses. </p>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                </div>
+            </div>
+        </div>
+        <!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    Nomenclador Combustible
+                </div>
+                <div class="panel-body">
+                    <div style="float: left; margin-top: -4px; width: 100px; height: 100px;" >
+                        <a href="#"> <img src="{{ asset('images/clock.png') }}" width="110%" height="110%" alt="Banner" /> </a>
+                    </div>
+
+                    <div style="float: left; padding: 8px 2px 0px 30px; width: 190px; height: 100px;">
+                        <p style="text-align: center"> Gestiona los tipos de combustibles empleados por los autobuses. </p>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                </div>
+            </div>
+        </div>
+        <!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    Nomenclador Modelo
+                </div>
+                <div class="panel-body">
+                    <div style="float: left; margin-top: -4px; width: 100px; height: 100px;" >
+                        <a href="#"> <img src="{{ asset('images/bookmark.png') }}" width="110%" height="110%" alt="Banner" /> </a>
+                    </div>
+
+                    <div style="float: left; padding: 8px 0px 0px 30px; width: 190px; height: 100px;">
+                        <p style="text-align: center"> Gestiona los modelos de los autobuses. </p>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                </div>
+            </div>
+        </div>
+        <!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    Nomenclador Estilo
+                </div>
+                <div class="panel-body">
+                    <div style="float: left; margin-top: -4px; width: 100px; height: 100px;" >
+                        <a href="#"> <img src="{{ asset('images/edit-notes.png') }}" width="110%" height="110%" alt="Banner" /> </a>
+                    </div>
+
+                    <div style="float: left; padding: 8px 0px 0px 30px; width: 190px; height: 100px;">
+                        <p style="text-align: center"> Gestiona los estilos de los autobuses. </p>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                </div>
+            </div>
+        </div>
+        <!-- /.col-lg-4 -->
+    </div>
+    <!-- /.row -->
+
+
+
+{% endblock %}
+
+
+{% block contenido %}
+
+
+{% endblock %}
