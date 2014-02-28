@@ -298,8 +298,10 @@ table.dataTable thead .sorting:after {
 .show-grid [class^="col-"] {
     padding-top: 10px;
     padding-bottom: 10px;
+    /*
     border: 1px solid #ddd;
     background-color: #eee !important;
+    */
 }
 
 .show-grid {

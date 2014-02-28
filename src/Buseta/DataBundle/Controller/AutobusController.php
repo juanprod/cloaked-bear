@@ -5,8 +5,8 @@ namespace Buseta\DataBundle\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-use Buseta\DataBundle\Entity\Autobus;
-use Buseta\DataBundle\Form\AutobusType;
+use Buseta\DataBundle\Form\Model\Autobus;
+use Buseta\DataBundle\Form\Type\AutobusType;
 
 /**
  * Autobus controller.
@@ -39,7 +39,49 @@ class AutobusController extends Controller
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
+        $em = $this->getDoctrine()->getManager();
+
+        $autobus = $request->request->get('buseta_databundle_autobus');
+
+        $em = $this->getDoctrine()->getManager();
+        $entity->setMatricula($autobus['matricula']);
+        $entity->setNumeroChasis($autobus['numero_chasis']);
+        $entity->setNumeroMotor($autobus['numero_motor']);
+        $entity->setPesoTara($autobus['peso_tara']);
+        $entity->setPesoBruto($autobus['peso_bruto']);
+        $entity->setNumeroPlazas($autobus['numero_plazas']);
+        $entity->setNumeroCilindros($autobus['numero_cilindros']);
+        $entity->setCilindrada($autobus['cilindrada']);
+        $entity->setPotencia($autobus['potencia']);
+        $entity->setFechaRtv(date_create_from_format('d/m/Y',$autobus['fecha_rtv']));
+        $entity->setValidoHasta(date_create_from_format('d/m/Y',$autobus['valido_hasta']));
+
+        $modelo = $em->getRepository('BusetaNomencladorBundle:Modelo')->find($autobus['modelo']);
+        $entity->setModelo($modelo);
+
+        $marca = $em->getRepository('BusetaNomencladorBundle:Marca')->find($autobus['marca']);
+        $entity->setModelo($marca);
+
+        $estilo = $em->getRepository('BusetaNomencladorBundle:Estilo')->find($autobus['estilo']);
+        $entity->setModelo($estilo);
+
+        $color = $em->getRepository('BusetaNomencladorBundle:Color')->find($autobus['color']);
+        $entity->setModelo($color);
+
+        $marcamotor = $em->getRepository('BusetaNomencladorBundle:MarcaMotor')->find($autobus['marca_motor']);
+        $entity->setModelo($marcamotor);
+
+        $combustible = $em->getRepository('BusetaNomencladorBundle:Combustible')->find($autobus['combustible']);
+        $entity->setModelo($combustible);
+
+        $em->persist($entity);
+        $em->flush();
+
+        return $this->redirect($this->generateUrl('autobus_show', array('id' => $entity->getId())));
+
         if ($form->isValid()) {
+
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
@@ -83,15 +125,17 @@ class AutobusController extends Controller
 
         $em = $this->getDoctrine()->getManager();
 
-        $marcas = $em->getRepository('NomencladorBundle:Marca')->findAll();
-        $modelos = $em->getRepository('NomencladorBundle:Modelo')->findAll();
-        $estilos = $em->getRepository('NomencladorBundle:Estilo')->findAll();
+        $marcas = $em->getRepository('BusetaNomencladorBundle:Marca')->findAll();
+        $modelos = $em->getRepository('BusetaNomencladorBundle:Modelo')->findAll();
+        $estilos = $em->getRepository('BusetaNomencladorBundle:Estilo')->findAll();
+        $colores = $em->getRepository('BusetaNomencladorBundle:Color')->findAll();
 
         return $this->render('DataBundle:Autobus:new.html.twig', array(
             'entity' => $entity,
             'marcas' => $marcas,
             'modelos' => $modelos,
             'estilos' => $estilos,
+            'colores' => $colores,
             'form'   => $form->createView(),
         ));
     }

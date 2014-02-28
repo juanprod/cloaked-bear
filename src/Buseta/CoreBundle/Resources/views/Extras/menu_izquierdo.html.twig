@@ -13,16 +13,28 @@
                 <!-- /input-group -->
             </li>
             <li>
-                <a href="#"><i class="fa fa-dashboard fa-fw"></i> Página Principal</a>
+                <a href="{{ path('core_homepage') }}"><i class="fa fa-dashboard fa-fw"></i> Página Principal</a>
             </li>
             <li>
                 <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Nomencladores<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="#">Color</a>
+                        <a href="{{ path('Buseta_NomencladorBundle_Color_list') }}">Color</a>
                     </li>
                     <li>
-                        <a href="#">Marca de Motor</a>
+                        <a href="{{ path('Buseta_NomencladorBundle_Combustible_list') }}">Combustible</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('Buseta_NomencladorBundle_Estilo_list') }}">Estilo</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('Buseta_NomencladorBundle_Marca_list') }}">Marca de Autobus</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('Buseta_NomencladorBundle_Marcamotor_list') }}">Marca de Motor</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('Buseta_NomencladorBundle_Modelo_list') }}">Modelo</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->
@@ -32,10 +44,10 @@
                 <a href="#"><i class="fa fa-wrench fa-fw"></i> Gestión de Autobuses<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="panels-wells.html">Listar Autobuses Existentes</a>
+                        <a href="{{ path('autobus') }}">Listar Autobuses Existentes</a>
                     </li>
                     <li>
-                        <a href="buttons.html">Adicionar Nuevo Autobus</a>
+                        <a href="{{ path('autobus_new') }}">Adicionar Nuevo Autobus</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->

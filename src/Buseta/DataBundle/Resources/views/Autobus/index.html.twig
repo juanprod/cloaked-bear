@@ -8,26 +8,30 @@
     Listado de Autobuses
 {% endblock %}
 
+{% block titulo_encabezado %}
+    Listados de Autobuses
+{% endblock %}
+
 {% block area_trabajo %}
 
     <div class="btn-group" style="padding-bottom: 10px;">
-        <a class="btn btn-inverse" href="{{ path('autobus_new') }}"><i class="icon-plus-sign icon-white"></i> Adicionar nuevo</a>
+        <a class="btn btn-primary" href="{{ path('autobus_new') }}"><i class="icon-plus-sign icon-white"></i>Adicionar nuevo</a>
     </div>
 
-    <table class="records_list table table-striped table-bordered table-condensed table-hover ">
+    <table class="table table-striped table-bordered table-hover">
         <thead>
             <tr>
                 <th>Matricula</th>
                 <th>No.Chasis</th>
                 <th>No.Motor</th>
-                <th>Peso Tara</th>
-                <th>Peso Bruto</th>
+                <th style="text-align: center">Peso Tara</th>
+                <th style="text-align: center">Peso Bruto</th>
                 <th>No.Plazas</th>
                 <th>No.Cilindros</th>
                 <th>Cilindrada</th>
                 <th>Potencia</th>
-                <th>Valido Hasta</th>
-                <th>Fecha RTV</th>
+                <th style="text-align: center">Valido Hasta</th>
+                <th style="text-align: center">Fecha RTV</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -57,7 +61,12 @@
                 </td>
                 </td>
             </tr>
+            {% else %}
+                <tr>
+                    <td colspan="12">No se encontraron registros de autobuses en el sistema.</td>
+                </tr>
         {% endfor %}
+
         </tbody>
     </table>
 
