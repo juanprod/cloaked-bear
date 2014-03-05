@@ -1,0 +1,55 @@
+{# default Sliding pagination control implementation #}
+
+{% if pageCount > 1 %}
+<div class="dataTables_paginate paging_simple_numbers">
+    <ul class="pagination">
+    {% if first is defined and current != first %}
+        <li class="first paginate_button previous btn-xs"><a href="{{ path(route, query | merge({(pageParameterName): first})) }}">&laquo;</a></li>
+    {% else %}
+        <li class="first disabled paginate_button previous btn-xs"><a>&laquo;</a></li>
+    {% endif %}
+
+    {# No definir anterior
+    {% if previous is defined %}
+        <li class="previous"><a href="{{ path(route, query|merge({(pageParameterName): previous})) }}">&lt;</a></li>
+    {% else %}
+        <li class="previous disabled"><a>&lt;</a></li>
+    {% endif %} #}
+
+    {% set left = false %}
+    {% set rigth = false %}
+    {% for page in pagesInRange %}
+        {% if page != current %}
+            {% if current - page <= 3 and current > page %}
+                <li class="page paginate_button btn-xs"><a href="{{ path(route, query | merge({(pageParameterName): page})) }}">{{ page }}</a></li>
+            {% elseif page - current <= 3 and current < page %}
+                <li class="page btn-xs"><a href="{{ path(route, query | merge({(pageParameterName): page})) }}">{{ page }}</a></li>
+            {% else %}
+                {% if current < page and not rigth %}
+                    <li class="current active paginate_button btn-xs"><a href="#"> {{ '...' }}</a></li>
+                    {% set rigth = true %}
+                {% elseif current > page and not left %}
+                    <li class="current active paginate_button btn-xs"><a href="#"> {{ '...' }}</a></li>
+                    {% set left = true %}
+                {% endif %}
+            {% endif %}
+        {% else %}
+            <li class="current active btn-xs"><a href="#">{{ page }}</a></li>
+        {% endif %}
+    {% endfor %}
+
+    {# No definir siguiente
+    {% if next is defined %}
+        <li class="next"><a href="{{ path(route, query|merge({(pageParameterName): next})) }}">&gt;</a></li>
+    {% else %}
+        <li class="next disabled"><a>&gt;</a></li>
+    {% endif %} #}
+
+    {% if last is defined and current != last %}
+        <li class="last paginate_button next btn-xs"><a href="{{ path(route, query|merge({(pageParameterName): last})) }}">&raquo;</a></li>
+    {% else %}
+        <li class="last paginate_button next disabled btn-xs"><a>&raquo;</a></li>
+    {% endif %}
+    </ul>
+</div>
+{% endif %}
