@@ -125,7 +125,7 @@ class Autobus
      * @var date
      *
      * @ORM\Column(name="valido_hasta", type="date")
-     * @Assert\Type(type="\DateTime")
+     * @Assert\Date()
      */
     private $valido_hasta;
 
@@ -133,7 +133,7 @@ class Autobus
      * @var date
      *
      * @ORM\Column(name="fecha_rtv", type="date")
-     * @Assert\Type(type="\DateTime")
+     * @Assert\Date()
      */
     private $fecha_rtv;
 

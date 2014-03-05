@@ -139,6 +139,7 @@
 
     <div class="btn-group">
         <form action="{{ path('autobus_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
             <button class="btn btn-primary" type="submit">Eliminar</button>
         </form>
     </div>

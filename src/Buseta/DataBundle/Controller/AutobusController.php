@@ -32,7 +32,7 @@ class AutobusController extends Controller
         $entities = $paginator->paginate(
             $entities,
             $this->get('request')->query->get('page', 1),
-            1,
+            10,
             array('pageParameterName' => 'page')
         );
 
@@ -54,8 +54,8 @@ class AutobusController extends Controller
         $form->handleRequest($request);
 
         $autobus = $request->request->get('buseta_databundle_autobus');
-
-        print_r($form->getErrorsAsString());die;
+        /*echo '<pre>';
+        var_dump($form->getErrorsAsString());die;*/
 
         $entity->setFechaRtv(date_create_from_format('d/m/Y',$autobus['fecha_rtv']));
         $entity->setValidoHasta(date_create_from_format('d/m/Y',$autobus['valido_hasta']));
@@ -101,7 +101,7 @@ class AutobusController extends Controller
 
         */
 
-        if (!$form->isValid()) {
+        if ($form->isValid()) {
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
@@ -132,7 +132,7 @@ class AutobusController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        //$form->add('submit', 'submit', array('label' => 'Create'));
 
         return $form;
     }
@@ -214,7 +214,7 @@ class AutobusController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        //$form->add('submit', 'submit', array('label' => 'Update'));
 
         return $form;
     }
@@ -234,7 +234,7 @@ class AutobusController extends Controller
 
         $deleteForm = $this->createDeleteForm($id);
         $editForm = $this->createEditForm($entity);
-        $editForm->handleRequest($request);
+        $editForm->submit($request);
 
         if ($editForm->isValid()) {
             $em->flush();
@@ -255,7 +255,7 @@ class AutobusController extends Controller
     public function deleteAction(Request $request, $id)
     {
         $form = $this->createDeleteForm($id);
-        $form->handleRequest($request);
+        $form->submit($request);
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
@@ -284,7 +284,7 @@ class AutobusController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('autobus_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            //->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()
         ;
     }

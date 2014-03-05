@@ -1,5 +1,16 @@
-$('#buseta_databundle_autobus_valido_hasta').datepicker();
-$('#buseta_databundle_autobus_fecha_rtv').datepicker();
+$('#buseta_databundle_autobus_valido_hasta').pickadate({
+    format: 'dd/mm/yyyy',
+    formatSubmit: 'dd/mm/yyyy'
+});
+var valido = $('#buseta_databundle_autobus_valido_hasta').val();
+$('input:hidden[name^="buseta_databundle_autobus[valido_hasta]_submit"]').val(valido);
+
+$('#buseta_databundle_autobus_fecha_rtv').pickadate({
+    format: 'dd/mm/yyyy',
+    formatSubmit: 'dd/mm/yyyy'
+});
+var rtv = $('#buseta_databundle_autobus_fecha_rtv').val();
+$('input:hidden[name^="buseta_databundle_autobus[fecha_rtv]_submit"]').val(rtv);
 
 localChange()
 $("input#barras").click(localChange);

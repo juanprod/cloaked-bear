@@ -36,42 +36,42 @@ class AutobusType extends AbstractType
                         'style' => 'width: 250px',
                     )
                 ))
-            ->add('peso_tara', 'text', array(
+            ->add('peso_tara', 'integer', array(
                     'required' => true,
                     'attr'   => array(
                         'class' => 'form-control',
                         'style' => 'width: 250px',
                     )
                 ))
-            ->add('peso_bruto', 'text', array(
+            ->add('peso_bruto', 'integer', array(
                     'required' => true,
                     'attr'   => array(
                         'class' => 'form-control',
                         'style' => 'width: 250px',
                     )
                 ))
-            ->add('numero_plazas', 'text', array(
+            ->add('numero_plazas', 'integer', array(
                     'required' => true,
                     'attr'   => array(
                         'class' => 'form-control',
                         'style' => 'width: 250px',
                     )
                 ))
-            ->add('numero_cilindros', 'text', array(
+            ->add('numero_cilindros', 'integer', array(
                     'required' => true,
                     'attr'   => array(
                         'class' => 'form-control',
                         'style' => 'width: 250px',
                     )
                 ))
-            ->add('cilindrada', 'text', array(
+            ->add('cilindrada', 'integer', array(
                     'required' => true,
                     'attr'   => array(
                         'class' => 'form-control',
                         'style' => 'width: 250px',
                     )
                 ))
-            ->add('potencia', 'text', array(
+            ->add('potencia', 'integer', array(
                     'required' => true,
                     'attr'   => array(
                         'class' => 'form-control',
@@ -80,6 +80,7 @@ class AutobusType extends AbstractType
                 ))
             ->add('valido_hasta','date',array(
                     'widget' => 'single_text',
+                    'format'  => 'dd/MM/yyyy',
                     'attr'   => array(
                         'class' => 'form-control',
                         'style' => 'width: 250px',
@@ -87,6 +88,7 @@ class AutobusType extends AbstractType
                 ))
             ->add('fecha_rtv','date',array(
                     'widget' => 'single_text',
+                    'format'  => 'dd/MM/yyyy',
                     'attr'   => array(
                         'class' => 'form-control',
                         'style' => 'width: 250px',
@@ -134,14 +136,14 @@ class AutobusType extends AbstractType
                         'style' => 'width: 250px',
                     )
                 ))
-            ->add('rampas', 'text', array(
+            ->add('rampas', 'textarea', array(
                     'required' => false,
                     'attr'   => array(
                         'class' => 'form-control',
                         'style' => 'width: 250px',
                     )
                 ))
-            ->add('barras', 'text', array(
+            ->add('barras', 'textarea', array(
                     'required' => false,
                     'attr'   => array(
                         'class' => 'form-control',
@@ -155,28 +157,28 @@ class AutobusType extends AbstractType
                         'style' => 'width: 250px',
                     )
                 ))
-            ->add('lector_cedulas', 'text', array(
+            ->add('lector_cedulas', 'textarea', array(
                     'required' => false,
                     'attr'   => array(
                         'class' => 'form-control',
                         'style' => 'width: 250px',
                     )
                 ))
-            ->add('publicidad', 'text', array(
+            ->add('publicidad', 'textarea', array(
                     'required' => false,
                     'attr'   => array(
                         'class' => 'form-control',
                         'style' => 'width: 250px',
                     )
                 ))
-            ->add('gps', 'text', array(
+            ->add('gps', 'textarea', array(
                     'required' => false,
                     'attr'   => array(
                         'class' => 'form-control',
                         'style' => 'width: 250px',
                     )
                 ))
-            ->add('wifi', 'text', array(
+            ->add('wifi', 'textarea', array(
                     'required' => false,
                     'attr'   => array(
                         'class' => 'form-control',
