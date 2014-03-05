@@ -134,6 +134,55 @@ class AutobusType extends AbstractType
                         'style' => 'width: 250px',
                     )
                 ))
+            ->add('rampas', 'text', array(
+                    'required' => false,
+                    'attr'   => array(
+                        'class' => 'form-control',
+                        'style' => 'width: 250px',
+                    )
+                ))
+            ->add('barras', 'text', array(
+                    'required' => false,
+                    'attr'   => array(
+                        'class' => 'form-control',
+                        'style' => 'width: 250px',
+                    )
+                ))
+            ->add('camaras', 'textarea', array(
+                    'required' => false,
+                    'attr'   => array(
+                        'class' => 'form-control',
+                        'style' => 'width: 250px',
+                    )
+                ))
+            ->add('lector_cedulas', 'text', array(
+                    'required' => false,
+                    'attr'   => array(
+                        'class' => 'form-control',
+                        'style' => 'width: 250px',
+                    )
+                ))
+            ->add('publicidad', 'text', array(
+                    'required' => false,
+                    'attr'   => array(
+                        'class' => 'form-control',
+                        'style' => 'width: 250px',
+                    )
+                ))
+            ->add('gps', 'text', array(
+                    'required' => false,
+                    'attr'   => array(
+                        'class' => 'form-control',
+                        'style' => 'width: 250px',
+                    )
+                ))
+            ->add('wifi', 'text', array(
+                    'required' => false,
+                    'attr'   => array(
+                        'class' => 'form-control',
+                        'style' => 'width: 250px',
+                    )
+                ))
         ;
     }
     
@@ -142,8 +191,11 @@ class AutobusType extends AbstractType
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        $resolver->setDefaults(array(
+        /*$resolver->setDefaults(array(
             'data_class' => 'Buseta\DataBundle\Form\Model\Autobus'
+        ));*/
+        $resolver->setDefaults(array(
+                'data_class' => 'Buseta\DataBundle\Entity\Autobus'
         ));
     }
 

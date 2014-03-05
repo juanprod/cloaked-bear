@@ -5,7 +5,10 @@ namespace Buseta\DataBundle\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-use Buseta\DataBundle\Form\Model\Autobus;
+//use Buseta\DataBundle\Entity\Autobus as BaseAutobus;
+//use Buseta\DataBundle\Form\Model\Autobus;
+
+use Buseta\DataBundle\Entity\Autobus;
 use Buseta\DataBundle\Form\Type\AutobusType;
 
 /**
@@ -24,22 +27,40 @@ class AutobusController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('DataBundle:Autobus')->findAll();
+        //CASO CAJERO
+        $paginator = $this->get('knp_paginator');
+        $entities = $paginator->paginate(
+            $entities,
+            $this->get('request')->query->get('page', 1),
+            1,
+            array('pageParameterName' => 'page')
+        );
 
         return $this->render('DataBundle:Autobus:index.html.twig', array(
             'entities' => $entities,
         ));
     }
+
     /**
      * Creates a new Autobus entity.
      *
      */
     public function createAction(Request $request)
     {
+        //$entity = new BaseAutobus();
+
         $entity = new Autobus();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
-        $em = $this->getDoctrine()->getManager();
+        $autobus = $request->request->get('buseta_databundle_autobus');
+
+        print_r($form->getErrorsAsString());die;
+
+        $entity->setFechaRtv(date_create_from_format('d/m/Y',$autobus['fecha_rtv']));
+        $entity->setValidoHasta(date_create_from_format('d/m/Y',$autobus['valido_hasta']));
+
+        /*$em = $this->getDoctrine()->getManager();
 
         $autobus = $request->request->get('buseta_databundle_autobus');
 
@@ -60,27 +81,27 @@ class AutobusController extends Controller
         $entity->setModelo($modelo);
 
         $marca = $em->getRepository('BusetaNomencladorBundle:Marca')->find($autobus['marca']);
-        $entity->setModelo($marca);
+        $entity->setMarca($marca);
 
         $estilo = $em->getRepository('BusetaNomencladorBundle:Estilo')->find($autobus['estilo']);
-        $entity->setModelo($estilo);
+        $entity->setEstilo($estilo);
 
         $color = $em->getRepository('BusetaNomencladorBundle:Color')->find($autobus['color']);
-        $entity->setModelo($color);
+        $entity->setColor($color);
 
         $marcamotor = $em->getRepository('BusetaNomencladorBundle:MarcaMotor')->find($autobus['marca_motor']);
-        $entity->setModelo($marcamotor);
+        $entity->setMarcaMotor($marcamotor);
 
         $combustible = $em->getRepository('BusetaNomencladorBundle:Combustible')->find($autobus['combustible']);
-        $entity->setModelo($combustible);
+        $entity->setCombustible($combustible);
 
-        $em->persist($entity);
-        $em->flush();
+        //$em->persist($entity);
+        //$em->flush();
+        //return $this->redirect($this->generateUrl('autobus_show', array('id' => $entity->getId())));
 
-        return $this->redirect($this->generateUrl('autobus_show', array('id' => $entity->getId())));
+        */
 
-        if ($form->isValid()) {
-
+        if (!$form->isValid()) {
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
@@ -88,6 +109,8 @@ class AutobusController extends Controller
 
             return $this->redirect($this->generateUrl('autobus_show', array('id' => $entity->getId())));
         }
+
+        print_r($form->getErrorsAsString());die;
 
         return $this->render('DataBundle:Autobus:new.html.twig', array(
             'entity' => $entity,
@@ -125,17 +148,9 @@ class AutobusController extends Controller
 
         $em = $this->getDoctrine()->getManager();
 
-        $marcas = $em->getRepository('BusetaNomencladorBundle:Marca')->findAll();
-        $modelos = $em->getRepository('BusetaNomencladorBundle:Modelo')->findAll();
-        $estilos = $em->getRepository('BusetaNomencladorBundle:Estilo')->findAll();
-        $colores = $em->getRepository('BusetaNomencladorBundle:Color')->findAll();
 
         return $this->render('DataBundle:Autobus:new.html.twig', array(
             'entity' => $entity,
-            'marcas' => $marcas,
-            'modelos' => $modelos,
-            'estilos' => $estilos,
-            'colores' => $colores,
             'form'   => $form->createView(),
         ));
     }

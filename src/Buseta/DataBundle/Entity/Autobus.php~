@@ -3,7 +3,6 @@
 namespace Buseta\DataBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Autobus
@@ -62,7 +61,6 @@ class Autobus
      * @var integer
      *
      * @ORM\Column(name="peso_tara", type="integer")
-     * @Assert\Type("integer")
      */
     private $peso_tara;
 
@@ -70,7 +68,6 @@ class Autobus
      * @var integer
      *
      * @ORM\Column(name="peso_bruto", type="integer")
-     * @Assert\Type("integer")
      */
     private $peso_bruto;
 
@@ -83,7 +80,6 @@ class Autobus
      * @var integer
      *
      * @ORM\Column(name="numero_plazas", type="integer")
-     * @Assert\Type("integer")
      */
     private $numero_plazas;
 
@@ -101,7 +97,6 @@ class Autobus
      * @var integer
      *
      * @ORM\Column(name="numero_cilindros", type="integer")
-     * @Assert\Type("integer")
      */
     private $numero_cilindros;
 
@@ -109,7 +104,6 @@ class Autobus
      * @var integer
      *
      * @ORM\Column(name="cilindrada", type="integer")
-     * @Assert\Type("integer")
      */
     private $cilindrada;
 
@@ -117,7 +111,6 @@ class Autobus
      * @var integer
      *
      * @ORM\Column(name="potencia", type="integer")
-     * @Assert\Type("integer")
      */
     private $potencia;
 
@@ -125,7 +118,6 @@ class Autobus
      * @var date
      *
      * @ORM\Column(name="valido_hasta", type="date")
-     * @Assert\Type(type="\DateTime")
      */
     private $valido_hasta;
 
@@ -133,56 +125,55 @@ class Autobus
      * @var date
      *
      * @ORM\Column(name="fecha_rtv", type="date")
-     * @Assert\Type(type="\DateTime")
      */
     private $fecha_rtv;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="rampas", type="string", nullable=true)
+     * @ORM\Column(name="rampas", type="string")
      */
     private $rampas;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="barras", type="string", nullable=true)
+     * @ORM\Column(name="barras", type="string")
      */
     private $barras;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="camaras", type="string", nullable=true)
+     * @ORM\Column(name="camaras", type="string")
      */
     private $camaras;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="lector_cedulas", type="string", nullable=true)
+     * @ORM\Column(name="lector_cedulas", type="string")
      */
     private $lector_cedulas;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="publicidad", type="string", nullable=true)
+     * @ORM\Column(name="publicidad", type="string")
      */
     private $publicidad;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="gps", type="string", nullable=true)
+     * @ORM\Column(name="gps", type="string")
      */
     private $gps;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="wifi", type="string", nullable=true)
+     * @ORM\Column(name="wifi", type="string")
      */
     private $wifi;
 
@@ -609,143 +600,5 @@ class Autobus
     public function getPublicidad()
     {
         return $this->publicidad;
-    }
-
-    /**
-     * Set rampas
-     *
-     * @param string $rampas
-     * @return Autobus
-     */
-    public function setRampas($rampas)
-    {
-        $this->rampas = $rampas;
-    
-        return $this;
-    }
-
-    /**
-     * Get rampas
-     *
-     * @return string 
-     */
-    public function getRampas()
-    {
-        return $this->rampas;
-    }
-
-    /**
-     * Set barras
-     *
-     * @param string $barras
-     * @return Autobus
-     */
-    public function setBarras($barras)
-    {
-        $this->barras = $barras;
-    
-        return $this;
-    }
-
-    /**
-     * Get barras
-     *
-     * @return string 
-     */
-    public function getBarras()
-    {
-        return $this->barras;
-    }
-
-    /**
-     * Set camaras
-     *
-     * @param string $camaras
-     * @return Autobus
-     */
-    public function setCamaras($camaras)
-    {
-        $this->camaras = $camaras;
-    
-        return $this;
-    }
-
-    /**
-     * Get camaras
-     *
-     * @return string 
-     */
-    public function getCamaras()
-    {
-        return $this->camaras;
-    }
-
-    /**
-     * Set lector_cedulas
-     *
-     * @param string $lectorCedulas
-     * @return Autobus
-     */
-    public function setLectorCedulas($lectorCedulas)
-    {
-        $this->lector_cedulas = $lectorCedulas;
-    
-        return $this;
-    }
-
-    /**
-     * Get lector_cedulas
-     *
-     * @return string 
-     */
-    public function getLectorCedulas()
-    {
-        return $this->lector_cedulas;
-    }
-
-    /**
-     * Set gps
-     *
-     * @param string $gps
-     * @return Autobus
-     */
-    public function setGps($gps)
-    {
-        $this->gps = $gps;
-    
-        return $this;
-    }
-
-    /**
-     * Get gps
-     *
-     * @return string 
-     */
-    public function getGps()
-    {
-        return $this->gps;
-    }
-
-    /**
-     * Set wifi
-     *
-     * @param string $wifi
-     * @return Autobus
-     */
-    public function setWifi($wifi)
-    {
-        $this->wifi = $wifi;
-    
-        return $this;
-    }
-
-    /**
-     * Get wifi
-     *
-     * @return string 
-     */
-    public function getWifi()
-    {
-        return $this->wifi;
     }
 }

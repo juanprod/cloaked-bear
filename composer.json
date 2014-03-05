@@ -25,7 +25,8 @@
         "avocode/form-extensions-bundle": "dev-master",
         "liip/imagine-bundle": "0.20.*",
         "cedriclombardot/admingenerator-user-bundle": "dev-master",
-        "doctrine/doctrine-fixtures-bundle": "2.2.*"
+        "doctrine/doctrine-fixtures-bundle": "2.2.*",
+        "knplabs/knp-paginator-bundle": "2.4.*@dev"
     },
     "scripts": {
         "post-install-cmd": [
@@ -61,7 +62,7 @@
     "repositories": [
         {
             "type": "composer",
-            "url": "http://localhost/satis/web"
+            "url": "http://192.168.0.100/satis/web"
         },
         {
             "packagist": false

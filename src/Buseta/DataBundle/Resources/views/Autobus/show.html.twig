@@ -4,8 +4,8 @@
 
 {% endblock %}
 
-{% block titulo %}
-    Datos de Marca "{{ entity.descripcion }}"
+{% block titulo_encabezado %}
+    Datos del Autobus de Matrícula: "{{ entity.matricula }}"
 {% endblock %}
 
 {% block area_trabajo %}
@@ -13,35 +13,31 @@
     <table class="table table-striped" style="font-size: 16px;">
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ entity.id }}</td>
-            </tr>
-            <tr>
-                <th>Matricula</th>
+                <th>Matrícula</th>
                 <td>{{ entity.matricula }}</td>
             </tr>
             <tr>
-                <th>Numero_chasis</th>
+                <th>Número Chasis</th>
                 <td>{{ entity.numerochasis }}</td>
             </tr>
             <tr>
-                <th>Numero_motor</th>
+                <th>Número Motor</th>
                 <td>{{ entity.numeromotor }}</td>
             </tr>
             <tr>
-                <th>Peso_tara</th>
+                <th>Peso Tara</th>
                 <td>{{ entity.pesotara }}</td>
             </tr>
             <tr>
-                <th>Peso_bruto</th>
+                <th>Peso Bruto</th>
                 <td>{{ entity.pesobruto }}</td>
             </tr>
             <tr>
-                <th>Numero_plazas</th>
+                <th>Número Plazas</th>
                 <td>{{ entity.numeroplazas }}</td>
             </tr>
             <tr>
-                <th>Numero_cilindros</th>
+                <th>Número Cilindros</th>
                 <td>{{ entity.numerocilindros }}</td>
             </tr>
             <tr>
@@ -53,27 +49,97 @@
                 <td>{{ entity.potencia }}</td>
             </tr>
             <tr>
-                <th>Valido_hasta</th>
+                <th>Válido Hasta</th>
                 <td>{{ entity.validohasta|date('Y-m-d H:i:s') }}</td>
             </tr>
             <tr>
-                <th>Fecha_rtv</th>
+                <th>Fecha RTV</th>
                 <td>{{ entity.fechartv|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Rampas</th>
+                <td>
+                    {% if entity.rampas == '' %}
+                        <label style="color: red">El autobus no tiene Rampas</label>
+                    {% else %}
+                        {{ entity.rampas }}
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>Barras</th>
+                <td>
+                    {% if entity.barras == '' %}
+                        <label style="color: red">El autobus no tiene Barras</label>
+                    {% else %}
+                        {{ entity.barras }}
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>Cámaras</th>
+                <td>
+                    {% if entity.camaras == '' %}
+                        <label style="color: red">El autobus no tiene Cámaras</label>
+                    {% else %}
+                        {{ entity.camaras }}
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>Lector de Células</th>
+                <td>
+                    {% if entity.lectorcedulas == '' %}
+                        <label style="color: red">El autobus no tiene Lector de Cédulas</label>
+                    {% else %}
+                        {{ entity.lectorcedulas }}
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>Publicidad</th>
+                <td>
+                    {% if entity.publicidad == '' %}
+                        <label style="color: red">El autobus no tiene Publicidad</label>
+                    {% else %}
+                        {{ entity.publicidad }}
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>GPS</th>
+                <td>
+                    {% if entity.gps == '' %}
+                        <label style="color: red">El autobus no tiene GPS</label>
+                    {% else %}
+                        {{ entity.gps }}
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>Wifi</th>
+                    <td>
+                        {% if entity.wifi == '' %}
+                            <label style="color: red">El autobus no tiene Wifi</label>
+                        {% else %}
+                            {{ entity.wifi }}
+                        {% endif %}
+                    </td>
             </tr>
         </tbody>
     </table>
 
     <div class="btn-group">
-        <a class="btn btn-inverse" href="{{ path('autobus_edit', { 'id': entity.id }) }}"> Editar</a>
+        <a class="btn btn-primary" href="{{ path('autobus_edit', { 'id': entity.id }) }}"> Editar</a>
     </div>
 
     <div class="btn-group">
-        <a class="btn btn-inverse" href="{{ path('autobus') }}"> Listado</a>
+        <a class="btn btn-primary" href="{{ path('autobus') }}"> Listado</a>
     </div>
 
-    <div class="btn-group" style="padding-top: 20px;">
+    <div class="btn-group">
         <form action="{{ path('autobus_delete', { 'id': entity.id }) }}" method="post">
-            <button class="btn btn-inverse" type="submit">Eliminar</button>
+            <button class="btn btn-primary" type="submit">Eliminar</button>
         </form>
     </div>
 

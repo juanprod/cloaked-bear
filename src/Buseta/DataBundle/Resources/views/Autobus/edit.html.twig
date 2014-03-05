@@ -1,16 +1,208 @@
-{% extends '::base.html.twig' %}
+{% extends "CoreBundle::layout.html.twig" %}
 
-{% block body -%}
-    <h1>Autobus edit</h1>
+{% block nombre_menu_superior %}
 
-    {{ form(edit_form) }}
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('autobus') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
 {% endblock %}
+
+{% block titulo_encabezado %}
+    Adicionar Nuevo Autobus
+{% endblock %}
+
+{% block area_trabajo %}
+
+    <form action="{{ path('autobus_update',{'id':entity.id}) }}" method="post" {{ form_enctype(edit_form) }}>
+        <div class="row show-grid">
+            <div class="col-md-4">
+                <label>Matrícula:</label>
+                {{ form_widget(edit_form.matricula) }}
+            </div>
+
+            <div class="col-md-4">
+                <label>Número de Chasis:</label>
+                {{ form_widget(edit_form.numero_chasis) }}
+            </div>
+
+            <div class="col-md-4">
+                <label>Número de Motor:</label>
+                {{ form_widget(edit_form.numero_motor) }}
+            </div>
+        </div>
+
+        <div class="row show-grid">
+            <div class="col-md-4">
+                <label>Peso Tara:</label>
+                {{ form_widget(edit_form.peso_tara) }}
+            </div>
+
+            <div class="col-md-4">
+                <label>Peso Bruto:</label>
+                {{ form_widget(edit_form.peso_bruto) }}
+            </div>
+
+            <div class="col-md-4">
+                <label>Número de Plazas:</label>
+                {{ form_widget(edit_form.numero_plazas) }}
+            </div>
+        </div>
+
+        <div class="row show-grid">
+            <div class="col-md-4">
+                <label>Número de Cilindros:</label>
+                {{ form_widget(edit_form.numero_cilindros) }}
+            </div>
+
+            <div class="col-md-4">
+                <label>Cilindrada:</label>
+                {{ form_widget(edit_form.cilindrada) }}
+            </div>
+
+            <div class="col-md-4">
+                <label>Potencia:</label>
+                {{ form_widget(edit_form.potencia) }}
+            </div>
+        </div>
+
+        <div class="row show-grid">
+            <div class="col-md-4">
+                <label>Válido Hasta:</label>
+                {{ form_widget(edit_form.valido_hasta) }}
+            </div>
+
+            <div class="col-md-4">
+                <label>Fecha RTV:</label>
+                {{ form_widget(edit_form.fecha_rtv) }}
+            </div>
+
+            <div class="col-md-4">
+                <label>Modelo:</label>
+                {{ form_widget(edit_form.modelo) }}
+            </div>
+        </div>
+
+        <div class="row show-grid">
+            <div class="col-md-4">
+                <label>Marca:</label>
+                {{ form_widget(edit_form.marca) }}
+            </div>
+
+            <div class="col-md-4">
+                <label>Estilo:</label>
+                {{ form_widget(edit_form.estilo) }}
+            </div>
+
+            <div class="col-md-4">
+                <label>Color:</label>
+                {{ form_widget(edit_form.color) }}
+            </div>
+        </div>
+
+        <div class="row show-grid">
+            <div class="col-md-4">
+                <label>Marca de Motor:</label>
+                {{ form_widget(edit_form.marca_motor) }}
+            </div>
+
+            <div class="col-md-4">
+                <label>Combustible:</label>
+                {{ form_widget(edit_form.combustible) }}
+            </div>
+        </div>
+
+        <div class="row show-grid">
+            <div class="col-md-4">
+                <div class="checkbox">
+                    <label>
+                        <input id="rampas" type="checkbox" value=""><strong>Tiene Rampas</strong>
+                    </label>
+                </div>
+                <label id="rampas">Descripción de las Rampas:</label>
+                {{ form_widget(edit_form.rampas) }}
+            </div>
+
+            <div class="col-md-4">
+                <div class="checkbox">
+                    <label>
+                        <input id="barras" type="checkbox" value=""><strong>Tiene Barras</strong>
+                    </label>
+                </div>
+                <label id="barras">Descripción de Barras:</label>
+                {{ form_widget(edit_form.barras) }}
+            </div>
+
+            <div class="col-md-4">
+                <div class="checkbox">
+                    <label>
+                        <input id="camaras" type="checkbox" value=""><strong>Tiene Cámaras</strong>
+                    </label>
+                </div>
+                <label id="camaras">Descripción de Cámaras:</label>
+                {{ form_widget(edit_form.camaras) }}
+            </div>
+        </div>
+
+        <div class="row show-grid">
+            <div class="col-md-4">
+                <div class="checkbox">
+                    <label>
+                        <input id="lector" type="checkbox" value=""><strong>Tiene Lector de Cédulas</strong>
+                    </label>
+                </div>
+                <label id="lector">Descripción del Lector de Cédulas:</label>
+                {{ form_widget(edit_form.lector_cedulas) }}
+            </div>
+
+            <div class="col-md-4">
+                <div class="checkbox">
+                    <label>
+                        <input id="publicidad" type="checkbox" value=""><strong>Tiene Publicidad</strong>
+                    </label>
+                </div>
+                <label id="publicidad">Descripción de la Publicidad:</label>
+                {{ form_widget(edit_form.publicidad) }}
+            </div>
+
+            <div class="col-md-4">
+                <div class="checkbox">
+                    <label>
+                        <input id="gps" type="checkbox" value=""><strong>Tiene GPS</strong>
+                    </label>
+                </div>
+                <label id="gps" >Descripción de GPS:</label>
+                {{ form_widget(edit_form.gps) }}
+            </div>
+        </div>
+
+        <div class="row show-grid">
+            <div class="col-md-4">
+                <div class="checkbox">
+                    <label>
+                        <input id="wifi" type="checkbox" value=""><strong>Tiene Wifi</strong>
+                    </label>
+                </div>
+                <label id="wifi">Descripción de Wifi:</label>
+                {{ form_widget(edit_form.wifi) }}
+            </div>
+        </div>
+
+        <div class="row show-grid">
+            <div class="col-md-4">
+
+                <input class="btn btn-primary" style="height: 34px" type="submit" value="Aceptar">
+                <div class="btn-group">
+                    <a class="btn btn-primary" href="{{ path('autobus') }}"> Cancelar</a>
+                </div>
+            </div>
+        </div>
+    </form>
+    </div>
+
+
+{% endblock %}
+
+
+{% block contenido %}
+
+
+{% endblock %}
+
+

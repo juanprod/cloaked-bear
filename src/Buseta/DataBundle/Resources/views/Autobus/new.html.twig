@@ -110,6 +110,82 @@
 
             <div class="row show-grid">
                 <div class="col-md-4">
+                    <div class="checkbox">
+                        <label>
+                            <input id="rampas" type="checkbox" value=""><strong>Tiene Rampas</strong>
+                        </label>
+                    </div>
+                    <label id="rampas">Descripción de las Rampas:</label>
+                    {{ form_widget(form.rampas) }}
+                </div>
+
+                <div class="col-md-4">
+                    <div class="checkbox">
+                        <label>
+                            <input id="barras" type="checkbox" value=""><strong>Tiene Barras</strong>
+                        </label>
+                    </div>
+                    <label id="barras">Descripción de Barras:</label>
+                    {{ form_widget(form.barras) }}
+                </div>
+
+                <div class="col-md-4">
+                    <div class="checkbox">
+                        <label>
+                            <input id="camaras" type="checkbox" value=""><strong>Tiene Cámaras</strong>
+                        </label>
+                    </div>
+                    <label id="camaras">Descripción de Cámaras:</label>
+                    {{ form_widget(form.camaras) }}
+                </div>
+            </div>
+
+            <div class="row show-grid">
+                <div class="col-md-4">
+                    <div class="checkbox">
+                        <label>
+                            <input id="lector" type="checkbox" value=""><strong>Tiene Lector de Cédulas</strong>
+                        </label>
+                    </div>
+                    <label id="lector">Descripción del Lector de Cédulas:</label>
+                    {{ form_widget(form.lector_cedulas) }}
+                </div>
+
+                <div class="col-md-4">
+                    <div class="checkbox">
+                        <label>
+                            <input id="publicidad" type="checkbox" value=""><strong>Tiene Publicidad</strong>
+                        </label>
+                    </div>
+                    <label id="publicidad">Descripción de la Publicidad:</label>
+                    {{ form_widget(form.publicidad) }}
+                </div>
+
+                <div class="col-md-4">
+                    <div class="checkbox">
+                        <label>
+                            <input id="gps" type="checkbox" value=""><strong>Tiene GPS</strong>
+                        </label>
+                    </div>
+                    <label id="gps" >Descripción de GPS:</label>
+                    {{ form_widget(form.gps) }}
+                </div>
+            </div>
+
+            <div class="row show-grid">
+                <div class="col-md-4">
+                    <div class="checkbox">
+                        <label>
+                            <input id="wifi" type="checkbox" value=""><strong>Tiene Wifi</strong>
+                        </label>
+                    </div>
+                    <label id="wifi">Descripción de Wifi:</label>
+                    {{ form_widget(form.wifi) }}
+                </div>
+            </div>
+
+            <div class="row show-grid">
+                <div class="col-md-4">
 
                     <input class="btn btn-primary" style="height: 34px" type="submit" value="Aceptar">
                     <div class="btn-group">
@@ -117,6 +193,8 @@
                     </div>
                 </div>
             </div>
+
+            {{ form_rest(form) }}
         </form>
     </div>
 

@@ -14,24 +14,24 @@
 
 {% block area_trabajo %}
 
-    <div class="btn-group" style="padding-bottom: 10px;">
-        <a class="btn btn-primary" href="{{ path('autobus_new') }}"><i class="icon-plus-sign icon-white"></i>Adicionar nuevo</a>
+    <div class="btn-group" style="padding-bottom: 8px;">
+        <a class="btn btn-primary" href="{{ path('autobus_new') }}"><i class="fa fa-plus-circle"></i> Adicionar Autobus</a>
     </div>
 
-    <table class="table table-striped table-bordered table-hover">
+    <table class="records_list table table-striped table-bordered table-condensed table-hover">
         <thead>
             <tr>
                 <th>Matricula</th>
                 <th>No.Chasis</th>
                 <th>No.Motor</th>
-                <th style="text-align: center">Peso Tara</th>
-                <th style="text-align: center">Peso Bruto</th>
-                <th>No.Plazas</th>
-                <th>No.Cilindros</th>
+                <th>Peso Tara</th>
+                <th>Peso Bruto</th>
+                <th>No. Plazas</th>
+                <th>No. Cilindros</th>
                 <th>Cilindrada</th>
                 <th>Potencia</th>
-                <th style="text-align: center">Valido Hasta</th>
-                <th style="text-align: center">Fecha RTV</th>
+                <th>Valido Hasta</th>
+                <th>Fecha RTV</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -49,16 +49,15 @@
                 <td>{{ entity.potencia }}</td>
                 <td>{% if entity.validohasta %}{{ entity.validohasta|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{% if entity.fechartv %}{{ entity.fechartv|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>
                 <td  style="width: 18% !important; text-align: center;">
                     <div class="btn-group">
-                        <a class="btn btn-mini btn-inverse" href="{{ path('autobus_show', { 'id': entity.id }) }}"><i class="icon-search icon-white"></i> Mostrar</a>
+                        <a class="btn btn-success btn-xs" href="{{ path('autobus_show', { 'id': entity.id }) }}"><i class="fa fa-search"> Mostrar</i></a>
                     </div>
 
                     <div class="btn-group">
-                        <a class="btn btn-mini btn-inverse" href="{{ path('autobus_edit', { 'id': entity.id }) }}"><i class="icon-edit icon-white"></i> Editar</a>
+                        <a class="btn btn-danger btn-xs" href="{{ path('autobus_edit', { 'id': entity.id }) }}"><i class="fa fa-edit"> Editar</i></a>
                     </div>
-                </td>
+
                 </td>
             </tr>
             {% else %}
@@ -69,5 +68,9 @@
 
         </tbody>
     </table>
+
+
+        {{ knp_pagination_render(entities) }}
+
 
     {% endblock %}

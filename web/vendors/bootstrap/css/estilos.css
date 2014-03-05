@@ -1,0 +1,17 @@
+.table thead th {
+    background-color: #3498DB;
+    color: #FFFFFF;
+    vertical-align: bottom;
+    text-align: center;
+}
+
+.table-condensed th, .table-condensed td {
+    padding: 4px 5px !important;
+}
+
+.table th, .table td {
+    border-top: 1px solid #DDDDDD !important;
+    line-height: 20px !important;
+    padding: 4px !important;
+    vertical-align: top !important;
+}
