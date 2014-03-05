@@ -31,58 +31,65 @@ function localChange(){
     lector = $("input#lector:checked").is(":empty");
 
     if(!barras){
-        $('input#buseta_databundle_autobus_barras').fadeOut();
+        $('textarea#buseta_databundle_autobus_barras').val("");
+        $('textarea#buseta_databundle_autobus_barras').fadeOut();
         $('label#barras').fadeOut();
     }else{
-        $('input#buseta_databundle_autobus_barras').fadeIn();
+        $('textarea#buseta_databundle_autobus_barras').fadeIn();
         $('label#barras').fadeIn();
     }
 
     if(!rampas){
-        $('input#buseta_databundle_autobus_rampas').fadeOut();
+        $('textarea#buseta_databundle_autobus_rampas').val("");
+        $('textarea#buseta_databundle_autobus_rampas').fadeOut();
         $('label#rampas').fadeOut();
     }else{
-        $('input#buseta_databundle_autobus_rampas').fadeIn();
+        $('textarea#buseta_databundle_autobus_rampas').fadeIn();
         $('label#rampas').fadeIn();
     }
 
     if(!camaras){
-        $('input#buseta_databundle_autobus_camaras').fadeOut();
+        $('textarea#buseta_databundle_autobus_camaras').val("");
+        $('textarea#buseta_databundle_autobus_camaras').fadeOut();
         $('label#camaras').fadeOut();
     }else{
-        $('input#buseta_databundle_autobus_camaras').fadeIn();
+        $('textarea#buseta_databundle_autobus_camaras').fadeIn();
         $('label#camaras').fadeIn();
     }
 
     if(!publicidad){
-        $('input#buseta_databundle_autobus_publicidad').fadeOut();
+        $('textarea#buseta_databundle_autobus_publicidad').val("");
+        $('textarea#buseta_databundle_autobus_publicidad').fadeOut();
         $('label#publicidad').fadeOut();
     }else{
-        $('input#buseta_databundle_autobus_publicidad').fadeIn();
+        $('textarea#buseta_databundle_autobus_publicidad').fadeIn();
         $('label#publicidad').fadeIn();
     }
 
     if(!gps){
-        $('input#buseta_databundle_autobus_gps').fadeOut();
+        $('textarea#buseta_databundle_autobus_gps').val("");
+        $('textarea#buseta_databundle_autobus_gps').fadeOut();
         $('label#gps').fadeOut();
     }else{
-        $('input#buseta_databundle_autobus_gps').fadeIn();
+        $('textarea#buseta_databundle_autobus_gps').fadeIn();
         $('label#gps').fadeIn();
     }
 
     if(!wifi){
-        $('input#buseta_databundle_autobus_wifi').fadeOut();
+        $('textarea#buseta_databundle_autobus_wifi').val("");
+        $('textarea#buseta_databundle_autobus_wifi').fadeOut();
         $('label#wifi').fadeOut();
     }else{
-        $('input#buseta_databundle_autobus_wifi').fadeIn();
+        $('textarea#buseta_databundle_autobus_wifi').fadeIn();
         $('label#wifi').fadeIn();
     }
 
     if(!lector){
-        $('input#buseta_databundle_autobus_lector_cedulas').fadeOut();
+        $('textarea#buseta_databundle_autobus_lector_cedulas').val("");
+        $('textarea#buseta_databundle_autobus_lector_cedulas').fadeOut();
         $('label#lector').fadeOut();
     }else{
-        $('input#buseta_databundle_autobus_lector_cedulas').fadeIn();
+        $('textarea#buseta_databundle_autobus_lector_cedulas').fadeIn();
         $('label#lector').fadeIn();
     }
 

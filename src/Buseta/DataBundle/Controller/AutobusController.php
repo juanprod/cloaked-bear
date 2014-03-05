@@ -239,7 +239,7 @@ class AutobusController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('autobus_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('autobus_show', array('id' => $id)));
         }
 
         return $this->render('DataBundle:Autobus:edit.html.twig', array(

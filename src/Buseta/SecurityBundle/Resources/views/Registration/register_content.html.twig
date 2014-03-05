@@ -1,0 +1,41 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+
+
+
+</form>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="login-panel panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Acceso al Sistema - SG Autobuses v0.1</h3>
+                </div>
+                <div class="panel-body">
+                    <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+
+                    <fieldset>
+
+                        {{ form_widget(form.email) }}
+                        <br>
+                        {{ form_widget(form.username) }}
+
+                        {{ form_widget(form.plainPassword) }}
+                        <br>
+
+                        <div>
+                            <input class="btn btn-lg btn-primary btn-block" type="submit" id="_submit" name="_submit" value="{{ 'registration.submit'|trans }}" />
+                        </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock fos_user_content %}

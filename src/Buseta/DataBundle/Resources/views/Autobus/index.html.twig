@@ -47,8 +47,8 @@
                 <td>{{ entity.numerocilindros }}</td>
                 <td>{{ entity.cilindrada }}</td>
                 <td>{{ entity.potencia }}</td>
-                <td>{% if entity.validohasta %}{{ entity.validohasta|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{% if entity.fechartv %}{{ entity.fechartv|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.validohasta %}{{ entity.validohasta|date('d/m/Y') }}{% endif %}</td>
+                <td>{% if entity.fechartv %}{{ entity.fechartv|date('d/m/Y') }}{% endif %}</td>
                 <td  style="width: 18% !important; text-align: center;">
                     <div class="btn-group">
                         <a class="btn btn-success btn-xs" href="{{ path('autobus_show', { 'id': entity.id }) }}"><i class="fa fa-search"> Mostrar</i></a>
