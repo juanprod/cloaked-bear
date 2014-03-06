@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "7749cc499fe7d174bb40c452150133ff",
+    "hash": "67cdabac42f9ae8877cbe95e4a4ccef5",
     "packages": [
         {
             "name": "afarkas/html5shiv",
@@ -1034,13 +1034,13 @@
         },
         {
             "name": "friendsofsymfony/user-bundle",
-            "version": "2.0",
+            "version": "2.0.x-dev",
             "target-dir": "FOS/UserBundle",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/friendsofsymfony-user-bundle-2.0.zip",
-                "reference": "friendsofsymfony-user-bundle-2.0.zip",
-                "shasum": "04d49d366a3115de6d190964604efd93a22db751"
+                "url": "http://localhost/artifact/zips/friendsofsymfony-user-bundle-2.0.x-dev.zip",
+                "reference": "friendsofsymfony-user-bundle-2.0.x-dev.zip",
+                "shasum": "886c06adbf4f1662d5153844604f7f36dde39fec"
             },
             "require": {
                 "php": ">=5.3.2",
@@ -2338,6 +2338,7 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
+        "friendsofsymfony/user-bundle": 20,
         "cedriclombardot/admingenerator-generator-bundle": 20,
         "avocode/form-extensions-bundle": 20,
         "cedriclombardot/admingenerator-user-bundle": 20,
