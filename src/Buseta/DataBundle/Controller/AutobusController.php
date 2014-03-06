@@ -26,7 +26,12 @@ class AutobusController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('DataBundle:Autobus')->findAll();
+        $entities = $em->createQueryBuilder()
+            ->select('a')
+            ->from('DataBundle:Autobus','a')
+            ->orderBy('a.id','DESC')
+            ->getQuery();
+
         //CASO CAJERO
         $paginator = $this->get('knp_paginator');
         $entities = $paginator->paginate(
