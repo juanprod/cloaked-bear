@@ -1,0 +1,7 @@
+parameters:
+#    buseta_taller.example.class: Buseta\TallerBundle\Example
+
+services:
+#    buseta_taller.example:
+#        class: %buseta_taller.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

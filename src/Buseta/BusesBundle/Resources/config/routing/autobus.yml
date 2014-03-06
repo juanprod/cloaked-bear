@@ -1,0 +1,30 @@
+autobus:
+    pattern:  /
+    defaults: { _controller: "BusetaBusesBundle:Autobus:index" }
+
+autobus_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "BusetaBusesBundle:Autobus:show" }
+
+autobus_new:
+    pattern:  /new
+    defaults: { _controller: "BusetaBusesBundle:Autobus:new" }
+
+autobus_create:
+    pattern:  /create
+    defaults: { _controller: "BusetaBusesBundle:Autobus:create" }
+    requirements: { _method: post }
+
+autobus_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "BusetaBusesBundle:Autobus:edit" }
+
+autobus_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "BusetaBusesBundle:Autobus:update" }
+    requirements: { _method: post|put }
+
+autobus_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "BusetaBusesBundle:Autobus:delete" }
+    requirements: { _method: post|delete }
