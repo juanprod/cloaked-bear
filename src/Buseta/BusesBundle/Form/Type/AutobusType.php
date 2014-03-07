@@ -1,6 +1,6 @@
 <?php
 
-namespace Buseta\DataBundle\Form\Type;
+namespace Buseta\BusesBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -194,10 +194,10 @@ class AutobusType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         /*$resolver->setDefaults(array(
-            'data_class' => 'Buseta\DataBundle\Form\Model\Autobus'
+            'data_class' => 'Buseta\BusesBundle\Form\Model\Autobus'
         ));*/
         $resolver->setDefaults(array(
-                'data_class' => 'Buseta\DataBundle\Entity\Autobus'
+                'data_class' => 'Buseta\BusesBundle\Entity\Autobus'
         ));
     }
 

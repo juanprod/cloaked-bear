@@ -1,0 +1,7 @@
+parameters:
+#    buseta_bodega.example.class: Buseta\BodegaBundle\Example
+
+services:
+#    buseta_bodega.example:
+#        class: %buseta_bodega.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

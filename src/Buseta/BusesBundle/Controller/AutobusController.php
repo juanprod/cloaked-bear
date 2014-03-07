@@ -1,15 +1,12 @@
 <?php
 
-namespace Buseta\DataBundle\Controller;
+namespace Buseta\BusesBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-//use Buseta\DataBundle\Entity\Autobus as BaseAutobus;
-//use Buseta\DataBundle\Form\Model\Autobus;
-
-use Buseta\DataBundle\Entity\Autobus;
-use Buseta\DataBundle\Form\Type\AutobusType;
+use Buseta\BusesBundle\Entity\Autobus;
+use Buseta\BusesBundle\Form\Type\AutobusType;
 
 /**
  * Autobus controller.
@@ -28,7 +25,7 @@ class AutobusController extends Controller
 
         $entities = $em->createQueryBuilder()
             ->select('a')
-            ->from('DataBundle:Autobus','a')
+            ->from('BusetaBusesBundle:Autobus','a')
             ->orderBy('a.id', 'DESC')
             ->getQuery();
 
@@ -41,7 +38,7 @@ class AutobusController extends Controller
             array('pageParameterName' => 'page')
         );
 
-        return $this->render('DataBundle:Autobus:index.html.twig', array(
+        return $this->render('BusetaBusesBundle:Autobus:index.html.twig', array(
             'entities' => $entities,
         ));
     }
@@ -52,8 +49,6 @@ class AutobusController extends Controller
      */
     public function createAction(Request $request)
     {
-        //$entity = new BaseAutobus();
-
         $entity = new Autobus();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
@@ -64,47 +59,6 @@ class AutobusController extends Controller
 
         $entity->setFechaRtv(date_create_from_format('d/m/Y',$autobus['fecha_rtv']));
         $entity->setValidoHasta(date_create_from_format('d/m/Y',$autobus['valido_hasta']));
-
-        /*$em = $this->getDoctrine()->getManager();
-
-        $autobus = $request->request->get('buseta_databundle_autobus');
-
-        $em = $this->getDoctrine()->getManager();
-        $entity->setMatricula($autobus['matricula']);
-        $entity->setNumeroChasis($autobus['numero_chasis']);
-        $entity->setNumeroMotor($autobus['numero_motor']);
-        $entity->setPesoTara($autobus['peso_tara']);
-        $entity->setPesoBruto($autobus['peso_bruto']);
-        $entity->setNumeroPlazas($autobus['numero_plazas']);
-        $entity->setNumeroCilindros($autobus['numero_cilindros']);
-        $entity->setCilindrada($autobus['cilindrada']);
-        $entity->setPotencia($autobus['potencia']);
-        $entity->setFechaRtv(date_create_from_format('d/m/Y',$autobus['fecha_rtv']));
-        $entity->setValidoHasta(date_create_from_format('d/m/Y',$autobus['valido_hasta']));
-
-        $modelo = $em->getRepository('BusetaNomencladorBundle:Modelo')->find($autobus['modelo']);
-        $entity->setModelo($modelo);
-
-        $marca = $em->getRepository('BusetaNomencladorBundle:Marca')->find($autobus['marca']);
-        $entity->setMarca($marca);
-
-        $estilo = $em->getRepository('BusetaNomencladorBundle:Estilo')->find($autobus['estilo']);
-        $entity->setEstilo($estilo);
-
-        $color = $em->getRepository('BusetaNomencladorBundle:Color')->find($autobus['color']);
-        $entity->setColor($color);
-
-        $marcamotor = $em->getRepository('BusetaNomencladorBundle:MarcaMotor')->find($autobus['marca_motor']);
-        $entity->setMarcaMotor($marcamotor);
-
-        $combustible = $em->getRepository('BusetaNomencladorBundle:Combustible')->find($autobus['combustible']);
-        $entity->setCombustible($combustible);
-
-        //$em->persist($entity);
-        //$em->flush();
-        //return $this->redirect($this->generateUrl('autobus_show', array('id' => $entity->getId())));
-
-        */
 
         if ($form->isValid()) {
 
@@ -117,7 +71,7 @@ class AutobusController extends Controller
 
         print_r($form->getErrorsAsString());die;
 
-        return $this->render('DataBundle:Autobus:new.html.twig', array(
+        return $this->render('BusetaBusesBundle:Autobus:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
@@ -154,7 +108,7 @@ class AutobusController extends Controller
         $em = $this->getDoctrine()->getManager();
 
 
-        return $this->render('DataBundle:Autobus:new.html.twig', array(
+        return $this->render('BusetaBusesBundle:Autobus:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
@@ -168,7 +122,7 @@ class AutobusController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('DataBundle:Autobus')->find($id);
+        $entity = $em->getRepository('BusetaBusesBundle:Autobus')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Autobus entity.');
@@ -176,7 +130,7 @@ class AutobusController extends Controller
 
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('DataBundle:Autobus:show.html.twig', array(
+        return $this->render('BusetaBusesBundle:Autobus:show.html.twig', array(
             'entity'      => $entity,
             'delete_form' => $deleteForm->createView(),        ));
     }
@@ -189,7 +143,7 @@ class AutobusController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('DataBundle:Autobus')->find($id);
+        $entity = $em->getRepository('BusetaBusesBundle:Autobus')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Autobus entity.');
@@ -198,7 +152,7 @@ class AutobusController extends Controller
         $editForm = $this->createEditForm($entity);
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('DataBundle:Autobus:edit.html.twig', array(
+        return $this->render('BusetaBusesBundle:Autobus:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
@@ -231,7 +185,7 @@ class AutobusController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('DataBundle:Autobus')->find($id);
+        $entity = $em->getRepository('BusetaBusesBundle:Autobus')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Autobus entity.');
@@ -247,7 +201,7 @@ class AutobusController extends Controller
             return $this->redirect($this->generateUrl('autobus_show', array('id' => $id)));
         }
 
-        return $this->render('DataBundle:Autobus:edit.html.twig', array(
+        return $this->render('BusetaBusesBundle:Autobus:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
@@ -264,7 +218,7 @@ class AutobusController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('DataBundle:Autobus')->find($id);
+            $entity = $em->getRepository('BusetaBusesBundle:Autobus')->find($id);
 
             if (!$entity) {
                 throw $this->createNotFoundException('Unable to find Autobus entity.');

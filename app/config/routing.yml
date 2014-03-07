@@ -1,3 +1,15 @@
+buseta_bodega:
+    resource: "@BusetaBodegaBundle/Resources/config/routing.yml"
+    prefix:   /
+
+buseta_taller:
+    resource: "@BusetaTallerBundle/Resources/config/routing.yml"
+    prefix:   /
+
+buseta_buses:
+    resource: "@BusetaBusesBundle/Resources/config/routing.yml"
+    prefix:   /
+
 BusetaNomencladorBundle_admin_buseta_nomenclador_bundle_marcamotor:
     resource: "@BusetaNomencladorBundle/Controller/Marcamotor/"
     type:     admingenerator

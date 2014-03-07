@@ -30,7 +30,9 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
-
+            new Buseta\BusesBundle\BusetaBusesBundle(),
+            new Buseta\TallerBundle\BusetaTallerBundle(),
+            new Buseta\BodegaBundle\BusetaBodegaBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {            
