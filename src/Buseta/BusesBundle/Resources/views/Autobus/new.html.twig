@@ -74,8 +74,8 @@
                 </div>
 
                 <div class="col-md-4">
-                    <label>Modelo:</label>
-                    {{ form_widget(form.modelo) }}
+                    <label>Estilo:</label>
+                    {{ form_widget(form.estilo) }}
                 </div>
             </div>
 
@@ -86,8 +86,8 @@
                 </div>
 
                 <div class="col-md-4">
-                    <label>Estilo:</label>
-                    {{ form_widget(form.estilo) }}
+                    <label>Modelo:</label>
+                    {{ form_widget(form.modelo) }}
                 </div>
 
                 <div class="col-md-4">
@@ -198,7 +198,6 @@
         </form>
     </div>
 
-
 {% endblock %}
 
 
@@ -208,6 +207,11 @@
 {% endblock %}
 
 {% block javascripts %}
+    <script type="text/javascript">
+        var json = {{ json|raw }};
+        console.log(json);
+    </script>
+    <script src="{{ asset('vendors/selectDinamico.js') }}"></script>
     <script src="{{ asset('vendors/funciones_datetime_new.js') }}"></script>
 {% endblock %}
 

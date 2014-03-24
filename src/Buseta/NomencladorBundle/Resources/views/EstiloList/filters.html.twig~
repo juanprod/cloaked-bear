@@ -1,1 +1,0 @@
-{% extends_admingenerated "BusetaNomencladorBundle:EstiloList:filters.html.twig" %}

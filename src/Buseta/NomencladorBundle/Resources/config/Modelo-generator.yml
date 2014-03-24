@@ -12,6 +12,8 @@ params:
             label: Código
       marca:
             label: Marca
+      descripcion:
+            label: Descripción
     object_actions:
         delete: ~
     batch_actions:
@@ -20,7 +22,7 @@ builders:
     list:
         params:
             title: Listado de Modelos
-            display: [valor, codigo, marca]
+            display: [valor, codigo, marca, descripcion]
             actions:
                 new: ~
             object_actions:
@@ -29,25 +31,25 @@ builders:
                 delete: ~
     filters:
         params:
-            display: [valor, codigo, marca]
+            display: [valor, codigo, marca, descripcion]
     new:
         params:
             title: Adicionar nuevo Modelo
-            display: [valor, codigo, marca]
+            display: [valor, codigo, marca, descripcion]
             actions:
                 save: ~
                 list: ~
     edit:
         params:
             title: "Usted está modificando el modelo: \"%object%\"|{ %object%: Modelo.valor }|"
-            display: [valor, codigo, marca]
+            display: [valor, codigo, marca, descripcion]
             actions:
                 save: ~
                 list: ~
     show:
         params:
             title: "Usted está mostrando el modelo: \"%object%\"|{ %object%: Modelo.valor }|"
-            display: [valor, codigo, marca]
+            display: [valor, codigo, marca, descripcion]
             actions:
                 list: ~
                 new: ~

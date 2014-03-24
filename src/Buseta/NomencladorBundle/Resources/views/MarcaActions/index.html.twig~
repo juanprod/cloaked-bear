@@ -1,1 +1,0 @@
-{% extends_admingenerated "BusetaNomencladorBundle:MarcaActions:index.html.twig" %}

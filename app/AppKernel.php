@@ -33,6 +33,7 @@ class AppKernel extends Kernel
             new Buseta\BusesBundle\BusetaBusesBundle(),
             new Buseta\TallerBundle\BusetaTallerBundle(),
             new Buseta\BodegaBundle\BusetaBodegaBundle(),
+            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {            

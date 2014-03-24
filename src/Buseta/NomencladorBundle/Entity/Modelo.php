@@ -68,4 +68,27 @@ class Modelo extends BaseNomenclador
         return $this->marca;
     }
 
+    /**
+     * Set descripcion
+     *
+     * @param string $descripcion
+     * @return Descripcion
+     */
+    public function setDescripcion($descripcion)
+    {
+        $this->descripcion = $descripcion;
+
+        return $this;
+    }
+
+    /**
+     * Get descripcion
+     *
+     * @return string
+     */
+    public function getDescripcion()
+    {
+        return $this->descripcion;
+    }
+
 }

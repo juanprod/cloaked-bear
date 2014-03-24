@@ -107,10 +107,32 @@ class AutobusController extends Controller
 
         $em = $this->getDoctrine()->getManager();
 
+        $json = array();
+
+        $marcas  = $em->getRepository('BusetaNomencladorBundle:Marca')->findAll();
+
+        foreach($marcas as $m){
+
+            $modelos = $em->getRepository('BusetaNomencladorBundle:Modelo')->findBy(array(
+                    'marca' => $m->getId()
+                ));
+
+            $childrens = array();
+
+            foreach($modelos as $modelo){
+                $childrens[$modelo->getId()] = $modelo->getCodigo();
+            }
+
+            $json[$m->getId()] = array(
+                'name' => $m->getCodigo(),
+                'childrens' => $childrens,
+            );
+        }
 
         return $this->render('BusetaBusesBundle:Autobus:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
+            'json'   => json_encode($json),
         ));
     }
 
@@ -247,4 +269,29 @@ class AutobusController extends Controller
             ->getForm()
         ;
     }
+
+    public function modelosAction($idMarca) {
+        if (!$this->get('security.context')->isGranted('IS_AUTHENTICATED_FULLY'))
+            return new \Symfony\Component\HttpFoundation\Response('Acceso Denegado', 403);
+
+        $request = $this->getRequest();
+        if (!$request->isXmlHttpRequest())
+            return new \Symfony\Component\HttpFoundation\Response('No es una petición Ajax', 500);
+
+        $em = $this->getDoctrine()->getManager();
+        $modelos = $em->getRepository('BusetaNomencladorBundle:Modelo')->findBy(array(
+                'marca' => $idMarca
+            ));
+
+        $json = array();
+        foreach ($modelos as $modelos) {
+            $json[] = array(
+                'id' => $modelos->getId(),
+                'codigo' => $modelos->getCodigo(),
+            );
+        }
+
+        return new \Symfony\Component\HttpFoundation\Response(json_encode($json), 200);
+    }
+
 }

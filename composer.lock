@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "cca15dcec5911b9e5c5ad6f79ee76d02",
+    "hash": "af63582f418197e7935d68e2568e9697",
     "packages": [
         {
             "name": "afarkas/html5shiv",
@@ -1030,6 +1030,55 @@
             "keywords": [
                 "database",
                 "orm"
+            ]
+        },
+        {
+            "name": "friendsofsymfony/jsrouting-bundle",
+            "version": "1.5.3",
+            "target-dir": "FOS/JsRoutingBundle",
+            "dist": {
+                "type": "zip",
+                "url": "http://192.168.0.100/artifact/zips/friendsofsymfony-jsrouting-bundle-1.5.3.zip",
+                "reference": "friendsofsymfony-jsrouting-bundle-1.5.3.zip",
+                "shasum": "18c4ddfd53db77b253f6c15358abfe36a7dc5fef"
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "symfony/console": "~2.0",
+                "symfony/framework-bundle": "~2.0",
+                "symfony/serializer": "~2.0",
+                "willdurand/jsonp-callback-validator": "~1.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.5-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "FOS\\JsRoutingBundle": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "William Durand",
+                    "email": "william.durand1@gmail.com"
+                },
+                {
+                    "name": "FriendsOfSymfony Community",
+                    "homepage": "https://github.com/friendsofsymfony/FOSJsRoutingBundle/contributors"
+                }
+            ],
+            "description": "A pretty nice way to expose your Symfony2 routing to client applications.",
+            "homepage": "http://friendsofsymfony.github.com",
+            "keywords": [
+                "javascript",
+                "js routing",
+                "routing"
             ]
         },
         {
@@ -2328,6 +2377,38 @@
                 "page",
                 "paging"
             ]
+        },
+        {
+            "name": "willdurand/jsonp-callback-validator",
+            "version": "1.1.0",
+            "dist": {
+                "type": "zip",
+                "url": "http://192.168.0.100/artifact/zips/willdurand-jsonp-callback-validator-v1.1.0.zip",
+                "reference": "willdurand-jsonp-callback-validator-v1.1.0.zip",
+                "shasum": "111ca546e540536177164e187e1e396d4430b7bd"
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~3.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "JsonpCallbackValidator": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "William DURAND",
+                    "email": "william.durand1@gmail.com"
+                }
+            ],
+            "description": "JSONP callback validator."
         }
     ],
     "packages-dev": [
