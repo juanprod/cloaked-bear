@@ -83,5 +83,13 @@ class FiltroTransmision
         return $this->id;
     }
 
-
+    /**
+     * Comprueba si contiene datos el filtro
+     *
+     * @return bool
+     */
+    public function hasData()
+    {
+        return $this->filtro_transmision;
+    }
 }

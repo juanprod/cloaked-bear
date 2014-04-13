@@ -95,12 +95,18 @@ class HandleAutobus
 
         $entity->setCartelCapacidadlitros($entityModel->getCartelCapacidadlitros());
 
-        $entity->setFiltroAceite($entityModel->getFiltroAceite());
-        $entity->setFiltroAgua($entityModel->getFiltroAgua());
-        $entity->setFiltroDiesel($entityModel->getFiltroDiesel());
-        $entity->setFiltroHidraulico($entityModel->getFiltroHidraulico());
-        $entity->setFiltroTransmision($entityModel->getFiltroTransmision());
-        $entity->setFiltroCaja($entityModel->getFiltroCaja());
+        if($entityModel->getFiltroAceite()->hasData())
+            $entity->setFiltroAceite($entityModel->getFiltroAceite());
+        if($entityModel->getFiltroAgua()->hasData())
+            $entity->setFiltroAgua($entityModel->getFiltroAgua());
+        if($entityModel->getFiltroDiesel()->hasData())
+            $entity->setFiltroDiesel($entityModel->getFiltroDiesel());
+        if($entityModel->getFiltroHidraulico()->hasData())
+            $entity->setFiltroHidraulico($entityModel->getFiltroHidraulico());
+        if($entityModel->getFiltroTransmision()->hasData())
+            $entity->setFiltroTransmision($entityModel->getFiltroTransmision());
+        if($entityModel->getFiltroCaja()->hasData())
+            $entity->setFiltroCaja($entityModel->getFiltroCaja());
 
         $entity->setBateria1($entityModel->getBateria1());
         $entity->setBateria2($entityModel->getBateria2());
@@ -189,12 +195,18 @@ class HandleAutobus
 
         $entity->setCartelCapacidadlitros($entityModel->getCartelCapacidadlitros());
 
-        $entity->setFiltroAceite($entityModel->getFiltroAceite());
-        $entity->setFiltroAgua($entityModel->getFiltroAgua());
-        $entity->setFiltroDiesel($entityModel->getFiltroDiesel());
-        $entity->setFiltroHidraulico($entityModel->getFiltroHidraulico());
-        $entity->setFiltroTransmision($entityModel->getFiltroTransmision());
-        $entity->setFiltroCaja($entityModel->getFiltroCaja());
+        if($entityModel->getFiltroAceite()->hasData())
+            $entity->setFiltroAceite($entityModel->getFiltroAceite());
+        if($entityModel->getFiltroAgua()->hasData())
+            $entity->setFiltroAgua($entityModel->getFiltroAgua());
+        if($entityModel->getFiltroDiesel()->hasData())
+            $entity->setFiltroDiesel($entityModel->getFiltroDiesel());
+        if($entityModel->getFiltroHidraulico()->hasData())
+            $entity->setFiltroHidraulico($entityModel->getFiltroHidraulico());
+        if($entityModel->getFiltroTransmision()->hasData())
+            $entity->setFiltroTransmision($entityModel->getFiltroTransmision());
+        if($entityModel->getFiltroCaja()->hasData())
+            $entity->setFiltroCaja($entityModel->getFiltroCaja());
 
         $entity->setBateria1($entityModel->getBateria1());
         $entity->setBateria2($entityModel->getBateria2());

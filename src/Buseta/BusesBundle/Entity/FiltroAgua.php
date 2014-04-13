@@ -105,5 +105,13 @@ class FiltroAgua
         return $this->id;
     }
 
-
+    /**
+     * Comprueba si contiene datos el filtro
+     *
+     * @return bool
+     */
+    public function hasData()
+    {
+        return $this->filtro_agua_1 && $this->filtro_agua_2;
+    }
 }
