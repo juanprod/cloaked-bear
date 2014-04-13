@@ -1,3 +1,13 @@
+BusetaNomencladorBundle_admin_buseta_nomenclador_bundle_aceitetransmision:
+    resource: "@BusetaNomencladorBundle/Controller/Aceitetransmision/"
+    type:     admingenerator
+    prefix:   /admin/nomenclador/aceitetransmision
+
+BusetaNomencladoBundle_admin_buseta_nomenclado_bundle_aceitemotor:
+    resource: "@BusetaNomencladorBundle/Controller/Aceitemotor/"
+    type:     admingenerator
+    prefix:   /admin/nomenclador/aceitemotor
+
 buseta_bodega:
     resource: "@BusetaBodegaBundle/Resources/config/routing.yml"
     prefix:   /
@@ -25,6 +35,11 @@ BusetaNomencladorBundle_admin_buseta_nomenclador_bundle_combustible:
     type:     admingenerator
     prefix:   /admin/nomenclador/combustible
 
+BusetaNomencladorBundle_admin_buseta_nomenclador_bundle_aceitehidraulico:
+    resource: "@BusetaNomencladorBundle/Controller/Aceitehidraulico/"
+    type:     admingenerator
+    prefix:   /admin/nomenclador/aceitehidraulico
+
 BusetaNomencladorBundle_admin_buseta_nomenclador_bundle_modelo:
     resource: "@BusetaNomencladorBundle/Controller/Modelo/"
     type:     admingenerator
@@ -34,6 +49,11 @@ BusetaNomencladorBundle_admin_buseta_nomenclador_bundle_marca:
     resource: "@BusetaNomencladorBundle/Controller/Marca/"
     type:     admingenerator
     prefix:   /admin/nomenclador/marca
+
+BusetaNomencladorBundle_admin_buseta_nomenclador_bundle_aceitecajacambios:
+    resource: "@BusetaNomencladorBundle/Controller/Aceitecajacambios/"
+    type:     admingenerator
+    prefix:   /admin/nomenclador/aceitecajacambios
 
 buseta_security:
     resource: "@BusetaSecurityBundle/Resources/config/routing.yml"
@@ -76,3 +96,10 @@ fos_user_resetting:
 fos_user_change_password:
     resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
     prefix: /profile
+
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+
+_imagine:
+    resource: .
+    type:     imagine

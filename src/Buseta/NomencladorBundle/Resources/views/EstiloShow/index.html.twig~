@@ -1,1 +1,0 @@
-{% extends_admingenerated "BusetaNomencladorBundle:EstiloShow:index.html.twig" %}

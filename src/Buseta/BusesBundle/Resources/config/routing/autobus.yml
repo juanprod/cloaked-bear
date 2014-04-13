@@ -28,3 +28,10 @@ autobus_delete:
     pattern:  /{id}/delete
     defaults: { _controller: "BusetaBusesBundle:Autobus:delete" }
     requirements: { _method: post|delete }
+
+autobus_ajax_modelos:
+  pattern: /ajax/{idMarca}/modelos
+  defaults: { _controller: "BusetaBusesBundle:Autobus:modelos" }
+  requirements: { _method: "GET" }
+  options:
+      expose: true

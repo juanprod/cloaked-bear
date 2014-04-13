@@ -15,6 +15,34 @@ class AutobusType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('imagen_frontal', 'file', array(
+                    'required' => true,
+                    'attr'   => array(
+                        'class' => 'form-control',
+                        'style' => 'width: 250px',
+                    )
+                ))
+            ->add('imagen_lateral_d', 'file', array(
+                    'required' => true,
+                    'attr'   => array(
+                        'class' => 'form-control',
+                        'style' => 'width: 250px',
+                    )
+                ))
+            ->add('imagen_lateral_i', 'file', array(
+                    'required' => true,
+                    'attr'   => array(
+                        'class' => 'form-control',
+                        'style' => 'width: 250px',
+                    )
+                ))
+            ->add('imagen_trasera', 'file', array(
+                    'required' => true,
+                    'attr'   => array(
+                        'class' => 'form-control',
+                        'style' => 'width: 250px',
+                    )
+                ))
             ->add('matricula', 'text', array(
                     'required' => true,
                     'attr'   => array(
@@ -22,6 +50,81 @@ class AutobusType extends AbstractType
                         'style' => 'width: 250px',
                     )
                 ))
+            ->add('marca_cajacambio', 'text', array(
+                    'required' => false,
+                    'attr'   => array(
+                        'class' => 'form-control',
+                        'style' => 'width: 250px',
+                    )
+                ))
+            ->add('tipo_cajacambio', 'text', array(
+                    'required' => false,
+                    'attr'   => array(
+                        'class' => 'form-control',
+                        'style' => 'width: 250px',
+                    )
+                ))
+            ->add('aceitecajacambios','entity',array(
+                    'class' => 'BusetaNomencladorBundle:AceiteCajaCambios',
+                    'attr' => array(
+                        'class' => 'form-control',
+                        'style' => 'width: 250px',
+                    )
+                ))
+            ->add('aceitehidraulico','entity',array(
+                    'class' => 'BusetaNomencladorBundle:AceiteHidraulico',
+                    'attr' => array(
+                        'class' => 'form-control',
+                        'style' => 'width: 250px',
+                    )
+                ))
+            ->add('aceitemotor','entity',array(
+                    'class' => 'BusetaNomencladorBundle:AceiteMotor',
+                    'attr' => array(
+                        'class' => 'form-control',
+                        'style' => 'width: 250px',
+                    )
+                ))
+            ->add('aceitetransmision','entity',array(
+                    'class' => 'BusetaNomencladorBundle:AceiteTransmision',
+                    'attr' => array(
+                        'class' => 'form-control',
+                        'style' => 'width: 250px',
+                    )
+                ))
+            ->add('cartel_capacidadlitros', 'text', array(
+                    'required' => false,
+                    'attr'   => array(
+                        'class' => 'form-control',
+                        'style' => 'width: 250px',
+                    )
+                ))
+            ->add('bateria_1', 'text', array(
+                    'required' => false,
+                    'attr'   => array(
+                        'class' => 'form-control',
+                        'style' => 'width: 250px',
+                    )
+                ))
+            ->add('bateria_2', 'text', array(
+                    'required' => false,
+                    'attr'   => array(
+                        'class' => 'form-control',
+                        'style' => 'width: 250px',
+                    )
+                ))
+            ->add('filtro_aceite', new FiltroAceiteType())
+
+            ->add('filtro_diesel', new FiltroDieselType())
+
+            ->add('filtro_hidraulico', new FiltroHidraulicoType())
+
+            ->add('filtro_caja', new FiltroCajaType())
+
+            ->add('filtro_transmision', new FiltroTransmisionType())
+
+            ->add('filtro_agua', new FiltroAguaType())
+
             ->add('numero_chasis', 'text', array(
                     'required' => true,
                     'attr'   => array(
@@ -31,6 +134,34 @@ class AutobusType extends AbstractType
                 ))
             ->add('numero_motor', 'text', array(
                     'required' => true,
+                    'attr'   => array(
+                        'class' => 'form-control',
+                        'style' => 'width: 250px',
+                    )
+                ))
+            ->add('capacidad_tanque', 'text', array(
+                    'required' => true,
+                    'attr'   => array(
+                        'class' => 'form-control',
+                        'style' => 'width: 250px',
+                    )
+                ))
+            ->add('valor_unidad', 'text', array(
+                    'required' => false,
+                    'attr'   => array(
+                        'class' => 'form-control',
+                        'style' => 'width: 250px',
+                    )
+                ))
+            ->add('numero_unidad', 'text', array(
+                    'required' => false,
+                    'attr'   => array(
+                        'class' => 'form-control',
+                        'style' => 'width: 250px',
+                    )
+                ))
+            ->add('anno', 'text', array(
+                    'required' => false,
                     'attr'   => array(
                         'class' => 'form-control',
                         'style' => 'width: 250px',
@@ -86,7 +217,45 @@ class AutobusType extends AbstractType
                         'style' => 'width: 250px',
                     )
                 ))
-            ->add('fecha_rtv','date',array(
+            ->add('fecha_rtv_1', 'choice', array(
+                    'attr'   => array(
+                        'class' => 'form-control',
+                        'style' => 'width: 250px',
+                    ),
+                    'choices' => array('Enero'=>'Enero',
+                                       'Febrero' => 'Febrero',
+                                       'Marzo' => 'Marzo',
+                                       'Abril' => 'Abril',
+                                       'Mayo' => 'Mayo',
+                                       'Junio' => 'Junio',
+                                       'Julio' => 'Julio',
+                                       'Agosto' => 'Agosto',
+                                       'Septiembre' => 'Septiembre',
+                                       'Octubre' => 'Octubre',
+                                       'Noviembre' => 'Noviembre',
+                                       'Diciembre' => 'Diciembre'
+                    )
+                    ))
+            ->add('fecha_rtv_2', 'choice', array(
+                    'attr'   => array(
+                        'class' => 'form-control',
+                        'style' => 'width: 250px',
+                    ),
+                    'choices' => array('Enero'=>'Enero',
+                                       'Febrero' => 'Febrero',
+                                       'Marzo' => 'Marzo',
+                                       'Abril' => 'Abril',
+                                       'Mayo' => 'Mayo',
+                                       'Junio' => 'Junio',
+                                       'Julio' => 'Julio',
+                                       'Agosto' => 'Agosto',
+                                       'Septiembre' => 'Septiembre',
+                                       'Octubre' => 'Octubre',
+                                       'Noviembre' => 'Noviembre',
+                                       'Diciembre' => 'Diciembre'
+                    )
+                ))
+            ->add('fecha_ingreso','date',array(
                     'widget' => 'single_text',
                     'format'  => 'dd/MM/yyyy',
                     'attr'   => array(
@@ -197,7 +366,7 @@ class AutobusType extends AbstractType
             'data_class' => 'Buseta\BusesBundle\Form\Model\Autobus'
         ));*/
         $resolver->setDefaults(array(
-                'data_class' => 'Buseta\BusesBundle\Entity\Autobus'
+                'data_class' => 'Buseta\BusesBundle\Form\Model\AutobusModel'
         ));
     }
 

@@ -1,16 +1,32 @@
-$('#buseta_databundle_autobus_valido_hasta').pickadate({
+var autobus_fecha_ingreso = $('#buseta_databundle_autobus_fecha_ingreso').pickadate({
     format: 'dd/mm/yyyy',
     formatSubmit: 'dd/mm/yyyy'
 });
+var autobus_valido_hasta = $('#buseta_databundle_autobus_valido_hasta').pickadate({
+    format: 'dd/mm/yyyy',
+    formatSubmit: 'dd/mm/yyyy'
+});
+
+var picker = autobus_fecha_ingreso.pickadate('picker');
+var $fechaIngreso;
+picker.on('close', function(){
+    $fechaIngreso = this.get('select','dd/mm/yyyy');
+    var splt = $fechaIngreso.split('/');
+    var entero = parseInt(splt[2]);
+    entero+=15;
+    splt[2] = entero.toString();
+
+    $fechaIngreso = splt.join('/');
+
+    var picker2 = autobus_valido_hasta.pickadate('picker');
+    picker2.set('select', $fechaIngreso, { format: 'dd/mm/yyyy' });
+});
+
 var valido = $('#buseta_databundle_autobus_valido_hasta').val();
 $('input:hidden[name^="buseta_databundle_autobus[valido_hasta]_submit"]').val(valido);
 
-$('#buseta_databundle_autobus_fecha_rtv').pickadate({
-    format: 'dd/mm/yyyy',
-    formatSubmit: 'dd/mm/yyyy'
-});
-var rtv = $('#buseta_databundle_autobus_fecha_rtv').val();
-$('input:hidden[name^="buseta_databundle_autobus[fecha_rtv]_submit"]').val(rtv);
+var fechaingreso = $('#buseta_databundle_autobus_fecha_ingreso').val();
+$('input:hidden[name^="buseta_databundle_autobus[fecha_ingreso]_submit"]').val(fechaingreso);
 
 localChange()
 $("input#barras").click(localChange);

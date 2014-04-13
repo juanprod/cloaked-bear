@@ -29,6 +29,13 @@ class Marca extends BaseNomenclador
     private $modelos;
 
     /**
+     * @var \Doctrine\Common\Collections\ArrayCollection
+     *
+     * @ORM\OneToMany(targetEntity="Buseta\BusesBundle\Entity\Autobus", mappedBy="marca", cascade={"all"})
+     */
+    private $autobuses;
+
+    /**
      * Constructor
      */
     public function __construct()
@@ -78,4 +85,22 @@ class Marca extends BaseNomenclador
     {
         return $this->modelos;
     }
+
+    /**
+     * @param \Doctrine\Common\Collections\ArrayCollection $autobuses
+     */
+    public function setAutobuses($autobuses)
+    {
+        $this->autobuses = $autobuses;
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\ArrayCollection
+     */
+    public function getAutobuses()
+    {
+        return $this->autobuses;
+    }
+
+
 }

@@ -23,10 +23,11 @@
         "friendsofsymfony/user-bundle": "2.0.*@dev",
 	"cedriclombardot/admingenerator-generator-bundle": "2.3.*@dev",
         "avocode/form-extensions-bundle": "dev-master",
-        "liip/imagine-bundle": "0.20.*",
+        "liip/imagine-bundle": "dev-master",
         "cedriclombardot/admingenerator-user-bundle": "dev-master",
         "doctrine/doctrine-fixtures-bundle": "2.2.*",
-        "knplabs/knp-paginator-bundle": "2.4.*@dev"
+        "knplabs/knp-paginator-bundle": "2.4.*@dev",
+        "friendsofsymfony/jsrouting-bundle": "1.5.*"
     },
     "scripts": {
         "post-install-cmd": [
@@ -62,7 +63,7 @@
     "repositories": [
         {
             "type": "composer",
-            "url": "http://localhost/satis/web"
+            "url": "http://192.168.0.100/satis/web"
         },
         {
             "packagist": false

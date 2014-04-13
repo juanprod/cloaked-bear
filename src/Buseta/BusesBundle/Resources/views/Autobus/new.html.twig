@@ -10,179 +10,405 @@
 
 {% block area_trabajo %}
 
-        <form action="{{ path('autobus_create') }}" method="post" {{ form_enctype(form) }}>
-            <div class="row show-grid">
-                <div class="col-md-4">
-                    <label>Matrícula:</label>
-                    {{ form_widget(form.matricula) }}
-                </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a href="#basicos" data-toggle="tab">Datos b&aacute;sicos</a>
+                        </li>
+                        <li>
+                            <a href="#extras" data-toggle="tab">Informaci&oacute;n extra</a>
+                        </li>
+                        <li>
+                            <a href="#filtros" data-toggle="tab">Filtros</a>
+                        </li>
+                    </ul>
 
-                <div class="col-md-4">
-                    <label>Número de Chasis:</label>
-                    {{ form_widget(form.numero_chasis) }}
-                </div>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="basicos">
+                            <form action="{{ path('autobus_create') }}" method="post" {{ form_enctype(form) }}>
+                            <div class="row show-grid">
+                                <div class="col-md-6">
+                                    <label>Vista Frontal:</label>
+                                    {{ form_widget(form.imagen_frontal) }}
+                                </div>
 
-                <div class="col-md-4">
-                    <label>Número de Motor:</label>
-                    {{ form_widget(form.numero_motor) }}
-                </div>
-            </div>
+                                <div class="col-md-6">
+                                    <label>Vista Trasera:</label>
+                                    {{ form_widget(form.imagen_trasera) }}
+                                </div>
+                            </div>
 
-            <div class="row show-grid">
-                <div class="col-md-4">
-                    <label>Peso Tara:</label>
-                    {{ form_widget(form.peso_tara) }}
-                </div>
+                            <div class="row show-grid">
+                                <div class="col-md-6">
+                                    <label>Vista Lateral Izquierda:</label>
+                                    {{ form_widget(form.imagen_lateral_i) }}
+                                </div>
 
-                <div class="col-md-4">
-                    <label>Peso Bruto:</label>
-                    {{ form_widget(form.peso_bruto) }}
-                </div>
+                                <div class="col-md-6">
+                                    <label>Vista Lateral Derecha:</label>
+                                    {{ form_widget(form.imagen_lateral_d) }}
+                                </div>
+                            </div>
 
-                <div class="col-md-4">
-                    <label>Número de Plazas:</label>
-                    {{ form_widget(form.numero_plazas) }}
-                </div>
-            </div>
+                            <div class="row show-grid">
+                                <div class="col-md-4">
+                                    <label>Matr&iacute;cula:</label>
+                                    {{ form_widget(form.matricula) }}
+                                </div>
 
-            <div class="row show-grid">
-                <div class="col-md-4">
-                    <label>Número de Cilindros:</label>
-                    {{ form_widget(form.numero_cilindros) }}
-                </div>
+                                <div class="col-md-4">
+                                    <label>N&uacute;mero de Chasis:</label>
+                                    {{ form_widget(form.numero_chasis) }}
+                                </div>
 
-                <div class="col-md-4">
-                    <label>Cilindrada:</label>
-                    {{ form_widget(form.cilindrada) }}
-                </div>
+                                <div class="col-md-4">
+                                    <label>N&uacute;mero de Motor:</label>
+                                    {{ form_widget(form.numero_motor) }}
+                                </div>
+                            </div>
 
-                <div class="col-md-4">
-                    <label>Potencia:</label>
-                    {{ form_widget(form.potencia) }}
-                </div>
-            </div>
+                            <div class="row show-grid">
+                                <div class="col-md-4">
+                                    <label>Peso Tara:</label>
+                                    {{ form_widget(form.peso_tara) }}
+                                </div>
 
-            <div class="row show-grid">
-                <div class="col-md-4">
-                    <label>Válido Hasta:</label>
-                    {{ form_widget(form.valido_hasta) }}
-                </div>
+                                <div class="col-md-4">
+                                    <label>Peso Bruto:</label>
+                                    {{ form_widget(form.peso_bruto) }}
+                                </div>
 
-                <div class="col-md-4">
-                    <label>Fecha RTV:</label>
-                    {{ form_widget(form.fecha_rtv) }}
-                </div>
+                                <div class="col-md-4">
+                                    <label>N&uacute;mero de Plazas:</label>
+                                    {{ form_widget(form.numero_plazas) }}
+                                </div>
+                            </div>
 
-                <div class="col-md-4">
-                    <label>Modelo:</label>
-                    {{ form_widget(form.modelo) }}
-                </div>
-            </div>
+                            <div class="row show-grid">
+                                <div class="col-md-4">
+                                    <label>N&uacute;mero de Cilindros:</label>
+                                    {{ form_widget(form.numero_cilindros) }}
+                                </div>
 
-            <div class="row show-grid">
-                <div class="col-md-4">
-                    <label>Marca:</label>
-                    {{ form_widget(form.marca) }}
-                </div>
+                                <div class="col-md-4">
+                                    <label>Cilindrada:</label>
+                                    {{ form_widget(form.cilindrada) }}
+                                </div>
 
-                <div class="col-md-4">
-                    <label>Estilo:</label>
-                    {{ form_widget(form.estilo) }}
-                </div>
+                                <div class="col-md-4">
+                                    <label>Potencia:</label>
+                                    {{ form_widget(form.potencia) }}
+                                </div>
+                            </div>
 
-                <div class="col-md-4">
-                    <label>Color:</label>
-                    {{ form_widget(form.color) }}
-                </div>
-            </div>
+                            <div class="row show-grid">
+                                <div class="col-md-4">
+                                    <label>Fecha de Ingreso:</label>
+                                    {{ form_widget(form.fecha_ingreso) }}
+                                </div>
 
-            <div class="row show-grid">
-                <div class="col-md-4">
-                    <label>Marca de Motor:</label>
-                    {{ form_widget(form.marca_motor) }}
-                </div>
+                                <div class="col-md-4">
+                                    <label>V&aacute;lido Hasta:</label>
+                                    {{ form_widget(form.valido_hasta) }}
+                                </div>
 
-                <div class="col-md-4">
-                    <label>Combustible:</label>
-                    {{ form_widget(form.combustible) }}
-                </div>
-            </div>
+                                <div class="col-md-4">
+                                    <label>Estilo:</label>
+                                    {{ form_widget(form.estilo) }}
+                                </div>
+                            </div>
 
-            <div class="row show-grid">
-                <div class="col-md-4">
-                    <div class="checkbox">
-                        <label>
-                            <input id="rampas" type="checkbox" value=""><strong>Tiene Rampas</strong>
-                        </label>
+                            <div class="row show-grid">
+                                <div class="col-md-4">
+                                    <label>Fecha RTV 1:</label>
+                                    {{ form_widget(form.fecha_rtv_1) }}
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label>Fecha RTV 2:</label>
+                                    {{ form_widget(form.fecha_rtv_2) }}
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label>Combustible:</label>
+                                    {{ form_widget(form.combustible) }}
+                                </div>
+
+                            </div>
+
+
+                            <div class="row show-grid">
+                                <div class="col-md-4">
+                                    <label>Marca:</label>
+                                    {{ form_widget(form.marca) }}
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label>Modelo:</label>
+                                    {{ form_widget(form.modelo) }}
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label>Color:</label>
+                                    {{ form_widget(form.color) }}
+                                </div>
+                            </div>
+
+                            <div class="row show-grid">
+                                <div class="col-md-4">
+                                    <label>Marca de Motor:</label>
+                                    {{ form_widget(form.marca_motor) }}
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label>Capacidad del Tanque en Litros:</label>
+                                    {{ form_widget(form.capacidad_tanque) }}
+                                </div>
+
+                            </div>
+
+                            <div class="row show-grid">
+                                <div class="col-md-4">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input id="rampas" type="checkbox" value=""><strong>Tiene Rampas</strong>
+                                        </label>
+                                    </div>
+                                    <label id="rampas">Descripci&oacute;n de las Rampas:</label>
+                                    {{ form_widget(form.rampas) }}
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input id="barras" type="checkbox" value=""><strong>Tiene Barras</strong>
+                                        </label>
+                                    </div>
+                                    <label id="barras">Descripci&oacute;n de Barras:</label>
+                                    {{ form_widget(form.barras) }}
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input id="camaras" type="checkbox" value=""><strong>Tiene Cámaras</strong>
+                                        </label>
+                                    </div>
+                                    <label id="camaras">Descripci&oacute;n de Cámaras:</label>
+                                    {{ form_widget(form.camaras) }}
+                                </div>
+                            </div>
+
+                            <div class="row show-grid">
+                                <div class="col-md-4">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input id="lector" type="checkbox" value=""><strong>Tiene Lector de Cédulas</strong>
+                                        </label>
+                                    </div>
+                                    <label id="lector">Descripci&oacute;n del Lector de C&eacute;dulas:</label>
+                                    {{ form_widget(form.lector_cedulas) }}
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input id="publicidad" type="checkbox" value=""><strong>Tiene Publicidad</strong>
+                                        </label>
+                                    </div>
+                                    <label id="publicidad">Descripci&oacute;n de la Publicidad:</label>
+                                    {{ form_widget(form.publicidad) }}
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input id="gps" type="checkbox" value=""><strong>Tiene GPS</strong>
+                                        </label>
+                                    </div>
+                                    <label id="gps" >Descripci&oacute;n de GPS:</label>
+                                    {{ form_widget(form.gps) }}
+                                </div>
+                            </div>
+
+                            <div class="row show-grid">
+                                <div class="col-md-4">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input id="wifi" type="checkbox" value=""><strong>Tiene Wifi</strong>
+                                        </label>
+                                    </div>
+                                    <label id="wifi">Descripci&oacute;n de Wifi:</label>
+                                    {{ form_widget(form.wifi) }}
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="tab-pane fade" id="extras">
+
+                            <div class="row show-grid">
+                                <div class="col-md-4">
+                                    <label>N&uacute;mero de Unidad:</label>
+                                    {{ form_widget(form.numero_unidad) }}
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label>Valor Unidad:</label>
+                                    {{ form_widget(form.valor_unidad) }}
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label>Año:</label>
+                                    {{ form_widget(form.anno) }}
+                                </div>
+
+                            </div>
+
+                            <div class="row show-grid">
+                                <div class="col-md-4">
+                                    <label>Marca Caja de Cambio:</label>
+                                    {{ form_widget(form.marca_cajacambio) }}
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label>Tipo Caja de Cambio:</label>
+                                    {{ form_widget(form.tipo_cajacambio) }}
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label>Cartel Capacidad de Litros:</label>
+                                    {{ form_widget(form.cartel_capacidadlitros) }}
+                                </div>
+                            </div>
+
+                            <div class="row show-grid">
+                                <div class="col-md-4">
+                                    <label>Aceite Caja de Cambios:</label>
+                                    {{ form_widget(form.aceitecajacambios) }}
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label>Aceite Hidr&aacute;ulico:</label>
+                                    {{ form_widget(form.aceitehidraulico) }}
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label>Aceite de Motor:</label>
+                                    {{ form_widget(form.aceitemotor) }}
+                                </div>
+
+                            </div>
+
+                            <div class="row show-grid">
+                                <div class="col-md-4">
+                                    <label>Aceite de Transmisi&oacute;n:</label>
+                                    {{ form_widget(form.aceitetransmision) }}
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label>Bater&iacute;a 1:</label>
+                                    {{ form_widget(form.bateria_1) }}
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label>Bater&iacute;a 2:</label>
+                                    {{ form_widget(form.bateria_2) }}
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="tab-pane fade" id="filtros">
+
+                            <div class="row show-grid">
+                                <div class="col-md-3">
+                                    <label>Filtro de Caja:</label>
+                                    {{ form_widget(form.filtro_caja.filtro_caja_1) }}
+                                </div>
+                                <div class="col-md-3">
+                                    <label>&nbsp;</label>
+                                    {{ form_widget(form.filtro_caja.filtro_caja_2) }}
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label>Filtro de Transmisi&oacute;n</label>
+                                    {{ form_widget(form.filtro_transmision.filtro_transmision) }}
+                                </div>
+                            </div>
+
+
+                            <div class="row show-grid">
+                                <div class="col-md-3">
+                                    <label>Filtro de Agua:</label>
+                                    {{ form_widget(form.filtro_agua.filtro_agua_1) }}
+                                </div>
+                                <div class="col-md-3">
+                                    <label>&nbsp;</label>
+                                    {{ form_widget(form.filtro_agua.filtro_agua_2) }}
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label>Filtro de Hidr&aacute;ulico:</label>
+                                    {{ form_widget(form.filtro_hidraulico.filtro_hidraulico_1) }}
+                                </div>
+                                <div class="col-md-3">
+                                    <label>&nbsp;</label>
+                                    {{ form_widget(form.filtro_hidraulico.filtro_hidraulico_2) }}
+                                </div>
+                            </div>
+
+                            <div class="row show-grid">
+                                <div class="col-md-3">
+                                    <label>Filtro de Diesel:</label>
+                                    {{ form_widget(form.filtro_diesel.filtro_diesel_1) }}
+                                </div>
+                                <div class="col-md-3">
+                                    <label>&nbsp;</label>
+                                    {{ form_widget(form.filtro_diesel.filtro_diesel_2) }}
+                                </div>
+                                <div class="col-md-3">
+                                    <label>&nbsp;</label>
+                                    {{ form_widget(form.filtro_diesel.filtro_diesel_3) }}
+                                </div>
+                                <div class="col-md-3">
+                                    <label>&nbsp;</label>
+                                    {{ form_widget(form.filtro_diesel.filtro_diesel_4) }}
+                                </div>
+                            </div>
+
+
+                            <div class="row show-grid">
+                                <div class="col-md-3">
+                                    <label>Filtro de Aceite:</label>
+                                    {{ form_widget(form.filtro_aceite.filtro_aceite_1) }}
+                                </div>
+                                <div class="col-md-3">
+                                    <label>&nbsp;</label>
+                                    {{ form_widget(form.filtro_aceite.filtro_aceite_2) }}
+                                </div>
+                                <div class="col-md-3">
+                                    <label>&nbsp;</label>
+                                    {{ form_widget(form.filtro_aceite.filtro_aceite_3) }}
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+
                     </div>
-                    <label id="rampas">Descripción de las Rampas:</label>
-                    {{ form_widget(form.rampas) }}
                 </div>
-
-                <div class="col-md-4">
-                    <div class="checkbox">
-                        <label>
-                            <input id="barras" type="checkbox" value=""><strong>Tiene Barras</strong>
-                        </label>
-                    </div>
-                    <label id="barras">Descripción de Barras:</label>
-                    {{ form_widget(form.barras) }}
-                </div>
-
-                <div class="col-md-4">
-                    <div class="checkbox">
-                        <label>
-                            <input id="camaras" type="checkbox" value=""><strong>Tiene Cámaras</strong>
-                        </label>
-                    </div>
-                    <label id="camaras">Descripción de Cámaras:</label>
-                    {{ form_widget(form.camaras) }}
-                </div>
+                <!-- /.panel-body -->
             </div>
-
-            <div class="row show-grid">
-                <div class="col-md-4">
-                    <div class="checkbox">
-                        <label>
-                            <input id="lector" type="checkbox" value=""><strong>Tiene Lector de Cédulas</strong>
-                        </label>
-                    </div>
-                    <label id="lector">Descripción del Lector de Cédulas:</label>
-                    {{ form_widget(form.lector_cedulas) }}
-                </div>
-
-                <div class="col-md-4">
-                    <div class="checkbox">
-                        <label>
-                            <input id="publicidad" type="checkbox" value=""><strong>Tiene Publicidad</strong>
-                        </label>
-                    </div>
-                    <label id="publicidad">Descripción de la Publicidad:</label>
-                    {{ form_widget(form.publicidad) }}
-                </div>
-
-                <div class="col-md-4">
-                    <div class="checkbox">
-                        <label>
-                            <input id="gps" type="checkbox" value=""><strong>Tiene GPS</strong>
-                        </label>
-                    </div>
-                    <label id="gps" >Descripción de GPS:</label>
-                    {{ form_widget(form.gps) }}
-                </div>
-            </div>
-
-            <div class="row show-grid">
-                <div class="col-md-4">
-                    <div class="checkbox">
-                        <label>
-                            <input id="wifi" type="checkbox" value=""><strong>Tiene Wifi</strong>
-                        </label>
-                    </div>
-                    <label id="wifi">Descripción de Wifi:</label>
-                    {{ form_widget(form.wifi) }}
-                </div>
-            </div>
+            <!-- /.panel -->
 
             <div class="row show-grid">
                 <div class="col-md-4">
@@ -195,8 +421,12 @@
             </div>
 
             {{ form_rest(form) }}
-        </form>
+            </form>
+        </div>
+        <!-- /.col-lg-6 -->
+
     </div>
+
 
 
 {% endblock %}
@@ -208,6 +438,11 @@
 {% endblock %}
 
 {% block javascripts %}
+    <script type="text/javascript">
+        var json = {{ json|raw }};
+        console.log(json);
+    </script>
+    <script src="{{ asset('vendors/selectDinamico.js') }}"></script>
     <script src="{{ asset('vendors/funciones_datetime_new.js') }}"></script>
 {% endblock %}
 

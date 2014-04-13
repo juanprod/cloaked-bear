@@ -22,16 +22,14 @@
         <thead>
             <tr>
                 <th>Matricula</th>
-                <th>No.Chasis</th>
-                <th>No.Motor</th>
-                <th>Peso Tara</th>
-                <th>Peso Bruto</th>
-                <th>No. Plazas</th>
-                <th>No. Cilindros</th>
-                <th>Cilindrada</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Color</th>
                 <th>Potencia</th>
+                <th>Fecha Ingreso</th>
                 <th>Valido Hasta</th>
-                <th>Fecha RTV</th>
+                <th>Fecha RTV 1</th>
+                <th>Fecha RTV 2</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -39,16 +37,14 @@
         {% for entity in entities %}
             <tr>
                 <td>{{ entity.matricula }}</td>
-                <td>{{ entity.numerochasis }}</td>
-                <td>{{ entity.numeromotor }}</td>
-                <td>{{ entity.pesotara }}</td>
-                <td>{{ entity.pesobruto }}</td>
-                <td>{{ entity.numeroplazas }}</td>
-                <td>{{ entity.numerocilindros }}</td>
-                <td>{{ entity.cilindrada }}</td>
+                <td>{{ entity.marca }}</td>
+                <td>{{ entity.modelo }}</td>
+                <td>{{ entity.color }}</td>
                 <td>{{ entity.potencia }}</td>
+                <td>{% if entity.fechaingreso %}{{ entity.fechaingreso|date('d/m/Y') }}{% endif %}</td>
                 <td>{% if entity.validohasta %}{{ entity.validohasta|date('d/m/Y') }}{% endif %}</td>
-                <td>{% if entity.fechartv %}{{ entity.fechartv|date('d/m/Y') }}{% endif %}</td>
+                <td>{% if entity.fechartv1 %}{{ entity.fechartv1 }}{% endif %}</td>
+                <td>{% if entity.fechartv2 %}{{ entity.fechartv2 }}{% endif %}</td>
                 <td  style="width: 18% !important; text-align: center;">
                     <div class="btn-group">
                         <a class="btn btn-success btn-xs" href="{{ path('autobus_show', { 'id': entity.id }) }}"><i class="fa fa-search"> Mostrar</i></a>

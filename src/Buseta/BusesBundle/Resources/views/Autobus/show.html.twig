@@ -13,6 +13,34 @@
     <table class="table table-striped" style="font-size: 16px;">
         <tbody>
             <tr>
+                <th>Imagen Frontal</th>
+                <td>
+                    {% set path = 'images/' ~ entity.imagenfrontal %}
+                    <img src="{{ asset(path)}}" alt="Imagen frontal" class="imagen-autobus" />
+                </td>
+            </tr>
+            <tr>
+                <th>Imagen Lateral Derecha</th>
+                <td>
+                    {% set path = 'images/' ~ entity.imagenlaterald %}
+                    <img src="{{ asset(path)}}" alt="Imagen lateral derecha" class="imagen-autobus" />
+                </td>
+            </tr>
+            <tr>
+                <th>Imagen Lateral Izquierda</th>
+                <td>
+                    {% set path = 'images/' ~ entity.imagenlaterali %}
+                    <img src="{{ asset(path)}}" alt="Imagen lateral izquierda" class="imagen-autobus" />
+                </td>
+            </tr>
+            <tr>
+                <th>Imagen Trasera</th>
+                <td>
+                    {% set path = 'images/' ~ entity.imagentrasera %}
+                    <img src="{{ asset(path)}}" alt="Imagen trasera" class="imagen-autobus" />
+                </td>
+            </tr>
+            <tr>
                 <th>Matrícula</th>
                 <td>{{ entity.matricula }}</td>
             </tr>
@@ -49,12 +77,20 @@
                 <td>{{ entity.potencia }}</td>
             </tr>
             <tr>
+                <th>Fecha Ingreso</th>
+                <td>{{ entity.fechaingreso|date('d/m/Y') }}</td>
+            </tr>
+            <tr>
                 <th>Válido Hasta</th>
                 <td>{{ entity.validohasta|date('d/m/Y') }}</td>
             </tr>
             <tr>
-                <th>Fecha RTV</th>
-                <td>{{ entity.fechartv|date('d/m/Y') }}</td>
+                <th>Fecha RTV 1</th>
+                <td>{{ entity.fechartv1 }}</td>
+            </tr>
+            <tr>
+                <th>Fecha RTV 2</th>
+                <td>{{ entity.fechartv2 }}</td>
             </tr>
             <tr>
                 <th>Rampas</th>
@@ -125,6 +161,146 @@
                             {{ entity.wifi }}
                         {% endif %}
                     </td>
+            </tr>
+            <tr>
+                <th>N&uacute;mero de Unidad</th>
+                <td>
+                    {% if entity.numerounidad == '' %}
+                        <label style="color: red">El autobus no tiene N&uacute;mero de Unidad</label>
+                    {% else %}
+                        {{ entity.numerounidad }}
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>Año</th>
+                <td>
+                    {% if entity.anno == '' %}
+                        <label style="color: red">El autobus no tiene Año</label>
+                    {% else %}
+                        {{ entity.anno }}
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>Valor de Unidad</th>
+                <td>
+                    {% if entity.valorunidad == '' %}
+                        <label style="color: red">El autobus no tiene Valor de Unidad</label>
+                    {% else %}
+                        {{ entity.valorunidad }}
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>Marca Caja de Cambios</th>
+                <td>
+                    {% if entity.marcacajacambio == '' %}
+                        <label style="color: red">El autobus no tiene Marca Caja de Cambios</label>
+                    {% else %}
+                        {{ entity.marcacajacambio }}
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>Tipo Caja de Cambios</th>
+                <td>
+                    {% if entity.tipocajacambio == '' %}
+                        <label style="color: red">El autobus no tiene Tipo Caja de Cambios</label>
+                    {% else %}
+                        {{ entity.tipocajacambio }}
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>Cartel Capacidad en Litros</th>
+                <td>
+                    {% if entity.cartelcapacidadlitros == '' %}
+                        <label style="color: red">El autobus no tiene Cartel Capacidad en Litros</label>
+                    {% else %}
+                        {{ entity.cartelcapacidadlitros }}
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>Bater&iacute;a 1</th>
+                <td>
+                    {% if entity.bateria1 == '' %}
+                        <label style="color: red">El autobus no tiene Bater&iacute;a 1</label>
+                    {% else %}
+                        {{ entity.bateria1 }}
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>Bater&iacute;a 2</th>
+                <td>
+                    {% if entity.bateria2 == '' %}
+                        <label style="color: red">El autobus no tiene Bater&iacute;a 2</label>
+                    {% else %}
+                        {{ entity.bateria2 }}
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>Filtro de Aceite</th>
+                <td>
+                    {% if entity.filtroaceite == '' %}
+                        <label style="color: red">El autobus no tiene Filtro de Aceite</label>
+                    {% else %}
+                        {{ entity.filtroaceite.filtroaceite1 }} - {{ entity.filtroaceite.filtroaceite2 }} - {{ entity.filtroaceite.filtroaceite3 }}
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>Filtro de Agua</th>
+                <td>
+                    {% if entity.filtroagua == '' %}
+                        <label style="color: red">El autobus no tiene Filtro de Agua</label>
+                    {% else %}
+                        {{ entity.filtroagua.filtroagua1 }} - {{ entity.filtroagua.filtroagua2 }}
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>Filtro de Caja</th>
+                <td>
+                    {% if entity.filtrocaja == '' %}
+                        <label style="color: red">El autobus no tiene Filtro de Caja</label>
+                    {% else %}
+                        {{ entity.filtrocaja.filtrocaja1 }} - {{ entity.filtrocaja.filtrocaja2 }}
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>Filtro de Diesel</th>
+                <td>
+                    {% if entity.filtrodiesel == '' %}
+                        <label style="color: red">El autobus no tiene Filtro de Diesel</label>
+                    {% else %}
+                        {{ entity.filtrodiesel.filtrodiesel1 }} - {{ entity.filtrodiesel.filtrodiesel2 }} - {{ entity.filtrodiesel.filtrodiesel3 }} - {{ entity.filtrodiesel.filtrodiesel4 }}
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>Filtro Hidr&aacute;ulico</th>
+                <td>
+                    {% if entity.filtrohidraulico == '' %}
+                        <label style="color: red">El autobus no tiene Filtro Hidr&aacute;ulico</label>
+                    {% else %}
+                        {{ entity.filtrohidraulico.filtrohidraulico1 }} - {{ entity.filtrohidraulico.filtrohidraulico2 }}
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>Filtro de Transmisi&oacute;n</th>
+                <td>
+                    {% if entity.filtrotransmision == '' %}
+                        <label style="color: red">El autobus no tiene Filtro de Transmisi&oacute;n</label>
+                    {% else %}
+                        {{ entity.filtrotransmision.filtrotransmision }}
+                    {% endif %}
+                </td>
             </tr>
         </tbody>
     </table>
