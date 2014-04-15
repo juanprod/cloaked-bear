@@ -62,7 +62,7 @@ class AutobusModel
     /**
      * @var string
      */
-    private $cartel_capacidadlitros;
+    private $carter_capacidadlitros;
 
     /**
      * @var integer
@@ -434,19 +434,19 @@ class AutobusModel
     }
 
     /**
-     * @param string $cartel_capacidadlitros
+     * @param string $carter_capacidadlitros
      */
-    public function setCartelCapacidadlitros($cartel_capacidadlitros)
+    public function setCarterCapacidadlitros($carter_capacidadlitros)
     {
-        $this->cartel_capacidadlitros = $cartel_capacidadlitros;
+        $this->carter_capacidadlitros = $carter_capacidadlitros;
     }
 
     /**
      * @return string
      */
-    public function getCartelCapacidadlitros()
+    public function getCarterCapacidadlitros()
     {
-        return $this->cartel_capacidadlitros;
+        return $this->carter_capacidadlitros;
     }
 
     /**

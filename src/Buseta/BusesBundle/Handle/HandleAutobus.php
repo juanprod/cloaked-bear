@@ -93,7 +93,7 @@ class HandleAutobus
         $entity->setMarcaCajacambio($entityModel->getMarcaCajacambio());
         $entity->setTipoCajacambio($entityModel->getTipoCajacambio());
 
-        $entity->setCartelCapacidadlitros($entityModel->getCartelCapacidadlitros());
+        $entity->setCarterCapacidadlitros($entityModel->getCarterCapacidadlitros());
 
         if($entityModel->getFiltroAceite()->hasData())
             $entity->setFiltroAceite($entityModel->getFiltroAceite());
@@ -193,7 +193,7 @@ class HandleAutobus
         $entity->setMarcaCajacambio($entityModel->getMarcaCajacambio());
         $entity->setTipoCajacambio($entityModel->getTipoCajacambio());
 
-        $entity->setCartelCapacidadlitros($entityModel->getCartelCapacidadlitros());
+        $entity->setCarterCapacidadlitros($entityModel->getCarterCapacidadlitros());
 
         if($entityModel->getFiltroAceite()->hasData())
             $entity->setFiltroAceite($entityModel->getFiltroAceite());
@@ -265,7 +265,7 @@ class HandleAutobus
 
         $model->setMarcaCajacambio($entity->getMarcaCajacambio());
         $model->setTipoCajacambio($entity->getTipoCajacambio());
-        $model->setCartelCapacidadlitros($entity->getCartelCapacidadlitros());
+        $model->setCarterCapacidadlitros($entity->getCarterCapacidadlitros());
 
         $model->setAceitecajacambios($entity->getAceitecajacambios());
         $model->setAceitehidraulico($entity->getAceitehidraulico());

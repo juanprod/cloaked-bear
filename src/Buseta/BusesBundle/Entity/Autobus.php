@@ -133,9 +133,9 @@ class Autobus
     /**
      * @var string
      *
-     * @ORM\Column(name="cartel_capacidadlitros", type="string", nullable=true)
+     * @ORM\Column(name="carter_capacidadlitros", type="string", nullable=true)
      */
-    private $cartel_capacidadlitros;
+    private $carter_capacidadlitros;
 
     /**
      * @ORM\ManyToOne(targetEntity="Buseta\NomencladorBundle\Entity\Marca", inversedBy="autobuses")
@@ -612,26 +612,26 @@ class Autobus
     }
 
     /**
-     * Set cartel_capacidadlitros
+     * Set carter_capacidadlitros
      *
-     * @param string $cartelCapacidadlitros
+     * @param string $carterCapacidadlitros
      * @return Autobus
      */
-    public function setCartelCapacidadlitros($cartelCapacidadlitros)
+    public function setCarterCapacidadlitros($carterCapacidadlitros)
     {
-        $this->cartel_capacidadlitros = $cartelCapacidadlitros;
+        $this->carter_capacidadlitros = $carterCapacidadlitros;
     
         return $this;
     }
 
     /**
-     * Get cartel_capacidadlitros
+     * Get carter_capacidadlitros
      *
      * @return string 
      */
-    public function getCartelCapacidadlitros()
+    public function getCarterCapacidadlitros()
     {
-        return $this->cartel_capacidadlitros;
+        return $this->carter_capacidadlitros;
     }
 
     /**
