@@ -93,14 +93,20 @@ class HandleAutobus
         $entity->setMarcaCajacambio($entityModel->getMarcaCajacambio());
         $entity->setTipoCajacambio($entityModel->getTipoCajacambio());
 
-        $entity->setCartelCapacidadlitros($entityModel->getCartelCapacidadlitros());
+        $entity->setCarterCapacidadlitros($entityModel->getCarterCapacidadlitros());
 
-        $entity->setFiltroAceite($entityModel->getFiltroAceite());
-        $entity->setFiltroAgua($entityModel->getFiltroAgua());
-        $entity->setFiltroDiesel($entityModel->getFiltroDiesel());
-        $entity->setFiltroHidraulico($entityModel->getFiltroHidraulico());
-        $entity->setFiltroTransmision($entityModel->getFiltroTransmision());
-        $entity->setFiltroCaja($entityModel->getFiltroCaja());
+        if($entityModel->getFiltroAceite()->hasData())
+            $entity->setFiltroAceite($entityModel->getFiltroAceite());
+        if($entityModel->getFiltroAgua()->hasData())
+            $entity->setFiltroAgua($entityModel->getFiltroAgua());
+        if($entityModel->getFiltroDiesel()->hasData())
+            $entity->setFiltroDiesel($entityModel->getFiltroDiesel());
+        if($entityModel->getFiltroHidraulico()->hasData())
+            $entity->setFiltroHidraulico($entityModel->getFiltroHidraulico());
+        if($entityModel->getFiltroTransmision()->hasData())
+            $entity->setFiltroTransmision($entityModel->getFiltroTransmision());
+        if($entityModel->getFiltroCaja()->hasData())
+            $entity->setFiltroCaja($entityModel->getFiltroCaja());
 
         $entity->setBateria1($entityModel->getBateria1());
         $entity->setBateria2($entityModel->getBateria2());
@@ -187,14 +193,20 @@ class HandleAutobus
         $entity->setMarcaCajacambio($entityModel->getMarcaCajacambio());
         $entity->setTipoCajacambio($entityModel->getTipoCajacambio());
 
-        $entity->setCartelCapacidadlitros($entityModel->getCartelCapacidadlitros());
+        $entity->setCarterCapacidadlitros($entityModel->getCarterCapacidadlitros());
 
-        $entity->setFiltroAceite($entityModel->getFiltroAceite());
-        $entity->setFiltroAgua($entityModel->getFiltroAgua());
-        $entity->setFiltroDiesel($entityModel->getFiltroDiesel());
-        $entity->setFiltroHidraulico($entityModel->getFiltroHidraulico());
-        $entity->setFiltroTransmision($entityModel->getFiltroTransmision());
-        $entity->setFiltroCaja($entityModel->getFiltroCaja());
+        if($entityModel->getFiltroAceite()->hasData())
+            $entity->setFiltroAceite($entityModel->getFiltroAceite());
+        if($entityModel->getFiltroAgua()->hasData())
+            $entity->setFiltroAgua($entityModel->getFiltroAgua());
+        if($entityModel->getFiltroDiesel()->hasData())
+            $entity->setFiltroDiesel($entityModel->getFiltroDiesel());
+        if($entityModel->getFiltroHidraulico()->hasData())
+            $entity->setFiltroHidraulico($entityModel->getFiltroHidraulico());
+        if($entityModel->getFiltroTransmision()->hasData())
+            $entity->setFiltroTransmision($entityModel->getFiltroTransmision());
+        if($entityModel->getFiltroCaja()->hasData())
+            $entity->setFiltroCaja($entityModel->getFiltroCaja());
 
         $entity->setBateria1($entityModel->getBateria1());
         $entity->setBateria2($entityModel->getBateria2());
@@ -253,7 +265,7 @@ class HandleAutobus
 
         $model->setMarcaCajacambio($entity->getMarcaCajacambio());
         $model->setTipoCajacambio($entity->getTipoCajacambio());
-        $model->setCartelCapacidadlitros($entity->getCartelCapacidadlitros());
+        $model->setCarterCapacidadlitros($entity->getCarterCapacidadlitros());
 
         $model->setAceitecajacambios($entity->getAceitecajacambios());
         $model->setAceitehidraulico($entity->getAceitehidraulico());

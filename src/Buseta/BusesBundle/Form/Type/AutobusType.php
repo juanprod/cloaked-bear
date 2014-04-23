@@ -92,7 +92,7 @@ class AutobusType extends AbstractType
                         'style' => 'width: 250px',
                     )
                 ))
-            ->add('cartel_capacidadlitros', 'text', array(
+            ->add('carter_capacidadlitros', 'text', array(
                     'required' => false,
                     'attr'   => array(
                         'class' => 'form-control',

@@ -151,5 +151,14 @@ class FiltroDiesel
         return $this->id;
     }
 
+    /**
+     * Comprueba si contiene datos el filtro
+     *
+     * @return bool
+     */
+    public function hasData()
+    {
+        return $this->filtro_diesel_1 && $this->filtro_diesel_2 && $this->filtro_diesel_3 && $this->filtro_diesel_4;
+    }
 
 }

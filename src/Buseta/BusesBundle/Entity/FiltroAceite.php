@@ -128,6 +128,14 @@ class FiltroAceite
         return $this->id;
     }
 
-
+    /**
+     * Comprueba si contiene datos el filtro
+     *
+     * @return bool
+     */
+    public function hasData()
+    {
+        return $this->filtro_aceite_1 && $this->filtro_aceite_2 && $this->filtro_aceite_3;
+    }
 
 }

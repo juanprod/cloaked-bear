@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "7ecc7fb9ef74d06d052c03f62ea79a0e",
+    "hash": "67cdabac42f9ae8877cbe95e4a4ccef5",
     "packages": [
         {
             "name": "afarkas/html5shiv",
@@ -415,7 +415,7 @@
             "version": "v1.1.2",
             "dist": {
                 "type": "zip",
-                "url": "http://192.168.0.106/artifact/zips/doctrine-annotations-v1.1.2.zip",
+                "url": "http://localhost/artifact/zips/doctrine-annotations-v1.1.2.zip",
                 "reference": "doctrine-annotations-v1.1.2.zip",
                 "shasum": "909212051c2fd7c4af5b3fcdb2412b25c4033f91"
             },
@@ -475,7 +475,7 @@
             "version": "v1.3.0",
             "dist": {
                 "type": "zip",
-                "url": "http://192.168.0.106/artifact/zips/doctrine-cache-v1.3.0.zip",
+                "url": "http://localhost/artifact/zips/doctrine-cache-v1.3.0.zip",
                 "reference": "doctrine-cache-v1.3.0.zip",
                 "shasum": "35593ab10712253e6633f3e8e761714bf15c8734"
             },
@@ -537,7 +537,7 @@
             "version": "v1.2",
             "dist": {
                 "type": "zip",
-                "url": "http://192.168.0.106/artifact/zips/doctrine-collections-v1.2.zip",
+                "url": "http://localhost/artifact/zips/doctrine-collections-v1.2.zip",
                 "reference": "doctrine-collections-v1.2.zip",
                 "shasum": "e57d99a2e6fb33d3cff5d5803cfc9de186769240"
             },
@@ -593,7 +593,7 @@
             "version": "v2.4.1",
             "dist": {
                 "type": "zip",
-                "url": "http://192.168.0.106/artifact/zips/doctrine-common-v2.4.1.zip",
+                "url": "http://localhost/artifact/zips/doctrine-common-v2.4.1.zip",
                 "reference": "doctrine-common-v2.4.1.zip",
                 "shasum": "5f4aacc579702e3d7e3ef916b146a6d1a6e5c50f"
             },
@@ -1033,63 +1033,14 @@
             ]
         },
         {
-            "name": "friendsofsymfony/jsrouting-bundle",
-            "version": "1.5.3",
-            "target-dir": "FOS/JsRoutingBundle",
-            "dist": {
-                "type": "zip",
-                "url": "http://192.168.0.100/artifact/zips/friendsofsymfony-jsrouting-bundle-1.5.3.zip",
-                "reference": "friendsofsymfony-jsrouting-bundle-1.5.3.zip",
-                "shasum": "18c4ddfd53db77b253f6c15358abfe36a7dc5fef"
-            },
-            "require": {
-                "php": ">=5.3.2",
-                "symfony/console": "~2.0",
-                "symfony/framework-bundle": "~2.0",
-                "symfony/serializer": "~2.0",
-                "willdurand/jsonp-callback-validator": "~1.0"
-            },
-            "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.5-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "FOS\\JsRoutingBundle": ""
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "William Durand",
-                    "email": "william.durand1@gmail.com"
-                },
-                {
-                    "name": "FriendsOfSymfony Community",
-                    "homepage": "https://github.com/friendsofsymfony/FOSJsRoutingBundle/contributors"
-                }
-            ],
-            "description": "A pretty nice way to expose your Symfony2 routing to client applications.",
-            "homepage": "http://friendsofsymfony.github.com",
-            "keywords": [
-                "javascript",
-                "js routing",
-                "routing"
-            ]
-        },
-        {
             "name": "friendsofsymfony/user-bundle",
-            "version": "2.0",
+            "version": "2.0.x-dev",
             "target-dir": "FOS/UserBundle",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/friendsofsymfony-user-bundle-2.0.zip",
-                "reference": "friendsofsymfony-user-bundle-2.0.zip",
-                "shasum": "04d49d366a3115de6d190964604efd93a22db751"
+                "url": "http://localhost/artifact/zips/friendsofsymfony-user-bundle-2.0.x-dev.zip",
+                "reference": "friendsofsymfony-user-bundle-2.0.x-dev.zip",
+                "shasum": "886c06adbf4f1662d5153844604f7f36dde39fec"
             },
             "require": {
                 "php": ">=5.3.2",
@@ -1280,7 +1231,7 @@
             "version": "1.2.5",
             "dist": {
                 "type": "zip",
-                "url": "http://192.168.0.100/artifact/zips/knplabs-knp-components-1.2.5.zip",
+                "url": "http://localhost/artifact/zips/knplabs-knp-components-1.2.5.zip",
                 "reference": "knplabs-knp-components-1.2.5.zip",
                 "shasum": "0b42c86362d56542a8240a1df6e9e2a56d41b2b0"
             },
@@ -1439,7 +1390,7 @@
             "target-dir": "Knp/Bundle/PaginatorBundle",
             "dist": {
                 "type": "zip",
-                "url": "http://192.168.0.100/artifact/zips/knplabs-knp-paginator-bundle-2.4.x-dev.zip",
+                "url": "http://localhost/artifact/zips/knplabs-knp-paginator-bundle-2.4.x-dev.zip",
                 "reference": "knplabs-knp-paginator-bundle-2.4.x-dev.zip",
                 "shasum": "c0e4c6a6a00195f4cc76754d0e9992688c51f547"
             },
@@ -1551,13 +1502,13 @@
         },
         {
             "name": "liip/imagine-bundle",
-            "version": "dev-master",
+            "version": "0.20.2",
             "target-dir": "Liip/ImagineBundle",
             "dist": {
                 "type": "zip",
-                "url": "http://192.168.0.106/artifact/zips/liip-imagine-bundle-dev-master.zip",
-                "reference": "liip-imagine-bundle-dev-master.zip",
-                "shasum": "d0442d2809bcfe0caee698d3c1d3aa2b9e653bc9"
+                "url": "/var/www/artifact/zips/liip-imagine-bundle-0.20.2.zip",
+                "reference": "liip-imagine-bundle-0.20.2.zip",
+                "shasum": "b21f8513ec87b41f882dd1e1ddf53795eb74ca4c"
             },
             "archive": {
                 "exclude": [
@@ -1567,35 +1518,20 @@
             "require": {
                 "imagine/imagine": "0.5.*",
                 "php": ">=5.3.2",
-                "symfony/filesystem": "~2.3",
-                "symfony/finder": "~2.3",
-                "symfony/framework-bundle": "~2.3",
-                "symfony/options-resolver": "~2.3"
+                "symfony/filesystem": ">=2.0.16,~2.0",
+                "symfony/finder": ">=2.0.16,~2.0",
+                "symfony/framework-bundle": ">=2.0.16,~2.0",
+                "symfony/options-resolver": ">=2.0.16,~2.0"
             },
             "require-dev": {
-                "amazonwebservices/aws-sdk-for-php": "~1.0",
-                "aws/aws-sdk-php": "~2.4",
                 "doctrine/cache": "~1.1",
-                "ext-gd": "*",
-                "phpunit/phpunit": "~3.7",
-                "psr/log": "~1.0",
-                "symfony/browser-kit": "~2.3",
-                "symfony/yaml": "~2.3",
-                "twig/twig": "~1.0"
+                "symfony/yaml": ">=2.0.16,~2.0",
+                "twig/twig": ">=1.0,<2.0-dev"
             },
             "suggest": {
-                "amazonwebservices/aws-sdk-for-php": "Add it if you'd like to use aws v1 resolver",
-                "aws/aws-sdk-php": "Add it if you'd like to use aws v2 resolver",
-                "monolog/monolog": "If you'd want to write logs",
-                "twig/twig": "If you'd want to use some handy twig filters"
+                "twig/twig": ">=1.0,<2.0-dev"
             },
             "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev",
-                    "dev-0.x": "0.x-dev"
-                }
-            },
             "autoload": {
                 "psr-0": {
                     "Liip\\ImagineBundle": ""
@@ -2169,7 +2105,7 @@
             "version": "2.3.11",
             "dist": {
                 "type": "zip",
-                "url": "http://192.168.0.106/artifact/zips/symfony-symfony-2.3.11.zip",
+                "url": "http://localhost/artifact/zips/symfony-symfony-2.3.11.zip",
                 "reference": "symfony-symfony-2.3.11.zip",
                 "shasum": "908eefcd86591246a6d6fa6b84c8d062317f9739"
             },
@@ -2392,38 +2328,6 @@
                 "page",
                 "paging"
             ]
-        },
-        {
-            "name": "willdurand/jsonp-callback-validator",
-            "version": "1.1.0",
-            "dist": {
-                "type": "zip",
-                "url": "http://192.168.0.100/artifact/zips/willdurand-jsonp-callback-validator-v1.1.0.zip",
-                "reference": "willdurand-jsonp-callback-validator-v1.1.0.zip",
-                "shasum": "111ca546e540536177164e187e1e396d4430b7bd"
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~3.7"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "JsonpCallbackValidator": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "William DURAND",
-                    "email": "william.durand1@gmail.com"
-                }
-            ],
-            "description": "JSONP callback validator."
         }
     ],
     "packages-dev": [
@@ -2434,9 +2338,9 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
+        "friendsofsymfony/user-bundle": 20,
         "cedriclombardot/admingenerator-generator-bundle": 20,
         "avocode/form-extensions-bundle": 20,
-        "liip/imagine-bundle": 20,
         "cedriclombardot/admingenerator-user-bundle": 20,
         "knplabs/knp-paginator-bundle": 20
     },

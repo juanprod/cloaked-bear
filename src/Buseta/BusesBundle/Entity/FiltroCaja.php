@@ -105,5 +105,13 @@ class FiltroCaja
         return $this->id;
     }
 
-
+    /**
+     * Comprueba si contiene datos el filtro
+     *
+     * @return bool
+     */
+    public function hasData()
+    {
+        return $this->filtro_caja_1 && $this->filtro_caja_2;
+    }
 }
