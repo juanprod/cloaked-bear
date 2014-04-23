@@ -10,6 +10,8 @@ use Buseta\BusesBundle\Handle\HandleAutobus;
 use Buseta\BusesBundle\Entity\Autobus;
 use Buseta\BusesBundle\Form\Model\AutobusModel;
 use Buseta\BusesBundle\Form\Type\AutobusType;
+use Buseta\BusesBundle\Form\Type\BusquedaAutobusType;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * Autobus controller.
@@ -22,9 +24,37 @@ class AutobusController extends Controller
      * Lists all Autobus entities.
      *
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
+
+        $busqueda = $this->createForm(new BusquedaAutobusType());
+
+        if($request->getMethod() === 'GET'){
+            $busqueda->submit($request);
+
+            $entities = $em->createQueryBuilder()
+                ->select('a')
+                ->from('BusetaBusesBundle:Autobus','a');
+
+            if($busqueda->isValid()){
+                $datos = $busqueda->getData();
+                $entities
+                    ->where('a.matricula LIKE :matricula AND a.marca LIKE :marca');
+                $parametros = array(
+                    'matricula' => '%'.$datos['matricula'].'%',
+                    'marca' => '%'.$datos['marca'].'%',
+                );
+
+                $entities = $entities
+                    ->setParameters($parametros)
+                    ->getQuery()
+                    ->getResult();
+            }else{
+                $entities
+                    ->where('a.deleted IS NULL');
+            }
+        }
 
         $entities = $em->createQueryBuilder()
             ->select('a')
@@ -43,6 +73,7 @@ class AutobusController extends Controller
 
         return $this->render('BusetaBusesBundle:Autobus:index.html.twig', array(
             'entities' => $entities,
+            'busqueda' => $busqueda->createView(),
         ));
     }
 
