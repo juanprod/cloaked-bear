@@ -15,6 +15,64 @@
 {% block area_trabajo %}
 
 
+<div class="panel panel-default">
+<div class="panel-body">
+    <fieldset>
+        <legend><h4>Búsqueda Avanzada</h4></legend>
+
+        {{ form_errors(busqueda) }}
+
+        <form action="{{ path('autobus') }}" method="get">
+            <div class="row show-grid" style="padding-top: 0px">
+                <div class="col-md-4">
+                    <label>Matrícula:</label>
+                    {{ form_widget(busqueda.matricula) }}
+                </div>
+
+                <div class="col-md-4">
+                    <label>Marca de Autobús:</label>
+                    {{ form_widget(busqueda.marca) }}
+                </div>
+
+                <div class="col-md-4">
+                    <label>Color:</label>
+                    {{ form_widget(busqueda.color) }}
+                </div>
+            </div>
+
+            <div class="row show-grid">
+                <div class="col-md-4">
+                    <label>Estilo:</label>
+                    {{ form_widget(busqueda.estilo) }}
+                </div>
+
+                <div class="col-md-4">
+                    <label>Combustible:</label>
+                    {{ form_widget(busqueda.combustible) }}
+                </div>
+
+                <div class="col-md-4">
+                    <label>Marca de Motor:</label>
+                    {{ form_widget(busqueda.marca_motor) }}
+                </div>
+            </div>
+
+            <div class="row show-grid">
+                <div class="col-md-4">
+                    <input type="submit" class="btn btn-primary btn-bg" value="Buscar" name="buscar">
+
+                    <div class="btn-group">
+                        <a class="btn btn-success btn-bg" href="{{ path('autobus') }}"><i class="fa fa-search"> Reiniciar Búsqueda</i></a>
+                    </div>
+                </div>
+            </div>
+
+
+        </form>
+    </fieldset>
+</div>
+</div>
+    <hr>
 
     <div class="btn-group" style="padding-bottom: 8px;">
         <a class="btn btn-primary" href="{{ path('autobus_new') }}"><i class="fa fa-plus-circle"></i> Adicionar Autobus</a>

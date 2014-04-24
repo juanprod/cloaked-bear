@@ -1,3 +1,13 @@
+BusetaNomencladorBundle_admin_buseta_nomenclador_bundle_subgrupo:
+    resource: "@BusetaNomencladorBundle/Controller/Subgrupo/"
+    type:     admingenerator
+    prefix:   /admin/buseta_nomenclador_bundle/subgrupo
+
+BusetaNomencladorBundle_admin_buseta_nomenclador_bundle_grupo:
+    resource: "@BusetaNomencladorBundle/Controller/Grupo/"
+    type:     admingenerator
+    prefix:   /admin/nomenclador/grupo
+
 BusetaNomencladorBundle_admin_buseta_nomenclador_bundle_aceitetransmision:
     resource: "@BusetaNomencladorBundle/Controller/Aceitetransmision/"
     type:     admingenerator

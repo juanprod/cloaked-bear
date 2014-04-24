@@ -1,6 +1,6 @@
 generator: admingenerator.generator.doctrine
 params:
-    model: Buseta\NomencladorBundle\Entity\Marca
+    model: Buseta\NomencladorBundle\Entity\Grupo
     namespace_prefix: Buseta
     concurrency_lock: ~
     bundle_name: NomencladorBundle
@@ -10,6 +10,8 @@ params:
             label: Valor
       codigo:
             label: Código
+      descripcion:
+            label: Descripción
     object_actions:
         delete: ~
     batch_actions:
@@ -17,8 +19,8 @@ params:
 builders:
     list:
         params:
-            title: Listado de Marcas
-            display: [valor, codigo]
+            title: Listado de Grupos
+            display: [valor, codigo, descripcion]
             actions:
                 new: ~
             object_actions:
@@ -27,25 +29,25 @@ builders:
                 delete: ~
     filters:
         params:
-            display: [valor, codigo]
+             display: [valor, codigo, descripcion]
     new:
         params:
-            title: Adicionar nuevo marca
-            display: [valor, codigo]
+            title: Adicionar nuevo grupo
+            display: [valor, codigo, descripcion]
             actions:
                 save: ~
                 list: ~
     edit:
         params:
-            title: "Usted está modificando la marca: \"%object%\"|{ %object%: Marca.valor }|"
-            display: [valor, codigo]
+            title: "Usted está modificando el grupo: \"%object%\"|{ %object%: Grupo.valor }|"
+            display: [valor, codigo, descripcion]
             actions:
                 save: ~
                 list: ~
     show:
         params:
-            title: "Usted está mostrando los datos de la marca: \"%object%\"|{ %object%: Marca.valor }|"
-            display: [valor, codigo]
+            title: "Usted está mostrando los datos del grupo: \"%object%\"|{ %object%: Grupo.valor }|"
+            display: [valor, codigo, descripcion]
             actions:
                 list: ~
                 new: ~

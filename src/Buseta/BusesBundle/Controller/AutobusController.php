@@ -10,7 +10,7 @@ use Buseta\BusesBundle\Handle\HandleAutobus;
 use Buseta\BusesBundle\Entity\Autobus;
 use Buseta\BusesBundle\Form\Model\AutobusModel;
 use Buseta\BusesBundle\Form\Type\AutobusType;
-use Buseta\BusesBundle\Form\Type\BusquedaAutobusType;
+use Buseta\BusesBundle\Form\Filtro\BusquedaAutobusType;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
@@ -33,36 +33,17 @@ class AutobusController extends Controller
         if($request->getMethod() === 'GET'){
             $busqueda->submit($request);
 
-            $entities = $em->createQueryBuilder()
-                ->select('a')
-                ->from('BusetaBusesBundle:Autobus','a');
-
             if($busqueda->isValid()){
-                $datos = $busqueda->getData();
-                $entities
-                    ->where('a.matricula LIKE :matricula AND a.marca LIKE :marca');
-                $parametros = array(
-                    'matricula' => '%'.$datos['matricula'].'%',
-                    'marca' => '%'.$datos['marca'].'%',
-                );
 
-                $entities = $entities
-                    ->setParameters($parametros)
-                    ->getQuery()
-                    ->getResult();
-            }else{
-                $entities
-                    ->where('a.deleted IS NULL');
+                $entities = $em->getRepository('BusetaBusesBundle:Autobus')->buscarAutobus($busqueda);
             }
         }
+        else
+        {
+            $entities = $em->getRepository('BusetaBusesBundle:Autobus')->buscarTodos();
+        }
 
-        $entities = $em->createQueryBuilder()
-            ->select('a')
-            ->from('BusetaBusesBundle:Autobus','a')
-            ->orderBy('a.id', 'DESC')
-            ->getQuery();
-
-        //CASO CAJERO
+        //CASO BUSQUEDA-AUTOBUS
         $paginator = $this->get('knp_paginator');
         $entities = $paginator->paginate(
             $entities,

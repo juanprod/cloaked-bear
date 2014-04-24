@@ -1,6 +1,6 @@
 generator: admingenerator.generator.doctrine
 params:
-    model: Buseta\NomencladorBundle\Entity\Marca
+    model: Buseta\NomencladorBundle\Entity\Subgrupo
     namespace_prefix: Buseta
     concurrency_lock: ~
     bundle_name: NomencladorBundle
@@ -10,6 +10,10 @@ params:
             label: Valor
       codigo:
             label: Código
+      grupo:
+            label: Grupo
+      descripcion:
+            label: Descripción
     object_actions:
         delete: ~
     batch_actions:
@@ -17,8 +21,8 @@ params:
 builders:
     list:
         params:
-            title: Listado de Marcas
-            display: [valor, codigo]
+            title: Listado de Subgrupos
+            display: [valor, codigo, grupo, descripcion]
             actions:
                 new: ~
             object_actions:
@@ -27,25 +31,25 @@ builders:
                 delete: ~
     filters:
         params:
-            display: [valor, codigo]
+             display: [valor, codigo, grupo, descripcion]
     new:
         params:
-            title: Adicionar nuevo marca
-            display: [valor, codigo]
+            title: Adicionar nuevo subgrupo
+            display: [valor, codigo, grupo, descripcion]
             actions:
                 save: ~
                 list: ~
     edit:
         params:
-            title: "Usted está modificando la marca: \"%object%\"|{ %object%: Marca.valor }|"
-            display: [valor, codigo]
+            title: "Usted está modificando el subgrupo: \"%object%\"|{ %object%: Subgrupo.valor }|"
+            display: [valor, codigo, grupo, descripcion]
             actions:
                 save: ~
                 list: ~
     show:
         params:
-            title: "Usted está mostrando los datos de la marca: \"%object%\"|{ %object%: Marca.valor }|"
-            display: [valor, codigo]
+            title: "Usted está mostrando los datos del subgrupo: \"%object%\"|{ %object%: Subgrupo.valor }|"
+            display: [valor, codigo, grupo, descripcion]
             actions:
                 list: ~
                 new: ~
