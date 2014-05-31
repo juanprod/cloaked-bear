@@ -3,14 +3,14 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "67cdabac42f9ae8877cbe95e4a4ccef5",
+    "hash": "2d4e1db67006abaa9c39cb5c79e4fc12",
     "packages": [
         {
             "name": "afarkas/html5shiv",
             "version": "3.7.0",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/afarkas-html5shiv-3.7.0.zip",
+                "url": "http://192.168.0.100/artifact/zips/afarkas-html5shiv-3.7.0.zip",
                 "reference": "afarkas-html5shiv-3.7.0.zip",
                 "shasum": "054e3f45217b8d15af96e50ccc3fac7b5b470116"
             },
@@ -38,7 +38,7 @@
             "target-dir": "Avocode/FormExtensionsBundle",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/avocode-form-extensions-bundle-dev-master.zip",
+                "url": "http://192.168.0.100/artifact/zips/avocode-form-extensions-bundle-dev-master.zip",
                 "reference": "avocode-form-extensions-bundle-dev-master.zip",
                 "shasum": "3dc78095e7b13f82bd80f77afc0a9d7b17012b8d"
             },
@@ -85,7 +85,7 @@
             "target-dir": "Admingenerator/GeneratorBundle",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/cedriclombardot-admingenerator-generator-bundle-dev-master.zip",
+                "url": "http://192.168.0.100/artifact/zips/cedriclombardot-admingenerator-generator-bundle-dev-master.zip",
                 "reference": "cedriclombardot-admingenerator-generator-bundle-dev-master.zip",
                 "shasum": "236b2e7a554f9a5b035357a25006085801f254d4"
             },
@@ -152,7 +152,7 @@
             "target-dir": "Admingenerator/UserBundle",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/cedriclombardot-admingenerator-user-bundle-dev-master.zip",
+                "url": "http://192.168.0.100/artifact/zips/cedriclombardot-admingenerator-user-bundle-dev-master.zip",
                 "reference": "cedriclombardot-admingenerator-user-bundle-dev-master.zip",
                 "shasum": "c51dc28f680ebaabd7343c7fceec78c0cb2d2b1e"
             },
@@ -179,7 +179,7 @@
             "version": "1.0.0",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/cedriclombardot-twig-generator-1.0.0.zip",
+                "url": "http://192.168.0.100/artifact/zips/cedriclombardot-twig-generator-1.0.0.zip",
                 "reference": "cedriclombardot-twig-generator-1.0.0.zip",
                 "shasum": "f8fd7acf42ee4a0c20a43ce5f650053c40d4849c"
             },
@@ -217,7 +217,7 @@
             "version": "2.3.2",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/components-bootstrap-2.3.2.zip",
+                "url": "http://192.168.0.100/artifact/zips/components-bootstrap-2.3.2.zip",
                 "reference": "components-bootstrap-2.3.2.zip",
                 "shasum": "0c10f1f729424b8163bcb3cb639cda34f7c6c136"
             },
@@ -265,7 +265,7 @@
             "version": "3.2.1",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/components-font-awesome-3.2.1.zip",
+                "url": "http://192.168.0.100/artifact/zips/components-font-awesome-3.2.1.zip",
                 "reference": "components-font-awesome-3.2.1.zip",
                 "shasum": "46c77790f0f91fd9cca0492b2df06ff4c6a04f19"
             },
@@ -299,7 +299,7 @@
             "version": "1.9.1",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/components-jquery-1.9.1.zip",
+                "url": "http://192.168.0.100/artifact/zips/components-jquery-1.9.1.zip",
                 "reference": "components-jquery-1.9.1.zip",
                 "shasum": "b08ac4f3eeee6c65f0977cc55618fdebc7ea118e"
             },
@@ -343,7 +343,7 @@
             "version": "1.10.3",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/components-jqueryui-1.10.3.zip",
+                "url": "http://192.168.0.100/artifact/zips/components-jqueryui-1.10.3.zip",
                 "reference": "components-jqueryui-1.10.3.zip",
                 "shasum": "93aca0327213d4a23cb6e8c1600ee8254fc6ec94"
             },
@@ -415,7 +415,7 @@
             "version": "v1.1.2",
             "dist": {
                 "type": "zip",
-                "url": "http://localhost/artifact/zips/doctrine-annotations-v1.1.2.zip",
+                "url": "http://192.168.0.100/artifact/zips/doctrine-annotations-v1.1.2.zip",
                 "reference": "doctrine-annotations-v1.1.2.zip",
                 "shasum": "909212051c2fd7c4af5b3fcdb2412b25c4033f91"
             },
@@ -475,7 +475,7 @@
             "version": "v1.3.0",
             "dist": {
                 "type": "zip",
-                "url": "http://localhost/artifact/zips/doctrine-cache-v1.3.0.zip",
+                "url": "http://192.168.0.100/artifact/zips/doctrine-cache-v1.3.0.zip",
                 "reference": "doctrine-cache-v1.3.0.zip",
                 "shasum": "35593ab10712253e6633f3e8e761714bf15c8734"
             },
@@ -537,7 +537,7 @@
             "version": "v1.2",
             "dist": {
                 "type": "zip",
-                "url": "http://localhost/artifact/zips/doctrine-collections-v1.2.zip",
+                "url": "http://192.168.0.100/artifact/zips/doctrine-collections-v1.2.zip",
                 "reference": "doctrine-collections-v1.2.zip",
                 "shasum": "e57d99a2e6fb33d3cff5d5803cfc9de186769240"
             },
@@ -593,7 +593,7 @@
             "version": "v2.4.1",
             "dist": {
                 "type": "zip",
-                "url": "http://localhost/artifact/zips/doctrine-common-v2.4.1.zip",
+                "url": "http://192.168.0.100/artifact/zips/doctrine-common-v2.4.1.zip",
                 "reference": "doctrine-common-v2.4.1.zip",
                 "shasum": "5f4aacc579702e3d7e3ef916b146a6d1a6e5c50f"
             },
@@ -667,7 +667,7 @@
             "version": "v1.0.0",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/doctrine-data-fixtures-v1.0.0.zip",
+                "url": "http://192.168.0.100/artifact/zips/doctrine-data-fixtures-v1.0.0.zip",
                 "reference": "doctrine-data-fixtures-v1.0.0.zip",
                 "shasum": "755d30875b08bd9b1327371421f8184a19f92484"
             },
@@ -714,9 +714,9 @@
             "version": "2.3.4",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/doctrine-dbal-2.3.4.zip",
+                "url": "http://192.168.0.100/artifact/zips/doctrine-dbal-2.3.4.zip",
                 "reference": "doctrine-dbal-2.3.4.zip",
-                "shasum": "e1794db67cc6b578e73e3de1ed7d6e45af291e74"
+                "shasum": "0b92a00871dda6589195e056a0455d4157e9bbd6"
             },
             "require": {
                 "doctrine/common": ">=2.3.0,<2.5-dev",
@@ -769,7 +769,7 @@
             "target-dir": "Doctrine/Bundle/DoctrineBundle",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/doctrine-doctrine-bundle-1.2.0.zip",
+                "url": "http://192.168.0.100/artifact/zips/doctrine-doctrine-bundle-1.2.0.zip",
                 "reference": "doctrine-doctrine-bundle-1.2.0.zip",
                 "shasum": "209cda6a43f02b71ab6922a73315270a3366f3f1"
             },
@@ -832,7 +832,7 @@
             "target-dir": "Doctrine/Bundle/FixturesBundle",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/doctrine-doctrine-fixtures-bundle-2.2.x-dev.zip",
+                "url": "http://192.168.0.100/artifact/zips/doctrine-doctrine-fixtures-bundle-2.2.x-dev.zip",
                 "reference": "doctrine-doctrine-fixtures-bundle-2.2.x-dev.zip",
                 "shasum": "0d5b2135e68599ec4f2b61d111ed32c5a4259b6c"
             },
@@ -882,7 +882,7 @@
             "version": "1.0",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/doctrine-inflector-1.0.zip",
+                "url": "http://192.168.0.100/artifact/zips/doctrine-inflector-1.0.zip",
                 "reference": "doctrine-inflector-1.0.zip",
                 "shasum": "304c04bd496d12f41066a928ea3fe11a23c1e92c"
             },
@@ -934,9 +934,9 @@
             "version": "v1.0",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/doctrine-lexer-v1.0.zip",
+                "url": "http://192.168.0.100/artifact/zips/doctrine-lexer-v1.0.zip",
                 "reference": "doctrine-lexer-v1.0.zip",
-                "shasum": "08aca95bc288040b99e9bc259ebbb3a79ad07193"
+                "shasum": "5bc9e4c59d96b0af1867d3ce866dcbba017a9920"
             },
             "require": {
                 "php": ">=5.3.2"
@@ -976,7 +976,7 @@
             "version": "2.3.4",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/doctrine-orm-2.3.4.zip",
+                "url": "http://192.168.0.100/artifact/zips/doctrine-orm-2.3.4.zip",
                 "reference": "doctrine-orm-2.3.4.zip",
                 "shasum": "a7dc2e99a1b650d61a18c2285f52966e7c627184"
             },
@@ -1033,12 +1033,61 @@
             ]
         },
         {
+            "name": "friendsofsymfony/jsrouting-bundle",
+            "version": "1.5.3",
+            "target-dir": "FOS/JsRoutingBundle",
+            "dist": {
+                "type": "zip",
+                "url": "http://192.168.0.100/artifact/zips/friendsofsymfony-jsrouting-bundle-1.5.3.zip",
+                "reference": "friendsofsymfony-jsrouting-bundle-1.5.3.zip",
+                "shasum": "18c4ddfd53db77b253f6c15358abfe36a7dc5fef"
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "symfony/console": "~2.0",
+                "symfony/framework-bundle": "~2.0",
+                "symfony/serializer": "~2.0",
+                "willdurand/jsonp-callback-validator": "~1.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.5-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "FOS\\JsRoutingBundle": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "William Durand",
+                    "email": "william.durand1@gmail.com"
+                },
+                {
+                    "name": "FriendsOfSymfony Community",
+                    "homepage": "https://github.com/friendsofsymfony/FOSJsRoutingBundle/contributors"
+                }
+            ],
+            "description": "A pretty nice way to expose your Symfony2 routing to client applications.",
+            "homepage": "http://friendsofsymfony.github.com",
+            "keywords": [
+                "javascript",
+                "js routing",
+                "routing"
+            ]
+        },
+        {
             "name": "friendsofsymfony/user-bundle",
             "version": "2.0.x-dev",
             "target-dir": "FOS/UserBundle",
             "dist": {
                 "type": "zip",
-                "url": "http://localhost/artifact/zips/friendsofsymfony-user-bundle-2.0.x-dev.zip",
+                "url": "http://192.168.0.100/artifact/zips/friendsofsymfony-user-bundle-2.0.x-dev.zip",
                 "reference": "friendsofsymfony-user-bundle-2.0.x-dev.zip",
                 "shasum": "886c06adbf4f1662d5153844604f7f36dde39fec"
             },
@@ -1098,9 +1147,9 @@
             "version": "0.5.0",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/imagine-imagine-0.5.0.zip",
+                "url": "http://192.168.0.100/artifact/zips/imagine-imagine-0.5.0.zip",
                 "reference": "imagine-imagine-0.5.0.zip",
-                "shasum": "68318e0335f0a85435d6b5428381f7822cd39633"
+                "shasum": "76aa6ec87929918a3a6901bdeca82676c9c5caa6"
             },
             "require": {
                 "php": ">=5.3.2"
@@ -1144,7 +1193,7 @@
             "target-dir": "Incenteev/ParameterHandler",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/incenteev-composer-parameter-handler-2.1.0.zip",
+                "url": "http://192.168.0.100/artifact/zips/incenteev-composer-parameter-handler-2.1.0.zip",
                 "reference": "incenteev-composer-parameter-handler-2.1.0.zip",
                 "shasum": "926f4723862291a0267d426bc4ce6ea45efc211a"
             },
@@ -1188,7 +1237,7 @@
             "version": "1.3.0",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/jdorn-sql-formatter-1.3.0.zip",
+                "url": "http://192.168.0.100/artifact/zips/jdorn-sql-formatter-1.3.0.zip",
                 "reference": "jdorn-sql-formatter-1.3.0.zip",
                 "shasum": "9de3c6de40e3ed92f8844ab9f48ec35792d4e467"
             },
@@ -1231,9 +1280,9 @@
             "version": "1.2.5",
             "dist": {
                 "type": "zip",
-                "url": "http://localhost/artifact/zips/knplabs-knp-components-1.2.5.zip",
+                "url": "http://192.168.0.100/artifact/zips/knplabs-knp-components-1.2.5.zip",
                 "reference": "knplabs-knp-components-1.2.5.zip",
-                "shasum": "0b42c86362d56542a8240a1df6e9e2a56d41b2b0"
+                "shasum": "9b5be05b5a0ebab9f864e6c0dae1fb633210b8a0"
             },
             "require": {
                 "php": ">=5.3.2"
@@ -1282,12 +1331,12 @@
         },
         {
             "name": "knplabs/knp-menu",
-            "version": "2.0.0",
+            "version": "2.0.x-dev",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/knplabs-knp-menu-2.0.0.zip",
-                "reference": "knplabs-knp-menu-2.0.0.zip",
-                "shasum": "3804e04bd89c3919656879e6cf068078e2034602"
+                "url": "http://192.168.0.100/artifact/zips/knplabs-knp-menu-2.0.x-dev.zip",
+                "reference": "knplabs-knp-menu-2.0.x-dev.zip",
+                "shasum": "c791574e8e7780476b1d8916676ea8b9fcf2bcb4"
             },
             "require": {
                 "php": ">=5.3.0"
@@ -1339,13 +1388,13 @@
         },
         {
             "name": "knplabs/knp-menu-bundle",
-            "version": "2.0.0",
+            "version": "2.0.x-dev",
             "target-dir": "Knp/Bundle/MenuBundle",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/knplabs-knp-menu-bundle-2.0.0.zip",
-                "reference": "knplabs-knp-menu-bundle-2.0.0.zip",
-                "shasum": "1a0e889efdd43c7a94d4a053589251a099dbb2f1"
+                "url": "http://192.168.0.100/artifact/zips/knplabs-knp-menu-bundle-2.0.x-dev.zip",
+                "reference": "knplabs-knp-menu-bundle-2.0.x-dev.zip",
+                "shasum": "ea3480ed6eb4f2f05d03c96960280980be089013"
             },
             "require": {
                 "knplabs/knp-menu": "~2.0, >=2.0.0-beta1",
@@ -1390,7 +1439,7 @@
             "target-dir": "Knp/Bundle/PaginatorBundle",
             "dist": {
                 "type": "zip",
-                "url": "http://localhost/artifact/zips/knplabs-knp-paginator-bundle-2.4.x-dev.zip",
+                "url": "http://192.168.0.100/artifact/zips/knplabs-knp-paginator-bundle-2.4.x-dev.zip",
                 "reference": "knplabs-knp-paginator-bundle-2.4.x-dev.zip",
                 "shasum": "c0e4c6a6a00195f4cc76754d0e9992688c51f547"
             },
@@ -1441,7 +1490,7 @@
             "version": "1.1",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/kriswallsmith-assetic-1.1.zip",
+                "url": "http://192.168.0.100/artifact/zips/kriswallsmith-assetic-1.1.zip",
                 "reference": "kriswallsmith-assetic-1.1.zip",
                 "shasum": "a494c9b2651f571938afd9b47fcfa46fd60d256a"
             },
@@ -1502,13 +1551,13 @@
         },
         {
             "name": "liip/imagine-bundle",
-            "version": "0.20.2",
+            "version": "dev-master",
             "target-dir": "Liip/ImagineBundle",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/liip-imagine-bundle-0.20.2.zip",
-                "reference": "liip-imagine-bundle-0.20.2.zip",
-                "shasum": "b21f8513ec87b41f882dd1e1ddf53795eb74ca4c"
+                "url": "http://192.168.0.100/artifact/zips/liip-imagine-bundle-dev-master.zip",
+                "reference": "liip-imagine-bundle-dev-master.zip",
+                "shasum": "d0442d2809bcfe0caee698d3c1d3aa2b9e653bc9"
             },
             "archive": {
                 "exclude": [
@@ -1518,20 +1567,35 @@
             "require": {
                 "imagine/imagine": "0.5.*",
                 "php": ">=5.3.2",
-                "symfony/filesystem": ">=2.0.16,~2.0",
-                "symfony/finder": ">=2.0.16,~2.0",
-                "symfony/framework-bundle": ">=2.0.16,~2.0",
-                "symfony/options-resolver": ">=2.0.16,~2.0"
+                "symfony/filesystem": "~2.3",
+                "symfony/finder": "~2.3",
+                "symfony/framework-bundle": "~2.3",
+                "symfony/options-resolver": "~2.3"
             },
             "require-dev": {
+                "amazonwebservices/aws-sdk-for-php": "~1.0",
+                "aws/aws-sdk-php": "~2.4",
                 "doctrine/cache": "~1.1",
-                "symfony/yaml": ">=2.0.16,~2.0",
-                "twig/twig": ">=1.0,<2.0-dev"
+                "ext-gd": "*",
+                "phpunit/phpunit": "~3.7",
+                "psr/log": "~1.0",
+                "symfony/browser-kit": "~2.3",
+                "symfony/yaml": "~2.3",
+                "twig/twig": "~1.0"
             },
             "suggest": {
-                "twig/twig": ">=1.0,<2.0-dev"
+                "amazonwebservices/aws-sdk-for-php": "Add it if you'd like to use aws v1 resolver",
+                "aws/aws-sdk-php": "Add it if you'd like to use aws v2 resolver",
+                "monolog/monolog": "If you'd want to write logs",
+                "twig/twig": "If you'd want to use some handy twig filters"
             },
             "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev",
+                    "dev-0.x": "0.x-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
                     "Liip\\ImagineBundle": ""
@@ -1558,7 +1622,7 @@
             "version": "1.7",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/monolog-monolog-1.7.zip",
+                "url": "http://192.168.0.100/artifact/zips/monolog-monolog-1.7.zip",
                 "reference": "monolog-monolog-1.7.zip",
                 "shasum": "d83e6f08d35ccc4f202d2e310db722fb91b1801d"
             },
@@ -1617,7 +1681,7 @@
             "version": "1.0.1",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/pagerfanta-pagerfanta-1.0.1.zip",
+                "url": "http://192.168.0.100/artifact/zips/pagerfanta-pagerfanta-1.0.1.zip",
                 "reference": "pagerfanta-pagerfanta-1.0.1.zip",
                 "shasum": "e4d362d73221b58f549fa76556de306ab1b21b4d"
             },
@@ -1671,7 +1735,7 @@
             "version": "1.0",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/psr-log-1.0.zip",
+                "url": "http://192.168.0.100/artifact/zips/psr-log-1.0.zip",
                 "reference": "psr-log-1.0.zip",
                 "shasum": "e56b25ea96a159849b151513af35ed8bfd358e63"
             },
@@ -1702,7 +1766,7 @@
             "version": "dev-master",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/robloach-component-installer-dev-master.zip",
+                "url": "http://192.168.0.100/artifact/zips/robloach-component-installer-dev-master.zip",
                 "reference": "robloach-component-installer-dev-master.zip",
                 "shasum": "26251e63c8d8fe54a57dc5f52149132e9738ac40"
             },
@@ -1748,7 +1812,7 @@
             "target-dir": "Sensio/Bundle/DistributionBundle",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/sensio-distribution-bundle-2.3.9.zip",
+                "url": "http://192.168.0.100/artifact/zips/sensio-distribution-bundle-2.3.9.zip",
                 "reference": "sensio-distribution-bundle-2.3.9.zip",
                 "shasum": "6027e94832f69a45612c614dbc79c2220c08e52d"
             },
@@ -1787,7 +1851,7 @@
             "target-dir": "Sensio/Bundle/FrameworkExtraBundle",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/sensio-framework-extra-bundle2.3.9.zip",
+                "url": "http://192.168.0.100/artifact/zips/sensio-framework-extra-bundle2.3.9.zip",
                 "reference": "sensio-framework-extra-bundle2.3.9.zip",
                 "shasum": "c83ea7871102ac48d8d0ba8cd8c13f22f55522cf"
             },
@@ -1827,7 +1891,7 @@
             "target-dir": "Sensio/Bundle/GeneratorBundle",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/sensio-generator-bundle-2.3.4.zip",
+                "url": "http://192.168.0.100/artifact/zips/sensio-generator-bundle-2.3.4.zip",
                 "reference": "sensio-generator-bundle-2.3.4.zip",
                 "shasum": "17b69d823aee01219f301aafa1be911882976575"
             },
@@ -1867,7 +1931,7 @@
             "version": "5.0.3",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/swiftmailer-swiftmailer-5.0.3.zip",
+                "url": "http://192.168.0.100/artifact/zips/swiftmailer-swiftmailer-5.0.3.zip",
                 "reference": "swiftmailer-swiftmailer-5.0.3.zip",
                 "shasum": "0df544749d1a58b2cc8bfd234ff76066da5113df"
             },
@@ -1906,13 +1970,13 @@
         },
         {
             "name": "symfony/assetic-bundle",
-            "version": "2.3.9",
+            "version": "2.3.0",
             "target-dir": "Symfony/Bundle/AsseticBundle",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/symfony-assetic-bundle-2.3.9.zip",
-                "reference": "symfony-assetic-bundle-2.3.9.zip",
-                "shasum": "af29ec83d3450f158aee2f2d8be176b4dee67dee"
+                "url": "http://192.168.0.100/artifact/zips/symfony-assetic-bundle-2.3.0.zip",
+                "reference": "symfony-assetic-bundle-2.3.0.zip",
+                "shasum": "26ce1eb0ec94f396f8134c2303006a51b14df8d6"
             },
             "require": {
                 "kriswallsmith/assetic": "~1.1",
@@ -1962,16 +2026,15 @@
         },
         {
             "name": "symfony/icu",
-            "version": "1.0",
+            "version": "v1.0.0",
             "target-dir": "Symfony/Component/Icu",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/symfony-icu-1.0.zip",
-                "reference": "symfony-icu-1.0.zip",
-                "shasum": "0cbf80a549fc5d37db4cc9bd752db5744d4cb8e3"
+                "url": "http://192.168.0.100/artifact/zips/symfony-icu-v1.0.0.zip",
+                "reference": "symfony-icu-v1.0.0.zip",
+                "shasum": "ece6792be9471daaff3c539062a2adeaaed5ce84"
             },
             "require": {
-                "lib-icu": ">=4.4",
                 "php": ">=5.3.3",
                 "symfony/intl": "~2.3"
             },
@@ -2003,13 +2066,13 @@
         },
         {
             "name": "symfony/monolog-bundle",
-            "version": "2.3.9",
+            "version": "2.3.0",
             "target-dir": "Symfony/Bundle/MonologBundle",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/symfony-monolog-bundle-2.3.9.zip",
-                "reference": "symfony-monolog-bundle-2.3.9.zip",
-                "shasum": "38d6b0e70413d618b1ae8a4e3ac0aa1e8be857b7"
+                "url": "http://192.168.0.100/artifact/zips/symfony-monolog-bundle-2.3.0.zip",
+                "reference": "symfony-monolog-bundle-2.3.0.zip",
+                "shasum": "2977443381b10a8bfdf7b60ade7cb1efaedf81c2"
             },
             "require": {
                 "monolog/monolog": "~1.3",
@@ -2054,13 +2117,13 @@
         },
         {
             "name": "symfony/swiftmailer-bundle",
-            "version": "2.3.9",
+            "version": "2.3.5",
             "target-dir": "Symfony/Bundle/SwiftmailerBundle",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/symfony-swiftmailer-bundle-2.3.9.zip",
-                "reference": "symfony-swiftmailer-bundle-2.3.9.zip",
-                "shasum": "8f468c96f1b6a155e4f62942ab9cccbd14f17409"
+                "url": "http://192.168.0.100/artifact/zips/symfony-swiftmailer-bundle-2.3.5.zip",
+                "reference": "symfony-swiftmailer-bundle-2.3.5.zip",
+                "shasum": "6bd11c13e66162c4b773e92509145351282ec782"
             },
             "require": {
                 "php": ">=5.3.2",
@@ -2102,12 +2165,12 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "2.3.11",
+            "version": "v2.3.15",
             "dist": {
                 "type": "zip",
-                "url": "http://localhost/artifact/zips/symfony-symfony-2.3.11.zip",
-                "reference": "symfony-symfony-2.3.11.zip",
-                "shasum": "908eefcd86591246a6d6fa6b84c8d062317f9739"
+                "url": "http://192.168.0.100/artifact/zips/symfony-symfony-v2.3.15.zip",
+                "reference": "symfony-symfony-v2.3.15.zip",
+                "shasum": "09c145ce3528840e398073834299ec55eae8cc1c"
             },
             "require": {
                 "doctrine/common": "~2.2",
@@ -2206,7 +2269,7 @@
             "version": "1.0",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/twig-extensions-1.0.zip",
+                "url": "http://192.168.0.100/artifact/zips/twig-extensions-1.0.zip",
                 "reference": "twig-extensions-1.0.zip",
                 "shasum": "bb11ee468cfd4eb1c79333848d450d77960e153a"
             },
@@ -2246,7 +2309,7 @@
             "version": "1.15",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/twig-twig-1.15.zip",
+                "url": "http://192.168.0.100/artifact/zips/twig-twig-1.15.zip",
                 "reference": "twig-twig-1.15.zip",
                 "shasum": "fbc139f100117d39f9993caa4d61c464fbe71c6e"
             },
@@ -2289,7 +2352,7 @@
             "target-dir": "WhiteOctober/PagerfantaBundle",
             "dist": {
                 "type": "zip",
-                "url": "/var/www/artifact/zips/white-october-pagerfanta-bundle-1.0.x-dev.zip",
+                "url": "http://192.168.0.100/artifact/zips/white-october-pagerfanta-bundle-1.0.x-dev.zip",
                 "reference": "white-october-pagerfanta-bundle-1.0.x-dev.zip",
                 "shasum": "1ce08b2aaf2766a99933f94288311dc4414be991"
             },
@@ -2328,6 +2391,38 @@
                 "page",
                 "paging"
             ]
+        },
+        {
+            "name": "willdurand/jsonp-callback-validator",
+            "version": "1.1.0",
+            "dist": {
+                "type": "zip",
+                "url": "http://192.168.0.100/artifact/zips/willdurand-jsonp-callback-validator-v1.1.0.zip",
+                "reference": "willdurand-jsonp-callback-validator-v1.1.0.zip",
+                "shasum": "111ca546e540536177164e187e1e396d4430b7bd"
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~3.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "JsonpCallbackValidator": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "William DURAND",
+                    "email": "william.durand1@gmail.com"
+                }
+            ],
+            "description": "JSONP callback validator."
         }
     ],
     "packages-dev": [
@@ -2341,6 +2436,7 @@
         "friendsofsymfony/user-bundle": 20,
         "cedriclombardot/admingenerator-generator-bundle": 20,
         "avocode/form-extensions-bundle": 20,
+        "liip/imagine-bundle": 20,
         "cedriclombardot/admingenerator-user-bundle": 20,
         "knplabs/knp-paginator-bundle": 20
     },
