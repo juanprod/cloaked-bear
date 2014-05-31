@@ -21,7 +21,7 @@
         "sensio/generator-bundle": "2.3.*",
         "incenteev/composer-parameter-handler": "~2.0",
         "friendsofsymfony/user-bundle": "2.0.*@dev",
-	"cedriclombardot/admingenerator-generator-bundle": "2.3.*@dev",
+        "cedriclombardot/admingenerator-generator-bundle": "2.3.*@dev",
         "avocode/form-extensions-bundle": "dev-master",
         "liip/imagine-bundle": "dev-master",
         "cedriclombardot/admingenerator-user-bundle": "dev-master",
@@ -63,7 +63,7 @@
     "repositories": [
         {
             "type": "composer",
-            "url": "http://192.168.0.100/satis/web"
+            "url": "http://192.168.0.100/satisai/web"
         },
         {
             "packagist": false
