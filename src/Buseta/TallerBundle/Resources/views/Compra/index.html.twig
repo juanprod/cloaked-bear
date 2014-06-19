@@ -41,7 +41,7 @@
                 <td>{{ entity.numero }}</td>
                 <td>{{ entity.tipo }}</td>
                 <td>{{ entity.descripcion }}</td>
-                <td>{% if entity.fechapedido %}{{ entity.fechapedido|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.fechapedido %}{{ entity.fechapedido|date('d/m/Y') }}{% endif %}</td>
                 <td>{{ entity.formapago }}</td>
                 <td>{{ entity.moneda }}</td>
                 <td>{{ entity.condicionespago }}</td>

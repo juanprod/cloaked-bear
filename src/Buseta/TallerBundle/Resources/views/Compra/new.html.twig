@@ -132,7 +132,7 @@
                                 {{ form_row(linea.cantidad_pedido) }}
                             </div>
 
-                            <div class="col-md-4">
+                            <div class="col-md-4" style="display: none;">
                                 {{ form_row(linea.monto) }}
                             </div>
                         </div>
@@ -150,11 +150,7 @@
         <!-- /.modal-dialog -->
     </div>
 
-
-
-
 {% endblock %}
-
 
 {% block contenido %}
 
@@ -162,6 +158,8 @@
 
 {% block javascripts %}
     {{ parent() }}
+
+    <script src="{{ asset('vendors/funciones_datetime_new.js') }}"></script>
 
     <script type="text/javascript">
         var collectionHolder = $('div#buseta_tallerbundle_compra_lineas');
@@ -203,6 +201,9 @@
 
                     // remove the li for the tag form
                     $(this).parent().parent().remove();
+
+                    actualizarMontoTotal();
+
                     updateView();
                 });
             }
@@ -216,6 +217,18 @@
                 }
             }
 
+            function actualizarMontoTotal(){
+                /*Obtener cada valor de las lineas y sumarlas a una variable*/
+                var montototal = 0;
+                $('[id^="buseta_tallerbundle_compra_lineas_"][id$="_monto"]').each(function(key, value){
+                    montototal += parseInt($(value).val());
+                });
+
+                /*Actualizar el valor del monto de todas las lineas*/
+                $('#buseta_tallerbundle_compra_importe_general').val(montototal);
+                $('#buseta_tallerbundle_compra_importe_con_impuesto').val(montototal);
+                $('#buseta_tallerbundle_compra_importe_libre_impuesto').val(montototal);
+            }
 
             $addTagLink.on('click', function(e) {
                 // prevent the link from creating a "#" on the URL
@@ -235,12 +248,24 @@
 
                 addTagForm(collectionHolder);
 
-                $('#buseta_tallerbundle_compra_lineas_' + index + '_numero').val(linea_numero.val());
+                $('#buseta_tallerbundle_compra_lineas_' + index + '_numero').val(linea_numero.val()).prop('readonly','readonly');
                 $('#buseta_tallerbundle_compra_lineas_' + index + '_tipo').val(linea_tipo.val());
                 $('#buseta_tallerbundle_compra_lineas_' + index + '_producto').val(linea_producto.val());
                 $('#buseta_tallerbundle_compra_lineas_' + index + '_impuesto').val(linea_impuesto.val());
                 $('#buseta_tallerbundle_compra_lineas_' + index + '_cantidad_pedido').val(linea_cantidad_pedido.val());
-                $('#buseta_tallerbundle_compra_lineas_' + index + '_monto').val(linea_monto.val());
+
+                var json = {{ json|raw }};
+                //console.log(json);
+
+                $.each(json, function(key,value){
+                    if(key == linea_producto.val()){
+                        var monto = value.precio_salida * linea_cantidad_pedido.val();
+                        $('#buseta_tallerbundle_compra_lineas_' + index + '_monto').val(monto);
+                    }
+                });
+
+                /*Obtener cada valor de las lineas y sumarlas a una variable*/
+                actualizarMontoTotal();
 
                 linea_numero.val('');
                 linea_tipo.val('');
@@ -249,7 +274,6 @@
                 linea_cantidad_pedido.val('');
                 linea_monto.val('');
             });
-
 
 
         });

@@ -59,6 +59,7 @@ class Compra
      * @var date
      *
      * @ORM\Column(name="fecha_pedido", type="date")
+     * @Assert\Date()
      */
     private $fecha_pedido;
 

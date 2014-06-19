@@ -38,12 +38,13 @@ class CompraType extends AbstractType
                     )
                 ))
             ->add('fecha_pedido','date',array(
-                    'widget' => 'single_text',
-                    'label'  => 'Fecha de pedido',
-                    'attr'   => array(
-                        'class' => 'form-control',
-                    )
-                ))
+                'widget' => 'single_text',
+                'format'  => 'dd/MM/yyyy',
+                'attr'   => array(
+                    'class' => 'form-control',
+                    'style' => 'width: 250px',
+                )
+            ))
             ->add('forma_pago', 'text', array(
                     'required' => true,
                     'label'  => 'Forma de pago',
@@ -66,6 +67,7 @@ class CompraType extends AbstractType
                 ))
             ->add('importe_libre_impuesto', 'text', array(
                     'required' => true,
+                    'read_only' => true,
                     'label'  => 'Importe libre de impuesto',
                     'attr'   => array(
                         'class' => 'form-control',
@@ -73,12 +75,14 @@ class CompraType extends AbstractType
                 ))
             ->add('importe_con_impuesto', 'text', array(
                     'required' => true,
+                    'read_only' => true,
                     'attr'   => array(
                         'class' => 'form-control',
                     )
                 ))
             ->add('importe_general', 'text', array(
                     'required' => true,
+                    'read_only' => true,
                     'label'  => 'Importe general',
                     'attr'   => array(
                         'class' => 'form-control',

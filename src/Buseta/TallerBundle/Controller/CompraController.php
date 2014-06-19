@@ -59,10 +59,24 @@ class CompraController extends Controller
             return $this->redirect($this->generateUrl('compra_show', array('id' => $entity->getId())));
         }
 
+        $em = $this->getDoctrine()->getManager();
+        $productos = $em->getRepository('BusetaBodegaBundle:Producto')->findAll();
+
+        $json = array();
+
+        foreach($productos as $p){
+
+            $json[$p->getId()] = array(
+                'nombre' => $p->getNombre(),
+                'precio_salida' => $p->getPrecioSalida(),
+            );
+        }
+
         return $this->render('BusetaTallerBundle:Compra:new.html.twig', array(
             'entity' => $entity,
             'linea'  => $linea->createView(),
             'form'   => $form->createView(),
+            'json'   => json_encode($json),
         ));
     }
 
@@ -97,14 +111,27 @@ class CompraController extends Controller
 
         //$entity->addLinea($linea);
 
-        $linea = $this->createForm(new LineaType());
+        $em = $this->getDoctrine()->getManager();
+        $productos = $em->getRepository('BusetaBodegaBundle:Producto')->findAll();
 
+        $json = array();
+
+        foreach($productos as $p){
+
+            $json[$p->getId()] = array(
+                'nombre' => $p->getNombre(),
+                'precio_salida' => $p->getPrecioSalida(),
+            );
+        }
+
+        $linea = $this->createForm(new LineaType());
         $form   = $this->createCreateForm($entity);
 
         return $this->render('BusetaTallerBundle:Compra:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
-            'linea' => $linea->createView(),
+            'linea'  => $linea->createView(),
+            'json'   => json_encode($json),
         ));
     }
 
@@ -148,11 +175,25 @@ class CompraController extends Controller
         $editForm = $this->createEditForm($entity);
         $deleteForm = $this->createDeleteForm($id);
 
+        $em = $this->getDoctrine()->getManager();
+        $productos = $em->getRepository('BusetaBodegaBundle:Producto')->findAll();
+
+        $json = array();
+
+        foreach($productos as $p){
+
+            $json[$p->getId()] = array(
+                'nombre' => $p->getNombre(),
+                'precio_salida' => $p->getPrecioSalida(),
+            );
+        }
+
         return $this->render('BusetaTallerBundle:Compra:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'linea'       => $linea->createView(),
             'delete_form' => $deleteForm->createView(),
+            'json'   => json_encode($json),
         ));
     }
 
@@ -198,10 +239,24 @@ class CompraController extends Controller
             return $this->redirect($this->generateUrl('compra_edit', array('id' => $id)));
         }
 
+        $em = $this->getDoctrine()->getManager();
+        $productos = $em->getRepository('BusetaBodegaBundle:Producto')->findAll();
+
+        $json = array();
+
+        foreach($productos as $p){
+
+            $json[$p->getId()] = array(
+                'nombre' => $p->getNombre(),
+                'precio_salida' => $p->getPrecioSalida(),
+            );
+        }
+
         return $this->render('BusetaTallerBundle:Compra:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
+            'json'   => json_encode($json),
         ));
     }
     /**

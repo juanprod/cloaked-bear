@@ -26,7 +26,7 @@
             </tr>
             <tr>
                 <th>Fecha pedido</th>
-                <td>{{ entity.fechapedido|date('Y-m-d H:i:s') }}</td>
+                <td>{{ entity.fechapedido|date('d/m/Y') }}</td>
             </tr>
             <tr>
                 <th>Forma pago</th>
@@ -57,7 +57,11 @@
                 <td>{{ entity.estado }}</td>
             </tr>
             <tr>
-                <th>Líneas</th>
+                <th>Tercero (Nombres y apellidos)</th>
+                <td>{{ entity.tercero.nombres }} {{ entity.tercero.apellidos }}</td>
+            </tr>
+            <tr>
+                <th>Líneas existentes</th>
                 <td>
                     <table class="table table-striped" style="font-size: 16px;">
                         <th>Número</th>
@@ -67,18 +71,18 @@
                         <th>Cant. Pedido</th>
                         <th>Monto</th>
                         {% for linea in entity.lineas %}
-                            <tbody>
-                                <tr>
-                                    <td>{{ linea.numero }}</td>
-                                    <td>{{ linea.tipo }}</td>
-                                    <td>{{ linea.producto.nombre }}</td>
-                                    <td>{{ linea.impuesto.nombre }}</td>
-                                    <td>{{ linea.cantidadpedido }}</td>
-                                    <td>{{ linea.monto }}</td>
-                                </tr>
-                    {% else %}
-                        <label style="color: red">La compra no tiene líneas disponibles.</label>
-                    {% endfor %}
+                        <tbody>
+                        <tr>
+                            <td>{{ linea.numero }}</td>
+                            <td>{{ linea.tipo }}</td>
+                            <td>{{ linea.producto.nombre }}</td>
+                            <td>{{ linea.impuesto.nombre }}</td>
+                            <td>{{ linea.cantidadpedido }}</td>
+                            <td>{{ linea.monto }}</td>
+                        </tr>
+                        {% else %}
+                            <label style="color: red">La compra no tiene líneas disponibles.</label>
+                        {% endfor %}
                     </table>
                 </td>
             </tr>

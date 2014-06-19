@@ -16,10 +16,10 @@
                         <div class="row form-group" >
                             <div class="col-lg-12">
                                 <div class="col-lg-1" style="text-align: center;"><b>Número</b></div>
-                                <div class="col-lg-2" style="text-align: center;"><b>Tipo</b></div>
-                                <div class="col-lg-2" style="text-align: center;"><b>Pedido</b></div>
-                                <div class="col-lg-2" style="text-align: center;"><b>Monto</b></div>
                                 <div class="col-lg-2" style="text-align: center;"><b>Producto</b></div>
+                                <div class="col-lg-2" style="text-align: center;"><b>Pedido</b></div>
+                                <div class="col-lg-2" style="text-align: center;"><b>Tipo</b></div>
+                                <div class="col-lg-2" style="text-align: center;"><b>Monto</b></div>
                                 <div class="col-lg-2" style="text-align: center;"><b>Impuesto</b></div>
                             </div>
                         </div>
@@ -63,20 +63,20 @@
         {{ form_widget(prototype.numero) }}
     </div>
     <div class="col-lg-2 form-group">
-        {{ form_errors(prototype.tipo) }}
-        {{ form_widget(prototype.tipo) }}
+        {{ form_errors(prototype.producto) }}
+        {{ form_widget(prototype.producto) }}
     </div>
     <div class="col-lg-2 form-group">
         {{ form_errors(prototype.cantidad_pedido) }}
         {{ form_widget(prototype.cantidad_pedido) }}
     </div>
     <div class="col-lg-2 form-group">
-        {{ form_errors(prototype.monto) }}
-        {{ form_widget(prototype.monto) }}
+        {{ form_errors(prototype.tipo) }}
+        {{ form_widget(prototype.tipo) }}
     </div>
     <div class="col-lg-2 form-group">
-        {{ form_errors(prototype.producto) }}
-        {{ form_widget(prototype.producto) }}
+        {{ form_errors(prototype.monto) }}
+        {{ form_widget(prototype.monto) }}
     </div>
     <div class="col-lg-2 form-group">
         {{ form_errors(prototype.impuesto) }}
