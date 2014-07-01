@@ -227,34 +227,4 @@ class Direccion
 
 
 
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->terceros = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-    
-    /**
-     * Add terceros
-     *
-     * @param \Buseta\BodegaBundle\Entity\Tercero $terceros
-     * @return Direccion
-     */
-    public function addTercero(\Buseta\BodegaBundle\Entity\Tercero $terceros)
-    {
-        $this->terceros[] = $terceros;
-    
-        return $this;
-    }
-
-    /**
-     * Remove terceros
-     *
-     * @param \Buseta\BodegaBundle\Entity\Tercero $terceros
-     */
-    public function removeTercero(\Buseta\BodegaBundle\Entity\Tercero $terceros)
-    {
-        $this->terceros->removeElement($terceros);
-    }
 }

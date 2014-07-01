@@ -31,7 +31,7 @@ class TerceroController extends Controller
         $entities = $paginator->paginate(
             $entities,
             $this->get('request')->query->get('page', 1),
-            10,
+            5,
             array('pageParameterName' => 'page')
         );
 

@@ -1,0 +1,30 @@
+movimiento:
+    pattern:  /
+    defaults: { _controller: "BusetaBodegaBundle:Movimiento:index" }
+
+movimiento_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "BusetaBodegaBundle:Movimiento:show" }
+
+movimiento_new:
+    pattern:  /new
+    defaults: { _controller: "BusetaBodegaBundle:Movimiento:new" }
+
+movimiento_create:
+    pattern:  /create
+    defaults: { _controller: "BusetaBodegaBundle:Movimiento:create" }
+    requirements: { _method: post }
+
+movimiento_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "BusetaBodegaBundle:Movimiento:edit" }
+
+movimiento_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "BusetaBodegaBundle:Movimiento:update" }
+    requirements: { _method: post|put }
+
+movimiento_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "BusetaBodegaBundle:Movimiento:delete" }
+    requirements: { _method: post|delete }

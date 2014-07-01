@@ -4,31 +4,44 @@
 
 {% endblock %}
 
-{% block titulo %}
-    Listado de productos
-{% endblock %}
-
 {% block titulo_encabezado %}
-    Listados de productos
+    Informe stock
 {% endblock %}
 
 {% block area_trabajo %}
 
-    <div class="btn-group" style="padding-bottom: 8px;">
-        <a class="btn btn-primary" href="{{ path('producto_new') }}"><i class="fa fa-plus-circle"></i> Adicionar producto</a>
-    </div>
+    <form action="{{ path('bodega_informe_stock') }}" method="get">
+
+        <div class="row show-grid">
+            <div class="col-md-4">
+                {{ form_row(busqueda.producto) }}
+            </div>
+
+            <div class="col-md-4">
+                {{ form_row(busqueda.categoria) }}
+            </div>
+        </div>
+
+
+        <div class="row show-grid">
+            <div class="col-md-4">
+                <input class="btn btn-primary" style="height: 34px" type="submit" value="Generar informe">
+
+            </div>
+        </div>
+
+    {{ form_end(busqueda) }}
+
+    <hr>
+
+    <label style="float: right;"> Fecha de informe: {{ fecha |date('d/m/Y')  }} </label>
 
     <table class="records_list table table-striped table-bordered table-condensed table-hover">
         <thead>
         <tr>
             <th>Código</th>
             <th>Nombre</th>
-            <th>U/M</th>
             <th>Categoría</th>
-            <th>Precio/Costo</th>
-            <th>Precio/Salida</th>
-            <th>Bodega</th>
-            <th>Activo</th>
             <th>Acciones</th>
         </tr>
         </thead>
@@ -37,18 +50,7 @@
             <tr>
                 <td>{{ entity.codigo }}</td>
                 <td>{{ entity.nombre }}</td>
-                <td>{{ entity.uom }}</td>
                 <td>{{ entity.categoria }}</td>
-                <td>{{ entity.preciocosto }}</td>
-                <td>{{ entity.preciosalida }}</td>
-                <td>{{ entity.bodega }}</td>
-                <td>
-                    {% if entity.activo == 1 %}
-                        Sí
-                    {% else %}
-                        No
-                    {% endif %}
-                </td>
                 <td  style="width: 18% !important; text-align: center;">
                     <div class="btn-group">
                         <a class="btn btn-success btn-xs" href="{{ path('producto_show', { 'id': entity.id }) }}"><i class="fa fa-search"> Mostrar</i></a>
@@ -77,4 +79,17 @@
         </div>
     </div>
 
+
 {% endblock %}
+
+
+{% block contenido %}
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('vendors/funciones_datetime_new.js') }}"></script>
+
+
+{% endblock javascripts %}

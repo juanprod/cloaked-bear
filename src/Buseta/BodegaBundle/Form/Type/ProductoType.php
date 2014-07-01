@@ -19,14 +19,12 @@ class ProductoType extends AbstractType
                     'required' => false,
                     'attr'   => array(
                         'class' => 'form-control',
-                        'style' => 'width: 250px',
                     )
                 ))
             ->add('nombre', 'text', array(
                     'required' => true,
                     'attr'   => array(
                         'class' => 'form-control',
-                        'style' => 'width: 250px',
                     )
                 ))
             ->add('uom','entity',array(
@@ -34,7 +32,6 @@ class ProductoType extends AbstractType
                     'empty_value' => '---Seleccione una UOM---',
                     'attr' => array(
                         'class' => 'form-control',
-                        'style' => 'width: 250px',
                     )
                 ))
             ->add('categoria','entity',array(
@@ -42,27 +39,31 @@ class ProductoType extends AbstractType
                     'empty_value' => '---Seleccione una categoría---',
                     'attr' => array(
                         'class' => 'form-control',
-                        'style' => 'width: 250px',
                     )
                 ))
+            ->add('bodega','entity',array(
+                'class' => 'BusetaBodegaBundle:Bodega',
+                'required' => false,
+                'empty_value' => '---Seleccione una bodega---',
+                'attr' => array(
+                    'class' => 'form-control',
+                )
+            ))
             ->add('precio_costo', 'text', array(
                     'required' => true,
                     'attr'   => array(
                         'class' => 'form-control',
-                        'style' => 'width: 250px',
                     )
                 ))
             ->add('precio_salida', 'text', array(
                     'required' => true,
                     'attr'   => array(
                         'class' => 'form-control',
-                        'style' => 'width: 250px',
                     )
                 ))
             ->add('activo', null, array(
                     'required' => false,
                 ))
-
         ;
     }
     

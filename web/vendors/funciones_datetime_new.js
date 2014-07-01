@@ -1,3 +1,7 @@
+var fecha = $('#buseta_informestock_autobus_fecha').pickadate({
+    format: 'dd/mm/yyyy',
+    formatSubmit: 'dd/mm/yyyy'
+});
 var fecha_pedido = $('#buseta_tallerbundle_compra_fecha_pedido').pickadate({
     format: 'dd/mm/yyyy',
     formatSubmit: 'dd/mm/yyyy'
@@ -29,6 +33,9 @@ if(picker != null)
         picker2.set('select', $fechaIngreso, { format: 'dd/mm/yyyy' });
     });
 }
+
+var fecha = $('#buseta_informestock_autobus_fecha').val();
+$('input:hidden[name^="buseta_informestock_autobus[fecha]_submit"]').val(fecha);
 
 var valido = $('#buseta_databundle_autobus_valido_hasta').val();
 $('input:hidden[name^="buseta_databundle_autobus[valido_hasta]_submit"]').val(valido);

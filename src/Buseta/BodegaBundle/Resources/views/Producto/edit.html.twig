@@ -48,6 +48,18 @@
 
         <div class="row show-grid">
             <div class="col-md-4">
+                <label>Bodega:</label>
+                {{ form_widget(edit_form.bodega) }}
+            </div>
+
+            <div class="col-lg-4">
+                <label>Activo:</label></br>
+                {{ form_widget(edit_form.activo) }}
+            </div>
+        </div>
+
+        <div class="row show-grid">
+            <div class="col-md-4">
 
                 <input class="btn btn-primary" style="height: 34px" type="submit" value="Aceptar">
                 <div class="btn-group">

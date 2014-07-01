@@ -2,29 +2,28 @@
 
 namespace Buseta\BodegaBundle\Controller;
 
-use Buseta\BodegaBundle\Entity\Movimiento;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-use Buseta\BodegaBundle\Entity\Producto;
-use Buseta\BodegaBundle\Form\Type\ProductoType;
+use Buseta\BodegaBundle\Entity\Movimiento;
+use Buseta\BodegaBundle\Form\Type\MovimientoType;
 
 /**
- * Producto controller.
+ * Movimiento controller.
  *
  */
-class ProductoController extends Controller
+class MovimientoController extends Controller
 {
 
     /**
-     * Lists all Producto entities.
+     * Lists all Movimiento entities.
      *
      */
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('BusetaBodegaBundle:Producto')->findAll();
+        $entities = $em->getRepository('BusetaBodegaBundle:Movimiento')->findAll();
 
         $paginator = $this->get('knp_paginator');
         $entities = $paginator->paginate(
@@ -34,55 +33,52 @@ class ProductoController extends Controller
             array('pageParameterName' => 'page')
         );
 
-        return $this->render('BusetaBodegaBundle:Producto:index.html.twig', array(
+        return $this->render('BusetaBodegaBundle:Movimiento:index.html.twig', array(
             'entities' => $entities,
         ));
     }
     /**
-     * Creates a new Producto entity.
+     * Creates a new Movimiento entity.
      *
      */
     public function createAction(Request $request)
     {
-        $entity = new Producto();
+        $entity = new Movimiento();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-            $movimiento = new Movimiento();
-
-            $movimiento->setCreatedBy($this->getUser()->getUsername());
-            $movimiento->setUpdatedBy($this->getUser()->getUsername());
-            $movimiento->setMovidoBy($this->getUser()->getUsername());
-            $movimiento->setMovidoA($entity->getBodega());
-            $movimiento->setProducto($entity);
+            $entity->setProducto($entity->getProducto());
+            $entity->setCreatedBy($this->getUser()->getUsername());
+            $entity->setUpdatedBy($this->getUser()->getUsername());
+            $entity->setMovidoBy($this->getUser()->getUsername());
+            $entity->setMovidoA($entity->getMovidoA());
+            $entity->setProducto($entity->getProducto());
 
             $em = $this->getDoctrine()->getManager();
-            $em->persist($movimiento);
-
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('producto_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('movimiento_show', array('id' => $entity->getId())));
         }
 
-        return $this->render('BusetaBodegaBundle:Producto:new.html.twig', array(
+        return $this->render('BusetaBodegaBundle:Movimiento:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
     }
 
     /**
-    * Creates a form to create a Producto entity.
-    *
-    * @param Producto $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createCreateForm(Producto $entity)
+     * Creates a form to create a Movimiento entity.
+     *
+     * @param Movimiento $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
+    private function createCreateForm(Movimiento $entity)
     {
-        $form = $this->createForm(new ProductoType(), $entity, array(
-            'action' => $this->generateUrl('producto_create'),
+        $form = $this->createForm(new MovimientoType(), $entity, array(
+            'action' => $this->generateUrl('movimiento_create'),
             'method' => 'POST',
         ));
 
@@ -92,59 +88,59 @@ class ProductoController extends Controller
     }
 
     /**
-     * Displays a form to create a new Producto entity.
+     * Displays a form to create a new Movimiento entity.
      *
      */
     public function newAction()
     {
-        $entity = new Producto();
+        $entity = new Movimiento();
         $form   = $this->createCreateForm($entity);
 
-        return $this->render('BusetaBodegaBundle:Producto:new.html.twig', array(
+        return $this->render('BusetaBodegaBundle:Movimiento:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
     }
 
     /**
-     * Finds and displays a Producto entity.
+     * Finds and displays a Movimiento entity.
      *
      */
     public function showAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('BusetaBodegaBundle:Producto')->find($id);
+        $entity = $em->getRepository('BusetaBodegaBundle:Movimiento')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Producto entity.');
+            throw $this->createNotFoundException('Unable to find Movimiento entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('BusetaBodegaBundle:Producto:show.html.twig', array(
+        return $this->render('BusetaBodegaBundle:Movimiento:show.html.twig', array(
             'entity'      => $entity,
             'delete_form' => $deleteForm->createView(),        ));
     }
 
     /**
-     * Displays a form to edit an existing Producto entity.
+     * Displays a form to edit an existing Movimiento entity.
      *
      */
     public function editAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('BusetaBodegaBundle:Producto')->find($id);
+        $entity = $em->getRepository('BusetaBodegaBundle:Movimiento')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Producto entity.');
+            throw $this->createNotFoundException('Unable to find Movimiento entity.');
         }
 
         $editForm = $this->createEditForm($entity);
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('BusetaBodegaBundle:Producto:edit.html.twig', array(
+        return $this->render('BusetaBodegaBundle:Movimiento:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
@@ -152,16 +148,16 @@ class ProductoController extends Controller
     }
 
     /**
-    * Creates a form to edit a Producto entity.
-    *
-    * @param Producto $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createEditForm(Producto $entity)
+     * Creates a form to edit a Movimiento entity.
+     *
+     * @param Movimiento $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
+    private function createEditForm(Movimiento $entity)
     {
-        $form = $this->createForm(new ProductoType(), $entity, array(
-            'action' => $this->generateUrl('producto_update', array('id' => $entity->getId())),
+        $form = $this->createForm(new MovimientoType(), $entity, array(
+            'action' => $this->generateUrl('movimiento_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
@@ -170,17 +166,17 @@ class ProductoController extends Controller
         return $form;
     }
     /**
-     * Edits an existing Producto entity.
+     * Edits an existing Movimiento entity.
      *
      */
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('BusetaBodegaBundle:Producto')->find($id);
+        $entity = $em->getRepository('BusetaBodegaBundle:Movimiento')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Producto entity.');
+            throw $this->createNotFoundException('Unable to find Movimiento entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -190,17 +186,17 @@ class ProductoController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('producto_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('movimiento_show', array('id' => $entity->getId())));
         }
 
-        return $this->render('BusetaBodegaBundle:Producto:edit.html.twig', array(
+        return $this->render('BusetaBodegaBundle:Movimiento:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
     /**
-     * Deletes a Producto entity.
+     * Deletes a Movimiento entity.
      *
      */
     public function deleteAction(Request $request, $id)
@@ -210,21 +206,21 @@ class ProductoController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('BusetaBodegaBundle:Producto')->find($id);
+            $entity = $em->getRepository('BusetaBodegaBundle:Movimiento')->find($id);
 
             if (!$entity) {
-                throw $this->createNotFoundException('Unable to find Producto entity.');
+                throw $this->createNotFoundException('Unable to find Movimiento entity.');
             }
 
             $em->remove($entity);
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('producto'));
+        return $this->redirect($this->generateUrl('movimiento'));
     }
 
     /**
-     * Creates a form to delete a Producto entity by id.
+     * Creates a form to delete a Movimiento entity by id.
      *
      * @param mixed $id The entity id
      *
@@ -233,10 +229,10 @@ class ProductoController extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('producto_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('movimiento_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()
-        ;
+            ;
     }
 }

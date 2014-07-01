@@ -190,37 +190,4 @@ class Bodega
         return $this->getNombre();
     }
 
-
-    /**
-     * Add movimientos
-     *
-     * @param \Buseta\BodegaBundle\Entity\Movimiento $movimientos
-     * @return Bodega
-     */
-    public function addMovimiento(\Buseta\BodegaBundle\Entity\Movimiento $movimientos)
-    {
-        $this->movimientos[] = $movimientos;
-    
-        return $this;
-    }
-
-    /**
-     * Remove movimientos
-     *
-     * @param \Buseta\BodegaBundle\Entity\Movimiento $movimientos
-     */
-    public function removeMovimiento(\Buseta\BodegaBundle\Entity\Movimiento $movimientos)
-    {
-        $this->movimientos->removeElement($movimientos);
-    }
-
-    /**
-     * Get movimientos
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getMovimientos()
-    {
-        return $this->movimientos;
-    }
 }

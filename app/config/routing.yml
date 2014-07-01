@@ -33,6 +33,10 @@ BusetaBodegaBundle_producto:
         resource: "@BusetaBodegaBundle/Resources/config/routing/producto.yml"
         prefix:   /bodega/producto
 
+BusetaBodegaBundle_movimiento:
+        resource: "@BusetaBodegaBundle/Resources/config/routing/movimiento.yml"
+        prefix:   /bodega/movimiento
+
 BusetaBodegaBundle_bodega:
     resource: "@BusetaBodegaBundle/Resources/config/routing/bodega.yml"
     prefix:   /bodega

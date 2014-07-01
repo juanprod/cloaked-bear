@@ -42,6 +42,11 @@ class Compra
     private $tercero;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Buseta\BodegaBundle\Entity\Bodega", inversedBy="compras")
+     */
+    private $bodega;
+
+    /**
      * @var \Doctrine\Common\Collections\ArrayCollection
      *
      * @ORM\OneToMany(targetEntity="Buseta\TallerBundle\Entity\Linea", mappedBy="compra", cascade={"all"})
@@ -398,5 +403,47 @@ class Compra
     public function getTercero()
     {
         return $this->tercero;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->lineas = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Add lineas
+     *
+     * @param \Buseta\TallerBundle\Entity\Linea $lineas
+     * @return Compra
+     */
+    public function addLinea(\Buseta\TallerBundle\Entity\Linea $lineas)
+    {
+        $lineas->setCompra($this);
+
+        $this->lineas[] = $lineas;
+    
+        return $this;
+    }
+
+    /**
+     * Remove lineas
+     *
+     * @param \Buseta\TallerBundle\Entity\Linea $lineas
+     */
+    public function removeLinea(\Buseta\TallerBundle\Entity\Linea $lineas)
+    {
+        $this->lineas->removeElement($lineas);
+    }
+
+    /**
+     * Get lineas
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getLineas()
+    {
+        return $this->lineas;
     }
 }

@@ -1,0 +1,65 @@
+{% extends "BusetaBodegaBundle::layout.html.twig" %}
+
+{% block nombre_menu_superior %}
+
+{% endblock %}
+
+{% block titulo %}
+    Listado de movimientos de productos
+{% endblock %}
+
+{% block titulo_encabezado %}
+    Listados de movimientos de productos
+{% endblock %}
+
+{% block area_trabajo %}
+
+    <div class="btn-group" style="padding-bottom: 8px;">
+        <a class="btn btn-primary" href="{{ path('movimiento_new') }}"><i class="fa fa-plus-circle"></i> Adicionar producto</a>
+    </div>
+
+    <table class="records_list table table-striped table-bordered table-condensed table-hover">
+        <thead>
+        <tr>
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th>Movido a</th>
+            <th>Fecha de Movimiento</th>
+            <th>Realizado por</th>
+            <th>Descripción</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ entity.producto }}</td>
+                <td>{{ entity.cantidadProductos }}</td>
+                <td>{{ entity.movidoA }}</td>
+                <td>{{ entity.fechaMovimiento|date('d/m/Y') }}</td>
+                <td>{{ entity.movidoBy }}</td>
+                <td>{{ entity.descripcion }}</td>
+                <td  style="width: 18% !important; text-align: center;">
+                    <div class="btn-group">
+                        <a class="btn btn-success btn-xs" href="{{ path('movimiento_show', { 'id': entity.id }) }}"><i class="fa fa-search"> Mostrar</i></a>
+                    </div>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="12">No se encontraron registros de movimientos en el sistema.</td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                {{ knp_pagination_render(entities) }}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -28,3 +28,12 @@ bodega_delete:
     pattern:  /{id}/delete
     defaults: { _controller: "BusetaBodegaBundle:Bodega:delete" }
     requirements: { _method: post|delete }
+
+informe_stock_create:
+    pattern:  /informe_stock_create
+    defaults: { _controller: "BusetaBodegaBundle:Default:create" }
+    requirements: { _method: post }
+
+informe_stock_show:
+    pattern:  /informe_stock/{id}/show
+    defaults: { _controller: "BusetaBodegaBundle:Default:show" }

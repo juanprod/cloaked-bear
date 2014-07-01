@@ -5,3 +5,7 @@ buseta_bodega_homepage:
 bodega_principal:
     pattern:  /modulo/bodega
     defaults: { _controller: "BusetaBodegaBundle:Bodega:principal" }
+
+bodega_informe_stock:
+    pattern:  /modulo/bodega/informe_stock
+    defaults: { _controller: "BusetaBodegaBundle:Default:informeStock" }

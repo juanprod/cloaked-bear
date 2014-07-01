@@ -87,4 +87,27 @@ class MecanismoContacto
         return $this->valor;
     }
 
+
+    /**
+     * Set terceros
+     *
+     * @param \Buseta\BodegaBundle\Entity\Tercero $terceros
+     * @return MecanismoContacto
+     */
+    public function setTerceros(\Buseta\BodegaBundle\Entity\Tercero $terceros = null)
+    {
+        $this->terceros = $terceros;
+    
+        return $this;
+    }
+
+    /**
+     * Get terceros
+     *
+     * @return \Buseta\BodegaBundle\Entity\Tercero 
+     */
+    public function getTerceros()
+    {
+        return $this->terceros;
+    }
 }

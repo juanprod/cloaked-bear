@@ -298,4 +298,37 @@ class Tercero
     {
         return $this->nombres.' '.$this->apellidos;
     }
+
+    /**
+     * Add compras
+     *
+     * @param \Buseta\TallerBundle\Entity\Compra $compras
+     * @return Tercero
+     */
+    public function addCompra(\Buseta\TallerBundle\Entity\Compra $compras)
+    {
+        $this->compras[] = $compras;
+    
+        return $this;
+    }
+
+    /**
+     * Remove compras
+     *
+     * @param \Buseta\TallerBundle\Entity\Compra $compras
+     */
+    public function removeCompra(\Buseta\TallerBundle\Entity\Compra $compras)
+    {
+        $this->compras->removeElement($compras);
+    }
+
+    /**
+     * Get compras
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCompras()
+    {
+        return $this->compras;
+    }
 }
