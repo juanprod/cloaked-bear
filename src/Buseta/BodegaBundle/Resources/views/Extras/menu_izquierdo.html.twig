@@ -22,9 +22,7 @@
                     <li>
                         <a href="{{ path('tercero') }}">Terceros</a>
                     </li>
-                    <li>
-                        <a href="{{ path('direccion') }}">Direcciones</a>
-                    </li>
+
                 </ul>
                 <!-- /.nav-second-level -->
             </li>
@@ -39,9 +37,20 @@
                 <!-- /.nav-second-level -->
             </li>
 
+            <li>
+                <a href="#"><i class="fa fa-file-text fa-fw"></i> Gestión de Direcciones<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="{{ path('direccion') }}">Direcciones</a>
+                    </li>
+
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+
 
             <li>
-                <a href="#"><i class="fa fa-wrench fa-fw"></i> Gestión de Bodega<span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-archive fa-fw"></i> Gestión de Bodega<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
                         <a href="{{ path('bodega') }}">Bodegas</a>

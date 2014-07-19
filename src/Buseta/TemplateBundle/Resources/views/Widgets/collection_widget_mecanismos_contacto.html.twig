@@ -21,9 +21,9 @@
                                         </tr>
                                     {% endfor %}
                                     {% if counter == 0 %}
-                                        <tr id="no-elements-tr" style="font-size: 40px;"><td colspan="5">No existen elementos. Presione "Adicionar" para agregar nuevos elementos.</td></tr>
+                                        <div id="no-elements-tr">No existen elementos. Presione "Adicionar" para agregar nuevos elementos.</div>
                                     {% else %}
-                                        <tr id="no-elements-tr" style="display: none; font-size: 16px; color: red;"><td colspan="5">No existen elementos. Presione "Adicionar" para agregar nuevos elementos.</td></tr>
+                                        <div id="no-elements-tr">No existen elementos. Presione "Adicionar" para agregar nuevos elementos.</div>
                                     {% endif %}
                                 </tbody>
                             </table>

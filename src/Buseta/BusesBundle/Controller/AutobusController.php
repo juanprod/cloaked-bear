@@ -296,8 +296,17 @@ class AutobusController extends Controller
                 throw $this->createNotFoundException('Unable to find Autobus entity.');
             }
 
-            $em->remove($entity);
-            $em->flush();
+            try {
+                $em->remove($entity);
+                $em->flush();
+
+                $this->get('session')->getFlashBag()->add('success', 'Ha sido eliminado satisfactoriamente.');
+            } catch (\Exception $e) {
+                $this->get('logger')->addCritical(
+                    sprintf('Ha ocurrido un error eliminando un Autobús. Detalles: %s',
+                        $e->getMessage()
+                    ));
+            }
         }
 
         return $this->redirect($this->generateUrl('autobus'));

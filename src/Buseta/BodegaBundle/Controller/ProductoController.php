@@ -216,8 +216,17 @@ class ProductoController extends Controller
                 throw $this->createNotFoundException('Unable to find Producto entity.');
             }
 
-            $em->remove($entity);
-            $em->flush();
+            try {
+                $em->remove($entity);
+                $em->flush();
+
+                $this->get('session')->getFlashBag()->add('success', 'Ha sido eliminado satisfactoriamente.');
+            } catch (\Exception $e) {
+                $this->get('logger')->addCritical(
+                    sprintf('Ha ocurrido un error eliminando un Producto. Detalles: %s',
+                        $e->getMessage()
+                    ));
+            }
         }
 
         return $this->redirect($this->generateUrl('producto'));
@@ -235,7 +244,6 @@ class ProductoController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('producto_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()
         ;
     }

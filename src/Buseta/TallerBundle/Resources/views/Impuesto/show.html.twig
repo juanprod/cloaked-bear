@@ -36,14 +36,13 @@
         </tbody>
     </table>
 
-    <div class="btn-group">
+    <div class="form-actions">
+        {{ form_start(delete_form) }}
         <a class="btn btn-primary" href="{{ path('impuesto_edit', { 'id': entity.id }) }}"> Editar</a>
-    </div>
-
-    <div class="btn-group">
         <a class="btn btn-primary" href="{{ path('impuesto') }}"> Listado</a>
+        <button type="sumbit" class="btn btn-primary">Eliminar</button>
+        {{ form_end(delete_form) }}
     </div>
-
 
 {% endblock %}
 

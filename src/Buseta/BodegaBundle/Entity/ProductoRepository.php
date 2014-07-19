@@ -26,7 +26,7 @@ class ProductoRepository extends EntityRepository
             ->setParameter('producto', $datos->getProducto());
 
         if($datos->getCategoria()){
-            $entities->andWhere('p.categoria.id = :categoria');
+            $entities->andWhere('p.categoria = :categoria');
             $entities->setParameter('categoria', $datos->getCategoria());
         }
 

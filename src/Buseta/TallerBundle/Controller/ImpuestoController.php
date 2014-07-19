@@ -205,8 +205,17 @@ class ImpuestoController extends Controller
                 throw $this->createNotFoundException('Unable to find Impuesto entity.');
             }
 
-            $em->remove($entity);
-            $em->flush();
+            try {
+                $em->remove($entity);
+                $em->flush();
+
+                $this->get('session')->getFlashBag()->add('success', 'Ha sido eliminado satisfactoriamente.');
+            } catch (\Exception $e) {
+                $this->get('logger')->addCritical(
+                    sprintf('Ha ocurrido un error eliminando un Impuesto. Detalles: %s',
+                        $e->getMessage()
+                    ));
+            }
         }
 
         return $this->redirect($this->generateUrl('impuesto'));
@@ -224,7 +233,6 @@ class ImpuestoController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('impuesto_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()
         ;
     }

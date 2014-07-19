@@ -1,3 +1,5 @@
+{% from 'BusetaTemplateBundle::flash.html.twig' import session_flash %}
+
 {% extends "::base.html.twig" %}
 
 {% block header %}{% endblock %}
@@ -22,6 +24,16 @@
         <!-- /.col-lg-12 -->
     </div>
     <!-- /.row -->
+        {# Session flashes #}
+        {% block flashes %}
+            {% if app.session.flashbag.peekAll|length > 0 %}
+                <div class="row">
+                    <div class="col-sm-12">
+                        {{ session_flash() }}
+                    </div>
+                </div>
+            {% endif %}
+        {% endblock flashes %}
 
         {% block area_trabajo %}
             Área de Trabajo

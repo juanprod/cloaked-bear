@@ -15,7 +15,7 @@
                 <th>Imagen Lateral Izquierda</th>
                 <td>
                     {% if entity.imagenlaterali == '' %}
-                        <label style="color: red">El autobús no tiene Imagen Lateral Izquierda.</label>
+                        <label style="color: red">No tiene</label>
                     {% else %}
                         {% set path = 'images/' ~ entity.imagenlaterali %}
                         <img src="{{ asset(path)}}" alt="Imagen lateral izquierda" class="imagen-autobus" />
@@ -24,7 +24,7 @@
                 <th>Imagen Lateral Derecha</th>
                 <td>
                     {% if entity.imagenlaterald == '' %}
-                        <label style="color: red">El autobús no tiene Imagen Lateral Derecha</label>
+                        <label style="color: red">No tiene</label>
                     {% else %}
                         {% set path = 'images/' ~ entity.imagenlaterald %}
                         <img src="{{ asset(path)}}" alt="Imagen lateral derecha" class="imagen-autobus" />
@@ -35,7 +35,7 @@
                 <th>Imagen Frontal</th>
                 <td>
                     {% if entity.imagenfrontal == '' %}
-                        <label style="color: red">El autobús no tiene Imagen Frontal</label>
+                        <label style="color: red">No tiene</label>
                     {% else %}
                         {% set path = 'images/' ~ entity.imagenfrontal %}
                         <img src="{{ asset(path)}}" alt="Imagen frontal" class="imagen-autobus" />
@@ -44,7 +44,7 @@
                 <th>Imagen Trasera</th>
                 <td>
                     {% if entity.imagentrasera == '' %}
-                        <label style="color: red">El autobús no tiene Imagen Trasera</label>
+                        <label style="color: red">No tiene</label>
                     {% else %}
                         {% set path = 'images/' ~ entity.imagentrasera %}
                         <img src="{{ asset(path)}}" alt="Imagen trasera" class="imagen-autobus" />
@@ -87,7 +87,7 @@
                 <th>Número de Unidad</th>
                 <td>
                     {% if entity.numerounidad == '' %}
-                        <label style="color: red">El autobús no tiene N&uacute;mero de Unidad</label>
+                        <label style="color: red">No tiene</label>
                     {% else %}
                         {{ entity.numerounidad }}
                     {% endif %}
@@ -103,7 +103,7 @@
                 <th>Año</th>
                 <td>
                     {% if entity.anno == '' %}
-                        <label style="color: red">El autobús no tiene Año</label>
+                        <label style="color: red">No tiene</label>
                     {% else %}
                         {{ entity.anno }}
                     {% endif %}
@@ -111,7 +111,7 @@
                 <th>Valor de Unidad</th>
                 <td>
                     {% if entity.valorunidad == '' %}
-                        <label style="color: red">El autobús no tiene Valor de Unidad</label>
+                        <label style="color: red">No tiene</label>
                     {% else %}
                         {{ entity.valorunidad }}
                     {% endif %}
@@ -122,7 +122,7 @@
                 <th>Marca Caja de Cambios</th>
                 <td>
                     {% if entity.marcacajacambio == '' %}
-                        <label style="color: red">El autobús no tiene Marca Caja de Cambios</label>
+                        <label style="color: red">No tiene</label>
                     {% else %}
                         {{ entity.marcacajacambio }}
                     {% endif %}
@@ -130,7 +130,7 @@
                 <th>Tipo Caja de Cambios</th>
                 <td>
                     {% if entity.tipocajacambio == '' %}
-                        <label style="color: red">El autobús no tiene Tipo Caja de Cambios</label>
+                        <label style="color: red">No tiene</label>
                     {% else %}
                         {{ entity.tipocajacambio }}
                     {% endif %}
@@ -141,7 +141,7 @@
                 <th>Carter Capacidad en Litros</th>
                 <td>
                     {% if entity.cartercapacidadlitros == '' %}
-                        <label style="color: red">El autobús no tiene Carter Capacidad en Litros</label>
+                        <label style="color: red">No tiene</label>
                     {% else %}
                         {{ entity.cartercapacidadlitros }}
                     {% endif %}
@@ -149,7 +149,7 @@
                 <th>Bater&iacute;a 1</th>
                 <td>
                     {% if entity.bateria1 == '' %}
-                        <label style="color: red">El autobús no tiene Bater&iacute;a 1</label>
+                        <label style="color: red">No tiene</label>
                     {% else %}
                         {{ entity.bateria1 }}
                     {% endif %}
@@ -159,7 +159,7 @@
                 <th>Batería 2</th>
                 <td>
                     {% if entity.bateria2 == '' %}
-                        <label style="color: red">El autobús no tiene Bater&iacute;a 2</label>
+                        <label style="color: red">No tiene</label>
                     {% else %}
                         {{ entity.bateria2 }}
                     {% endif %}
@@ -171,7 +171,7 @@
                 <th>Rampas</th>
                 <td>
                     {% if entity.rampas == '' %}
-                        <label style="color: red">El autobús no tiene Rampas</label>
+                        <label style="color: red">No tiene</label>
                     {% else %}
                         {{ entity.rampas }}
                     {% endif %}
@@ -183,7 +183,7 @@
                 <th>Barras</th>
                 <td>
                     {% if entity.barras == '' %}
-                        <label style="color: red">El autobús no tiene Barras</label>
+                        <label style="color: red">No tiene</label>
                     {% else %}
                         {{ entity.barras }}
                     {% endif %}
@@ -195,7 +195,7 @@
                 <th>Cámaras</th>
                 <td>
                     {% if entity.camaras == '' %}
-                        <label style="color: red">El autobús no tiene Cámaras</label>
+                        <label style="color: red">No tiene</label>
                     {% else %}
                         {{ entity.camaras }}
                     {% endif %}
@@ -207,7 +207,7 @@
                 <th>Lector de Células</th>
                 <td>
                     {% if entity.lectorcedulas == '' %}
-                        <label style="color: red">El autobús no tiene Lector de Cédulas</label>
+                        <label style="color: red">No tiene</label>
                     {% else %}
                         {{ entity.lectorcedulas }}
                     {% endif %}
@@ -219,7 +219,7 @@
                 <th>Publicidad</th>
                 <td>
                     {% if entity.publicidad == '' %}
-                        <label style="color: red">El autobús no tiene Publicidad</label>
+                        <label style="color: red">No tiene</label>
                     {% else %}
                         {{ entity.publicidad }}
                     {% endif %}
@@ -231,7 +231,7 @@
                 <th>GPS</th>
                 <td>
                     {% if entity.gps == '' %}
-                        <label style="color: red">El autobús no tiene GPS</label>
+                        <label style="color: red">No tiene</label>
                     {% else %}
                         {{ entity.gps }}
                     {% endif %}
@@ -243,7 +243,7 @@
                 <th>Wifi</th>
                 <td>
                     {% if entity.wifi == '' %}
-                        <label style="color: red">El autobús no tiene Wifi</label>
+                        <label style="color: red">No tiene</label>
                     {% else %}
                         {{ entity.wifi }}
                     {% endif %}
@@ -256,7 +256,7 @@
                 <th>Filtro de Aceite</th>
                 <td>
                     {% if entity.filtroaceite == '' %}
-                        <label style="color: red">El autobús no tiene Filtro de Aceite</label>
+                        <label style="color: red">No tiene</label>
                     {% else %}
                         {{ entity.filtroaceite.filtroaceite1 }} - {{ entity.filtroaceite.filtroaceite2 }} - {{ entity.filtroaceite.filtroaceite3 }}
                     {% endif %}
@@ -268,7 +268,7 @@
                 <th>Filtro de Agua</th>
                 <td>
                     {% if entity.filtroagua == '' %}
-                        <label style="color: red">El autobús no tiene Filtro de Agua</label>
+                        <label style="color: red">No tiene</label>
                     {% else %}
                         {{ entity.filtroagua.filtroagua1 }} - {{ entity.filtroagua.filtroagua2 }}
                     {% endif %}
@@ -280,7 +280,7 @@
                 <th>Filtro de Caja</th>
                 <td>
                     {% if entity.filtrocaja == '' %}
-                        <label style="color: red">El autobús no tiene Filtro de Caja</label>
+                        <label style="color: red">No tiene</label>
                     {% else %}
                         {{ entity.filtrocaja.filtrocaja1 }} - {{ entity.filtrocaja.filtrocaja2 }}
                     {% endif %}
@@ -292,7 +292,7 @@
                 <th>Filtro de Diesel</th>
                 <td>
                     {% if entity.filtrodiesel == '' %}
-                        <label style="color: red">El autobús no tiene Filtro de Diesel</label>
+                        <label style="color: red">No tiene</label>
                     {% else %}
                         {{ entity.filtrodiesel.filtrodiesel1 }} - {{ entity.filtrodiesel.filtrodiesel2 }} - {{ entity.filtrodiesel.filtrodiesel3 }} - {{ entity.filtrodiesel.filtrodiesel4 }}
                     {% endif %}
@@ -304,7 +304,7 @@
                 <th>Filtro Hidr&aacute;ulico</th>
                 <td>
                     {% if entity.filtrohidraulico == '' %}
-                        <label style="color: red">El autobús no tiene Filtro Hidr&aacute;ulico</label>
+                        <label style="color: red">No tiene</label>
                     {% else %}
                         {{ entity.filtrohidraulico.filtrohidraulico1 }} - {{ entity.filtrohidraulico.filtrohidraulico2 }}
                     {% endif %}
@@ -316,7 +316,7 @@
                 <th>Filtro de Transmisi&oacute;n</th>
                 <td>
                     {% if entity.filtrotransmision == '' %}
-                        <label style="color: red">El autobús no tiene Filtro de Transmisi&oacute;n</label>
+                        <label style="color: red">No tiene</label>
                     {% else %}
                         {{ entity.filtrotransmision.filtrotransmision }}
                     {% endif %}
@@ -331,7 +331,7 @@
                             {% set path = 'files/' ~ archivo.valor %}
                             <a class="bg-warning" href="{{ asset(path) }}"> {{ archivo.valor }} </a>
                         {% else %}
-                            <label style="color: red">El autobús no tiene archivos adjuntos</label>
+                            <label style="color: red">No tiene</label>
                     {% endfor %}
                 </td>
                 <th></th>
@@ -340,19 +340,12 @@
         </tbody>
     </table>
 
-    <div class="btn-group">
+    <div class="form-actions">
+        {{ form_start(delete_form) }}
         <a class="btn btn-primary" href="{{ path('autobus_edit', { 'id': entity.id }) }}"> Editar</a>
-    </div>
-
-    <div class="btn-group">
         <a class="btn btn-primary" href="{{ path('autobus') }}"> Listado</a>
-    </div>
-
-    <div class="btn-group">
-        <form action="{{ path('autobus_delete', { 'id': entity.id }) }}" method="post">
-            {{ form_widget(delete_form) }}
-            <button class="btn btn-primary" type="submit">Eliminar</button>
-        </form>
+        <button type="sumbit" class="btn btn-primary">Eliminar</button>
+        {{ form_end(delete_form) }}
     </div>
 
 {% endblock %}

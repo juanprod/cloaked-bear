@@ -92,7 +92,7 @@ class TerceroController extends Controller
 
         $tipo_contacto = $this->createForm(new MecanismoContactoType());
 
-        $entity->addMecanismoscontacto(new MecanismoContacto());
+        //$entity->addMecanismoscontacto(new MecanismoContacto());
 
         $form   = $this->createCreateForm($entity);
 
@@ -218,7 +218,7 @@ class TerceroController extends Controller
                 $em->remove($entity);
                 $em->flush();
 
-                $this->get('session')->getFlashBag()->add('success', 'El Tercero ha sido eliminado satisfactoriamente.');
+                $this->get('session')->getFlashBag()->add('success', 'Ha sido eliminado satisfactoriamente.');
             } catch (\Exception $e) {
                 $this->get('logger')->addCritical(
                     sprintf('Ha ocurrido un error eliminando un Tercero. Detalles: %s',
