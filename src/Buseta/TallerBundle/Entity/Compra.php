@@ -30,11 +30,14 @@ class Compra
     private $numero;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="tipo", type="string", nullable=false)
+     * @ORM\ManyToOne(targetEntity="Buseta\NomencladorBundle\Entity\TipoCompra")
      */
     private $tipo;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Buseta\NomencladorBundle\Entity\Moneda")
+     */
+    private $moneda;
 
     /**
      * @ORM\ManyToOne(targetEntity="Buseta\BodegaBundle\Entity\Tercero", inversedBy="compras")
@@ -69,13 +72,6 @@ class Compra
      * @ORM\Column(name="forma_pago", type="string", nullable=false)
      */
     private $forma_pago;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="moneda", type="string", nullable=false)
-     */
-    private $moneda;
 
     /**
      * @var string
@@ -117,7 +113,7 @@ class Compra
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -133,41 +129,18 @@ class Compra
     public function setNumero($numero)
     {
         $this->numero = $numero;
-    
+
         return $this;
     }
 
     /**
      * Get numero
      *
-     * @return string 
+     * @return string
      */
     public function getNumero()
     {
         return $this->numero;
-    }
-
-    /**
-     * Set tipo
-     *
-     * @param string $tipo
-     * @return Compra
-     */
-    public function setTipo($tipo)
-    {
-        $this->tipo = $tipo;
-    
-        return $this;
-    }
-
-    /**
-     * Get tipo
-     *
-     * @return string 
-     */
-    public function getTipo()
-    {
-        return $this->tipo;
     }
 
     /**
@@ -179,14 +152,14 @@ class Compra
     public function setDescripcion($descripcion)
     {
         $this->descripcion = $descripcion;
-    
+
         return $this;
     }
 
     /**
      * Get descripcion
      *
-     * @return string 
+     * @return string
      */
     public function getDescripcion()
     {
@@ -202,14 +175,14 @@ class Compra
     public function setFechaPedido($fechaPedido)
     {
         $this->fecha_pedido = $fechaPedido;
-    
+
         return $this;
     }
 
     /**
      * Get fecha_pedido
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getFechaPedido()
     {
@@ -225,14 +198,14 @@ class Compra
     public function setFormaPago($formaPago)
     {
         $this->forma_pago = $formaPago;
-    
+
         return $this;
     }
 
     /**
      * Get forma_pago
      *
-     * @return string 
+     * @return string
      */
     public function getFormaPago()
     {
@@ -248,14 +221,14 @@ class Compra
     public function setMoneda($moneda)
     {
         $this->moneda = $moneda;
-    
+
         return $this;
     }
 
     /**
      * Get moneda
      *
-     * @return string 
+     * @return string
      */
     public function getMoneda()
     {
@@ -271,14 +244,14 @@ class Compra
     public function setCondicionesPago($condicionesPago)
     {
         $this->condiciones_pago = $condicionesPago;
-    
+
         return $this;
     }
 
     /**
      * Get condiciones_pago
      *
-     * @return string 
+     * @return string
      */
     public function getCondicionesPago()
     {
@@ -294,14 +267,14 @@ class Compra
     public function setImporteLibreImpuesto($importeLibreImpuesto)
     {
         $this->importe_libre_impuesto = $importeLibreImpuesto;
-    
+
         return $this;
     }
 
     /**
      * Get importe_libre_impuesto
      *
-     * @return float 
+     * @return float
      */
     public function getImporteLibreImpuesto()
     {
@@ -317,14 +290,14 @@ class Compra
     public function setImporteConImpuesto($importeConImpuesto)
     {
         $this->importe_con_impuesto = $importeConImpuesto;
-    
+
         return $this;
     }
 
     /**
      * Get importe_con_impuesto
      *
-     * @return float 
+     * @return float
      */
     public function getImporteConImpuesto()
     {
@@ -340,14 +313,14 @@ class Compra
     public function setImporteGeneral($importeGeneral)
     {
         $this->importe_general = $importeGeneral;
-    
+
         return $this;
     }
 
     /**
      * Get importe_general
      *
-     * @return float 
+     * @return float
      */
     public function getImporteGeneral()
     {
@@ -363,14 +336,14 @@ class Compra
     public function setEstado($estado)
     {
         $this->estado = $estado;
-    
+
         return $this;
     }
 
     /**
      * Get estado
      *
-     * @return string 
+     * @return string
      */
     public function getEstado()
     {
@@ -386,14 +359,14 @@ class Compra
     public function setTercero(\Buseta\BodegaBundle\Entity\Tercero $tercero = null)
     {
         $this->tercero = $tercero;
-    
+
         return $this;
     }
 
     /**
      * Get tercero
      *
-     * @return \Buseta\BodegaBundle\Entity\Tercero 
+     * @return \Buseta\BodegaBundle\Entity\Tercero
      */
     public function getTercero()
     {
@@ -406,7 +379,7 @@ class Compra
     {
         $this->lineas = new \Doctrine\Common\Collections\ArrayCollection();
     }
-    
+
     /**
      * Add lineas
      *
@@ -418,7 +391,7 @@ class Compra
         $lineas->setCompra($this);
 
         $this->lineas[] = $lineas;
-    
+
         return $this;
     }
 
@@ -435,10 +408,27 @@ class Compra
     /**
      * Get lineas
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getLineas()
     {
         return $this->lineas;
     }
+
+    /**
+     * @param mixed $tipo
+     */
+    public function setTipo($tipo)
+    {
+        $this->tipo = $tipo;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTipo()
+    {
+        return $this->tipo;
+    }
+
 }

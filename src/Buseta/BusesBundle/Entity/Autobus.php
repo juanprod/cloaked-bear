@@ -199,7 +199,7 @@ class Autobus
     private $peso_bruto;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Buseta\NomencladorBundle\Entity\Color", inversedBy="autobuses")
+     * @ORM\ManyToOne(targetEntity="Buseta\NomencladorBundle\Entity\Color")
      */
     private $color;
 

@@ -1,0 +1,59 @@
+generator: admingenerator.generator.doctrine
+params:
+    model: Buseta\NomencladorBundle\Entity\TipoCompra
+    namespace_prefix: Buseta
+    concurrency_lock: ~
+    bundle_name: NomencladorBundle
+    pk_requirement: ~
+    fields:
+      valor:
+            label: Valor
+      codigo:
+            label: Código
+      descripcion:
+            label: Descripción
+    object_actions:
+        delete: ~
+    batch_actions:
+        delete: ~
+builders:
+    list:
+        params:
+            title: Listado de tipos de compras
+            display: [valor, codigo, descripcion]
+            actions:
+                new: ~
+            object_actions:
+                show: ~
+                edit: ~
+                delete: ~
+    filters:
+        params:
+            display: [valor, codigo, descripcion]
+    new:
+        params:
+            title: Adicionar nuevo tipo de compra
+            display: [valor, codigo, descripcion]
+            actions:
+                save: ~
+                list: ~
+    edit:
+        params:
+            title: "Usted está modificando el tipo de compra: \"%object%\"|{ %object%: TipoCompra.valor }|"
+            display: [valor, codigo, descripcion]
+            actions:
+                save: ~
+                list: ~
+    show:
+        params:
+            title: "Usted está mostrando los datos del tipo de compra: \"%object%\"|{ %object%: TipoCompra.valor }|"
+            display: [valor, codigo, descripcion]
+            actions:
+                list: ~
+                new: ~
+    actions:
+        params:
+            object_actions:
+                delete: ~
+            batch_actions:
+                delete: ~

@@ -1,3 +1,8 @@
+BusetaNomencladorBundle_admin_buseta_nomenclador_bundle_tipocompra:
+    resource: "@BusetaNomencladorBundle/Controller/Tipocompra/"
+    type:     admingenerator
+    prefix:   /admin/nomenclador/tipocompra
+
 BusetaTallerBundle_linea:
         resource: "@BusetaTallerBundle/Resources/config/routing/linea.yml"
         prefix:   /linea

@@ -24,12 +24,14 @@ class CompraType extends AbstractType
                         'class' => 'form-control',
                     )
                 ))
-            ->add('tipo', 'text', array(
-                    'required' => true,
-                    'attr'   => array(
-                        'class' => 'form-control',
-                    )
-                ))
+            ->add('tipo','entity',array(
+                'class' => 'BusetaNomencladorBundle:TipoCompra',
+                'empty_value' => '---Seleccione tipo de compra---',
+                'required' => false,
+                'attr' => array(
+                    'class' => 'form-control',
+                )
+            ))
             ->add('descripcion', 'textarea', array(
                     'required' => false,
                     'label'  => 'Descripción',
@@ -52,12 +54,14 @@ class CompraType extends AbstractType
                         'class' => 'form-control',
                     )
                 ))
-            ->add('moneda', 'text', array(
-                    'required' => true,
-                    'attr'   => array(
-                        'class' => 'form-control',
-                    )
-                ))
+            ->add('moneda','entity',array(
+                'class' => 'BusetaNomencladorBundle:Moneda',
+                'empty_value' => '---Seleccione tipo de moneda---',
+                'required' => false,
+                'attr' => array(
+                    'class' => 'form-control',
+                )
+            ))
             ->add('condiciones_pago', 'text', array(
                     'required' => true,
                     'label'  => 'Condiciones de pago',

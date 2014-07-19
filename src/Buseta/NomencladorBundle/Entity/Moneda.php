@@ -7,10 +7,10 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Color
  *
- * @ORM\Table(name="n_color")
+ * @ORM\Table(name="n_moneda")
  * @ORM\Entity
  */
-class Color extends BaseNomenclador
+class Moneda extends BaseNomenclador
 {
     /**
      * @var integer
@@ -29,36 +29,35 @@ class Color extends BaseNomenclador
     private $descripcion;
 
     /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set descripcion
-     *
      * @param string $descripcion
-     * @return Color
      */
     public function setDescripcion($descripcion)
     {
         $this->descripcion = $descripcion;
-    
-        return $this;
     }
 
     /**
-     * Get descripcion
-     *
-     * @return string 
+     * @return string
      */
     public function getDescripcion()
     {
         return $this->descripcion;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
     }
 
 }
