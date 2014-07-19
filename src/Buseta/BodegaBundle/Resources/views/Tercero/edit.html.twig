@@ -1,16 +1,165 @@
-{% extends '::base.html.twig' %}
+{% extends "BusetaBodegaBundle::layout.html.twig" %}
 
-{% block body -%}
-    <h1>Tercero edit</h1>
+{% form_theme edit_form 'BusetaTemplateBundle:Widgets:collection_widget_mecanismos_contacto.html.twig' %}
 
-    {{ form(edit_form) }}
+{% block nombre_menu_superior %}
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('tercero') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
 {% endblock %}
+
+{% block titulo_encabezado %}
+    Modificar del tercero: "{{ entity.nombres }}"
+{% endblock %}
+
+{% block area_trabajo %}
+
+    <form action="{{ path('tercero_create') }}" method="post" {{ form_enctype(edit_form) }}>
+        <div class="row show-grid">
+            <div class="col-md-4">
+                <label>Nombres:</label>
+                {{ form_widget(edit_form.nombres) }}
+            </div>
+
+            <div class="col-md-4">
+                <label>Apellidos:</label>
+                {{ form_widget(edit_form.apellidos) }}
+            </div>
+
+            <div class="col-md-4">
+                <label>Alias:</label>
+                {{ form_widget(edit_form.alias) }}
+            </div>
+        </div>
+
+        <div class="row show-grid">
+            <div class="col-md-4">
+                <label>Código:</label>
+                {{ form_widget(edit_form.codigo) }}
+            </div>
+
+            <div class="col-md-4">
+                <label>Dirección:</label>
+                {{ form_widget(edit_form.direccion) }}
+            </div>
+
+            <div class="col-md-4">
+                <label>&nbsp;</label> <br>
+                <div class="btn-group" style="padding-bottom: 8px;">
+                    <a class="btn btn-primary" href="{{ path('direccion_new') }}"><i class="fa fa-plus-circle"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row show-grid">
+            <div class="col-md-4">
+                <label>Cliente:</label>
+                {{ form_widget(edit_form.cliente) }}
+            </div>
+
+            <div class="col-md-4">
+                <label>Institución:</label>
+                {{ form_widget(edit_form.institucion) }}
+            </div>
+
+            <div class="col-md-4">
+                <label>Proveedor:</label>
+                {{ form_widget(edit_form.proveedor) }}
+            </div>
+        </div>
+
+        <div class="row show-grid">
+            <div class="col-md-4">
+                <label>Activo:</label>
+                {{ form_widget(edit_form.activo) }}
+            </div>
+        </div>
+
+        {{ form_widget(edit_form.mecanismoscontacto) }}
+
+        <div class="row show-grid">
+            <div class="col-md-4">
+
+                <input class="btn btn-primary" style="height: 34px" type="submit" value="Aceptar">
+                <div class="btn-group">
+                    <a class="btn btn-primary" href="{{ path('tercero') }}"> Cancelar</a>
+                </div>
+
+            </div>
+        </div>
+
+        {{ form_rest(edit_form) }}
+    </form>
+
+
+{% endblock %}
+
+
+{% block contenido %}
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript">
+        var collectionHolder = $('table#buseta_bodegabundle_tercero_mecanismoscontacto');
+        var $addTagLink = $('a.add_tag_link');
+
+        jQuery(document).ready(function() {
+            // count the current form inputs we have (e.g. 2), use that as the new
+            // index when inserting a new item (e.g. 2)
+            collectionHolder.data('index', collectionHolder.find('a.delete_tag_link').length);
+
+            $addTagLink.on('click', function(e) {
+                // prevent the link from creating a "#" on the URL
+                e.preventDefault();
+
+                // add a new tag form (see next code block)
+                addTagForm(collectionHolder);
+            });
+
+            updateDeleteLink();
+            updateView();
+
+            function addTagForm(collectionHolder) {
+                // Get the data-prototype explained earlier
+                var prototype = collectionHolder.data('prototype');
+
+                // get the new index
+                var index = collectionHolder.data('index');
+
+                // Replace '__name__' in the prototype's HTML to
+                // instead be a number based on how many items we have
+                var newForm = prototype.replace(/__name__/g, index);
+
+                // increase the index with one for the next item
+                collectionHolder.data('index', index + 1);
+
+                // Display the form in the page in an li, before the "Add a tag" link li
+                var $newFormDiv = $('<tr></tr>').append(newForm);
+                collectionHolder.find('tbody').append($newFormDiv);
+                updateDeleteLink();
+                updateView();
+            }
+
+            function updateDeleteLink(){
+                $('a.delete_tag_link').on('click', function(e) {
+                    // prevent the link from creating a "#" on the URL
+                    e.preventDefault();
+
+                    // remove the li for the tag form
+                    $(this).parent().parent().remove();
+                    updateView();
+                });
+            }
+
+            function updateView(){
+                counter = collectionHolder.find('a.delete_tag_link').length;
+                if(counter == 0){
+                    $('tr#no-elements-tr').show();
+                }else{
+                    $('tr#no-elements-tr').hide();
+                }
+            }
+        });
+
+    </script>
+{% endblock javascripts %}

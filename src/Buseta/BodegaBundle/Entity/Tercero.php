@@ -63,7 +63,7 @@ class Tercero
     private $direccion;
 
     /**
-     * @ORM\OneToMany(targetEntity="Buseta\BodegaBundle\Entity\MecanismoContacto", mappedBy="terceros", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="Buseta\BodegaBundle\Entity\MecanismoContacto", mappedBy="terceros", cascade={"remove","persist"})
      */
     private $mecanismoscontacto;
 

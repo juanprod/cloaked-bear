@@ -121,7 +121,8 @@ class TerceroController extends Controller
 
         return $this->render('BusetaBodegaBundle:Tercero:show.html.twig', array(
             'entity'      => $entity,
-            'delete_form' => $deleteForm->createView(),        ));
+            'delete_form' => $deleteForm->createView(),
+        ));
     }
 
     /**
@@ -213,8 +214,17 @@ class TerceroController extends Controller
                 throw $this->createNotFoundException('Unable to find Tercero entity.');
             }
 
-            $em->remove($entity);
-            $em->flush();
+            try {
+                $em->remove($entity);
+                $em->flush();
+
+                $this->get('session')->getFlashBag()->add('success', 'El Tercero ha sido eliminado satisfactoriamente.');
+            } catch (\Exception $e) {
+                $this->get('logger')->addCritical(
+                    sprintf('Ha ocurrido un error eliminando un Tercero. Detalles: %s',
+                    $e->getMessage()
+                ));
+            }
         }
 
         return $this->redirect($this->generateUrl('tercero'));
@@ -232,7 +242,6 @@ class TerceroController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('tercero_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()
         ;
     }

@@ -39,9 +39,27 @@
                 <td>{{ entity.nombres }}</td>
                 <td>{{ entity.apellidos }}</td>
                 <td>{{ entity.alias }}</td>
-                <td>{{ entity.cliente }}</td>
-                <td>{{ entity.institucion }}</td>
-                <td>{{ entity.proveedor }}</td>
+                <td style="color: red;">
+                    {% if entity.cliente == null %}
+                        No tiene
+                    {% else %}
+                        Sí tiene
+                    {% endif %}
+                </td>
+                <td style="color: red;">
+                    {% if entity.institucion == null %}
+                        No tiene
+                    {% else %}
+                        Sí tiene
+                    {% endif %}
+                </td>
+                <td style="color: red;">
+                    {% if entity.proveedor == null %}
+                        No tiene
+                    {% else %}
+                        Sí tiene
+                    {% endif %}
+                </td>
                 <td>
                     {% if entity.activo == 1 %}
                         Sí
