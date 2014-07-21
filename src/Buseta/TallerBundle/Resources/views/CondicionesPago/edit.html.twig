@@ -1,0 +1,64 @@
+{% extends "BusetaTallerBundle::layout.html.twig" %}
+
+{% block nombre_menu_superior %}
+
+{% endblock %}
+
+{% block titulo_encabezado %}
+    Modificar datos de la condición de pago: "{{ entity.nombre }}"
+{% endblock %}
+
+{% block area_trabajo %}
+
+    {{ form_start(edit_form) }}
+    <div class="row show-grid">
+        <div class="col-md-4">
+            <label>Nombre:</label>
+            {{ form_widget(edit_form.nombre) }}
+        </div>
+
+        <div class="col-md-4">
+            <label>Dias de plazo:</label>
+            {{ form_widget(edit_form.dias_plazo) }}
+        </div>
+
+        <div class="col-md-4">
+            <label>Meses de plazo:</label>
+            {{ form_widget(edit_form.meses_plazo) }}
+        </div>
+    </div>
+
+    <div class="row show-grid">
+        <div class="col-md-12">
+            <label>Descripción:</label>
+            {{ form_widget(edit_form.descripcion) }}
+        </div>
+    </div>
+
+    <div class="row show-grid">
+        <div class="col-md-12">
+            <label>Nota:</label>
+            {{ form_widget(edit_form.nota) }}
+        </div>
+    </div>
+
+
+    <div class="row show-grid">
+        <div class="col-md-4">
+
+            <input class="btn btn-primary" style="height: 34px" type="submit" value="Aceptar">
+            <div class="btn-group">
+                <a class="btn btn-primary" href="{{ path('condicionespago') }}"> Cancelar</a>
+            </div>
+        </div>
+    </div>
+
+    {{ form_end(edit_form) }}
+
+
+{% endblock %}
+
+
+{% block contenido %}
+
+{% endblock %}

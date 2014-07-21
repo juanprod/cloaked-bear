@@ -88,14 +88,20 @@
 
     <div class="row show-grid">
         <div class="col-md-4">
+            {{ form_row(edit_form.orden_prioridad) }}
+        </div>
+    </div>
+
+
+    <div class="row show-grid">
+        <div class="col-md-4">
             <input class="btn btn-primary" style="height: 34px" type="submit" value="Aceptar">
             <div class="btn-group">
-                <a class="btn btn-primary" href="{{ path('impuesto') }}"> Cancelar</a>
+                <a class="btn btn-primary" href="{{ path('compra') }}"> Cancelar</a>
             </div>
         </div>
     </div>
 
-    {{ form_rest(edit_form) }}
     {{ form_end(edit_form) }}
 
 
@@ -136,6 +142,7 @@
                                 {{ form_row(linea.monto) }}
                             </div>
                         </div>
+
                 </div>
                 <div class="modal-footer">
                     <!-- <input class="btn btn-primary add_tag_link" style="height: 34px" type="submit" value="Guardar cambios"> !-->

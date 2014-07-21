@@ -1,53 +1,57 @@
-{% extends "BusetaBodegaBundle::layout.html.twig" %}
+{% extends "BusetaTallerBundle::layout.html.twig" %}
 
 {% block nombre_menu_superior %}
 
 {% endblock %}
 
 {% block titulo %}
-    Listado de movimientos de productos
+    Listado de condiciones de pago
 {% endblock %}
 
 {% block titulo_encabezado %}
-    Listados de movimientos de productos
+    Listado de condiciones de pago
 {% endblock %}
 
 {% block area_trabajo %}
 
     <div class="btn-group" style="padding-bottom: 8px;">
-        <a class="btn btn-primary" href="{{ path('movimiento_new') }}"><i class="fa fa-plus-circle"></i> Realizar movimiento de producto</a>
+        <a class="btn btn-primary" href="{{ path('condicionespago_new') }}"><i class="fa fa-plus-circle"></i> Adicionar condición de pago</a>
     </div>
 
     <table class="records_list table table-striped table-bordered table-condensed table-hover">
         <thead>
         <tr>
-            <th>Producto</th>
-            <th>Cantidad</th>
-            <th>Movido a</th>
-            <th>Fecha de Movimiento</th>
-            <th>Realizado por</th>
+            <th>Nombre</th>
             <th>Descripción</th>
+            <th>Meses de plazo</th>
+            <th>Días de plazo</th>
+            <th>Nota</th>
             <th>Acciones</th>
         </tr>
         </thead>
         <tbody>
         {% for entity in entities %}
             <tr>
-                <td>{{ entity.producto }}</td>
-                <td>{{ entity.cantidadProductos }}</td>
-                <td>{{ entity.movidoA }}</td>
-                <td>{{ entity.fechaMovimiento|date('d/m/Y') }}</td>
-                <td>{{ entity.movidoBy }}</td>
+                <td>{{ entity.nombre }}</td>
                 <td>{{ entity.descripcion }}</td>
+                <td>{{ entity.mesesplazo }}</td>
+                <td>{{ entity.diasplazo }}</td>
+                <td>{{ entity.nota }}</td>
+
                 <td  style="width: 18% !important; text-align: center;">
                     <div class="btn-group">
-                        <a class="btn btn-success btn-xs" href="{{ path('movimiento_show', { 'id': entity.id }) }}"><i class="fa fa-search"> Mostrar</i></a>
+                        <a class="btn btn-success btn-xs" href="{{ path('condicionespago_show', { 'id': entity.id }) }}"><i class="fa fa-search"> Mostrar</i></a>
                     </div>
+
+                    <div class="btn-group">
+                        <a class="btn btn-danger btn-xs" href="{{ path('condicionespago_edit', { 'id': entity.id }) }}"><i class="fa fa-edit"> Editar</i></a>
+                    </div>
+
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="12">No se encontraron registros de movimientos en el sistema.</td>
+                <td colspan="12">No se encontraron registros de condiciones de pago en el sistema.</td>
             </tr>
         {% endfor %}
 

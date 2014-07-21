@@ -1,0 +1,117 @@
+<?php
+
+namespace Buseta\TallerBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
+/**
+ * Compra
+ *
+ * @ORM\Table(name="d_compra")
+ * @ORM\Entity(repositoryClass="Buseta\TallerBundle\Entity\CompraRepository")
+ */
+class Compra
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="numero", type="string", nullable=false)
+     */
+    private $numero;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Buseta\NomencladorBundle\Entity\TipoCompra")
+     */
+    private $tipo;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Buseta\NomencladorBundle\Entity\Moneda")
+     */
+    private $moneda;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Buseta\BodegaBundle\Entity\Tercero", inversedBy="compras")
+     */
+    private $tercero;
+
+    /**
+     * @var \Doctrine\Common\Collections\ArrayCollection
+     *
+     * @ORM\OneToMany(targetEntity="Buseta\TallerBundle\Entity\Linea", mappedBy="compra", cascade={"all"})
+     */
+    private $lineas;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="orden_prioridad", type="string", nullable=true)
+     */
+    private $orden_prioridad;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="descripcion", type="string", nullable=true)
+     */
+    private $descripcion;
+
+    /**
+     * @var date
+     *
+     * @ORM\Column(name="fecha_pedido", type="date")
+     * @Assert\Date()
+     */
+    private $fecha_pedido;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="forma_pago", type="string", nullable=false)
+     */
+    private $forma_pago;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="total_libre_impuesto", type="decimal", scale=2)
+     */
+    private $importe_libre_impuesto;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="total_con_impuesto", type="decimal", scale=2)
+     */
+    private $importe_con_impuesto;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="total_general", type="decimal", scale=2)
+     */
+    private $importe_general;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="estado", type="string", nullable=false)
+     */
+    private $estado;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Buseta\TallerBundle\Entity\CondicionesPago", inversedBy="compras")
+     */
+    private $condiciones_pago;
+
+    
+}

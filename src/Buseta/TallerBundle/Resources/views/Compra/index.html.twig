@@ -23,13 +23,8 @@
             <tr>
                 <th>Número</th>
                 <th>Tipo</th>
-                <th>Descripción</th>
                 <th>Fecha pedido</th>
-                <th>Forma pago</th>
-                <th>Moneda</th>
-                <th>Condiciones pago</th>
-                <th>Importe libre impuesto</th>
-                <th>Importe con impuesto</th>
+                <th>Prioridad</th>
                 <th>Importe general</th>
                 <th>Estado</th>
                 <th>Acciones</th>
@@ -40,15 +35,24 @@
             <tr>
                 <td>{{ entity.numero }}</td>
                 <td>{{ entity.tipo }}</td>
-                <td>{{ entity.descripcion }}</td>
                 <td>{% if entity.fechapedido %}{{ entity.fechapedido|date('d/m/Y') }}{% endif %}</td>
-                <td>{{ entity.formapago }}</td>
-                <td>{{ entity.moneda }}</td>
-                <td>{{ entity.condicionespago }}</td>
-                <td>{{ entity.importelibreimpuesto }}</td>
-                <td>{{ entity.importeconimpuesto }}</td>
+                <td>
+                    {% if entity.ordenprioridad == null %}
+                        <span class="label label-danger">No tiene</span>
+                    {% else %}
+                        {% set prioridad = 'prioridad.' ~ entity.ordenprioridad %}
+                        {{ prioridad | trans({},'BusetaTallerBundle') }}
+                    {% endif %}
+                </td>
                 <td>{{ entity.importegeneral }}</td>
-                <td>{{ entity.estado }}</td>
+                <td>
+                    {% if entity.estado == null %}
+                        <span class="label label-danger">No tiene</span>
+                    {% else %}
+                        {% set estado = 'estado.' ~ entity.estado %}
+                        {{ estado | trans({},'BusetaTallerBundle') }}
+                    {% endif %}
+                </td>
                 <td  style="width: 18% !important; text-align: center;">
                     <div class="btn-group">
                         <a class="btn btn-success btn-xs" href="{{ path('compra_show', { 'id': entity.id }) }}"><i class="fa fa-search"> Mostrar</i></a>

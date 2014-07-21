@@ -207,7 +207,7 @@ class CompraController extends Controller
     private function createEditForm(Compra $entity)
     {
         $form = $this->createForm(new CompraType(), $entity, array(
-            'action' => $this->generateUrl('compra_show', array('id' => $entity->getId())),
+            'action' => $this->generateUrl('compra_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
@@ -236,7 +236,7 @@ class CompraController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('compra_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('compra_show', array('id' => $id)));
         }
 
         $em = $this->getDoctrine()->getManager();

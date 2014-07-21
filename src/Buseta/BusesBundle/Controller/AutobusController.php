@@ -269,10 +269,6 @@ class AutobusController extends Controller
             return $this->redirect($this->generateUrl('autobus_show', array('id' => $entity->getId())));
         }
 
-        echo '<pre>';
-        var_dump($editForm->isSubmitted());
-        exit;
-
         return $this->render('BusetaBusesBundle:Autobus:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),

@@ -1,0 +1,58 @@
+{% extends "BusetaTallerBundle::layout.html.twig" %}
+
+{% block nombre_menu_superior %}
+
+{% endblock %}
+
+{% block titulo_encabezado %}
+    Datos de la condición de pago: "{{ entity.nombre }}"
+{% endblock %}
+
+{% block area_trabajo %}
+
+    <table class="table table-striped" style="font-size: 16px;">
+        <tbody>
+
+        <tr>
+            <th>Nombre</th>
+            <td>{{ entity.nombre }}</td>
+        </tr>
+
+        <tr>
+            <th>Descripción</th>
+            <td>{{ entity.descripcion }}</td>
+        </tr>
+
+        <tr>
+            <th>Meses de Plazo</th>
+            <td>{{ entity.mesesplazo }}</td>
+        </tr>
+
+        <tr>
+            <th>Días de Plazo</th>
+            <td>{{ entity.diasplazo }}</td>
+        </tr>
+
+        <tr>
+            <th>Nota</th>
+            <td>{{ entity.nota }}</td>
+        </tr>
+
+        </tbody>
+    </table>
+
+    <div class="form-actions">
+        {{ form_start(delete_form) }}
+        <a class="btn btn-primary" href="{{ path('condicionespago_edit', { 'id': entity.id }) }}"> Editar</a>
+        <a class="btn btn-primary" href="{{ path('condicionespago') }}"> Listado</a>
+        <button type="sumbit" class="btn btn-primary">Eliminar</button>
+        {{ form_end(delete_form) }}
+    </div>
+
+{% endblock %}
+
+
+{% block contenido %}
+
+
+{% endblock %}

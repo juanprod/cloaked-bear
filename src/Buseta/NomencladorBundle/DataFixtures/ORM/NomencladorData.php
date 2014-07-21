@@ -200,7 +200,6 @@ class NomencladorData extends AbstractFixture
             $codigo = uniqid();
             $objeto->setCodigo($codigo);
             $objeto->setValor($this->oums[$i]);
-
             $manager->persist($objeto);
             $manager->flush();
             $manager->clear();

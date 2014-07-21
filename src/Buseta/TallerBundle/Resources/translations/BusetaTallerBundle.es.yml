@@ -1,0 +1,38 @@
+forma_pago:
+  1: Tranferencia electrónica
+  2: Cheque
+  3: Nota Promisoria
+  4: Giro postal
+  5: Deposito bancario
+  B: Efectivo
+  C: Reembolso
+  K: Tarjeta de Crédito
+  P: A Crédito
+  R: Transferencia bancaria
+  T: Transferencia (ACH)
+  W: Retención
+
+estado:
+  ??: Desconocido
+  AP: Aceptado
+  CH: Modificado
+  CL: Cerrado
+  CO: Completado
+  DR: Borrador
+  IN: Inactivo
+  IP: En proceso
+  NA: No aceptado
+  PE: Error de cuenta
+  PO: Publicado
+  PR: Impreso
+  RE: Re abierto
+  TE: Error de transferencia
+  TR: Transferido
+  VO: Anulado
+  WP: No pagado
+  XX: Procesando
+
+prioridad:
+  High: Alta
+  Medium: Media
+  Low: Baja

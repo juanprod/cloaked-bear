@@ -1,0 +1,30 @@
+condicionespago:
+    pattern:  /
+    defaults: { _controller: "BusetaTallerBundle:CondicionesPago:index" }
+
+condicionespago_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "BusetaTallerBundle:CondicionesPago:show" }
+
+condicionespago_new:
+    pattern:  /new
+    defaults: { _controller: "BusetaTallerBundle:CondicionesPago:new" }
+
+condicionespago_create:
+    pattern:  /create
+    defaults: { _controller: "BusetaTallerBundle:CondicionesPago:create" }
+    requirements: { _method: post }
+
+condicionespago_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "BusetaTallerBundle:CondicionesPago:edit" }
+
+condicionespago_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "BusetaTallerBundle:CondicionesPago:update" }
+    requirements: { _method: post|put }
+
+condicionespago_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "BusetaTallerBundle:CondicionesPago:delete" }
+    requirements: { _method: post|delete }

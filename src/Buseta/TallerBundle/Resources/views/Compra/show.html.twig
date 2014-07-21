@@ -1,5 +1,7 @@
 {% extends "BusetaTallerBundle::layout.html.twig" %}
 
+{% trans_default_domain 'BusetaTallerBundle' %}
+
 {% block nombre_menu_superior %}
 
 {% endblock %}
@@ -29,12 +31,36 @@
                 <td>{{ entity.fechapedido|date('d/m/Y') }}</td>
             </tr>
             <tr>
+                <th>Prioridad</th>
+                <td>
+                    {% if entity.ordenprioridad == null %}
+                        <span class="label label-danger">No tiene</span>
+                    {% else %}
+                        {% set prioridad = 'prioridad.' ~ entity.ordenprioridad %}
+                        {{ prioridad | trans({},'BusetaTallerBundle') }}
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
                 <th>Forma pago</th>
-                <td>{{ entity.formapago }}</td>
+                <td>
+                    {% if entity.formapago == null %}
+                        <span class="label label-danger">No tiene</span>
+                    {% else %}
+                        {% set formapago = 'forma_pago.' ~ entity.formapago %}
+                        {{ formapago | trans({},'BusetaTallerBundle') }}
+                    {% endif %}
+                </td>
             </tr>
             <tr>
                 <th>Moneda</th>
-                <td>{{ entity.moneda }}</td>
+                <td>
+                    {% if entity.moneda == null %}
+                        <span class="label label-danger">No tiene</span>
+                    {% else %}
+                        {{ entity.moneda }}
+                    {% endif %}
+                </td>
             </tr>
             <tr>
                 <th>Condiciones pago</th>
@@ -54,7 +80,14 @@
             </tr>
             <tr>
                 <th>Estado</th>
-                <td>{{ entity.estado }}</td>
+                <td>
+                    {% if entity.estado == null %}
+                        <span class="label label-danger">No tiene</span>
+                    {% else %}
+                        {% set estado = 'estado.' ~ entity.estado %}
+                        {{ estado | trans({},'BusetaTallerBundle') }}
+                    {% endif %}
+                </td>
             </tr>
             <tr>
                 <th>Tercero (Nombres y apellidos)</th>
@@ -81,7 +114,11 @@
                             <td>{{ linea.monto }}</td>
                         </tr>
                         {% else %}
-                            <label style="color: red">La compra no tiene líneas disponibles.</label>
+                            <tr>
+                                <td colspan="6">
+                                    <span class="label label-danger">No existen líneas disponibles</span>
+                                </td>
+                            </tr>
                         {% endfor %}
                     </table>
                 </td>
