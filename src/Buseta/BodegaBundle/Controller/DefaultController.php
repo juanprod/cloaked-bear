@@ -25,7 +25,7 @@ class DefaultController extends Controller
             $entities = $em->getRepository('BusetaBodegaBundle:Producto')->buscarTodos($em);
         }
 
-        //CASO BUSQUEDA-AUTOBUS
+        //CASO INFORME-STOCK
         $paginator = $this->get('knp_paginator');
         $entities = $paginator->paginate(
             $entities,

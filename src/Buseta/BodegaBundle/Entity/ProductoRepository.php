@@ -2,6 +2,7 @@
 
 namespace Buseta\BodegaBundle\Entity;
 
+use Buseta\NomencladorBundle\Entity\Categoria;
 use Doctrine\ORM\EntityRepository;
 
 /**
@@ -20,14 +21,18 @@ class ProductoRepository extends EntityRepository
 
         $datos = $busqueda->getData();
 
-        $entities
-            ->where('p.id = :producto');
-        $entities
-            ->setParameter('producto', $datos->getProducto());
+        if($datos->getProducto()){
+            $entities
+                ->where('p.id = :producto');
+            $entities
+                ->setParameter('producto', $datos->getProducto());
+        }
+
 
         if($datos->getCategoria()){
-            $entities->andWhere('p.categoria = :categoria');
-            $entities->setParameter('categoria', $datos->getCategoria());
+            $entities->andWhere('c.id = :categoria');
+            $entities->leftJoin('p.categoria', 'c');
+            $entities->setParameter('categoria', $datos->getCategoria()->getId());
         }
 
         $entities = $entities
